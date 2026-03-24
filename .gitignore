@@ -3,6 +3,9 @@ node_modules/
 temporary screenshots/
 *.log
 
+# Local private reference files
+*.local.txt
+
 # Dev/planning files
 screenshot.mjs
 serve.mjs
