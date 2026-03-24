@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+temporary screenshots/
+*.log
+
+# Dev/planning files
+screenshot.mjs
+serve.mjs
+font-comparison.html
+package.json
+package-lock.json
+CLAUDE - web design.md
+Website idea.webp
+site-config.md
