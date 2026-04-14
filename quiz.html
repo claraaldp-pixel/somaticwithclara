@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is Your Body Actually Trying to Tell You? | Clara Louis</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
+<script defer src="/_vercel/insights/script.js"></script>
+<style>
+:root{
+  --bg:#EBF0E2;--white:#FFFFFF;--sage-light:#D4E8D8;
+  --sage:#5B9A6E;--sage-dark:#3D7A55;--violet:#7B5EA7;
+  --dark:#1A2035;--text:#2A2A2A;--body:#3A3A3A;--muted:#888;--faint:#BBB;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+.ticker{background:var(--sage);padding:9px 20px;}
+.ticker-inner{display:flex;flex-wrap:wrap;justify-content:center;}
+
+.ticker span{font-family:'Anton',sans-serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 20px;}
+.t-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.3);display:inline-block;flex-shrink:0;}
+
+.header{background:var(--dark);padding:36px 20px 30px;text-align:center;position:relative;overflow:hidden;}
+.circ{position:absolute;border-radius:50%;pointer-events:none;}
+.eyebrow{font-family:'Permanent Marker',cursive;font-size:13px;color:var(--violet);transform:rotate(-2deg);display:inline-block;margin-bottom:8px;}
+.h1{font-family:'Anton',sans-serif;font-size:clamp(26px,6vw,38px);color:#fff;text-transform:uppercase;line-height:1.05;letter-spacing:-0.3px;}
+.h1 span{color:var(--sage);}
+.sub{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.55);margin-top:10px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.65;}
+
+.grad-div{height:3px;background:linear-gradient(90deg,var(--violet),var(--sage));}
+
+.progress{background:rgba(0,0,0,.04);padding:14px 20px;border-bottom:1px solid rgba(0,0,0,.07);}
+.prog-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.prog-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,.35);}
+.prog-num{font-family:'Anton',sans-serif;font-size:16px;color:var(--sage);}
+.prog-bg{background:rgba(0,0,0,.08);border-radius:50px;height:4px;}
+.prog-fill{background:var(--sage);border-radius:50px;height:4px;transition:width .4s ease;}
+
+.quiz-body{background:transparent;padding:24px 20px 40px;max-width:640px;margin:0 auto;}
+.q-label{font-family:'Permanent Marker',cursive;font-size:13px;color:var(--violet);transform:rotate(-1deg);display:inline-block;margin-bottom:10px;}
+.q-text{font-family:'Anton',sans-serif;font-size:clamp(20px,4vw,26px);text-transform:uppercase;line-height:1.2;color:var(--dark);margin-bottom:16px;letter-spacing:0.2px;}
+
+.opt{background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:14px;padding:13px 16px;margin-bottom:9px;cursor:pointer;display:flex;align-items:flex-start;gap:12px;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.opt:hover{border-color:var(--sage);background:rgba(91,154,110,.06);transform:translateX(3px);}
+.opt.sel{border-color:var(--sage);background:rgba(91,154,110,.08);}
+.opt-dot{width:17px;height:17px;border-radius:50%;border:2px solid rgba(0,0,0,.15);flex-shrink:0;margin-top:2px;transition:all .2s;}
+.opt.sel .opt-dot{background:var(--sage);border-color:var(--sage);}
+.opt-text{font-size:14px;line-height:1.65;color:var(--body);}
+
+.btn{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:50px;padding:13px 30px;cursor:pointer;transition:all .2s;}
+.btn-sage{background:var(--sage);color:#fff;}
+.btn-sage:hover{background:var(--sage-dark);box-shadow:0 4px 20px rgba(91,154,110,.4);}
+.btn-sage:disabled{opacity:.35;cursor:not-allowed;box-shadow:none;}
+.btn-row{margin-top:20px;}
+
+#result-wrap{display:none;}
+.result-header{background:var(--dark);padding:32px 20px 26px;text-align:center;position:relative;overflow:hidden;}
+.result-state-label{font-family:'Permanent Marker',cursive;font-size:14px;color:var(--sage-light);transform:rotate(-1deg);display:inline-block;margin-bottom:6px;}
+.result-title{font-family:'Anton',sans-serif;font-size:clamp(24px,6vw,36px);text-transform:uppercase;color:#fff;line-height:1.15;letter-spacing:0.3px;}
+.result-title span{color:var(--sage);}
+.result-intro{font-size:14px;font-weight:300;font-style:italic;color:rgba(255,255,255,.65);margin-top:10px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;}
+
+.result-body{background:transparent;padding:24px 20px 32px;max-width:640px;margin:0 auto;}
+.result-card{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.result-card-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+.result-card p{font-size:14px;line-height:1.75;color:var(--body);}
+
+.takeaway{background:var(--sage-light);border:2px solid var(--sage);border-radius:16px;padding:20px;margin-bottom:14px;position:relative;overflow:hidden;}
+.takeaway-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:8px;}
+.takeaway p{font-size:14px;font-weight:400;font-style:italic;color:var(--body);line-height:1.75;}
+
+.cta-block{background:var(--sage);border-radius:16px;padding:26px 20px;text-align:center;position:relative;overflow:hidden;margin-bottom:14px;}
+.cta-circ{position:absolute;border-radius:50%;pointer-events:none;}
+.community-name{font-family:'Permanent Marker',cursive;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:4px;}
+.cta-block h3{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;}
+.cta-block p{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);margin-bottom:18px;line-height:1.65;}
+.cta-block a{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 26px;text-decoration:none;display:inline-block;transition:all .2s;}
+.cta-block a:hover{background:#0f1526;}
+
+.disclaimer{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.07);border-radius:12px;padding:16px;margin-bottom:14px;}
+.disclaimer-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.disclaimer p{font-size:11px;line-height:1.7;color:var(--muted);font-style:italic;}
+
+.retake{text-align:center;margin-top:4px;margin-bottom:8px;}
+.retake button{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;font-style:italic;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;}
+.opt.ventral-opt{border-style:dashed;border-color:rgba(91,154,110,.3);background:rgba(91,154,110,.03);}
+.opt.ventral-opt:hover{border-style:solid;border-color:var(--sage);background:rgba(91,154,110,.06);}
+.opt.ventral-opt.sel{border-style:solid;border-color:var(--sage);background:rgba(91,154,110,.08);}
+.opt.ventral-opt .opt-text{font-style:italic;color:var(--muted);}
+.opt.ventral-opt.sel .opt-text{color:var(--body);font-style:normal;}
+.ventral-divider{border:none;border-top:1px dashed rgba(0,0,0,.1);margin:6px 0 2px;}
+.retake button:hover{color:var(--body);}
+
+.footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding:20px;text-align:center;}
+.footer-name{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+.footer-links button{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.35);background:none;border:none;cursor:pointer;text-decoration:underline;}
+.footer-links button:hover{color:rgba(255,255,255,.6);}
+.footer-copy{font-size:10px;color:rgba(255,255,255,.2);}
+
+.email-gate{padding:32px 20px 48px;max-width:640px;margin:0 auto;}
+.email-gate-card{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:20px;padding:28px 24px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
+.email-gate-eyebrow{font-family:'Permanent Marker',cursive;font-size:13px;color:var(--violet);transform:rotate(-1deg);display:inline-block;margin-bottom:10px;}
+.email-gate-title{font-family:'Anton',sans-serif;font-size:clamp(20px,4vw,26px);text-transform:uppercase;color:var(--dark);line-height:1.15;margin-bottom:10px;}
+.email-gate-title span{color:var(--sage);}
+.email-gate-sub{font-size:13.5px;font-weight:300;color:var(--body);line-height:1.75;margin-bottom:22px;}
+.email-form{display:flex;flex-direction:column;gap:10px;}
+.email-input{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--text);background:var(--bg);border:2px solid rgba(0,0,0,.1);border-radius:12px;padding:13px 16px;outline:none;transition:border-color .2s;width:100%;}
+.email-input:focus{border-color:var(--sage);}
+.email-input::placeholder{color:var(--muted);}
+.email-consent{display:flex;gap:10px;align-items:flex-start;margin-top:4px;}
+.email-consent input[type=checkbox]{margin-top:3px;accent-color:var(--sage);flex-shrink:0;width:16px;height:16px;cursor:pointer;}
+.email-consent label{font-size:11.5px;color:var(--muted);line-height:1.65;cursor:pointer;}
+.email-consent label a{color:var(--sage);text-decoration:underline;}
+.email-error{font-size:12px;color:#c0392b;display:none;margin-top:2px;}
+.email-skip{text-align:center;margin-top:14px;}
+.email-skip button{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;font-style:italic;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;}
+.email-skip button:hover{color:var(--body);}
+.modal-overlay.open{display:block;}
+.modal{background:var(--dark);border:1px solid rgba(255,255,255,.1);border-radius:16px;max-width:560px;margin:40px auto;padding:28px 24px;}
+.modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
+.modal-title{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;}
+.modal-title span{color:var(--sage);}
+.modal-close{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:rgba(255,255,255,.08);border:none;color:rgba(255,255,255,.5);border-radius:50px;padding:8px 16px;cursor:pointer;}
+.modal-close:hover{color:#fff;background:rgba(255,255,255,.14);}
+.modal-section{margin-bottom:18px;}
+.modal-section-title{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:6px;}
+.modal-section p{font-size:12px;line-height:1.75;color:rgba(255,255,255,.6);}
+.modal-section a{color:var(--sage);text-decoration:underline;}
+.modal-section a:hover{color:#fff;}
+.modal-updated{font-size:10px;color:rgba(255,255,255,.25);margin-top:20px;font-style:italic;}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>STUCK ON REPEAT</span><span class="t-dot"></span>
+    <span>NOT BROKEN, JUST WIRED THIS WAY</span><span class="t-dot"></span>
+    <span>REGULATE FIRST. THEN BECOME.</span><span class="t-dot"></span>
+    <span>RECLAIM YOUR LIFE</span><span class="t-dot"></span>
+    <span>YOUR BODY IS NOT THE ENEMY</span><span class="t-dot"></span>
+    <span>BIOLOGY NOT CHARACTER</span>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="circ" style="width:240px;height:240px;border:3px solid #5B9A6E;opacity:.07;top:-70px;right:-70px;"></div>
+  <div class="circ" style="width:140px;height:140px;border:2px solid #7B5EA7;opacity:.09;bottom:-45px;left:-45px;"></div>
+  <div class="circ" style="width:80px;height:80px;border:2px solid #5B9A6E;opacity:.05;top:24px;left:10%;"></div>
+  <div class="eyebrow">this is where it starts</div>
+  <div class="h1">What is your body<br><span>actually trying to tell you?</span></div>
+  <p class="sub">You're keeping it together on the outside. But inside, something feels off and you can't quite name it. 10 questions to uncover your nervous system's default pattern — and what it's been trying to say.</p>
+</div>
+
+<div class="grad-div"></div>
+
+<!-- QUIZ -->
+<div id="quiz-wrap">
+  <div class="progress">
+    <div class="prog-row">
+      <div class="prog-label">Your progress</div>
+      <div class="prog-num" id="prog-num">1 / 10</div>
+    </div>
+    <div class="prog-bg"><div class="prog-fill" id="prog-fill" style="width:10%"></div></div>
+  </div>
+  <div class="quiz-body">
+    <div class="q-label" id="q-label">Question 01</div>
+    <div class="q-text" id="q-text"></div>
+    <div id="options-wrap"></div>
+    <div class="btn-row">
+      <button class="btn btn-sage" id="next-btn" disabled onclick="nextQ()">Next →</button>
+    </div>
+  </div>
+</div>
+
+<!-- EMAIL GATE -->
+<div id="email-gate-wrap" style="display:none;background:var(--bg);">
+  <div class="progress" style="background:rgba(0,0,0,.04);border-bottom:1px solid rgba(0,0,0,.07);padding:14px 20px;">
+    <div class="prog-row">
+      <div class="prog-label">Your progress</div>
+      <div class="prog-num" style="font-family:'Anton',sans-serif;font-size:16px;color:var(--sage);">10 / 10</div>
+    </div>
+    <div class="prog-bg"><div class="prog-fill" style="width:100%;"></div></div>
+  </div>
+  <div class="email-gate">
+    <div class="email-gate-card">
+      <div class="email-gate-eyebrow">almost there</div>
+      <div class="email-gate-title">Your body has been<br>trying to tell you <span>something.</span></div>
+      <p class="email-gate-sub">You've just answered 10 questions that most people never stop to ask. Enter your email to get your result — plus one somatic practice matched to your pattern, so you can start today.</p>
+      <div class="email-form">
+        <input class="email-input" type="text" id="gate-name" placeholder="Your first name" autocomplete="given-name">
+        <input class="email-input" type="email" id="gate-email" placeholder="Your email address" autocomplete="email">
+        <div id="email-error" class="email-error">Please enter a valid email address.</div>
+        <div class="email-consent">
+          <input type="checkbox" id="gate-consent" checked>
+          <label for="gate-consent">I'm happy to receive occasional emails from Clara with nervous system tools, somatic practices, and updates. I can unsubscribe any time. <a href="#" onclick="openModal('privacy');return false;">Privacy policy.</a></label>
+        </div>
+        <button class="btn btn-sage" id="reveal-btn" onclick="submitEmail()" style="margin-top:6px;">Show me my result →</button>
+      </div>
+    </div>
+    <div class="email-skip"><button onclick="skipEmail()">Skip and see my result without saving it</button></div>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div class="result-wrap" id="result-wrap">
+  <div class="result-header">
+    <div class="circ" style="width:220px;height:220px;border:3px solid #5B9A6E;opacity:.07;top:-65px;right:-65px;"></div>
+    <div class="circ" style="width:130px;height:130px;border:2px solid #7B5EA7;opacity:.09;bottom:-40px;left:-40px;"></div>
+    <div class="result-state-label" id="result-state-label"></div>
+    <div class="result-title" id="result-title"></div>
+    <p class="result-intro" id="result-intro"></p>
+  </div>
+  <div class="grad-div"></div>
+  <div class="result-body">
+    <div class="result-card">
+      <div class="result-card-label">What's happening in your body</div>
+      <p id="result-body-text"></p>
+    </div>
+    <div class="takeaway">
+      <div class="takeaway-label">You might recognise this as...</div>
+      <p id="result-recognise"></p>
+    </div>
+    <div class="result-card">
+      <div class="result-card-label">One thing to try today</div>
+      <p id="result-practice"></p>
+    </div>
+    <div class="cta-block">
+      <div class="cta-circ" style="width:200px;height:200px;border:4px solid rgba(255,255,255,.07);top:-60px;right:-60px;"></div>
+      <div class="cta-circ" style="width:120px;height:120px;border:3px solid rgba(255,255,255,.06);bottom:-40px;left:-40px;"></div>
+      <div class="community-name">Reclaim Your Life</div>
+      <h3>This is where the reclaiming starts.</h3>
+      <p>Naming your pattern is Step 1. The next is learning to work with it — not against it. Inside the free Skool community: a full nervous system library with practices mapped to your state, weekly somatic tools, and a space where people are doing exactly the same work you just named.</p>
+      <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank">Join the free community →</a>
+    </div>
+    <div class="result-card" style="border-color:rgba(123,94,167,.3);background:rgba(123,94,167,.07);">
+      <div class="result-card-label" style="color:var(--violet);">What comes next</div>
+      <p>Regulation isn't the destination — it's the door. Once your baseline shifts, the inner critic becomes workable, self-trust starts to return, and it becomes possible to go after what you actually want. You're not here just to feel better. You're here to find out who you are once you do.</p>
+    </div>
+    <div class="disclaimer">
+      <div class="disclaimer-label">Disclaimer</div>
+      <p>I am a somatic practitioner, but this quiz is for educational purposes and is not a substitute for professional medical advice or therapy. Listen to your body and move at your own pace.</p>
+    </div>
+    <div class="retake"><button onclick="retake()">← Take the quiz again</button></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-name">© 2026 Clara Louis</div>
+  <div class="footer-links">
+    <button onclick="openModal('privacy')">Privacy Policy</button>
+    <button onclick="openModal('disclaimer')">Disclaimer</button>
+  </div>
+  <div class="footer-copy">Your email is only collected if you choose to enter it. See our privacy policy for details.</div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="modal-overlay" id="modal-privacy">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title"><span>Privacy</span> Policy</div>
+      <button class="modal-close" onclick="closeModal('privacy')">✕ Close</button>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Who this covers</div>
+      <p>This privacy policy applies to the nervous system quiz created by Clara Louis and accessed via this page.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Data collection</div>
+      <p>If you choose to enter your name and email address at the end of the quiz, this information is collected and stored securely to send you your results and occasional emails with nervous system tools, somatic practices, and updates from Clara Louis. You can unsubscribe at any time using the link in any email.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">If you skip the email step</div>
+      <p>You may view your results without entering your email. In this case, no personal data is collected or stored. All quiz activity happens entirely within your browser.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Cookies & tracking</div>
+      <p>This quiz does not use cookies or tracking pixels. Anonymous page view data is collected via Vercel Analytics to help understand how this page performs. No personal data is collected, no cookies are set, and your quiz responses are never shared with Vercel. For details, see <a href="https://vercel.com/legal/privacy-policy" target="_blank">Vercel's privacy policy</a>.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Third-party links</div>
+      <p>This quiz contains a link to an external Skool community page. Once you click through to Skool, their own privacy policy and terms apply. Clara Louis is not responsible for the data practices of third-party platforms.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Contact</div>
+      <p>If you have any questions about this privacy policy, please visit <a href="https://www.somaticwithclara.com/" target="_blank">somaticwithclara.com</a>.</p>
+    </div>
+    <div class="modal-updated">Last updated: April 2026</div>
+  </div>
+</div>
+
+<!-- DISCLAIMER MODAL -->
+<div class="modal-overlay" id="modal-disclaimer">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title"><span>Disclaimer</span></div>
+      <button class="modal-close" onclick="closeModal('disclaimer')">✕ Close</button>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Educational purposes only</div>
+      <p>I am a somatic practitioner, but this quiz is for educational purposes and is not a substitute for professional medical advice or therapy. The information provided is intended to support general awareness and self-understanding, not to diagnose, treat, or replace clinical care.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Listen to your body</div>
+      <p>The practices suggested in your results are gentle somatic tools, not medical prescriptions. Listen to your body and move at your own pace. If you are currently working with a therapist, doctor, or other healthcare provider, please continue to do so and consult them before making any changes to your care.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">No professional relationship</div>
+      <p>Completing this quiz does not create a practitioner-client relationship between you and Clara Louis.</p>
+    </div>
+    <div class="modal-section">
+      <div class="modal-section-title">Contact</div>
+      <p>For any questions, please visit <a href="https://www.somaticwithclara.com/" target="_blank">somaticwithclara.com</a>.</p>
+    </div>
+    <div class="modal-updated">Last updated: April 2026</div>
+  </div>
+</div>
+
+<script>
+const questions=[
+  {text:"After a long day, how does your body usually feel?",options:[
+    {text:"Tense, wired, like I can't switch off",scores:{fight:1,flight:2,freeze:0,dorsal:0}},
+    {text:"Heavy and exhausted — like I have nothing left",scores:{fight:0,flight:0,freeze:0,dorsal:3}},
+    {text:"Restless — I need to keep moving or doing",scores:{fight:1,flight:3,freeze:0,dorsal:0}},
+    {text:"Numb — I don't really feel much at all",scores:{fight:0,flight:0,freeze:2,dorsal:2}},
+    {text:"Tired, but it settles. I can feel myself winding down naturally.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"When something unexpected happens, your first instinct is to...",options:[
+    {text:"Get frustrated or want to fix it immediately",scores:{fight:3,flight:0,freeze:0,dorsal:0}},
+    {text:"Worry, spiral, and start planning for the worst",scores:{fight:0,flight:3,freeze:1,dorsal:0}},
+    {text:"Go very quiet inside — blank or still",scores:{fight:0,flight:0,freeze:2,dorsal:2}},
+    {text:"Feel overwhelmed and want to disappear",scores:{fight:0,flight:1,freeze:0,dorsal:3}},
+    {text:"Pause, take it in, and figure out what's actually needed.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"How would you describe your relationship with rest?",options:[
+    {text:"I feel guilty when I'm not productive",scores:{fight:2,flight:2,freeze:0,dorsal:0}},
+    {text:"Rest doesn't actually feel restful — I'm still 'on'",scores:{fight:1,flight:3,freeze:1,dorsal:0}},
+    {text:"I sleep a lot but wake up feeling just as tired",scores:{fight:0,flight:0,freeze:1,dorsal:3}},
+    {text:"I collapse rather than rest — I just go offline",scores:{fight:0,flight:0,freeze:2,dorsal:2}},
+    {text:"Rest usually feels restorative — I can let myself switch off.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"When it comes to your body, you most often feel...",options:[
+    {text:"Tight — jaw, shoulders, chest",scores:{fight:2,flight:2,freeze:1,dorsal:0}},
+    {text:"Heavy, cold, or like you're moving through fog",scores:{fight:0,flight:0,freeze:0,dorsal:3}},
+    {text:"Disconnected — like you're watching yourself from outside",scores:{fight:0,flight:0,freeze:3,dorsal:1}},
+    {text:"Restless — hard to sit still",scores:{fight:1,flight:3,freeze:0,dorsal:0}},
+    {text:"Generally present in it — not perfect, but mostly connected.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"How do you usually handle conflict or tension with others?",options:[
+    {text:"I get irritable or want to sort it out straight away",scores:{fight:3,flight:0,freeze:0,dorsal:0}},
+    {text:"I avoid it or keep the peace — my needs can wait",scores:{fight:0,flight:1,freeze:2,dorsal:1}},
+    {text:"I go blank or freeze — I can't find the words",scores:{fight:0,flight:0,freeze:3,dorsal:1}},
+    {text:"I withdraw and go quiet — I just want to disappear",scores:{fight:0,flight:1,freeze:0,dorsal:3}},
+    {text:"I can stay in the conversation, even when it's uncomfortable.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"What does your mind feel like most of the time?",options:[
+    {text:"Racing — I can't slow my thoughts down",scores:{fight:2,flight:3,freeze:0,dorsal:0}},
+    {text:"Foggy — like thinking through mud",scores:{fight:0,flight:0,freeze:1,dorsal:3}},
+    {text:"Stuck in a loop — I overthink but can't decide",scores:{fight:1,flight:1,freeze:3,dorsal:0}},
+    {text:"Flat — not much going on, just going through the motions",scores:{fight:0,flight:0,freeze:2,dorsal:2}},
+    {text:"Mostly clear — thoughts move through without getting stuck.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"When you think about your to-do list, how does your body respond?",options:[
+    {text:"A rush of urgency — I need to get it done now",scores:{fight:2,flight:3,freeze:0,dorsal:0}},
+    {text:"A heaviness — I just can't seem to start",scores:{fight:0,flight:0,freeze:1,dorsal:3}},
+    {text:"I feel paralysed — I want to but I'm stuck",scores:{fight:0,flight:0,freeze:3,dorsal:1}},
+    {text:"A low-level dread or anxiety I can't shake",scores:{fight:1,flight:2,freeze:1,dorsal:0}},
+    {text:"A manageable sense of what needs doing — I can prioritise and start.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"In social situations, you tend to...",options:[
+    {text:"Take charge — or feel irritated when things aren't moving",scores:{fight:3,flight:0,freeze:0,dorsal:0}},
+    {text:"Feel on edge, like you need to manage everyone's feelings",scores:{fight:0,flight:2,freeze:2,dorsal:0}},
+    {text:"Go quiet internally, even if you're talking outwardly",scores:{fight:0,flight:0,freeze:3,dorsal:1}},
+    {text:"Want to leave — being around people feels like too much",scores:{fight:0,flight:1,freeze:0,dorsal:3}},
+    {text:"Feel mostly at ease — I can be present without it costing me much.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"Pleasure and enjoyment feel...",options:[
+    {text:"Hard to access — I'm too busy or wired to enjoy things",scores:{fight:2,flight:3,freeze:0,dorsal:0}},
+    {text:"Like a memory — I used to feel them but not anymore",scores:{fight:0,flight:0,freeze:2,dorsal:3}},
+    {text:"I go through the motions but don't really feel it",scores:{fight:0,flight:0,freeze:3,dorsal:1}},
+    {text:"Guilty — like I haven't earned rest or fun yet",scores:{fight:2,flight:2,freeze:1,dorsal:0}},
+    {text:"Accessible — I can actually feel them when they're there.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]},
+  {text:"If your nervous system had a volume dial, where would it usually sit?",options:[
+    {text:"Turned up way too loud — I can't turn it down",scores:{fight:2,flight:3,freeze:1,dorsal:0}},
+    {text:"Muted — there's barely anything coming through",scores:{fight:0,flight:0,freeze:1,dorsal:3}},
+    {text:"Crackling — I'm wired but also frozen",scores:{fight:1,flight:1,freeze:3,dorsal:0}},
+    {text:"Flat — low static, not much signal",scores:{fight:0,flight:0,freeze:2,dorsal:2}},
+    {text:"Somewhere in the middle — not always perfectly balanced, but not overwhelming.",scores:{fight:0,flight:0,freeze:0,dorsal:0},ventral:true},
+  ]}
+];
+
+const results={
+  fight:{
+    stateLabel:"your default survival state",
+    title:"Your nervous system's default is <span>fight mode</span>",
+    intro:"You're running on activation. Your system learned that staying charged keeps you safe — and it's been working hard to protect you that way.",
+    body:"When your nervous system defaults to the fight response, it keeps stress hormones like cortisol and adrenaline circulating — holding you alert, reactive, and always a little on edge. Your muscles tighten, your thoughts race, and slowing down feels genuinely unsafe to your system. Not just uncomfortable — actually dangerous. This isn't a character flaw. This is your body doing exactly what it was wired to do. And it's also where the inner critic tends to be loudest — because a system that's always braced for threat will turn that vigilance inward too.",
+    recognise:"Struggling to switch off after work. Feeling irritable for no clear reason. Needing to stay productive to feel okay. A low hum of urgency that never fully goes away. Doing more and more, but never feeling like enough. A self-critical voice that picks apart everything you do.",
+    practice:"Try Tense & Release. Clench every muscle in your body for 5 seconds — fists, shoulders, jaw, legs — then let it all go at once. Repeat 3 times. This gives your nervous system the signal it's been waiting for: completion. The tension finally has somewhere to go. Regulation isn't the destination — it's the door. When the charge settles, you start to hear yourself again."
+  },
+  flight:{
+    stateLabel:"your default survival state",
+    title:"Your nervous system's default is <span>flight mode</span>",
+    intro:"Your system is mobilised and moving — even when there's nowhere to go. It learned that staying in motion keeps danger at bay.",
+    body:"The flight response is your sympathetic nervous system saying: move, escape, stay ahead. Even when you're sitting still, your mind is running. Shallow breathing, restlessness, a constant sense that something needs sorting — that's your system in survival mode. The busyness isn't ambition. It's your body trying to feel safe. When you're always in forward motion, it's almost impossible to trust your own instincts — because you're never still long enough to hear them.",
+    recognise:"Racing thoughts that won't slow down. Difficulty relaxing even when you have the time. Anxiety that looks like forward motion — always planning, preparing, anticipating. Never feeling like you can stop without something falling apart. A quiet sense that you've lost touch with what you actually want.",
+    practice:"Try somatic shaking. Stand with your feet hip-width apart, bend your knees slightly, and let your body begin to shake — starting in your legs and letting it move up through your torso, arms, and hands. Do this for 2–3 minutes. Shaking is your nervous system's natural way of discharging the stress hormones that have been building up. You're not falling apart. You're completing what your body started. Regulation isn't the destination — it's the door."
+  },
+  freeze:{
+    stateLabel:"your default survival state",
+    title:"Your nervous system's default is <span>freeze mode</span>",
+    intro:"You're caught between wanting to act and not being able to. Your system is holding a charge it hasn't found a way to release.",
+    body:"Freeze happens when your sympathetic system activates to help you respond — but your dorsal vagal system steps in and holds that energy back. The result is a body that feels stuck, braced, or disconnected, while internally there's still a lot going on. You might look calm on the outside while feeling tight, foggy, or locked inside. This gets misread as laziness or avoidance. It's neither. It's one of the most sophisticated survival responses we have. And when your body won't give you clear signals, self-doubt fills the gap — you stop trusting your own instincts because the connection to yourself has gone quiet.",
+    recognise:"Procrastinating on things you actually want to do. Going blank in conversations or shutting down during conflict. Feeling internally activated but unable to take action. Doing everything right on the outside while feeling completely absent on the inside. An inner critic that calls it weakness or laziness.",
+    practice:"Try the butterfly tap. Cross your arms over your chest and alternate tapping your shoulders — left, right, left, right — slowly and rhythmically for a minute. This bilateral stimulation gently wakes up your nervous system and helps the two hemispheres of your brain reconnect. A soft on-ramp back to your body — and back to yourself. Regulation isn't the destination. It's the door."
+  },
+  dorsal:{
+    stateLabel:"your default survival state",
+    title:"Your nervous system's default is <span>shutdown mode</span>",
+    intro:"Your system has gone into conservation mode. When the world felt like too much, your body made the only logical choice: pull back and preserve energy.",
+    body:"Dorsal vagal shutdown is the oldest survival response we have. When fight or flight isn't possible, the nervous system defaults to collapse — slowing everything down to protect you. It shows up as numbness, fatigue that doesn't resolve with rest, brain fog, and a quiet disconnection from yourself and life. This gets misread as depression or not caring. But it's your nervous system doing exactly what it evolved to do when things felt overwhelmingly unsafe. The hardest part of shutdown is that it quietly erodes self-trust — when you can't feel yourself, you stop believing in yourself.",
+    recognise:"Feeling like you're going through the motions. Exhausted but unable to explain why. Struggling to feel joy or motivation even for things you used to love. A low sense that something is off, but you can't quite name what. Feeling disconnected from who you used to be.",
+    practice:"Start with support. Find a comfortable position — seated, lying down, child's pose — and bring your knees gently toward your chest. Place your hands over your heart or wrap your arms around yourself. Stay here for 3–5 minutes. Your nervous system needs to feel held before it can come back online. Let it rest first. Coming back to yourself starts here. Regulation isn't the destination — it's the door."
+  },
+  ventral:{
+    stateLabel:"your nervous system · present & flexible",
+    title:"Your nervous system has more <span>capacity</span> than you think",
+    intro:"You're not in crisis. Your system is doing what it's supposed to do — and that's worth knowing.",
+    body:"Your nervous system is showing signs of flexibility — the ability to move through states rather than getting stuck in one. This doesn't mean you never feel stressed, reactive, or flat. It means your system has enough capacity to come back. That recovery — however small, however imperfect — is regulation. It's what this work is actually building toward.",
+    recognise:"Feeling stressed sometimes, but not consumed by it. Noticing tension without it taking over. Being able to rest when you rest, and move when you need to move. A general sense of being in your life rather than just managing it.",
+    practice:"Notice what's already working. This sounds simple — it isn't. Most people in survival states can't access this at all. If you can feel when something is good, when your body settles, when you exhale without thinking — that's your nervous system doing its job. Pay attention to those moments. They're not accidents. They're your baseline, and they're worth protecting."
+  }
+};
+
+let current=0,selected=null;
+const scores={fight:0,flight:0,freeze:0,dorsal:0};
+
+function render(){
+  const q=questions[current],n=current+1;
+  document.getElementById('q-label').textContent=`Question ${String(n).padStart(2,'0')}`;
+  document.getElementById('q-text').textContent=q.text;
+  document.getElementById('prog-num').textContent=`${n} / ${questions.length}`;
+  document.getElementById('prog-fill').style.width=`${(n/questions.length)*100}%`;
+  const wrap=document.getElementById('options-wrap');
+  wrap.innerHTML='';selected=null;
+  document.getElementById('next-btn').disabled=true;
+  q.options.forEach((opt,i)=>{
+    if(opt.ventral){
+      const hr=document.createElement('hr');
+      hr.className='ventral-divider';
+      wrap.appendChild(hr);
+    }
+    const div=document.createElement('div');
+    div.className='opt'+(opt.ventral?' ventral-opt':'');
+    div.innerHTML=`<div class="opt-dot"></div><div class="opt-text">${opt.text}</div>`;
+    div.onclick=()=>selectOpt(i);
+    wrap.appendChild(div);
+  });
+}
+
+function selectOpt(i){
+  selected=i;
+  document.querySelectorAll('.opt').forEach((el,idx)=>el.classList.toggle('sel',idx===i));
+  document.getElementById('next-btn').disabled=false;
+}
+
+function nextQ(){
+  if(selected===null)return;
+  const s=questions[current].options[selected].scores;
+  for(const k in s)scores[k]+=s[k];
+  current++;
+  if(current<questions.length){render();}else{showEmailGate();}
+}
+
+function showEmailGate(){
+  document.getElementById('quiz-wrap').style.display='none';
+  document.getElementById('email-gate-wrap').style.display='block';
+  window.scrollTo(0,0);
+}
+
+function submitEmail(){
+  const email=document.getElementById('gate-email').value.trim();
+  const name=document.getElementById('gate-name').value.trim();
+  const consent=document.getElementById('gate-consent').checked;
+  const errEl=document.getElementById('email-error');
+  const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if(!emailRegex.test(email)){
+    errEl.textContent='Please enter a valid email address.';
+    errEl.style.display='block';
+    document.getElementById('gate-email').focus();
+    return;
+  }
+  errEl.style.display='none';
+
+  const WORKER_URL = 'https://mailerlite-proxy.clara-a-ldp.workers.dev';
+
+  const winner = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
+
+  // Show result immediately — don't make user wait for network
+  showResult();
+
+  // Send to Worker in background — fire and forget
+  fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, name, consent, quiz_result: winner })
+  }).catch(err => console.error('Subscription error:', err));
+}
+
+function skipEmail(){
+  document.getElementById('email-gate-wrap').style.display='none';
+  showResult();
+}
+
+function showResult(){
+  const totalScore=Object.values(scores).reduce((a,b)=>a+b,0);
+  const winner=totalScore<=8
+    ? 'ventral'
+    : Object.keys(scores).reduce((a,b)=>scores[a]>scores[b]?a:b);
+  const r=results[winner];
+  document.getElementById('quiz-wrap').style.display='none';
+  document.getElementById('email-gate-wrap').style.display='none';
+  document.getElementById('result-wrap').style.display='block';
+  document.getElementById('result-state-label').textContent=r.stateLabel;
+  document.getElementById('result-title').innerHTML=r.title;
+  document.getElementById('result-intro').textContent=r.intro;
+  document.getElementById('result-body-text').textContent=r.body;
+  document.getElementById('result-recognise').textContent=r.recognise;
+  document.getElementById('result-practice').textContent=r.practice;
+  window.scrollTo(0,0);
+}
+
+function retake(){
+  current=0;selected=null;
+  Object.keys(scores).forEach(k=>scores[k]=0);
+  document.getElementById('result-wrap').style.display='none';
+  document.getElementById('email-gate-wrap').style.display='none';
+  document.getElementById('quiz-wrap').style.display='block';
+  render();window.scrollTo(0,0);
+}
+
+function openModal(type){
+  document.getElementById('modal-'+type).classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(type){
+  document.getElementById('modal-'+type).classList.remove('open');
+  document.body.style.overflow='';
+}
+document.querySelectorAll('.modal-overlay').forEach(m=>{
+  m.addEventListener('click',e=>{if(e.target===m){m.classList.remove('open');document.body.style.overflow='';}});
+});
+
+render();
+</script>
+</body>
+</html>
