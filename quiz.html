@@ -123,6 +123,40 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .email-skip{text-align:center;margin-top:14px;}
 .email-skip button{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;font-style:italic;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;}
 .email-skip button:hover{color:var(--body);}
+/* REGULATED VS DYSREGULATED */
+.reg-section{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:24px 20px;margin-bottom:14px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.reg-section-eyebrow{font-family:'Permanent Marker',cursive;font-size:12px;color:var(--violet);transform:rotate(-1deg);display:inline-block;margin-bottom:6px;}
+.reg-section h3{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;color:var(--dark);margin-bottom:14px;}
+.reg-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.reg-col{background:var(--bg);border-radius:12px;padding:14px;}
+.reg-col-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.reg-col.regulated .reg-col-label{color:var(--sage);}
+.reg-col.dysregulated .reg-col-label{color:rgba(190,50,50,.85);}
+.reg-col ul{list-style:none;padding:0;}
+.reg-col ul li{font-size:12px;line-height:1.7;color:var(--body);padding:3px 0;padding-left:14px;position:relative;}
+.reg-col ul li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;}
+.reg-col.regulated ul li::before{background:var(--sage);}
+.reg-col.dysregulated ul li::before{background:rgba(190,50,50,.7);}
+.reg-note{font-size:11px;font-style:italic;font-weight:300;color:var(--muted);margin-top:12px;line-height:1.65;}
+
+/* HOW YOUR STATE SHOWS UP */
+.shows-section{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.shows-section-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
+.shows-section h3{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;color:var(--dark);margin-bottom:14px;}
+.shows-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
+.shows-tab{font-family:'Anton',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;border:2px solid rgba(0,0,0,.1);border-radius:50px;padding:8px 16px;cursor:pointer;background:transparent;color:var(--muted);transition:all .2s;}
+.shows-tab:hover{border-color:var(--sage);color:var(--sage);}
+.shows-tab.active{background:var(--sage);border-color:var(--sage);color:#fff;}
+.shows-panel{display:none;}
+.shows-panel.active{display:block;}
+.shows-panel-intro{font-size:12px;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:12px;line-height:1.65;}
+.shows-items{display:flex;flex-direction:column;gap:6px;}
+.shows-item{background:var(--bg);border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.65;color:var(--body);}
+.shows-item::before{content:'→ ';color:var(--sage);font-weight:700;}
+.shows-misread{background:rgba(123,94,167,.08);border:1px solid rgba(123,94,167,.2);border-radius:10px;padding:12px 14px;margin-top:10px;}
+.shows-misread-label{font-family:'Anton',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:4px;}
+.shows-misread p{font-size:12px;color:var(--body);line-height:1.65;font-style:italic;}
+
 .modal-overlay.open{display:block;}
 .modal{background:var(--dark);border:1px solid rgba(255,255,255,.1);border-radius:16px;max-width:560px;margin:40px auto;padding:28px 24px;}
 .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
@@ -236,6 +270,30 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
       <div class="practice-name" id="result-practice-name"></div>
       <p class="practice-desc" id="result-practice-desc"></p>
     </div>
+    <!-- REGULATED VS DYSREGULATED EXPLAINER -->
+    <div class="reg-section" id="reg-section">
+      <div class="reg-section-eyebrow">what does this actually mean?</div>
+      <h3>Regulated vs <span style="color:var(--sage)">Dysregulated</span></h3>
+      <div class="reg-cols" id="reg-cols"><!-- filled by JS --></div>
+      <p class="reg-note">Dysregulation isn't a flaw — it's your body's learned response to what it's been through. Regulation isn't about being calm all the time. It's about having access to your full range again.</p>
+    </div>
+
+    <!-- HOW YOUR STATE SHOWS UP -->
+    <div class="shows-section" id="shows-section">
+      <div class="shows-section-label">Know your nervous system</div>
+      <h3>How <span style="color:var(--sage)">your state</span> shows up</h3>
+      <div class="shows-tabs">
+        <button class="shows-tab active" onclick="showPanel('physical', this)">Physical</button>
+        <button class="shows-tab" onclick="showPanel('emotional', this)">Emotional</button>
+        <button class="shows-tab" onclick="showPanel('mental', this)">Mental</button>
+        <button class="shows-tab" onclick="showPanel('misread', this)">Often Misread As</button>
+      </div>
+      <div id="shows-physical" class="shows-panel active"></div>
+      <div id="shows-emotional" class="shows-panel"></div>
+      <div id="shows-mental" class="shows-panel"></div>
+      <div id="shows-misread" class="shows-panel"></div>
+    </div>
+
     <div class="cta-block">
       <div class="cta-circ" style="width:200px;height:200px;border:4px solid rgba(255,255,255,.07);top:-60px;right:-60px;"></div>
       <div class="cta-circ" style="width:120px;height:120px;border:3px solid rgba(255,255,255,.06);bottom:-40px;left:-40px;"></div>
@@ -526,6 +584,84 @@ function skipEmail(){
   showResult();
 }
 
+/* ── STATE DETAIL DATA ─────────────────────────────── */
+const stateDetails = {
+  fight:{
+    regulated:["Assertive without aggression","Clear boundaries with warmth","Energy that motivates and focuses","Able to rest after effort","Emotions that move through and resolve","Present and responsive in conflict"],
+    dysregulated:["Constant urgency, can't switch off","Irritability or anger that surfaces quickly","Chest tightness, jaw tension, clenched fists","Feeling wired but exhausted","Inner critic running loudly","Restlessness disguised as productivity"],
+    physical:["Chest visibly rising and falling rapidly","Tight shoulders, jaw, and fists","Fidgeting, bouncing, or pacing","Flushing or sweating","Dry mouth","Shallow or irregular breathing"],
+    emotional:["Anxious or on edge","Irritable or easily angered","Rushed and restless","Hypervigilant — scanning for problems","Excessive urgency or impatience","Emotionally reactive, difficulty pausing"],
+    mental:["Racing thoughts that won't slow","Difficulty focusing on one thing","Catastrophic thinking or worst-case planning","Narrowed attention, tunnel vision","Urgent internal language: 'I have to', 'I can't stop'","Reduced access to self-reflection"],
+    misread:"Often misread as: dramatic, too much, aggressive, or anxious. But this isn't personality — it's a nervous system that learned stillness was dangerous."
+  },
+  flight:{
+    regulated:["Healthy forward momentum","Able to take purposeful action and then stop","Clarity about what actually matters","Capacity to receive as well as give","Present in your body, not just your head","Able to feel without needing to fix"],
+    dysregulated:["Always planning or preparing for something","Difficulty relaxing even when there's time","Anxiety that looks like ambition","Shallow breathing, restlessness in the body","Feeling like you can't stop without something falling apart","Disconnection from what you actually want"],
+    physical:["Chest visibly rising and falling","Tight shoulders, jaw, fists","Fidgeting, bouncing, pacing","Sweating or flushed skin","Dry mouth","Rapid, shallow or irregular breathing"],
+    emotional:["Anxious, on edge","Afraid or panicked","Rushed, restless","Hypervigilant","Impatient, excessive urgency","Emotionally reactive"],
+    mental:["Racing thoughts","Difficulty slowing down mentally","Narrowed attention, tunnel vision","Catastrophic thinking","Urgent internal language: 'I need to fix this'","Reduced capacity for self-reflection"],
+    misread:"Often misread as: ambitious, high-functioning, or impressive. But the movement isn't drive — it's a system that learned stillness feels dangerous."
+  },
+  freeze:{
+    regulated:["Able to pause and still take action","Comfortable sitting with uncertainty","Capacity to move through stuck feelings","Connected to body signals and needs","Able to speak up even when it feels uncomfortable","Present in relationships without disappearing"],
+    dysregulated:["Procrastinating on things you actually want to do","Going blank in conversations or shutting down","Looking calm while feeling internally activated","Doing everything right on the outside, absent on the inside","Held breath or shallow breathing","An inner critic that calls it laziness or weakness"],
+    physical:["Stillness with tension underneath","Cold hands and feet","Tremors or micro-shaking","Increased heart rate but immobilised body","Tight jaw, neck, and/or shoulders","Dizzy or lightheaded sensation"],
+    emotional:["Fear without motion","Helplessness or powerlessness","Emotional numbness or flatness","Shame","Quickly overwhelmed","Hypervigilance leading to withdrawal"],
+    mental:["Foggy or blank mind","Fragmented thoughts","Difficulty making decisions or taking action","Hyper-focus on the problem without moving forward","Disconnection from surroundings","Self-critical internal voice"],
+    misread:"Often misread as: not trying hard enough, confused, or a pushover. But this isn't a character flaw — it's one of the most sophisticated survival responses we have."
+  },
+  dorsal:{
+    regulated:["Capacity for genuine rest and stillness","Able to receive care and support","Feeling settled rather than flat","Connected to body sensations","Presence without overwhelm","Able to be with others without disappearing"],
+    dysregulated:["Exhaustion that doesn't resolve with rest","Numbness or emotional flatness","Brain fog, difficulty finding words","Going through the motions without really being there","Feeling invisible or like disappearing would be easier","Disconnection from who you used to be"],
+    physical:["Slumped or collapsed posture","Very still or immobile body — low muscle tone","Shallow or barely perceptible breathing","Pale, cool, or clammy skin","Low energy, minimal movement","Blank or vacant facial expression"],
+    emotional:["Numbness or emotional flatness","Hopelessness or resignation","Overwhelm that leads to shutdown","Sense of isolation or disconnection","Inability to access emotion","Desire to withdraw or curl in"],
+    mental:["Foggy or slowed thinking","Difficulty finding words","Disorientation or 'checked out' quality","Dissociation or spacing out","Loss of time awareness","Sense of 'nothing matters' or 'I can't'"],
+    misread:"Often misread as: lazy, unmotivated, avoidant, or aloof. But this is your nervous system's oldest, most protective response — conservation in the face of overwhelm."
+  },
+  ventral:{
+    regulated:["Moving through states without getting stuck","Recovering after stress without it lingering","Feeling tired when tired, settled when settled","Able to be present in your body and in relationships","Accessing rest, play, and connection without guilt","A sense of being in your life, not just managing it"],
+    dysregulated:["Even regulated systems get activated — that's normal","Stress still shows up; it just doesn't take over","Some questions may have felt relatable on harder days","Capacity isn't the absence of struggle — it's the ability to come back"],
+    physical:["Body sensations that are readable and proportionate","Breath that moves freely and naturally","Tension that arises and releases","Energy that matches what the moment needs","Physical ease that doesn't require effort to maintain"],
+    emotional:["Emotions that feel proportionate to what's happening","Feelings that move through rather than getting stuck","Access to the full range — not just the safe ones","Curiosity rather than hypervigilance","Warmth and connection that feel natural"],
+    mental:["Thoughts that move rather than loop","Ability to hold complexity without overwhelm","Access to self-reflection and perspective","Decisions that feel possible rather than paralysing","A quiet internal knowing of what you need"],
+    misread:"Sometimes misread as: not needing help, having it together, being the strong one. Capacity is real — and it still deserves tending."
+  }
+};
+
+function showPanel(type, btn){
+  document.querySelectorAll('.shows-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.shows-panel').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('shows-'+type).classList.add('active');
+}
+
+function buildShowsSection(state){
+  const d = stateDetails[state];
+  ['physical','emotional','mental'].forEach(type=>{
+    const el = document.getElementById('shows-'+type);
+    const intros = {
+      physical:'What you might notice in your body — what others can sometimes see, and what you can feel from the inside.',
+      emotional:'The felt sense — the emotional texture of being in this state.',
+      mental:'How your thinking shifts when your system is in survival mode.'
+    };
+    el.innerHTML = `<p class="shows-panel-intro">${intros[type]}</p><div class="shows-items">${d[type].map(s=>`<div class="shows-item">${s}</div>`).join('')}</div>`;
+  });
+  document.getElementById('shows-misread').innerHTML = `<div class="shows-misread"><div class="shows-misread-label">Often misread as</div><p>${d.misread}</p></div>`;
+}
+
+function buildRegSection(state){
+  const d = stateDetails[state];
+  document.getElementById('reg-cols').innerHTML = `
+    <div class="reg-col regulated">
+      <div class="reg-col-label">Regulated looks like</div>
+      <ul>${d.regulated.map(s=>`<li>${s}</li>`).join('')}</ul>
+    </div>
+    <div class="reg-col dysregulated">
+      <div class="reg-col-label">Dysregulated looks like</div>
+      <ul>${d.dysregulated.map(s=>`<li>${s}</li>`).join('')}</ul>
+    </div>`;
+}
+
 function showResult(){
   const totalScore=Object.values(scores).reduce((a,b)=>a+b,0);
   const winner=totalScore<=8
@@ -543,6 +679,15 @@ function showResult(){
   const practiceFirstDot=r.practice.indexOf('.');
   document.getElementById('result-practice-name').textContent=r.practice.slice(0,practiceFirstDot);
   document.getElementById('result-practice-desc').textContent=r.practice.slice(practiceFirstDot+2);
+
+  buildRegSection(winner);
+  buildShowsSection(winner);
+  // hide "how your state shows up" for ventral result
+  document.getElementById('shows-section').style.display = winner === 'ventral' ? 'none' : '';
+  // reset tabs to first
+  document.querySelectorAll('.shows-tab').forEach((t,i)=>t.classList.toggle('active',i===0));
+  document.querySelectorAll('.shows-panel').forEach((p,i)=>p.classList.toggle('active',i===0));
+
   window.scrollTo(0,0);
 }
 
@@ -552,6 +697,7 @@ function retake(){
   document.getElementById('result-wrap').style.display='none';
   document.getElementById('email-gate-wrap').style.display='none';
   document.getElementById('quiz-wrap').style.display='block';
+  document.getElementById('shows-section').style.display='';
   render();window.scrollTo(0,0);
 }
 
