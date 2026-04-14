@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>What Has Your Nervous System Been Telling You? | Reclaim Your Life</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EBF0E2;--white:#FFFFFF;--sage-light:#D4E8D8;
+  --sage:#5B9A6E;--sage-dark:#3D7A55;--violet:#7B5EA7;
+  --violet-dark:#5A4080;--dark:#1A2035;--text:#2A2A2A;
+  --body:#3A3A3A;--muted:#888;--faint:#BBB;--line:rgba(0,0,0,.08);
+  --amber:#BA7517;--amber-light:rgba(186,117,23,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+
+.ticker{background:var(--sage);padding:9px 0;overflow:hidden;}
+.ticker-inner{display:flex;animation:tick 28s linear infinite;width:max-content;}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.tw{font-family:'Anton',sans-serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 22px;}
+.td{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.28);display:inline-block;flex-shrink:0;align-self:center;}
+
+.header{background:var(--dark);padding:40px 24px 34px;text-align:center;position:relative;overflow:hidden;}
+.circ{position:absolute;border-radius:50%;pointer-events:none;}
+.eyebrow{font-family:'Permanent Marker',cursive;font-style:normal;font-size:14px;color:var(--violet);transform:rotate(-2deg);display:inline-block;margin-bottom:10px;}
+.h1{font-family:'Anton',sans-serif;font-size:clamp(26px,6vw,38px);color:#fff;text-transform:uppercase;line-height:1.05;letter-spacing:-0.3px;}
+.h1 em{color:var(--sage);font-style:normal;}
+.header-sub{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);margin-top:12px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;}
+.grad-div{height:4px;background:var(--sage);}
+
+.progress{background:rgba(0,0,0,.04);padding:14px 24px;border-bottom:1px solid rgba(0,0,0,.07);}
+.prog-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.prog-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,.3);}
+.prog-num{font-family:'Anton',sans-serif;font-size:14px;color:var(--sage);}
+.prog-bg{background:rgba(0,0,0,.08);border-radius:50px;height:5px;}
+.prog-fill{background:var(--sage);border-radius:50px;height:5px;transition:width .5s cubic-bezier(.34,1.56,.64,1);}
+
+.quiz-body{padding:28px 24px 48px;max-width:640px;margin:0 auto;}
+
+.concept-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(91,154,110,.12);border:1.5px solid rgba(91,154,110,.2);border-radius:50px;padding:4px 12px;margin-bottom:12px;}
+.concept-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--sage);flex-shrink:0;}
+.concept-badge-text{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage-dark);}
+
+.q-label{font-family:'Permanent Marker',cursive;font-style:normal;font-size:13px;color:var(--violet);transform:rotate(-1deg);display:inline-block;margin-bottom:10px;}
+.q-text{font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(17px,3.5vw,22px);line-height:1.35;color:var(--dark);margin-bottom:20px;}
+
+.opt{background:var(--white);border:2px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px;cursor:pointer;display:flex;align-items:flex-start;gap:12px;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.04);}
+.opt:hover{border-color:var(--sage);background:rgba(91,154,110,.05);transform:translateX(4px);}
+.opt.sel{border-color:var(--sage);background:rgba(91,154,110,.08);}
+.opt-dot{width:18px;height:18px;border-radius:50%;border:2px solid rgba(0,0,0,.15);flex-shrink:0;margin-top:3px;transition:all .2s;}
+.opt.sel .opt-dot{background:var(--sage);border-color:var(--sage);}
+.opt-text{font-size:14px;line-height:1.65;color:var(--body);}
+
+.insight{display:none;margin-top:6px;margin-bottom:18px;}
+.insight.visible{display:block;animation:fadeUp .35s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.insight-inner{border-left:4px solid var(--sage);background:rgba(91,154,110,.07);border-radius:0 12px 12px 0;padding:14px 16px;}
+.insight-inner.violet{border-left-color:var(--violet);background:rgba(123,94,167,.07);}
+.insight-inner.amber{border-left-color:var(--amber);background:var(--amber-light);}
+.insight-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:5px;}
+.insight-label.v{color:var(--violet-dark);}
+.insight-label.a{color:#7A4F00;}
+.insight-text{font-size:13px;line-height:1.7;color:var(--body);}
+.insight-text strong{font-weight:700;color:var(--text);}
+
+.btn-row{margin-top:8px;display:flex;align-items:center;justify-content:space-between;}
+.btn{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:50px;padding:13px 30px;cursor:pointer;transition:all .2s;}
+.btn-sage{background:var(--sage);color:#fff;}
+.btn-sage:hover{background:var(--sage-dark);box-shadow:0 4px 20px rgba(91,154,110,.4);transform:translateY(-1px);}
+.btn-sage:disabled{opacity:.3;cursor:not-allowed;transform:none;box-shadow:none;}
+.skip-btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;font-style:italic;color:var(--muted);background:none;border:none;cursor:pointer;}
+.skip-btn:hover{color:var(--body);}
+
+.result-wrap{display:none;}
+.result-header{background:var(--dark);padding:36px 24px 30px;text-align:center;position:relative;overflow:hidden;}
+.result-eyebrow{font-family:'Permanent Marker',cursive;font-style:normal;font-size:14px;color:var(--sage);transform:rotate(-2deg);display:inline-block;margin-bottom:10px;}
+.result-title{font-family:'Anton',sans-serif;font-size:clamp(24px,6vw,36px);text-transform:uppercase;color:#fff;line-height:1.1;letter-spacing:-0.3px;}
+.result-title em{color:var(--sage);font-style:normal;}
+.result-sub{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.55);margin-top:10px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;}
+
+.result-body{max-width:640px;margin:0 auto;padding:28px 24px 48px;}
+
+.patterns-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:14px;}
+.pattern-item{background:var(--white);border:2px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:10px;display:flex;gap:14px;align-items:flex-start;}
+.pi-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.pi-icon.sage{background:rgba(91,154,110,.12);}
+.pi-icon.violet{background:rgba(123,94,167,.12);}
+.pi-icon.amber{background:rgba(186,117,23,.1);}
+.pi-concept{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.pi-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
+.pi-desc{font-size:12px;font-weight:300;color:var(--body);line-height:1.6;}
+
+.takeaway-block{background:var(--violet);border-radius:14px;padding:22px 22px;margin:20px 0;position:relative;overflow:hidden;}
+.tb-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px;}
+.tb-text{font-size:14px;font-weight:300;font-style:italic;color:#fff;line-height:1.75;}
+
+.cta-block{background:var(--sage);border-radius:14px;padding:26px 22px;text-align:center;position:relative;overflow:hidden;margin:20px 0;}
+.cta-community{font-family:'Permanent Marker',cursive;font-style:normal;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:6px;}
+.cta-title{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;}
+.cta-body{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);margin-bottom:18px;line-height:1.65;max-width:400px;margin-left:auto;margin-right:auto;}
+.cta-link{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 28px;text-decoration:none;display:inline-block;transition:all .2s;}
+.cta-link:hover{background:#0f1526;transform:translateY(-1px);}
+
+.retake{text-align:center;margin-top:12px;}
+.retake-btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;font-style:italic;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;}
+.retake-btn:hover{color:var(--body);}
+
+.footer{background:var(--dark);padding:20px 24px;text-align:center;border-top:1px solid rgba(255,255,255,.05);}
+.footer-brand{font-family:'Permanent Marker',cursive;font-size:14px;color:var(--sage);transform:rotate(-1deg);display:inline-block;margin-bottom:6px;}
+.footer-copy{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:1px;}
+</style>
+</head>
+<body>
+
+<div class="ticker">
+  <div class="ticker-inner">
+    <div style="display:flex;align-items:center;">
+      <span class="tw">WHY START WITH AWARENESS</span><span class="td"></span>
+      <span class="tw">THE STORY YOUR BODY TELLS</span><span class="td"></span>
+      <span class="tw">WHAT YOU BELIEVE IS WHAT YOU PERCEIVE</span><span class="td"></span>
+      <span class="tw">NOTICE BEFORE YOU CONCLUDE</span><span class="td"></span>
+      <span class="tw">THE BODY SPEAKS FIRST</span><span class="td"></span>
+      <span class="tw">RECLAIM YOUR LIFE</span><span class="td"></span>
+    </div>
+    <div style="display:flex;align-items:center;">
+      <span class="tw">WHY START WITH AWARENESS</span><span class="td"></span>
+      <span class="tw">THE STORY YOUR BODY TELLS</span><span class="td"></span>
+      <span class="tw">WHAT YOU BELIEVE IS WHAT YOU PERCEIVE</span><span class="td"></span>
+      <span class="tw">NOTICE BEFORE YOU CONCLUDE</span><span class="td"></span>
+      <span class="tw">THE BODY SPEAKS FIRST</span><span class="td"></span>
+      <span class="tw">RECLAIM YOUR LIFE</span><span class="td"></span>
+    </div>
+  </div>
+</div>
+
+<div class="header">
+  <div class="circ" style="width:260px;height:260px;border:3px solid #5B9A6E;opacity:.07;top:-90px;right:-70px;"></div>
+  <div class="circ" style="width:130px;height:130px;border:2px solid #7B5EA7;opacity:.09;bottom:-45px;left:-45px;"></div>
+  <div class="circ" style="width:80px;height:80px;border:2px solid #5B9A6E;opacity:.05;top:30px;left:8%;"></div>
+  <div class="eyebrow">your body already knows</div>
+  <div class="h1">What has your nervous<br><em>system been telling you?</em></div>
+  <p class="header-sub">Six questions to help you trace the concepts from this lesson back into your own life. There are no right answers — only recognition.</p>
+</div>
+<div class="grad-div"></div>
+
+<div id="quiz-wrap">
+  <div class="progress">
+    <div class="prog-row">
+      <div class="prog-label">Question</div>
+      <div class="prog-num" id="prog-num">1 of 6</div>
+    </div>
+    <div class="prog-bg"><div class="prog-fill" id="prog-fill" style="width:16.6%"></div></div>
+  </div>
+  <div class="quiz-body">
+    <div id="concept-badge-wrap"></div>
+    <div class="q-label" id="q-label">Notice</div>
+    <div class="q-text" id="q-text"></div>
+    <div id="options-wrap"></div>
+    <div class="insight" id="insight-wrap">
+      <div class="insight-inner" id="insight-inner">
+        <div class="insight-label" id="insight-label"></div>
+        <div class="insight-text" id="insight-text"></div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-sage" id="next-btn" disabled onclick="nextQ()">
+        <span id="next-label">Next →</span>
+      </button>
+      <button class="skip-btn" onclick="skipQ()">skip this one</button>
+    </div>
+  </div>
+</div>
+
+<div class="result-wrap" id="result-wrap">
+  <div class="result-header">
+    <div class="circ" style="width:240px;height:240px;border:3px solid #5B9A6E;opacity:.07;top:-70px;right:-70px;"></div>
+    <div class="circ" style="width:130px;height:130px;border:2px solid #7B5EA7;opacity:.09;bottom:-45px;left:-45px;"></div>
+    <div class="result-eyebrow">what you just noticed</div>
+    <div class="result-title">The awareness<br><em>was already there</em></div>
+    <p class="result-sub">These are the patterns your nervous system has been running — you've just given them language. That's not a small thing.</p>
+  </div>
+  <div class="grad-div"></div>
+  <div class="result-body">
+    <div class="patterns-label">What you recognised in yourself</div>
+    <div id="patterns-list"></div>
+
+    <div class="takeaway-block">
+      <div style="position:absolute;width:160px;height:160px;border:3px solid rgba(255,255,255,.08);top:-50px;right:-50px;border-radius:50%;pointer-events:none;"></div>
+      <div class="tb-label">Something worth sitting with</div>
+      <div class="tb-text">Awareness isn't just the starting point — it is itself a regulation tool. The moment you name what your nervous system has been doing, something shifts. Not because insight fixes things, but because recognition is the first crack of light through a door that's been closed. You've started opening it.</div>
+    </div>
+
+    <div class="cta-block">
+      <div style="position:absolute;width:200px;height:200px;border:4px solid rgba(255,255,255,.07);top:-60px;right:-60px;border-radius:50%;pointer-events:none;"></div>
+      <div style="position:absolute;width:120px;height:120px;border:3px solid rgba(255,255,255,.06);bottom:-40px;left:-40px;border-radius:50%;pointer-events:none;"></div>
+      <div class="cta-community">Reclaim Your Life</div>
+      <div class="cta-title">The companion guide goes deeper</div>
+      <p class="cta-body">Every concept you just recognised has a full breakdown — with examples, the science, and what it means for change — in the free lesson guide inside the community.</p>
+      <a class="cta-link" href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank">Join the free community →</a>
+    </div>
+
+    <div style="background:rgba(255,255,255,.6);border:2px solid var(--line);border-radius:14px;padding:18px 20px;margin-top:10px;text-align:center;">
+      <div style="font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">Share what came up</div>
+      <p style="font-size:13px;line-height:1.65;color:var(--body);margin-bottom:12px;">Did something land? Did a question miss the mark? I'd love to hear what this brought up for you — head to the <strong>🧠 Learn With Me</strong> category in the community and drop it there.</p>
+      <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" style="font-family:'Anton',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage-dark);text-decoration:none;border-bottom:2px solid var(--sage);padding-bottom:2px;">Go to the community →</a>
+    </div>
+
+    <div class="retake">
+      <button class="retake-btn" onclick="retake()">← Go through it again</button>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">Reclaim Your Life</div>
+  <div class="footer-copy">© 2026 Clara Louis · This quiz does not collect or store any personal data.</div>
+</div>
+
+<script>
+const questions = [
+  {
+    concept: "Reticular Activating System",
+    badge: "What your attention is filtering",
+    label: "Look at the last few weeks",
+    text: "Think about something you've been worried about, hoping for, or focused on lately. When you look at your days through that lens — what do you notice?",
+    options: [
+      {
+        text: "It feels like the thing I'm worried about keeps showing up everywhere — in what people say, in content I see, in conversations. It's like the world is confirming my fear.",
+        insight: { color: "sage", label: "Reticular activating system", title: "Your filter is curating your reality",
+          text: "The <strong>reticular activating system</strong> marked your worry as relevant, and started surfacing matching evidence. The world didn't change — your filter did. This is how fear compounds: the nervous system finds confirmation, which activates more fear, which makes the filter even more attuned to threat. The evidence feels real because, in a sense, it is. It's just not the whole picture." }
+      },
+      {
+        text: "When I'm in a hopeful or excited state, I notice opportunity everywhere — possibilities I hadn't seen before suddenly seem obvious.",
+        insight: { color: "sage", label: "Reticular activating system", title: "The same filter, different setting",
+          text: "This is the <strong>reticular activating system</strong> working in the other direction — calibrated to possibility rather than threat. Those opportunities didn't appear out of nowhere. Your filter shifted what it was surfacing. This is one of the most practical arguments for regulating the nervous system before making decisions: a settled body sets a very different filter." }
+      },
+      {
+        text: "I'm going through a period where nothing seems to be working. Every example I see confirms that my situation is stuck.",
+        insight: { color: "violet", label: "RAS meets confirmation bias", title: "The filter and the story reinforce each other",
+          text: "When the <strong>reticular activating system</strong> is set to 'stuck', it finds evidence of being stuck — and <strong>confirmation bias</strong> files that evidence as proof. The two systems amplify each other. What feels like clear-eyed realism is often a nervous system in a survival state, curating the world to match what it already believes. That doesn't mean the difficulties aren't real. It means you're not seeing all of what's real." }
+      },
+      {
+        text: "I find it hard to know what I'm focused on — my attention feels scattered, not locked onto any one thing.",
+        insight: { color: "amber", label: "Diffuse attention", title: "Scattered attention is also a nervous system state",
+          text: "A <strong>reticular activating system</strong> that isn't anchored to a clear signal often reflects a nervous system in a low-grade survival state — too many inputs marked as 'potential threat' at once, so attention spreads thin trying to monitor all of them. This can feel like lack of focus or direction, when it's actually the body running a very broad safety scan." }
+      }
+    ]
+  },
+  {
+    concept: "Confirmation Bias",
+    badge: "The stories that survive",
+    label: "Be honest about this one",
+    text: "There's something you believe about yourself that you've believed for a long time. When evidence shows up that contradicts it — something good you did, a moment someone valued you — what tends to happen?",
+    options: [
+      {
+        text: "I notice it briefly, then it fades. The contradicting evidence doesn't really land the same way as the evidence that confirms what I already think.",
+        insight: { color: "sage", label: "Confirmation bias", title: "The brain weights evidence unequally",
+          text: "<strong>Confirmation bias</strong> doesn't just make you miss contradictory evidence — it makes it feel less real, less sticky, less trustworthy than confirming evidence. A compliment glances off. A criticism lodges. This isn't pessimism or low self-esteem as a character trait. It's a brain taking the energetically efficient route of agreeing with the map it already has. The map just needs updating." }
+      },
+      {
+        text: "I find a reason why it doesn't count — it was a special circumstance, or they were being kind, or I got lucky.",
+        insight: { color: "violet", label: "Confirmation bias — the reframe", title: "The belief protects itself from evidence",
+          text: "<strong>Confirmation bias</strong> is remarkably creative. When contradictory evidence can't be ignored, the brain reinterprets it: luck, politeness, exception. The belief finds a way to survive the challenge. This is why you can receive ten compliments and one criticism and walk away thinking about the criticism. The nervous system was never running a neutral tally — it was filing evidence selectively." }
+      },
+      {
+        text: "I feel briefly good about it, but within hours or days I'm back to the underlying belief, as if nothing happened.",
+        insight: { color: "amber", label: "Cognitive update vs felt update", title: "The mind heard it — the body didn't",
+          text: "The positive evidence updated your <strong>conscious mind</strong> temporarily — but it didn't update your <strong>nervous system's</strong> felt sense of yourself. Those are different systems on different timelines. The nervous system updates through repeated, embodied experience — not single data points. This is why sustained change requires more than good moments. It requires the body to accumulate new evidence until the new version becomes the familiar one." }
+      },
+      {
+        text: "I'm not sure I hold strong fixed beliefs — I think I'm fairly open and self-aware.",
+        insight: { color: "amber", label: "Worth a closer look", title: "The quietest beliefs are often the deepest",
+          text: "<strong>Confirmation bias</strong> tends to operate most powerfully around beliefs we hold implicitly — the ones that have been true for so long we've stopped calling them beliefs and started calling them 'just how things are'. 'I'm someone things don't quite work out for.' 'I always end up alone with this.' 'I'm too much / not enough.' If a pattern keeps repeating across different contexts, ask: what would have to be true for this to keep happening?" }
+      }
+    ]
+  },
+  {
+    concept: "Neuroception & The Story",
+    badge: "How biology becomes narrative",
+    label: "Trace a recent reaction",
+    text: "Think of a moment when you had a strong emotional response — to something someone said, a tone of voice, a message — and the response felt bigger than the situation seemed to warrant. What was that like?",
+    options: [
+      {
+        text: "I responded sharply or defensively to something small, and afterwards couldn't quite explain why I reacted so strongly.",
+        insight: { color: "violet", label: "Neuroception fired before your mind arrived", title: "Your nervous system matched a pattern from the past",
+          text: "<strong>Neuroception</strong> scanned the situation — the tone, the timing, the dynamic — and found a match with something from your history. Your nervous system mobilised before your conscious mind could weigh in. The reaction that followed belonged to that older context, not the present one. The mismatch between what happened and how you responded isn't irrational. It's a very precise response to something that felt familiar." }
+      },
+      {
+        text: "I felt suddenly hurt or withdrawn, and told myself a full story about what it meant — about them, about me, about us — before I'd actually checked whether it was true.",
+        insight: { color: "violet", label: "Biology → story", title: "The mind explains what the body already decided",
+          text: "This is the chain reaction in action. <strong>Neuroception</strong> detected a possible threat. Your biology responded. Your <strong>mind</strong>, noticing the physical shift, needed a reason — and constructed one. The story felt like an insight because it arrived with such certainty. But it was an interpretation of a biological event, not an objective reading of what was happening. The story came second. The sensation came first." }
+      },
+      {
+        text: "I felt a wave of something — anxiety, heat, tightness — and didn't know where it came from. It just arrived.",
+        insight: { color: "sage", label: "Neuroception below the surface", title: "The body detected something before words were available",
+          text: "<strong>Neuroception</strong> is entirely unconscious — it makes its assessment and fires a response before any conscious awareness is possible. The wave that 'just arrived' was the biological response to a cue your nervous system had already processed and acted on. The feeling isn't random. Your body noticed something. The work of <strong>interoception</strong> — learning to read these signals — is learning to ask: what did my body just detect?" }
+      },
+      {
+        text: "I don't often have strong emotional reactions — I tend to feel fairly even most of the time.",
+        insight: { color: "amber", label: "Evenness has different meanings", title: "Flat and regulated aren't the same thing",
+          text: "Genuine regulation often feels even — spacious, settled, present. But <strong>neuroception</strong> can also produce responses that look like evenness: a numbing, a dimming, a learned habit of not registering. If the evenness feels more like absence than presence — if it's hard to feel much of anything, or feelings only arrive with a delay — it may be worth exploring whether the nervous system has learned to suppress the signal, rather than the signal not being there." }
+      }
+    ]
+  },
+  {
+    concept: "Interoception",
+    badge: "Your body's language",
+    label: "Slow down for this one",
+    text: "When you're in the middle of a difficult moment — a hard conversation, a stressful decision, a conflict — how much are you tracking what's happening in your body?",
+    options: [
+      {
+        text: "I'm almost entirely in my head — thinking, analysing, deciding what to say next. I might notice I feel 'bad' but I'm not tracking specific sensations.",
+        insight: { color: "amber", label: "Interoception — low access", title: "The body is already in the conversation",
+          text: "When attention is entirely cognitive during a difficult moment, your <strong>nervous system</strong> is still responding — you're just not receiving the signal. That unread signal shapes what you say, how you react, what you decide — without your awareness. <strong>Interoception</strong> is the practice of tuning into that signal in real time: not to fix it, but to know where you actually are before you respond." }
+      },
+      {
+        text: "I notice physical signs afterwards — I realise my jaw was clenched, my shoulders were up, my breathing was shallow — but only once the moment has passed.",
+        insight: { color: "sage", label: "Interoception — delayed", title: "The signal is there — the timing is the next step",
+          text: "Noticing after the fact is the beginning of <strong>interoception</strong>, not the absence of it. Your body was tracking and you're beginning to read it — just with a delay. The practice is gradually shortening that delay: noticing the jaw mid-conversation, the breath at the start of the tension, rather than an hour later. That window, however small, is where choice lives." }
+      },
+      {
+        text: "I sometimes have a felt sense of something being 'off' in my body — and I've learned to trust it even when I can't explain it rationally.",
+        insight: { color: "sage", label: "Interoception — active", title: "That felt sense is neuroception made conscious",
+          text: "This is <strong>interoception</strong> functioning well. Your nervous system is scanning and detecting — and you've learned to receive the signal before your mind has constructed a story about it. That gut knowing is not mystical. It's the <strong>brainstem</strong> processing cues of safety or danger faster than your conscious mind can, and your body reporting the result as sensation. Trusting it is the right move." }
+      },
+      {
+        text: "I tend to override whatever I'm feeling physically and push through — body signals feel like a distraction from what needs to happen.",
+        insight: { color: "violet", label: "The body as obstacle", title: "The signal you're overriding is the most important one",
+          text: "When body signals are treated as noise to be managed or overridden, the <strong>nervous system</strong> doesn't stop sending them — it just stops being listened to. Over time this creates a body that has to escalate to get attention: chronic tension, exhaustion, illness, shutdown. <strong>Interoception</strong> is the practice of moving the body from obstacle to informant — because what it's detecting is the thing that's actually driving everything else." }
+      }
+    ]
+  },
+  {
+    concept: "The 80/20 Signal",
+    badge: "Why thinking harder doesn't fix it",
+    label: "Recall a time you tried to reason with yourself",
+    text: "You told yourself it was fine. You knew, logically, that there was nothing to fear. Your mind was sending all the right messages. What did your body do?",
+    options: [
+      {
+        text: "It didn't listen. The physical response continued regardless of what I told myself — racing heart, tight chest, the dread just sitting there.",
+        insight: { color: "sage", label: "The 80% signal running upstream", title: "Your body wasn't being irrational — it was being louder",
+          text: "<strong>80% of the signal travels from body to brain</strong>, not the other way. Your mind was sending reassurance downward at 20% capacity. Your body was simultaneously sending a fear signal upward at 80% capacity. The brain receives both and trusts the louder, older, faster signal — the one from the body. This isn't a failure of your mind. It's a design feature. The body's signal has to be addressed at its source." }
+      },
+      {
+        text: "It worked temporarily — I could calm myself down for a while — but the anxiety or the pattern would come back, sometimes within hours.",
+        insight: { color: "amber", label: "Cognitive override — partial and temporary", title: "The mind can dampen the signal, not update it",
+          text: "The <strong>prefrontal cortex</strong> can produce enough of a top-down signal to quieten the body's response short-term — and this is real, useful, worth having. But it doesn't update the underlying pattern. The nervous system hasn't received new felt evidence that contradicts what it believes. So when attention drops — when you're tired, stressed, or distracted — the original signal reasserts. Sustainable change requires the body to be updated, not overridden." }
+      },
+      {
+        text: "I realised that my most useful moments of calm came not from reasoning but from something physical — a breath, a walk, a hand on my chest.",
+        insight: { color: "sage", label: "You found the upstream route", title: "The body responds to the body's language",
+          text: "Breath, movement, touch, and sensation speak directly to the <strong>brainstem</strong> — the source of the signal. These aren't distractions or coping mechanisms. They're the most direct available pathway to telling the nervous system something different at the level where the pattern is held. You discovered <strong>somatic regulation</strong> intuitively because it's what actually works." }
+      },
+      {
+        text: "I've mostly given up trying to talk myself out of things — I just wait for the feeling to pass on its own.",
+        insight: { color: "violet", label: "Passive waiting vs active regulation", title: "Time passes — the pattern stays",
+          text: "Waiting for a feeling to pass is different from the nervous system genuinely processing and updating. Often the feeling does fade — but the underlying pattern that generated it remains intact, ready to activate again at the next matching cue. <strong>Somatic regulation</strong> isn't about stopping the feeling faster. It's about giving the nervous system a new kind of experience while the feeling is present — which is what gradually changes the pattern." }
+      }
+    ]
+  },
+  {
+    concept: "Be → Do → Have",
+    badge: "The sequence your nervous system actually runs",
+    label: "Think about something you're trying to change",
+    text: "There's something you want — a way of being, a result, a version of your life. You've tried to move toward it. Which of these is most honest about how that's gone?",
+    options: [
+      {
+        text: "I've achieved versions of it before, but they don't seem to stick — I end up back in the old pattern, almost like the new thing was borrowed rather than mine.",
+        insight: { color: "violet", label: "Arrived without the BE", title: "The nervous system is living at the old address",
+          text: "When we reach a goal by doing and having — without the nervous system first embodying the new state — we arrive somewhere unfamiliar. The body hasn't yet experienced what it feels like to live there. So it does what it always does with the unfamiliar: it treats it as a potential threat, and moves back toward what it knows. This isn't self-sabotage as a character flaw. It's a <strong>nervous system</strong> trying to return home." }
+      },
+      {
+        text: "I work hard at it, stay motivated for a while, then hit a wall I can't seem to push through — no matter how much I understand the problem.",
+        insight: { color: "amber", label: "Effort without the body", title: "The wall is biological, not motivational",
+          text: "When the <strong>nervous system</strong> hasn't yet learned to feel safe with what you're moving toward, it will reliably recreate resistance — not through stubbornness but through survival. Pushing harder works until it doesn't, because effort is a top-down strategy operating at 20% signal strength. The wall isn't a signal to push harder. It's an invitation to ask: what does my body believe about this, and has it been given a chance to feel otherwise?" }
+      },
+      {
+        text: "I've noticed that the times real change happens, it feels less like discipline and more like something naturally shifted — like I became the person who does that thing, rather than the person forcing themselves to.",
+        insight: { color: "sage", label: "BE arrived first", title: "That shift is what nervous system updating feels like",
+          text: "This is the <strong>Be → Do → Have</strong> sequence working. Something changed at the felt level — the nervous system updated its sense of what's familiar, safe, and available — and action followed naturally from that new internal state. It didn't feel effortful because it wasn't effortful. You weren't overriding the body; you were moving from it. That's the difference between sustainable change and the version that requires constant willpower." }
+      },
+      {
+        text: "I'm not sure I've ever really let myself fully want something — it feels safer not to want it too much, in case it doesn't happen.",
+        insight: { color: "violet", label: "Desire and safety", title: "Wanting feels dangerous when the nervous system has learned to brace",
+          text: "When wanting has historically been followed by disappointment, loss, or not being safe to have what you need, the <strong>nervous system</strong> learns to protect against wanting itself. Closing off from desire isn't pessimism — it's a very efficient survival adaptation. But it means the <strong>Be</strong> — the embodied sense of being someone who can have good things — is being blocked at the source, before any action is even attempted. This is one of the quietest and most significant places the work happens." }
+      }
+    ]
+  }
+];
+
+let current = 0;
+let selectedIndex = null;
+let answeredQuestions = [];
+
+function render() {
+  const q = questions[current];
+  const isLast = current === questions.length - 1;
+
+  document.getElementById('prog-num').textContent = `${current + 1} of ${questions.length}`;
+  document.getElementById('prog-fill').style.width = `${((current + 1) / questions.length) * 100}%`;
+
+  document.getElementById('concept-badge-wrap').innerHTML = `
+    <div class="concept-badge">
+      <div class="concept-badge-dot"></div>
+      <div class="concept-badge-text">${q.badge}</div>
+    </div>
+  `;
+
+  document.getElementById('q-label').textContent = q.label;
+  document.getElementById('q-text').textContent = q.text;
+  document.getElementById('next-label').textContent = isLast ? 'See what you noticed →' : 'Next →';
+
+  const wrap = document.getElementById('options-wrap');
+  wrap.innerHTML = '';
+  q.options.forEach((opt, i) => {
+    const el = document.createElement('div');
+    el.className = 'opt';
+    el.innerHTML = `<div class="opt-dot"></div><div class="opt-text">${opt.text}</div>`;
+    el.onclick = () => selectOpt(i);
+    wrap.appendChild(el);
+  });
+
+  hideInsight();
+  selectedIndex = null;
+  document.getElementById('next-btn').disabled = true;
+}
+
+function selectOpt(i) {
+  document.querySelectorAll('.opt').forEach(el => el.classList.remove('sel'));
+  document.querySelectorAll('.opt')[i].classList.add('sel');
+  selectedIndex = i;
+  document.getElementById('next-btn').disabled = false;
+
+  const ins = questions[current].options[i].insight;
+  const inner = document.getElementById('insight-inner');
+  inner.className = 'insight-inner' + (ins.color === 'violet' ? ' violet' : ins.color === 'amber' ? ' amber' : '');
+  document.getElementById('insight-label').className = 'insight-label' + (ins.color === 'violet' ? ' v' : ins.color === 'amber' ? ' a' : '');
+  document.getElementById('insight-label').textContent = ins.label;
+  document.getElementById('insight-text').innerHTML = `<strong>${ins.title}</strong> — ${ins.text}`;
+  showInsight();
+}
+
+function showInsight() {
+  const el = document.getElementById('insight-wrap');
+  el.style.display = 'block';
+  void el.offsetHeight;
+  el.classList.add('visible');
+}
+
+function hideInsight() {
+  const el = document.getElementById('insight-wrap');
+  el.classList.remove('visible');
+  el.style.display = 'none';
+}
+
+function nextQ() {
+  if (selectedIndex !== null) {
+    const q = questions[current];
+    const ins = q.options[selectedIndex].insight;
+    answeredQuestions.push({
+      concept: q.concept,
+      icon: getIcon(q.concept),
+      iconColor: ins.color,
+      insightTitle: ins.title,
+      insightText: ins.text,
+    });
+  }
+
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    showResult();
+  }
+}
+
+function skipQ() {
+  if (current < questions.length - 1) {
+    current++;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    showResult();
+  }
+}
+
+function getIcon(concept) {
+  const map = {
+    "Reticular Activating System": "🔍",
+    "Confirmation Bias": "🔄",
+    "Neuroception & The Story": "⚡",
+    "Interoception": "🌿",
+    "The 80/20 Signal": "⬆️",
+    "Be → Do → Have": "🪴",
+  };
+  return map[concept] || "●";
+}
+
+function showResult() {
+  document.getElementById('quiz-wrap').style.display = 'none';
+  const result = document.getElementById('result-wrap');
+  result.style.display = 'block';
+
+  const list = document.getElementById('patterns-list');
+  list.innerHTML = '';
+
+  if (answeredQuestions.length === 0) {
+    list.innerHTML = `<p style="font-size:14px;color:var(--muted);font-style:italic;">You skipped everything — which is also data. Come back when you're ready.</p>`;
+    return;
+  }
+
+  answeredQuestions.forEach(item => {
+    const colorClass = item.iconColor === 'violet' ? 'violet' : item.iconColor === 'amber' ? 'amber' : 'sage';
+    list.innerHTML += `
+      <div class="pattern-item">
+        <div class="pi-icon ${colorClass}">${item.icon}</div>
+        <div>
+          <div class="pi-concept">${item.concept}</div>
+          <div class="pi-title">${item.insightTitle}</div>
+          <p class="pi-desc">${item.insightText}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function retake() {
+  current = 0;
+  selectedIndex = null;
+  answeredQuestions = [];
+  document.getElementById('result-wrap').style.display = 'none';
+  document.getElementById('quiz-wrap').style.display = 'block';
+  render();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+render();
+</script>
+</body>
+</html>
