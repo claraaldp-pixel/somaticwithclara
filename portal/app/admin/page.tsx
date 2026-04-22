@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase-server'
+import { createAdminClient } from '@/lib/supabase-admin'
 import AdminDashboard from './AdminDashboard'
 
 export default async function AdminPage() {
@@ -8,15 +9,16 @@ export default async function AdminPage() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login')
 
-  // Only allow Clara's admin email
   if (user.email !== process.env.ADMIN_EMAIL) redirect('/dashboard')
 
-  const { data: clients } = await supabase
+  const admin = createAdminClient()
+
+  const { data: clients } = await admin
     .from('clients')
     .select('id, name, email, slug, created_at')
     .order('created_at', { ascending: false })
 
-  const { data: reports } = await supabase
+  const { data: reports } = await admin
     .from('reports')
     .select('id, client_id, published, updated_at')
 
