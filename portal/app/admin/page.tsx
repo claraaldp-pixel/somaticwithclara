@@ -11,6 +11,10 @@ export default async function AdminPage() {
 
   if (user.email !== process.env.ADMIN_EMAIL) redirect('/dashboard')
 
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) {
+    throw new Error('SUPABASE_SERVICE_ROLE_KEY is not configured on the server.')
+  }
+
   const admin = createAdminClient()
 
   const { data: clients } = await admin
