@@ -47,5 +47,5 @@ export default async function DashboardPage() {
     )
   }
 
-  return <ReportView name={client.name} content={report.content} updatedAt={report.updated_at} />
+  return <ReportView name={client.name} clientId={client.id} content={report.content} updatedAt={report.updated_at} />
 }
