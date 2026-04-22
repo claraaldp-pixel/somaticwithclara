@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { createClient } from '@/lib/supabase-browser'
 import { useRouter } from 'next/navigation'
+import { addClient, saveReport, togglePublish, loadReportContent } from './actions'
 
 interface Client {
   id: string
@@ -26,84 +26,71 @@ interface Props {
 
 export default function AdminDashboard({ clients, reports }: Props) {
   const router = useRouter()
-  const supabase = createClient()
 
-  // New client form
   const [newName, setNewName] = useState('')
   const [newEmail, setNewEmail] = useState('')
   const [newSlug, setNewSlug] = useState('')
   const [addingClient, setAddingClient] = useState(false)
 
-  // Report editor
   const [selectedClientId, setSelectedClientId] = useState<string | null>(null)
   const [reportContent, setReportContent] = useState('')
   const [savingReport, setSavingReport] = useState(false)
   const [statusMsg, setStatusMsg] = useState('')
+  const [error, setError] = useState('')
 
   const reportMap = Object.fromEntries(reports.map((r) => [r.client_id, r]))
 
-  function autoSlug(name: string) {
-    return name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
-  }
-
-  async function addClient(e: React.FormEvent) {
+  async function handleAddClient(e: React.FormEvent) {
     e.preventDefault()
     setAddingClient(true)
-    const { error } = await supabase.from('clients').insert({
-      name: newName,
-      email: newEmail,
-      slug: newSlug || autoSlug(newName),
-    })
-    if (error) {
-      setStatusMsg('Error adding client: ' + error.message)
-    } else {
+    setError('')
+    const form = new FormData()
+    form.append('name', newName)
+    form.append('email', newEmail)
+    form.append('slug', newSlug)
+    try {
+      await addClient(form)
       setNewName(''); setNewEmail(''); setNewSlug('')
       setStatusMsg('Client added.')
       router.refresh()
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to add client.')
     }
     setAddingClient(false)
   }
 
-  async function loadReport(clientId: string) {
+  async function handleSelectClient(clientId: string) {
     setSelectedClientId(clientId)
-    const { data } = await supabase
-      .from('reports')
-      .select('content')
-      .eq('client_id', clientId)
-      .single()
-    setReportContent(data?.content ?? '')
+    setStatusMsg('')
+    setError('')
+    const content = await loadReportContent(clientId)
+    setReportContent(content)
   }
 
-  async function saveReport(publish: boolean) {
+  async function handleSaveReport(publish: boolean) {
     if (!selectedClientId) return
     setSavingReport(true)
     setStatusMsg('')
-
-    const existing = reportMap[selectedClientId]
-    if (existing) {
-      await supabase.from('reports').update({
-        content: reportContent,
-        published: publish,
-        updated_at: new Date().toISOString(),
-      }).eq('id', existing.id)
-    } else {
-      await supabase.from('reports').insert({
-        client_id: selectedClientId,
-        content: reportContent,
-        published: publish,
-      })
+    setError('')
+    try {
+      await saveReport(selectedClientId, reportContent, publish)
+      setStatusMsg(publish ? 'Report published — client can now see it.' : 'Draft saved.')
+      router.refresh()
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to save report.')
     }
-
-    setStatusMsg(publish ? 'Report published — client can now see it.' : 'Draft saved.')
     setSavingReport(false)
-    router.refresh()
   }
 
-  async function togglePublish(clientId: string) {
+  async function handleTogglePublish(clientId: string) {
     const report = reportMap[clientId]
     if (!report) return
-    await supabase.from('reports').update({ published: !report.published }).eq('id', report.id)
-    router.refresh()
+    try {
+      await togglePublish(report.id, report.published)
+      router.refresh()
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Failed to toggle.')
+    }
   }
 
   const selectedClient = clients.find((c) => c.id === selectedClientId)
@@ -119,7 +106,6 @@ export default function AdminDashboard({ clients, reports }: Props) {
 
       <main className="max-w-5xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-2 gap-10">
 
-        {/* Left: client list + add */}
         <div className="space-y-6">
           <h2 className="text-sm uppercase tracking-widest text-stone-400">Clients</h2>
 
@@ -134,7 +120,7 @@ export default function AdminDashboard({ clients, reports }: Props) {
                       ? 'border-stone-400 bg-white'
                       : 'border-stone-100 bg-white hover:border-stone-200'
                   }`}
-                  onClick={() => loadReport(c.id)}
+                  onClick={() => handleSelectClient(c.id)}
                 >
                   <div className="flex items-center justify-between">
                     <div>
@@ -143,7 +129,7 @@ export default function AdminDashboard({ clients, reports }: Props) {
                     </div>
                     {report && (
                       <button
-                        onClick={(e) => { e.stopPropagation(); togglePublish(c.id) }}
+                        onClick={(e) => { e.stopPropagation(); handleTogglePublish(c.id) }}
                         className={`text-xs px-2 py-1 rounded-full border transition ${
                           report.published
                             ? 'border-green-200 text-green-600 bg-green-50'
@@ -159,12 +145,11 @@ export default function AdminDashboard({ clients, reports }: Props) {
             })}
           </ul>
 
-          {/* Add client */}
           <details className="group">
             <summary className="text-xs text-stone-400 cursor-pointer hover:text-stone-600 transition list-none">
               + Add new client
             </summary>
-            <form onSubmit={addClient} className="mt-3 space-y-2">
+            <form onSubmit={handleAddClient} className="mt-3 space-y-2">
               <input
                 required
                 placeholder="Full name"
@@ -195,9 +180,11 @@ export default function AdminDashboard({ clients, reports }: Props) {
               </button>
             </form>
           </details>
+
+          {error && <p className="text-xs text-red-500">{error}</p>}
+          {statusMsg && <p className="text-xs text-stone-500">{statusMsg}</p>}
         </div>
 
-        {/* Right: report editor */}
         <div className="space-y-4">
           <h2 className="text-sm uppercase tracking-widest text-stone-400">
             {selectedClient ? `Report — ${selectedClient.name}` : 'Select a client'}
@@ -214,23 +201,20 @@ export default function AdminDashboard({ clients, reports }: Props) {
               />
               <div className="flex gap-3">
                 <button
-                  onClick={() => saveReport(false)}
+                  onClick={() => handleSaveReport(false)}
                   disabled={savingReport}
                   className="flex-1 py-2 border border-stone-200 text-stone-600 text-sm rounded-lg hover:bg-stone-100 transition disabled:opacity-50"
                 >
                   Save draft
                 </button>
                 <button
-                  onClick={() => saveReport(true)}
+                  onClick={() => handleSaveReport(true)}
                   disabled={savingReport}
                   className="flex-1 py-2 bg-stone-800 text-white text-sm rounded-lg hover:bg-stone-700 transition disabled:opacity-50"
                 >
                   Publish
                 </button>
               </div>
-              {statusMsg && (
-                <p className="text-xs text-stone-500">{statusMsg}</p>
-              )}
             </>
           )}
         </div>
