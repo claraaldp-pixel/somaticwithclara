@@ -15,9 +15,8 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
 
-.ticker{background:var(--sage);padding:9px 20px;}
+.ticker{background:var(--sage);padding:9px 20px;overflow:hidden;}
 .ticker-inner{display:flex;flex-wrap:wrap;justify-content:center;}
-
 .ticker span{font-family:'Anton',sans-serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 20px;}
 .t-dot{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.3);display:inline-block;flex-shrink:0;}
 
@@ -39,7 +38,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 
 .quiz-body{background:transparent;padding:24px 20px 40px;max-width:640px;margin:0 auto;}
 .q-label{font-family:'Permanent Marker',cursive;font-size:13px;color:var(--violet);transform:rotate(-1deg);display:inline-block;margin-bottom:10px;}
-.q-text{font-family:'Anton',sans-serif;font-size:clamp(20px,4vw,26px);text-transform:uppercase;line-height:1.2;color:var(--dark);margin-bottom:16px;letter-spacing:0.2px;}
+.q-text{font-family:'DM Sans',sans-serif;font-size:clamp(18px,4vw,22px);font-weight:700;line-height:1.3;color:var(--dark);margin-bottom:16px;}
 
 .opt{background:#fff;border:2px solid rgba(0,0,0,.08);border-radius:14px;padding:13px 16px;margin-bottom:9px;cursor:pointer;display:flex;align-items:flex-start;gap:12px;transition:all .2s;box-shadow:0 1px 3px rgba(0,0,0,.04);}
 .opt:hover{border-color:var(--sage);background:rgba(91,154,110,.06);transform:translateX(3px);}
@@ -49,62 +48,20 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .opt-text{font-size:14px;line-height:1.65;color:var(--body);}
 
 .btn{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;border:none;border-radius:50px;padding:13px 30px;cursor:pointer;transition:all .2s;}
-.btn-sage{background:var(--sage);color:#fff;}
-.btn-sage:hover{background:var(--sage-dark);box-shadow:0 4px 20px rgba(91,154,110,.4);}
-.btn-sage:disabled{opacity:.35;cursor:not-allowed;box-shadow:none;}
+.btn-sage{background:var(--sage);color:#fff;box-shadow:0 4px 16px rgba(91,154,110,.44);}
+.btn-sage:hover{background:var(--sage-dark);box-shadow:0 8px 24px rgba(91,154,110,.5);transform:translateY(-2px) scale(1.02);}
+.btn-sage:disabled{opacity:.35;cursor:not-allowed;box-shadow:none;transform:none;}
 .btn-row{margin-top:20px;}
 
-#result-wrap{display:none;}
-.result-header{background:var(--sage-light);padding:32px 20px 26px;text-align:center;position:relative;overflow:hidden;}
-.result-state-label{font-family:'Permanent Marker',cursive;font-size:14px;color:var(--sage-dark);transform:rotate(-1deg);display:inline-block;margin-bottom:6px;}
-.result-title{font-family:'Anton',sans-serif;font-size:clamp(24px,6vw,36px);text-transform:uppercase;color:var(--dark);line-height:1.15;letter-spacing:0.3px;}
-.result-title span{color:var(--sage);}
-.result-intro{font-size:14px;font-weight:300;font-style:italic;color:var(--body);margin-top:10px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;}
-
-.result-body{background:transparent;padding:24px 20px 32px;max-width:640px;margin:0 auto;}
-.result-card{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
-.result-card-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
-.result-card p{font-size:14px;line-height:1.75;color:var(--body);}
-
-.takeaway{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:20px;margin-bottom:14px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);}
-.takeaway-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
-.takeaway p{font-size:14px;font-weight:400;font-style:italic;color:var(--body);line-height:1.75;}
-
-.practice-card{background:var(--sage-light);border:2px solid var(--sage);border-radius:16px;padding:26px 22px;margin-bottom:14px;position:relative;overflow:hidden;}
-.practice-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--violet),var(--sage));}
-.practice-label{font-family:'Anton',sans-serif;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:14px;}
-.practice-name{font-family:'Anton',sans-serif;font-size:clamp(18px,4vw,22px);text-transform:uppercase;color:var(--dark);line-height:1.2;margin-bottom:12px;}
-.practice-desc{font-size:14px;font-weight:400;font-style:italic;color:var(--body);line-height:1.85;}
-
-.cta-block{background:var(--sage);border-radius:16px;padding:26px 20px;text-align:center;position:relative;overflow:hidden;margin-bottom:14px;}
-.cta-circ{position:absolute;border-radius:50%;pointer-events:none;}
-.community-name{font-family:'Permanent Marker',cursive;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:4px;}
-.cta-block h3{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;}
-.cta-block p{font-size:12px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);margin-bottom:18px;line-height:1.65;}
-.cta-block a{font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 26px;text-decoration:none;display:inline-block;transition:all .2s;}
-.cta-block a:hover{background:#0f1526;}
-
-.disclaimer{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.07);border-radius:12px;padding:16px;margin-bottom:14px;}
-.disclaimer-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-.disclaimer p{font-size:11px;line-height:1.7;color:var(--muted);font-style:italic;}
-
-.retake{text-align:center;margin-top:4px;margin-bottom:8px;}
-.retake button{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;font-style:italic;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;}
+/* VENTRAL OPTION */
 .opt.ventral-opt{border-style:dashed;border-color:rgba(91,154,110,.3);background:rgba(91,154,110,.03);}
 .opt.ventral-opt:hover{border-style:solid;border-color:var(--sage);background:rgba(91,154,110,.06);}
 .opt.ventral-opt.sel{border-style:solid;border-color:var(--sage);background:rgba(91,154,110,.08);}
 .opt.ventral-opt .opt-text{font-style:italic;color:var(--muted);}
 .opt.ventral-opt.sel .opt-text{color:var(--body);font-style:normal;}
 .ventral-divider{border:none;border-top:1px dashed rgba(0,0,0,.1);margin:6px 0 2px;}
-.retake button:hover{color:var(--body);}
 
-.footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding:20px;text-align:center;}
-.footer-name{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;}
-.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
-.footer-links button{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.35);background:none;border:none;cursor:pointer;text-decoration:underline;}
-.footer-links button:hover{color:rgba(255,255,255,.6);}
-.footer-copy{font-size:10px;color:rgba(255,255,255,.2);}
-
+/* EMAIL GATE */
 .email-gate{padding:32px 20px 48px;max-width:640px;margin:0 auto;}
 .email-gate-card{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:20px;padding:28px 24px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
 .email-gate-eyebrow{font-family:'Permanent Marker',cursive;font-size:13px;color:var(--violet);transform:rotate(-1deg);display:inline-block;margin-bottom:10px;}
@@ -120,43 +77,64 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .email-consent label{font-size:11.5px;color:var(--muted);line-height:1.65;cursor:pointer;}
 .email-consent label a{color:var(--sage);text-decoration:underline;}
 .email-error{font-size:12px;color:#c0392b;display:none;margin-top:2px;}
-.email-skip{text-align:center;margin-top:14px;}
-.email-skip button{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:300;font-style:italic;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;}
-.email-skip button:hover{color:var(--body);}
-/* REGULATED VS DYSREGULATED */
-.reg-section{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:24px 20px;margin-bottom:14px;position:relative;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.05);}
-.reg-section-eyebrow{font-family:'Permanent Marker',cursive;font-size:12px;color:var(--violet);transform:rotate(-1deg);display:inline-block;margin-bottom:6px;}
-.reg-section h3{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;color:var(--dark);margin-bottom:14px;}
-.reg-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-.reg-col{background:var(--bg);border-radius:12px;padding:14px;}
-.reg-col-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
-.reg-col.regulated .reg-col-label{color:var(--sage);}
-.reg-col.dysregulated .reg-col-label{color:rgba(190,50,50,.85);}
-.reg-col ul{list-style:none;padding:0;}
-.reg-col ul li{font-size:12px;line-height:1.7;color:var(--body);padding:3px 0;padding-left:14px;position:relative;}
-.reg-col ul li::before{content:'';position:absolute;left:0;top:9px;width:5px;height:5px;border-radius:50%;}
-.reg-col.regulated ul li::before{background:var(--sage);}
-.reg-col.dysregulated ul li::before{background:rgba(190,50,50,.7);}
-.reg-note{font-size:11px;font-style:italic;font-weight:300;color:var(--muted);margin-top:12px;line-height:1.65;}
 
-/* HOW YOUR STATE SHOWS UP */
-.shows-section{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
-.shows-section-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
-.shows-section h3{font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;color:var(--dark);margin-bottom:14px;}
-.shows-tabs{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
-.shows-tab{font-family:'Anton',sans-serif;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;border:2px solid rgba(0,0,0,.1);border-radius:50px;padding:8px 16px;cursor:pointer;background:transparent;color:var(--muted);transition:all .2s;}
-.shows-tab:hover{border-color:var(--sage);color:var(--sage);}
-.shows-tab.active{background:var(--sage);border-color:var(--sage);color:#fff;}
-.shows-panel{display:none;}
-.shows-panel.active{display:block;}
-.shows-panel-intro{font-size:12px;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:12px;line-height:1.65;}
-.shows-items{display:flex;flex-direction:column;gap:6px;}
-.shows-item{background:var(--bg);border-radius:10px;padding:10px 14px;font-size:13px;line-height:1.65;color:var(--body);}
-.shows-item::before{content:'→ ';color:var(--sage);font-weight:700;}
-.shows-misread{background:rgba(123,94,167,.08);border:1px solid rgba(123,94,167,.2);border-radius:10px;padding:12px 14px;margin-top:10px;}
-.shows-misread-label{font-family:'Anton',sans-serif;font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:4px;}
-.shows-misread p{font-size:12px;color:var(--body);line-height:1.65;font-style:italic;}
+/* RESULT */
+#result-wrap{display:none;}
+.result-header{background:var(--dark);padding:36px 20px 30px;text-align:center;position:relative;overflow:hidden;}
+.result-state-label{font-family:'Permanent Marker',cursive;font-size:13px;color:var(--sage);transform:rotate(-1deg);display:inline-block;margin-bottom:8px;}
+.result-title{font-family:'Anton',sans-serif;font-size:clamp(24px,6vw,38px);text-transform:uppercase;color:#fff;line-height:1.1;letter-spacing:0.3px;}
+.result-title span{color:var(--sage);}
+.result-intro{font-size:14px;font-weight:300;font-style:italic;color:rgba(255,255,255,.65);margin-top:10px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;}
 
+.result-body{background:transparent;padding:24px 20px 32px;max-width:640px;margin:0 auto;}
+
+.result-card{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.result-card-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+.result-card p{font-size:14px;line-height:1.75;color:var(--body);}
+
+.takeaway{background:#fff;border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.takeaway-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+.takeaway p{font-size:14px;font-style:italic;color:var(--body);line-height:1.75;}
+
+.misread-card{background:rgba(123,94,167,.07);border:1px solid rgba(123,94,167,.2);border-radius:16px;padding:18px 20px;margin-bottom:14px;}
+.misread-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:8px;}
+.misread-card p{font-size:13.5px;font-style:italic;color:var(--body);line-height:1.7;}
+
+.practice-card{background:var(--sage-light);border:2px solid var(--sage);border-radius:16px;padding:26px 22px;margin-bottom:14px;position:relative;overflow:hidden;}
+.practice-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--violet),var(--sage));}
+.practice-label{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;}
+.practice-name{font-family:'Anton',sans-serif;font-size:clamp(18px,4vw,22px);text-transform:uppercase;color:var(--dark);line-height:1.2;margin-bottom:12px;}
+.practice-desc{font-size:14px;font-style:italic;color:var(--body);line-height:1.85;}
+
+.path-b-card{background:var(--dark);border-radius:16px;padding:24px 22px;margin-bottom:14px;position:relative;overflow:hidden;}
+.path-b-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px;}
+.path-b-card p{font-size:14.5px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);line-height:1.75;}
+.path-b-card p strong{color:var(--sage);font-style:normal;font-weight:500;}
+
+.email-confirm-card{background:var(--sage);border-radius:16px;padding:26px 22px;margin-bottom:14px;position:relative;overflow:hidden;text-align:center;}
+.email-confirm-card .circ-w{position:absolute;border-radius:50%;pointer-events:none;}
+.email-confirm-script{font-family:'Permanent Marker',cursive;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:6px;}
+.email-confirm-card h3{font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:10px;position:relative;z-index:2;}
+.email-confirm-card p{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);line-height:1.65;position:relative;z-index:2;}
+
+.disclaimer{background:rgba(0,0,0,.04);border:1px solid rgba(0,0,0,.07);border-radius:12px;padding:16px;margin-bottom:14px;}
+.disclaimer-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.disclaimer p{font-size:11px;line-height:1.7;color:var(--muted);font-style:italic;}
+
+.retake{text-align:center;margin-top:4px;margin-bottom:8px;}
+.retake button{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:300;font-style:italic;color:var(--muted);background:none;border:none;cursor:pointer;text-decoration:underline;}
+.retake button:hover{color:var(--body);}
+
+/* FOOTER */
+.footer{background:var(--dark);border-top:1px solid rgba(255,255,255,.06);padding:20px;text-align:center;}
+.footer-name{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px;}
+.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:12px;flex-wrap:wrap;}
+.footer-links button{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.35);background:none;border:none;cursor:pointer;text-decoration:underline;}
+.footer-links button:hover{color:rgba(255,255,255,.6);}
+.footer-copy{font-size:10px;color:rgba(255,255,255,.2);}
+
+/* MODALS */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;overflow-y:auto;}
 .modal-overlay.open{display:block;}
 .modal{background:var(--dark);border:1px solid rgba(255,255,255,.1);border-radius:16px;max-width:560px;margin:40px auto;padding:28px 24px;}
 .modal-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;}
@@ -168,7 +146,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .modal-section-title{font-family:'Anton',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:6px;}
 .modal-section p{font-size:12px;line-height:1.75;color:rgba(255,255,255,.6);}
 .modal-section a{color:var(--sage);text-decoration:underline;}
-.modal-section a:hover{color:#fff;}
 .modal-updated{font-size:10px;color:rgba(255,255,255,.25);margin-top:20px;font-style:italic;}
 </style>
 </head>
@@ -193,7 +170,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   <div class="circ" style="width:80px;height:80px;border:2px solid #5B9A6E;opacity:.05;top:24px;left:10%;"></div>
   <div class="eyebrow">this is where it starts</div>
   <div class="h1">What is your body<br><span>actually trying to tell you?</span></div>
-  <p class="sub">You're keeping it together on the outside. But inside, something feels off and you can't quite name it. 10 questions to uncover your nervous system's default pattern — and what it's been trying to say.</p>
+  <p class="sub">You're keeping it together on the outside. But inside, something feels off and you can't quite name it. 10 questions to uncover what your body has been doing — and what it needs.</p>
 </div>
 
 <div class="grad-div"></div>
@@ -230,7 +207,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <div class="email-gate-card">
       <div class="email-gate-eyebrow">almost there</div>
       <div class="email-gate-title">Your body has been<br>trying to tell you <span>something.</span></div>
-      <p class="email-gate-sub">You've just answered 10 questions that most people never stop to ask. Enter your email to get your result — plus one somatic practice matched to your pattern, so you can start today.</p>
+      <p class="email-gate-sub">You've just answered 10 questions that most people never stop to ask. Enter your email to get your result — plus one somatic practice matched to what your body needs right now.</p>
       <div class="email-form">
         <input class="email-input" type="text" id="gate-name" placeholder="Your first name" autocomplete="given-name">
         <input class="email-input" type="email" id="gate-email" placeholder="Your email address" autocomplete="email">
@@ -242,12 +219,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
         <button class="btn btn-sage" id="reveal-btn" onclick="submitEmail()" style="margin-top:6px;">Show me my result →</button>
       </div>
     </div>
-    <div class="email-skip"><button onclick="skipEmail()">Skip and see my result without saving it</button></div>
   </div>
 </div>
 
 <!-- RESULT -->
-<div class="result-wrap" id="result-wrap">
+<div id="result-wrap">
   <div class="result-header">
     <div class="circ" style="width:220px;height:220px;border:3px solid #5B9A6E;opacity:.07;top:-65px;right:-65px;"></div>
     <div class="circ" style="width:130px;height:130px;border:2px solid #7B5EA7;opacity:.09;bottom:-40px;left:-40px;"></div>
@@ -256,61 +232,56 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <p class="result-intro" id="result-intro"></p>
   </div>
   <div class="grad-div"></div>
+
   <div class="result-body">
+
+    <!-- WHAT'S HAPPENING -->
     <div class="result-card">
       <div class="result-card-label">What's happening in your body</div>
       <p id="result-body-text"></p>
     </div>
+
+    <!-- RECOGNITION -->
     <div class="takeaway">
       <div class="takeaway-label">You might recognise this as...</div>
       <p id="result-recognise"></p>
     </div>
+
+    <!-- OFTEN MISREAD AS -->
+    <div class="misread-card">
+      <div class="misread-label">Often misread as</div>
+      <p id="result-misread"></p>
+    </div>
+
+    <!-- PRACTICE -->
     <div class="practice-card">
       <div class="practice-label">One thing to try today</div>
       <div class="practice-name" id="result-practice-name"></div>
       <p class="practice-desc" id="result-practice-desc"></p>
     </div>
-    <!-- REGULATED VS DYSREGULATED EXPLAINER -->
-    <div class="reg-section" id="reg-section">
-      <div class="reg-section-eyebrow">what does this actually mean?</div>
-      <h3>Regulated vs <span style="color:var(--sage)">Dysregulated</span></h3>
-      <div class="reg-cols" id="reg-cols"><!-- filled by JS --></div>
-      <p class="reg-note">Dysregulation isn't a flaw — it's your body's learned response to what it's been through. Regulation isn't about being calm all the time. It's about having access to your full range again.</p>
+
+    <!-- PATH B — WHAT COMES NEXT -->
+    <div class="path-b-card">
+      <div class="path-b-label">What this opens up</div>
+      <p id="result-path-b"></p>
     </div>
 
-    <!-- HOW YOUR STATE SHOWS UP -->
-    <div class="shows-section" id="shows-section">
-      <div class="shows-section-label">Know your nervous system</div>
-      <h3>How <span style="color:var(--sage)">your state</span> shows up</h3>
-      <div class="shows-tabs">
-        <button class="shows-tab active" onclick="showPanel('physical', this)">Physical</button>
-        <button class="shows-tab" onclick="showPanel('emotional', this)">Emotional</button>
-        <button class="shows-tab" onclick="showPanel('mental', this)">Mental</button>
-        <button class="shows-tab" onclick="showPanel('misread', this)">Often Misread As</button>
-      </div>
-      <div id="shows-physical" class="shows-panel active"></div>
-      <div id="shows-emotional" class="shows-panel"></div>
-      <div id="shows-mental" class="shows-panel"></div>
-      <div id="shows-misread" class="shows-panel"></div>
+    <!-- CTA — EMAIL CONFIRMED -->
+    <div class="email-confirm-card">
+      <div class="circ-w" style="width:200px;height:200px;border:4px solid rgba(255,255,255,.07);top:-60px;right:-60px;"></div>
+      <div class="circ-w" style="width:120px;height:120px;border:3px solid rgba(255,255,255,.06);bottom:-40px;left:-40px;"></div>
+      <div class="email-confirm-script">what's next</div>
+      <h3>Check your inbox.</h3>
+      <p>Your result is on its way — along with a deeper look at what this pattern means and what starts to shift when it changes. Watch for an email from Clara.</p>
     </div>
 
-    <div class="cta-block">
-      <div class="cta-circ" style="width:200px;height:200px;border:4px solid rgba(255,255,255,.07);top:-60px;right:-60px;"></div>
-      <div class="cta-circ" style="width:120px;height:120px;border:3px solid rgba(255,255,255,.06);bottom:-40px;left:-40px;"></div>
-      <div class="community-name">Reclaim Your Life</div>
-      <h3>This is where the reclaiming starts.</h3>
-      <p>Naming your pattern is Step 1. The next is learning to work with it — not against it. Inside the free Skool community: a full nervous system library with practices mapped to your state, weekly somatic tools, and a space where people are doing exactly the same work you just named.</p>
-      <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank">Join the free community →</a>
-    </div>
-    <div class="result-card" style="border-color:rgba(123,94,167,.3);background:rgba(123,94,167,.07);">
-      <div class="result-card-label" style="color:var(--violet);">What comes next</div>
-      <p>Regulation isn't the destination — it's the door. Once your baseline shifts, the inner critic becomes workable, self-trust starts to return, and it becomes possible to go after what you actually want. You're not here just to feel better. You're here to find out who you are once you do.</p>
-    </div>
+    <!-- DISCLAIMER -->
     <div class="disclaimer">
       <div class="disclaimer-label">Disclaimer</div>
       <p>I am a somatic practitioner, but this quiz is for educational purposes and is not a substitute for professional medical advice or therapy. Listen to your body and move at your own pace.</p>
     </div>
-    <div class="retake"><button onclick="retake()">← Take the quiz again</button></div>
+
+    <div class="retake"><button onclick="retake()">↩ Take the quiz again</button></div>
   </div>
 </div>
 
@@ -321,7 +292,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     <button onclick="openModal('privacy')">Privacy Policy</button>
     <button onclick="openModal('disclaimer')">Disclaimer</button>
   </div>
-  <div class="footer-copy">Your email is only collected if you choose to enter it. See our privacy policy for details.</div>
+  <div class="footer-copy">Your email is collected to send you your results. See our privacy policy for details.</div>
 </div>
 
 <!-- PRIVACY MODAL -->
@@ -329,7 +300,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   <div class="modal">
     <div class="modal-header">
       <div class="modal-title"><span>Privacy</span> Policy</div>
-      <button class="modal-close" onclick="closeModal('privacy')">✕ Close</button>
+      <button class="modal-close" onclick="closeModal('privacy')">× Close</button>
     </div>
     <div class="modal-section">
       <div class="modal-section-title">Who this covers</div>
@@ -337,19 +308,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
     </div>
     <div class="modal-section">
       <div class="modal-section-title">Data collection</div>
-      <p>If you choose to enter your name and email address at the end of the quiz, this information is collected and stored securely to send you your results and occasional emails with nervous system tools, somatic practices, and updates from Clara Louis. You can unsubscribe at any time using the link in any email.</p>
+      <p>To receive your results, you are asked to provide your name and email address at the end of the quiz. This information is collected and stored securely to send you your results and occasional emails with nervous system tools, somatic practices, and updates from Clara Louis. You can unsubscribe at any time using the link in any email.</p>
     </div>
     <div class="modal-section">
-      <div class="modal-section-title">If you skip the email step</div>
-      <p>You may view your results without entering your email. In this case, no personal data is collected or stored. All quiz activity happens entirely within your browser.</p>
-    </div>
-    <div class="modal-section">
-      <div class="modal-section-title">Cookies & tracking</div>
-      <p>This quiz does not use cookies or tracking pixels. Anonymous page view data is collected via Vercel Analytics to help understand how this page performs. No personal data is collected, no cookies are set, and your quiz responses are never shared with Vercel. For details, see <a href="https://vercel.com/legal/privacy-policy" target="_blank">Vercel's privacy policy</a>.</p>
-    </div>
-    <div class="modal-section">
-      <div class="modal-section-title">Third-party links</div>
-      <p>This quiz contains a link to an external Skool community page. Once you click through to Skool, their own privacy policy and terms apply. Clara Louis is not responsible for the data practices of third-party platforms.</p>
+      <div class="modal-section-title">Cookies &amp; tracking</div>
+      <p>This quiz does not use cookies or tracking pixels. Anonymous page view data may be collected via Vercel Analytics to help understand how this page performs. No personal data is collected, no cookies are set, and your quiz responses are never shared. For details, see <a href="https://vercel.com/legal/privacy-policy" target="_blank">Vercel's privacy policy</a>.</p>
     </div>
     <div class="modal-section">
       <div class="modal-section-title">Contact</div>
@@ -364,7 +327,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
   <div class="modal">
     <div class="modal-header">
       <div class="modal-title"><span>Disclaimer</span></div>
-      <button class="modal-close" onclick="closeModal('disclaimer')">✕ Close</button>
+      <button class="modal-close" onclick="closeModal('disclaimer')">× Close</button>
     </div>
     <div class="modal-section">
       <div class="modal-section-title">Educational purposes only</div>
@@ -462,36 +425,44 @@ const questions=[
 
 const results={
   fight:{
-    stateLabel:"your default survival state",
-    title:"Your nervous system's default is <span>fight mode</span>",
+    stateLabel:"this is what your body has been doing",
+    title:"Your body keeps returning to <span>fight mode</span>",
     intro:"You're running on activation. Your system learned that staying charged keeps you safe — and it's been working hard to protect you that way.",
     body:"When your nervous system defaults to the fight response, it keeps stress hormones like cortisol and adrenaline circulating — holding you alert, reactive, and always a little on edge. Your muscles tighten, your thoughts race, and slowing down feels genuinely unsafe to your system. Not just uncomfortable — actually dangerous. This isn't a character flaw. This is your body doing exactly what it was wired to do. And it's also where the inner critic tends to be loudest — because a system that's always braced for threat will turn that vigilance inward too.",
     recognise:"Struggling to switch off after work. Feeling irritable for no clear reason. Needing to stay productive to feel okay. A low hum of urgency that never fully goes away. Doing more and more, but never feeling like enough. A self-critical voice that picks apart everything you do.",
-    practice:"Try Tense & Release. Clench every muscle in your body for 5 seconds — fists, shoulders, jaw, legs — then let it all go at once. Repeat 3 times. This gives your nervous system the signal it's been waiting for: completion. The tension finally has somewhere to go. Regulation isn't the destination — it's the door. When the charge settles, you start to hear yourself again."
+    misread:"Often misread as: driven, high-achieving, or intense. But the charge isn't ambition — it's a system that learned stillness feels dangerous.",
+    practice:"Try Tense & Release. Clench every muscle in your body for 5 seconds — fists, shoulders, jaw, legs — then let it all go at once. Repeat 3 times. This gives your nervous system the signal it's been waiting for: completion. The tension finally has somewhere to go. Regulation isn't the destination — it's the door.",
+    pathB:"When the charge settles, something shifts. You start to hear yourself again — not the urgency, not the critic. What you actually want. That quiet is where the real choices live."
   },
   flight:{
-    stateLabel:"your default survival state",
-    title:"Your nervous system's default is <span>flight mode</span>",
+    stateLabel:"this is what your body has been doing",
+    title:"Your body keeps returning to <span>flight mode</span>",
     intro:"Your system is mobilised and moving — even when there's nowhere to go. It learned that staying in motion keeps danger at bay.",
     body:"The flight response is your sympathetic nervous system saying: move, escape, stay ahead. Even when you're sitting still, your mind is running. Shallow breathing, restlessness, a constant sense that something needs sorting — that's your system in survival mode. The busyness isn't ambition. It's your body trying to feel safe. When you're always in forward motion, it's almost impossible to trust your own instincts — because you're never still long enough to hear them.",
     recognise:"Racing thoughts that won't slow down. Difficulty relaxing even when you have the time. Anxiety that looks like forward motion — always planning, preparing, anticipating. Never feeling like you can stop without something falling apart. A quiet sense that you've lost touch with what you actually want.",
-    practice:"Try somatic shaking. Stand with your feet hip-width apart, bend your knees slightly, and let your body begin to shake — starting in your legs and letting it move up through your torso, arms, and hands. Do this for 2–3 minutes. Shaking is your nervous system's natural way of discharging the stress hormones that have been building up. You're not falling apart. You're completing what your body started. Regulation isn't the destination — it's the door."
+    misread:"Often misread as: ambitious, high-functioning, or impressive. But the movement isn't drive — it's a system that learned stillness feels dangerous.",
+    practice:"Try somatic shaking. Stand with your feet hip-width apart, bend your knees slightly, and let your body begin to shake — starting in your legs and letting it move up through your torso, arms, and hands. Do this for 2–3 minutes. Shaking is your nervous system's natural way of discharging the stress hormones that have been building up. You're not falling apart. You're completing what your body started. Regulation isn't the destination — it's the door.",
+    pathB:"When flight isn't the baseline, something shifts. You start to notice what you actually want to move toward — not just away from. That's when the real choices become visible."
   },
   freeze:{
-    stateLabel:"your default survival state",
-    title:"Your nervous system's default is <span>freeze mode</span>",
+    stateLabel:"this is what your body has been doing",
+    title:"Your body keeps returning to <span>freeze mode</span>",
     intro:"You're caught between wanting to act and not being able to. Your system is holding a charge it hasn't found a way to release.",
     body:"Freeze happens when your sympathetic system activates to help you respond — but your dorsal vagal system steps in and holds that energy back. The result is a body that feels stuck, braced, or disconnected, while internally there's still a lot going on. You might look calm on the outside while feeling tight, foggy, or locked inside. This gets misread as laziness or avoidance. It's neither. It's one of the most sophisticated survival responses we have. And when your body won't give you clear signals, self-doubt fills the gap — you stop trusting your own instincts because the connection to yourself has gone quiet.",
     recognise:"Procrastinating on things you actually want to do. Going blank in conversations or shutting down during conflict. Feeling internally activated but unable to take action. Doing everything right on the outside while feeling completely absent on the inside. An inner critic that calls it weakness or laziness.",
-    practice:"Try the butterfly tap. Cross your arms over your chest and alternate tapping your shoulders — left, right, left, right — slowly and rhythmically for a minute. This bilateral stimulation gently wakes up your nervous system and helps the two hemispheres of your brain reconnect. A soft on-ramp back to your body — and back to yourself. Regulation isn't the destination. It's the door."
+    misread:"Often misread as: not trying hard enough, confused, or a pushover. But this isn't a character flaw — it's one of the most sophisticated survival responses we have.",
+    practice:"Try the butterfly tap. Cross your arms over your chest and alternate tapping your shoulders — left, right, left, right — slowly and rhythmically for a minute. This bilateral stimulation gently wakes up your nervous system and helps the two hemispheres of your brain reconnect. A soft on-ramp back to your body — and back to yourself. Regulation isn't the destination — it's the door.",
+    pathB:"When freeze starts to thaw, something comes back online. Not all at once — gradually. You start to notice what you actually want. What you actually think. The voice that got quiet in there. That's who's been waiting."
   },
   dorsal:{
-    stateLabel:"your default survival state",
-    title:"Your nervous system's default is <span>shutdown mode</span>",
+    stateLabel:"this is what your body has been doing",
+    title:"Your body keeps returning to <span>shutdown mode</span>",
     intro:"Your system has gone into conservation mode. When the world felt like too much, your body made the only logical choice: pull back and preserve energy.",
     body:"Dorsal vagal shutdown is the oldest survival response we have. When fight or flight isn't possible, the nervous system defaults to collapse — slowing everything down to protect you. It shows up as numbness, fatigue that doesn't resolve with rest, brain fog, and a quiet disconnection from yourself and life. This gets misread as depression or not caring. But it's your nervous system doing exactly what it evolved to do when things felt overwhelmingly unsafe. The hardest part of shutdown is that it quietly erodes self-trust — when you can't feel yourself, you stop believing in yourself.",
     recognise:"Feeling like you're going through the motions. Exhausted but unable to explain why. Struggling to feel joy or motivation even for things you used to love. A low sense that something is off, but you can't quite name what. Feeling disconnected from who you used to be.",
-    practice:"Start with support. Find a comfortable position — seated, lying down, child's pose — and bring your knees gently toward your chest. Place your hands over your heart or wrap your arms around yourself. Stay here for 3–5 minutes. Your nervous system needs to feel held before it can come back online. Let it rest first. Coming back to yourself starts here. Regulation isn't the destination — it's the door."
+    misread:"Often misread as: lazy, unmotivated, avoidant, or aloof. But this is your nervous system's oldest, most protective response — conservation in the face of overwhelm.",
+    practice:"Start with support. Find a comfortable position — seated, lying down, child's pose — and bring your knees gently toward your chest. Place your hands over your heart or wrap your arms around yourself. Stay here for 3–5 minutes. Your nervous system needs to feel held before it can come back online. Let it rest first. Coming back to yourself starts here. Regulation isn't the destination — it's the door.",
+    pathB:"Coming back online is slow. But when it happens — even in small moments — something becomes available that shutdown had been protecting you from: yourself. What you feel. What you want. What life could actually be like from here."
   },
   ventral:{
     stateLabel:"your nervous system · present & flexible",
@@ -499,21 +470,23 @@ const results={
     intro:"You're not in crisis. Your system is doing what it's supposed to do — and that's worth knowing.",
     body:"Your nervous system is showing signs of flexibility — the ability to move through states rather than getting stuck in one. This doesn't mean you never feel stressed, reactive, or flat. It means your system has enough capacity to come back. That recovery — however small, however imperfect — is regulation. It's what this work is actually building toward.",
     recognise:"Feeling stressed sometimes, but not consumed by it. Noticing tension without it taking over. Being able to rest when you rest, and move when you need to move. A general sense of being in your life rather than just managing it.",
-    practice:"Notice what's already working. This sounds simple — it isn't. Most people in survival states can't access this at all. If you can feel when something is good, when your body settles, when you exhale without thinking — that's your nervous system doing its job. Pay attention to those moments. They're not accidents. They're your baseline, and they're worth protecting."
+    misread:"Sometimes misread as: not needing help, having it together, being the strong one. Capacity is real — and it still deserves tending.",
+    practice:"Notice what's already working. This sounds simple — it isn't. Most people in survival states can't access this at all. If you can feel when something is good, when your body settles, when you exhale without thinking — that's your nervous system doing its job. Pay attention to those moments. They're not accidents. They're your baseline, and they're worth protecting.",
+    pathB:"Capacity isn't the end of the work — it's the beginning of something else. From here, you can start to ask the questions that survival doesn't have time for. What do I actually want? What would life feel like if it were fully mine?"
   }
 };
 
-let current=0,selected=null;
+let current=0, selected=null;
 const scores={fight:0,flight:0,freeze:0,dorsal:0};
 
 function render(){
-  const q=questions[current],n=current+1;
+  const q=questions[current], n=current+1;
   document.getElementById('q-label').textContent=`Question ${String(n).padStart(2,'0')}`;
   document.getElementById('q-text').textContent=q.text;
   document.getElementById('prog-num').textContent=`${n} / ${questions.length}`;
   document.getElementById('prog-fill').style.width=`${(n/questions.length)*100}%`;
   const wrap=document.getElementById('options-wrap');
-  wrap.innerHTML='';selected=null;
+  wrap.innerHTML=''; selected=null;
   document.getElementById('next-btn').disabled=true;
   q.options.forEach((opt,i)=>{
     if(opt.ventral){
@@ -555,7 +528,6 @@ function submitEmail(){
   const consent=document.getElementById('gate-consent').checked;
   const errEl=document.getElementById('email-error');
   const emailRegex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
   if(!emailRegex.test(email)){
     errEl.textContent='Please enter a valid email address.';
     errEl.style.display='block';
@@ -563,142 +535,50 @@ function submitEmail(){
     return;
   }
   errEl.style.display='none';
-
-  const WORKER_URL = 'https://mailerlite-proxy.clara-a-ldp.workers.dev';
-
-  const winner = Object.keys(scores).reduce((a,b) => scores[a] > scores[b] ? a : b);
-
-  // Show result immediately — don't make user wait for network
+  const WORKER_URL='https://mailerlite-proxy.clara-a-ldp.workers.dev';
+  const winner=Object.keys(scores).reduce((a,b)=>scores[a]>scores[b]?a:b);
   showResult();
-
-  // Send to Worker in background — fire and forget
-  fetch(WORKER_URL, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ email, name, consent, quiz_result: winner })
-  }).catch(err => console.error('Subscription error:', err));
-}
-
-function skipEmail(){
-  document.getElementById('email-gate-wrap').style.display='none';
-  showResult();
-}
-
-/* ── STATE DETAIL DATA ─────────────────────────────── */
-const stateDetails = {
-  fight:{
-    regulated:["Assertive without aggression","Clear boundaries with warmth","Energy that motivates and focuses","Able to rest after effort","Emotions that move through and resolve","Present and responsive in conflict"],
-    dysregulated:["Constant urgency, can't switch off","Irritability or anger that surfaces quickly","Chest tightness, jaw tension, clenched fists","Feeling wired but exhausted","Inner critic running loudly","Restlessness disguised as productivity"],
-    physical:["Chest visibly rising and falling rapidly","Tight shoulders, jaw, and fists","Fidgeting, bouncing, or pacing","Flushing or sweating","Dry mouth","Shallow or irregular breathing"],
-    emotional:["Anxious or on edge","Irritable or easily angered","Rushed and restless","Hypervigilant — scanning for problems","Excessive urgency or impatience","Emotionally reactive, difficulty pausing"],
-    mental:["Racing thoughts that won't slow","Difficulty focusing on one thing","Catastrophic thinking or worst-case planning","Narrowed attention, tunnel vision","Urgent internal language: 'I have to', 'I can't stop'","Reduced access to self-reflection"],
-    misread:"Often misread as: dramatic, too much, aggressive, or anxious. But this isn't personality — it's a nervous system that learned stillness was dangerous."
-  },
-  flight:{
-    regulated:["Healthy forward momentum","Able to take purposeful action and then stop","Clarity about what actually matters","Capacity to receive as well as give","Present in your body, not just your head","Able to feel without needing to fix"],
-    dysregulated:["Always planning or preparing for something","Difficulty relaxing even when there's time","Anxiety that looks like ambition","Shallow breathing, restlessness in the body","Feeling like you can't stop without something falling apart","Disconnection from what you actually want"],
-    physical:["Chest visibly rising and falling","Tight shoulders, jaw, fists","Fidgeting, bouncing, pacing","Sweating or flushed skin","Dry mouth","Rapid, shallow or irregular breathing"],
-    emotional:["Anxious, on edge","Afraid or panicked","Rushed, restless","Hypervigilant","Impatient, excessive urgency","Emotionally reactive"],
-    mental:["Racing thoughts","Difficulty slowing down mentally","Narrowed attention, tunnel vision","Catastrophic thinking","Urgent internal language: 'I need to fix this'","Reduced capacity for self-reflection"],
-    misread:"Often misread as: ambitious, high-functioning, or impressive. But the movement isn't drive — it's a system that learned stillness feels dangerous."
-  },
-  freeze:{
-    regulated:["Able to pause and still take action","Comfortable sitting with uncertainty","Capacity to move through stuck feelings","Connected to body signals and needs","Able to speak up even when it feels uncomfortable","Present in relationships without disappearing"],
-    dysregulated:["Procrastinating on things you actually want to do","Going blank in conversations or shutting down","Looking calm while feeling internally activated","Doing everything right on the outside, absent on the inside","Held breath or shallow breathing","An inner critic that calls it laziness or weakness"],
-    physical:["Stillness with tension underneath","Cold hands and feet","Tremors or micro-shaking","Increased heart rate but immobilised body","Tight jaw, neck, and/or shoulders","Dizzy or lightheaded sensation"],
-    emotional:["Fear without motion","Helplessness or powerlessness","Emotional numbness or flatness","Shame","Quickly overwhelmed","Hypervigilance leading to withdrawal"],
-    mental:["Foggy or blank mind","Fragmented thoughts","Difficulty making decisions or taking action","Hyper-focus on the problem without moving forward","Disconnection from surroundings","Self-critical internal voice"],
-    misread:"Often misread as: not trying hard enough, confused, or a pushover. But this isn't a character flaw — it's one of the most sophisticated survival responses we have."
-  },
-  dorsal:{
-    regulated:["Capacity for genuine rest and stillness","Able to receive care and support","Feeling settled rather than flat","Connected to body sensations","Presence without overwhelm","Able to be with others without disappearing"],
-    dysregulated:["Exhaustion that doesn't resolve with rest","Numbness or emotional flatness","Brain fog, difficulty finding words","Going through the motions without really being there","Feeling invisible or like disappearing would be easier","Disconnection from who you used to be"],
-    physical:["Slumped or collapsed posture","Very still or immobile body — low muscle tone","Shallow or barely perceptible breathing","Pale, cool, or clammy skin","Low energy, minimal movement","Blank or vacant facial expression"],
-    emotional:["Numbness or emotional flatness","Hopelessness or resignation","Overwhelm that leads to shutdown","Sense of isolation or disconnection","Inability to access emotion","Desire to withdraw or curl in"],
-    mental:["Foggy or slowed thinking","Difficulty finding words","Disorientation or 'checked out' quality","Dissociation or spacing out","Loss of time awareness","Sense of 'nothing matters' or 'I can't'"],
-    misread:"Often misread as: lazy, unmotivated, avoidant, or aloof. But this is your nervous system's oldest, most protective response — conservation in the face of overwhelm."
-  },
-  ventral:{
-    regulated:["Moving through states without getting stuck","Recovering after stress without it lingering","Feeling tired when tired, settled when settled","Able to be present in your body and in relationships","Accessing rest, play, and connection without guilt","A sense of being in your life, not just managing it"],
-    dysregulated:["Even regulated systems get activated — that's normal","Stress still shows up; it just doesn't take over","Some questions may have felt relatable on harder days","Capacity isn't the absence of struggle — it's the ability to come back"],
-    physical:["Body sensations that are readable and proportionate","Breath that moves freely and naturally","Tension that arises and releases","Energy that matches what the moment needs","Physical ease that doesn't require effort to maintain"],
-    emotional:["Emotions that feel proportionate to what's happening","Feelings that move through rather than getting stuck","Access to the full range — not just the safe ones","Curiosity rather than hypervigilance","Warmth and connection that feel natural"],
-    mental:["Thoughts that move rather than loop","Ability to hold complexity without overwhelm","Access to self-reflection and perspective","Decisions that feel possible rather than paralysing","A quiet internal knowing of what you need"],
-    misread:"Sometimes misread as: not needing help, having it together, being the strong one. Capacity is real — and it still deserves tending."
-  }
-};
-
-function showPanel(type, btn){
-  document.querySelectorAll('.shows-tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.shows-panel').forEach(p=>p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('shows-'+type).classList.add('active');
-}
-
-function buildShowsSection(state){
-  const d = stateDetails[state];
-  ['physical','emotional','mental'].forEach(type=>{
-    const el = document.getElementById('shows-'+type);
-    const intros = {
-      physical:'What you might notice in your body — what others can sometimes see, and what you can feel from the inside.',
-      emotional:'The felt sense — the emotional texture of being in this state.',
-      mental:'How your thinking shifts when your system is in survival mode.'
-    };
-    el.innerHTML = `<p class="shows-panel-intro">${intros[type]}</p><div class="shows-items">${d[type].map(s=>`<div class="shows-item">${s}</div>`).join('')}</div>`;
-  });
-  document.getElementById('shows-misread').innerHTML = `<div class="shows-misread"><div class="shows-misread-label">Often misread as</div><p>${d.misread}</p></div>`;
-}
-
-function buildRegSection(state){
-  const d = stateDetails[state];
-  document.getElementById('reg-cols').innerHTML = `
-    <div class="reg-col regulated">
-      <div class="reg-col-label">Regulated looks like</div>
-      <ul>${d.regulated.map(s=>`<li>${s}</li>`).join('')}</ul>
-    </div>
-    <div class="reg-col dysregulated">
-      <div class="reg-col-label">Dysregulated looks like</div>
-      <ul>${d.dysregulated.map(s=>`<li>${s}</li>`).join('')}</ul>
-    </div>`;
+  fetch(WORKER_URL,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({email,name,consent,quiz_result:winner})
+  }).catch(err=>console.error('Subscription error:',err));
 }
 
 function showResult(){
   const totalScore=Object.values(scores).reduce((a,b)=>a+b,0);
   const winner=totalScore<=8
-    ? 'ventral'
-    : Object.keys(scores).reduce((a,b)=>scores[a]>scores[b]?a:b);
+    ?'ventral'
+    :Object.keys(scores).reduce((a,b)=>scores[a]>scores[b]?a:b);
   const r=results[winner];
+
   document.getElementById('quiz-wrap').style.display='none';
   document.getElementById('email-gate-wrap').style.display='none';
   document.getElementById('result-wrap').style.display='block';
+
   document.getElementById('result-state-label').textContent=r.stateLabel;
   document.getElementById('result-title').innerHTML=r.title;
   document.getElementById('result-intro').textContent=r.intro;
   document.getElementById('result-body-text').textContent=r.body;
   document.getElementById('result-recognise').textContent=r.recognise;
-  const practiceFirstDot=r.practice.indexOf('.');
-  document.getElementById('result-practice-name').textContent=r.practice.slice(0,practiceFirstDot);
-  document.getElementById('result-practice-desc').textContent=r.practice.slice(practiceFirstDot+2);
+  document.getElementById('result-misread').textContent=r.misread;
+  document.getElementById('result-path-b').innerHTML=r.pathB;
 
-  buildRegSection(winner);
-  buildShowsSection(winner);
-  // hide "how your state shows up" for ventral result
-  document.getElementById('shows-section').style.display = winner === 'ventral' ? 'none' : '';
-  // reset tabs to first
-  document.querySelectorAll('.shows-tab').forEach((t,i)=>t.classList.toggle('active',i===0));
-  document.querySelectorAll('.shows-panel').forEach((p,i)=>p.classList.toggle('active',i===0));
+  // Practice — split on first period for name/desc
+  const firstDot=r.practice.indexOf('.');
+  document.getElementById('result-practice-name').textContent=r.practice.slice(0,firstDot);
+  document.getElementById('result-practice-desc').textContent=r.practice.slice(firstDot+2);
 
   window.scrollTo(0,0);
 }
 
 function retake(){
-  current=0;selected=null;
+  current=0; selected=null;
   Object.keys(scores).forEach(k=>scores[k]=0);
   document.getElementById('result-wrap').style.display='none';
   document.getElementById('email-gate-wrap').style.display='none';
   document.getElementById('quiz-wrap').style.display='block';
-  document.getElementById('shows-section').style.display='';
-  render();window.scrollTo(0,0);
+  render(); window.scrollTo(0,0);
 }
 
 function openModal(type){
