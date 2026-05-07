@@ -17,6 +17,9 @@
   <meta property="og:description" content="There's who you've been surviving as. And who you actually are." />
   <meta property="og:image" content="https://somaticwithclara.com/og-image.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Somatic with Clara — There's who you've been surviving as. And who you actually are." />
+  <meta name="twitter:description" content="For women who are functioning on the outside and quietly disconnected inside. The quiz names the pattern. The work begins there." />
+  <meta name="twitter:image" content="https://somaticwithclara.com/og-image.jpg" />
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"Person","name":"Clara Louis","jobTitle":"Somatic Coach & Human Design Guide","url":"https://somaticwithclara.com","email":"hello@somaticwithclara.com","sameAs":["https://www.instagram.com/clara.holds.space/","https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg"]}
   </script>
@@ -94,9 +97,8 @@
     .nav-link {
       font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700;
       letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
-      color: var(--text); transition: color 0.2s ease;
+      color: rgba(255,255,255,.65); transition: color 0.2s ease;
     }
-    #nav.scrolled .nav-link { color: rgba(255,255,255,.65); }
     .nav-link:hover { color: var(--sage); }
     #nav.scrolled .nav-link:hover { color: #fff; }
 
@@ -142,6 +144,7 @@
     @media (max-width: 680px) {
       .narrow, .wide { padding: 0 16px; }
       .hero-dark { padding: 100px 16px 60px; }
+      .testimonials-grid { grid-template-columns: 1fr !important; }
     }
 
     /* ── Process arc cards ── */
@@ -177,6 +180,7 @@
     #mobile-nav.open { display: block; }
     #mobile-nav .nav-link { font-size: 15px; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.7); display: block; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
     @media (max-width:680px) { .desktop-nav { display:none !important; } #ham { display:flex !important; } }
+    @media (prefers-reduced-motion: reduce) { .testimonial-track { animation: none; } }
   </style>
 </head>
 <body>
@@ -191,7 +195,7 @@
       <a href="offers.html" class="nav-link">Work with Me</a>
       <a href="nervous_system_state_quiz_v2.html" class="btn-sage" style="padding:10px 24px;font-size:11px;">Take the Quiz</a>
     </div>
-    <button id="ham" aria-label="Open menu" style="background:none;border:none;cursor:pointer;padding:8px;display:none;flex-direction:column;gap:5px;">
+    <button id="ham" type="button" aria-label="Open menu" style="background:none;border:none;cursor:pointer;padding:8px;display:none;flex-direction:column;gap:5px;">
       <span style="display:block;width:22px;height:2px;background:rgba(255,255,255,.7);"></span>
       <span style="display:block;width:22px;height:2px;background:rgba(255,255,255,.7);"></span>
       <span style="display:block;width:22px;height:2px;background:rgba(255,255,255,.7);"></span>
@@ -334,7 +338,6 @@
     </div>
   </div>
 </section>
-<style>@media(max-width:680px){.testimonials-grid{grid-template-columns:1fr!important}}</style>
 <hr class="divider" />
 
 <!-- CTA -->
@@ -361,8 +364,8 @@
       <a href="about.html" class="footer-link">About</a>
       <a href="offers.html" class="footer-link">Work with Me</a>
       <a href="nervous_system_state_quiz_v2.html" class="footer-link">Quiz</a>
-      <a href="https://www.instagram.com/clara.holds.space/" class="footer-link" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg" class="footer-link" target="_blank">YouTube</a>
+      <a href="https://www.instagram.com/clara.holds.space/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
     <p class="footer-copy">© 2026 Clara Louis — somaticwithclara.com</p>
   </div>
