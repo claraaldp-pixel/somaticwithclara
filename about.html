@@ -37,7 +37,8 @@
     .nav-inner { max-width: 960px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
     .nav-link { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,.65); transition: color 0.2s ease; }
     #nav.scrolled .nav-link { color: rgba(255,255,255,.65); }
-    .nav-link:hover { color: #fff; }
+    .nav-link:hover { color: var(--sage); }
+    #nav.scrolled .nav-link:hover { color: #fff; }
     .nav-link.active { color: var(--sage); }
 
     .hero-dark { background: var(--dark); position: relative; overflow: hidden; padding: 120px 24px 80px; text-align: center; }
@@ -127,7 +128,7 @@
   <div class="narrow">
     <span class="section-label reveal">The story</span>
     <h2 class="section-title reveal d1">How I got here.</h2>
-    <div style="display:flex;align-items:flex-start;gap:28px;margin-bottom:32px;" class="reveal d2">
+    <div style="display:flex;align-items:flex-start;gap:28px;margin-bottom:32px;flex-wrap:wrap;" class="reveal d2">
       <img src="profile-pic.png" alt="Clara Louis" style="width:100px;height:100px;border-radius:50%;object-fit:cover;object-position:center top;border:3px solid var(--sage);flex-shrink:0;" />
       <p style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);line-height:1.6;padding-top:8px;">Clara Louis<br/><span style="font-weight:400;color:var(--muted);font-size:13px;">Somatic Coach & Human Design Guide — London</span></p>
     </div>
@@ -164,13 +165,13 @@
   <div class="narrow">
     <span class="section-label reveal">Training & credentials</span>
     <h2 class="section-title reveal d1">The work behind<br/><em>the work.</em></h2>
-    <ul class="cred-list reveal d2">
-      <li class="cred-item"><span class="cred-dot"></span><span class="cred-name">The Core Rising® Method</span></li>
-      <li class="cred-item"><span class="cred-dot"></span><span class="cred-name">Somatic Coaching — Academia Coaching Somático</span></li>
-      <li class="cred-item"><span class="cred-dot"></span><span class="cred-name">Somatic Yoga (300hr)</span></li>
-      <li class="cred-item"><span class="cred-dot"></span><span class="cred-name">Angelic Reiki Practitioner</span></li>
-      <li class="cred-item"><span class="cred-dot"></span><span class="cred-name">PSYCH-K® Basic & Advanced</span></li>
-      <li class="cred-item"><span class="cred-dot"></span><span class="cred-name">Human Design & Gene Keys</span></li>
+    <ul class="cred-list">
+      <li class="cred-item reveal"><span class="cred-dot"></span><span class="cred-name">The Core Rising® Method</span></li>
+      <li class="cred-item reveal d1"><span class="cred-dot"></span><span class="cred-name">Somatic Coaching — Academia Coaching Somático</span></li>
+      <li class="cred-item reveal d2"><span class="cred-dot"></span><span class="cred-name">Somatic Yoga (300hr)</span></li>
+      <li class="cred-item reveal d3"><span class="cred-dot"></span><span class="cred-name">Angelic Reiki Practitioner</span></li>
+      <li class="cred-item reveal d4"><span class="cred-dot"></span><span class="cred-name">PSYCH-K® Basic & Advanced</span></li>
+      <li class="cred-item reveal" style="transition-delay:0.5s;"><span class="cred-dot"></span><span class="cred-name">Human Design & Gene Keys</span></li>
     </ul>
   </div>
 </section>
@@ -182,7 +183,7 @@
   <div class="circ" style="width:160px;height:160px;border:4px solid rgba(255,255,255,.06);bottom:-50px;left:-50px;"></div>
   <div style="max-width:560px;margin:0 auto;position:relative;z-index:1;">
     <h2 class="reveal" style="font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(26px,4.5vw,42px);text-transform:uppercase;color:#fff;line-height:1.1;margin-bottom:16px;">The quiz is where it starts.</h2>
-    <p class="reveal d1" style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;font-style:italic;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:32px;">Five minutes. Your pattern is named instantly.</p>
+    <p class="reveal d1" style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;font-style:italic;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:32px;">Three minutes. Your pattern is named instantly.</p>
     <a href="nervous_system_state_quiz_v2.html" class="btn-dark reveal d2">Take the Quiz</a>
   </div>
 </section>
