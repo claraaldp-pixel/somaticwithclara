@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80" role="img">
+  <title>Somatic with Clara</title>
+  <desc>Logo for Somatic with Clara — spiral mark in sage green with Anton wordmark</desc>
+
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Anton&amp;family=DM+Sans:wght@700&amp;family=Permanent+Marker&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Spiral mark -->
+  <g transform="translate(4, 4)">
+    <path
+      d="M36 36 C36 29, 43 21, 51 26 C59 31, 59 45, 51 53 C41 63, 21 61, 13 46 C5 29, 14 7, 33 3 C55 -1, 71 16, 68 36 C65 55, 50 67, 36 67"
+      stroke="#5B9A6E"
+      stroke-width="3"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <circle cx="36" cy="36" r="4.5" fill="#5B9A6E"/>
+    <circle cx="36" cy="67" r="2.5" fill="#5B9A6E"/>
+  </g>
+
+  <!-- Wordmark group -->
+  <g transform="translate(92, 8)">
+
+    <!-- SOMATIC in Anton -->
+    <text
+      x="0"
+      y="38"
+      font-family="'Anton', sans-serif"
+      font-size="36"
+      font-weight="400"
+      fill="#1A2035"
+      letter-spacing="-0.5"
+    >SOMATIC</text>
+
+    <!-- "with" in Permanent Marker + CLARA on same baseline -->
+    <text
+      x="4"
+      y="58"
+      font-family="'Permanent Marker', cursive"
+      font-size="12"
+      fill="#5B9A6E"
+      transform="rotate(-1.5, 4, 58)"
+    >with</text>
+
+    <text
+      x="38"
+      y="58"
+      font-family="'DM Sans', sans-serif"
+      font-size="9"
+      font-weight="700"
+      fill="#5B9A6E"
+      letter-spacing="3"
+    >CLARA</text>
+
+  </g>
+
+</svg>
