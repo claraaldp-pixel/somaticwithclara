@@ -130,7 +130,7 @@ Same as homepage.
 
 ### Hero (navy)
 - Permanent Marker script: *"about clara"* (rotate -1deg, violet)
-- Anton headline: *"YOU DON'T NEED SOMETHING TO BE WRONG ENOUGH."*
+- Anton headline: *"THERE'S WHO YOU'VE BEEN SURVIVING AS. AND THERE'S YOU."*
 
 ### Legitimacy Gap Section (off-white)
 - DM Sans body: functioning fine on the outside, quietly not yourself. The feeling that nothing is wrong enough to warrant support — and why that feeling is the barrier, not the truth.

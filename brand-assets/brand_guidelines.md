@@ -1,6 +1,6 @@
 # To be Human — Brand Guidelines
 
-Primary color: #E9EFD8
+Primary color: ##e2e9d3
 Secondary color: #BBA3CF
 Accent color: #C8D9A8
 Text color: #2A2A2A
