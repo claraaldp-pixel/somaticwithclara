@@ -1,3 +1,6 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/nervous_system_state_quiz_v2", "destination": "/quiz", "permanent": true }
+  ]
 }

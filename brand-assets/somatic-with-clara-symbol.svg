@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img">
+  <title>Somatic with Clara — Symbol</title>
+  <desc>Spiral mark for Somatic with Clara</desc>
+
+  <g transform="translate(4, 4)">
+    <path
+      d="M36 36 C36 29, 43 21, 51 26 C59 31, 59 45, 51 53 C41 63, 21 61, 13 46 C5 29, 14 7, 33 3 C55 -1, 71 16, 68 36 C65 55, 50 67, 36 67"
+      stroke="#D4904A"
+      stroke-width="3.5"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <circle cx="36" cy="36" r="5" fill="#D4904A"/>
+    <circle cx="36" cy="67" r="3" fill="#D4904A"/>
+  </g>
+
+</svg>

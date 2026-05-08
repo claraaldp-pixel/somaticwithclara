@@ -27,17 +27,19 @@
   <script defer src="/_vercel/insights/script.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
   <style>
     /* ── Brand: Sage & Midnight Ink ─────────────────── */
     :root {
       --bg: #EBF0E2;
       --white: #FFFFFF;
-      --sage-light: #D4E8D8;
-      --sage: #5B9A6E;
-      --sage-dark: #3D7A55;
-      --violet: #7B5EA7;
-      --violet-dark: #5A4080;
+      --sage-light: #D8EDD0;
+      --sage: #7AAB6A;
+      --sage-dark: #5A8A4A;
+      --violet: #A87BAA;
+      --violet-dark: #7A5A80;
+      --amber: #D4904A;
+      --cream: #F5F0E8;
       --dark: #1A2035;
       --text: #2A2A2A;
       --body: #3A3A3A;
@@ -50,7 +52,7 @@
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
     /* Divider */
-    .divider { height: 4px; background: var(--sage); border: none; }
+    .divider { height: 4px; background: var(--amber); border: none; }
 
     /* Section containers */
     .narrow { max-width: 680px; margin: 0 auto; padding: 0 24px; }
@@ -58,12 +60,12 @@
 
     /* Typography */
     .section-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 12px; }
-    .section-title { font-family: 'Anton', sans-serif; font-weight: 400; font-size: clamp(28px,4vw,42px); color: var(--text); line-height: 1.1; text-transform: uppercase; margin-bottom: 40px; }
-    .section-title em { color: var(--sage); font-style: normal; }
+    .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; font-size: clamp(28px,4vw,42px); color: var(--text); line-height: 1.15; margin-bottom: 40px; }
+    .section-title em { color: var(--sage-dark); font-style: italic; }
 
     /* Buttons */
     .btn-sage {
-      display: inline-block; font-family: 'Anton', sans-serif; font-size: 13px;
+      display: inline-block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 600;
       letter-spacing: 1.5px; text-transform: uppercase; color: #fff;
       background: var(--sage); padding: 16px 40px; border-radius: 50px; border: none;
       text-decoration: none; cursor: pointer;
@@ -73,7 +75,7 @@
     .btn-sage:hover { background: var(--sage-dark); transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 36px rgba(91,154,110,.4); }
 
     .btn-dark {
-      display: inline-block; font-family: 'Anton', sans-serif; font-size: 13px;
+      display: inline-block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 600;
       letter-spacing: 1.5px; text-transform: uppercase; color: #fff;
       background: var(--dark); padding: 16px 40px; border-radius: 50px; border: none;
       text-decoration: none; cursor: pointer;
@@ -107,20 +109,42 @@
       background: var(--dark); position: relative; overflow: hidden;
       padding: 120px 24px 80px; text-align: center;
     }
+    .hero-video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background:
+        linear-gradient(160deg, rgba(26,32,53,0.78) 0%, rgba(40,25,8,0.72) 100%),
+        radial-gradient(ellipse 80% 60% at 5% 95%, rgba(212,144,74,0.35) 0%, transparent 60%);
+    }
+    @media (max-width: 768px) {
+      .hero-video { display: none; }
+      .hero-dark {
+        background-image:
+          linear-gradient(160deg, rgba(26,32,53,0.78) 0%, rgba(40,25,8,0.72) 100%),
+          radial-gradient(ellipse 80% 60% at 5% 95%, rgba(212,144,74,0.35) 0%, transparent 60%),
+          url('brand-assets/hero-poster.jpg');
+        background-size: cover;
+        background-position: center;
+        background-color: var(--dark);
+      }
+    }
     .hero-script {
       font-family: 'Permanent Marker', cursive; font-size: clamp(18px,3vw,26px);
-      color: var(--violet); display: inline-block;
+      color: var(--amber); display: inline-block;
       transform: rotate(-1.5deg); margin-bottom: 12px;
     }
     .hero-h1 {
-      font-family: 'Anton', sans-serif; font-weight: 400;
-      font-size: clamp(28px,5.5vw,52px); line-height: 1.05;
-      text-transform: uppercase; letter-spacing: -0.3px; color: #fff; margin-bottom: 20px;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 300;
+      font-size: clamp(28px,5.5vw,52px); line-height: 1.1;
+      letter-spacing: -0.5px; color: var(--cream); margin-bottom: 20px;
     }
-    .hero-h1 em { color: var(--sage); font-style: normal; }
+    .hero-h1 em { color: var(--sage); font-style: italic; }
     .hero-sub {
       font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 300;
-      font-style: italic; color: rgba(255,255,255,.55); line-height: 1.8;
+      font-style: italic; color: rgba(245,240,232,.65); line-height: 1.8;
       max-width: 520px; margin: 0 auto 36px;
     }
 
@@ -156,10 +180,10 @@
     .process-card:hover { transform: translateY(-4px); border-color: var(--sage); box-shadow: 0 8px 24px rgba(91,154,110,.12); }
     .process-num {
       width: 40px; height: 40px; border-radius: 50%; background: var(--sage); color: #fff;
-      font-family: 'Anton', sans-serif; font-size: 14px; display: flex; align-items: center;
+      font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; font-weight: 600; display: flex; align-items: center;
       justify-content: center; margin-bottom: 16px;
     }
-    .process-card h3 { font-family: 'Anton', sans-serif; font-size: 17px; text-transform: uppercase; color: var(--text); margin-bottom: 8px; line-height: 1.2; }
+    .process-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; font-size: 16px; color: var(--text); margin-bottom: 8px; line-height: 1.3; }
     .process-card p { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--body); line-height: 1.75; }
 
     /* ── Testimonials (vertical scroll) ── */
@@ -168,7 +192,7 @@
     @keyframes scrollUp { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
     .quote-card { background: #fff; border-radius: 16px; border: 2px solid var(--line); padding: 24px; }
     .quote-card.sage { background: var(--sage); border-color: var(--sage); }
-    .quote-mark { font-family: 'Anton', sans-serif; font-size: 36px; line-height: 0.6; color: var(--sage-light); display: block; margin-bottom: 12px; }
+    .quote-mark { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 300; font-size: 52px; line-height: 0.6; color: var(--sage-light); display: block; margin-bottom: 12px; }
     .quote-card.sage .quote-mark { color: rgba(255,255,255,.3); }
     .quote-text { font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.75; color: var(--text); margin-bottom: 12px; }
     .quote-card.sage .quote-text { color: rgba(255,255,255,.9); }
@@ -188,12 +212,12 @@
 <nav id="nav">
   <div class="nav-inner">
     <a href="/" aria-label="Somatic with Clara — home">
-      <img src="brand-assets/somatic-with-clara-logo-dark.svg" alt="Somatic with Clara" style="height:40px;width:auto;display:block;" />
+      <img src="brand-assets/somatic-with-clara-logo-dark-transparent.svg" alt="Somatic with Clara" style="height:40px;width:auto;display:block;" />
     </a>
     <div style="display:flex;align-items:center;gap:32px;" class="desktop-nav">
       <a href="about.html" class="nav-link">About</a>
       <a href="offers.html" class="nav-link">Work with Me</a>
-      <a href="nervous_system_state_quiz_v2.html" class="btn-sage" style="padding:10px 24px;font-size:11px;">Take the Quiz</a>
+      <a href="quiz.html" class="btn-sage" style="padding:10px 24px;font-size:11px;">Take the Quiz</a>
     </div>
     <button id="ham" type="button" aria-label="Open menu" style="background:none;border:none;cursor:pointer;padding:8px;display:none;flex-direction:column;gap:5px;">
       <span style="display:block;width:22px;height:2px;background:rgba(255,255,255,.7);"></span>
@@ -204,27 +228,30 @@
   <div id="mobile-nav">
     <a href="about.html" class="nav-link">About</a>
     <a href="offers.html" class="nav-link">Work with Me</a>
-    <a href="nervous_system_state_quiz_v2.html" class="btn-sage" style="display:block;margin-top:20px;text-align:center;">Take the Quiz</a>
+    <a href="quiz.html" class="btn-sage" style="display:block;margin-top:20px;text-align:center;">Take the Quiz</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero-dark" style="padding-top:140px;padding-bottom:100px;">
-  <div class="circ" style="width:300px;height:300px;border:3px solid var(--sage);opacity:.08;top:-80px;right:-80px;"></div>
-  <div class="circ" style="width:160px;height:160px;border:2px solid var(--violet);opacity:.09;bottom:-50px;left:-50px;"></div>
-  <div class="circ" style="width:90px;height:90px;border:2px solid var(--sage);opacity:.06;top:40px;left:12%;"></div>
-  <div style="max-width:760px;margin:0 auto;position:relative;z-index:1;">
+  <video class="hero-video" autoplay muted loop playsinline poster="brand-assets/hero-poster.jpg">
+    <source src="hero-video.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="circ" style="width:300px;height:300px;border:3px solid var(--sage);opacity:.06;top:-80px;right:-80px;position:absolute;z-index:2;border-radius:50%;pointer-events:none;"></div>
+  <div class="circ" style="width:160px;height:160px;border:2px solid var(--amber);opacity:.08;bottom:-50px;left:-50px;position:absolute;z-index:2;border-radius:50%;pointer-events:none;"></div>
+  <div style="max-width:760px;margin:0 auto;position:relative;z-index:3;">
     <div class="hero-script">something feels off</div>
     <h1 class="hero-h1">There's who you've been<br/>surviving as.<br/>And who you <em>actually</em> are.</h1>
     <p class="hero-sub">Most people never find out there's a difference.</p>
-    <a href="nervous_system_state_quiz_v2.html" class="btn-sage">Take the Quiz</a>
-    <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.3);margin-top:14px;">Takes 3 minutes. Your pattern is named instantly.</p>
+    <a href="quiz.html" class="btn-sage">Take the Quiz</a>
+    <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(245,240,232,.35);margin-top:14px;">Takes 3 minutes. Your pattern is named instantly.</p>
   </div>
 </section>
 <hr class="divider" />
 
 <!-- PROBLEM SECTION -->
-<section style="background:var(--bg);padding:80px 24px;">
+<section style="background:#F5F0E8;padding:80px 24px;">
   <div class="narrow" style="text-align:center;">
     <span class="section-label reveal">The real barrier</span>
     <h2 class="section-title reveal d1">Not in crisis.<br/>Not <em>thriving.</em></h2>
@@ -274,8 +301,6 @@
     </div>
   </div>
 </section>
-<hr class="divider" />
-
 <!-- OFFER PREVIEW -->
 <section style="background:var(--sage);padding:80px 24px;text-align:center;position:relative;overflow:hidden;">
   <div class="circ" style="width:260px;height:260px;border:4px solid rgba(255,255,255,.07);top:-70px;right:-70px;"></div>
@@ -289,7 +314,6 @@
     <a href="offers.html" class="btn-dark reveal d3">See All Offers</a>
   </div>
 </section>
-<hr class="divider" />
 
 <!-- TESTIMONIALS -->
 <section style="background:var(--bg);padding:80px 24px;overflow:hidden;">
@@ -346,24 +370,24 @@
   <div class="circ" style="width:160px;height:160px;border:2px solid var(--violet);opacity:.09;bottom:-50px;left:-50px;"></div>
   <div style="max-width:620px;margin:0 auto;position:relative;z-index:1;">
     <div class="hero-script reveal" style="color:var(--sage);">where it begins</div>
-    <h2 class="reveal d1" style="font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(28px,5vw,48px);text-transform:uppercase;color:#fff;line-height:1.05;margin-bottom:20px;">
+    <h2 class="reveal d1" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:300;font-size:clamp(28px,5vw,48px);color:var(--cream);line-height:1.1;margin-bottom:20px;">
       The quiz is<br/>where you start.
     </h2>
     <p class="reveal d2" style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;font-style:italic;color:rgba(255,255,255,.55);line-height:1.8;margin-bottom:36px;">
       Three minutes. Your pattern is named instantly. Most people have a moment of recognition when they see their result.
     </p>
-    <a href="nervous_system_state_quiz_v2.html" class="btn-sage reveal d3">Take the Quiz</a>
+    <a href="quiz.html" class="btn-sage reveal d3">Take the Quiz</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="site-footer">
   <div class="footer-inner">
-    <img src="brand-assets/somatic-with-clara-logo-dark.svg" alt="Somatic with Clara" style="height:32px;width:auto;opacity:.55;" />
+    <img src="brand-assets/somatic-with-clara-logo-dark-transparent.svg" alt="Somatic with Clara" style="height:32px;width:auto;opacity:.55;" />
     <div class="footer-links">
       <a href="about.html" class="footer-link">About</a>
       <a href="offers.html" class="footer-link">Work with Me</a>
-      <a href="nervous_system_state_quiz_v2.html" class="footer-link">Quiz</a>
+      <a href="quiz.html" class="footer-link">Quiz</a>
       <a href="https://www.instagram.com/clara.holds.space/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
       <a href="https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
