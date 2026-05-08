@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work with Clara — Somatic with Clara</title>
+  <title>Work with Clara · Somatic with Clara</title>
   <meta name="description" content="Each offer is a different entry point into the same work. Visualisation tracks, HD report, somatic sessions, and HD + Somatic signature offer." />
   <link rel="canonical" href="https://somaticwithclara.com/offers.html" />
   <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
@@ -25,10 +25,9 @@
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--body); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
     .divider { height: 4px; background: var(--sage); border: none; }
-    .narrow { max-width: 680px; margin: 0 auto; padding: 0 24px; }
-    .wide { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+    .wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
     .section-label { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 12px; }
-    .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; font-size: clamp(28px,4vw,42px); color: var(--text); line-height: 1.15; margin-bottom: 40px; }
+    .section-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 400; font-size: clamp(24px,3vw,36px); color: var(--text); line-height: 1.15; margin-bottom: 20px; }
     .section-title em { color: var(--sage-dark); font-style: italic; }
 
     .btn-sage { display: inline-block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: var(--sage); padding: 16px 40px; border-radius: 50px; border: none; text-decoration: none; cursor: pointer; box-shadow: 0 6px 24px rgba(122,171,106,.3); transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease; }
@@ -36,42 +35,48 @@
     .btn-dark { display: inline-block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: var(--dark); padding: 16px 40px; border-radius: 50px; border: none; text-decoration: none; cursor: pointer; box-shadow: 0 6px 24px rgba(0,0,0,.2); transition: transform 0.25s ease, box-shadow 0.25s ease; }
     .btn-dark:hover { transform: translateY(-3px); box-shadow: 0 10px 36px rgba(0,0,0,.3); }
 
+    /* Nav — dark links before scroll (light hero) */
     #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 20px 0; transition: background 0.35s ease, box-shadow 0.35s ease, padding 0.35s ease; }
     #nav.scrolled { background: var(--dark); box-shadow: 0 1px 0 rgba(255,255,255,.06); padding: 12px 0; }
     .nav-inner { max-width: 960px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,.65); transition: color 0.2s ease; }
-    .nav-link:hover { color: var(--sage); }
+    .nav-link { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; color: rgba(42,42,42,.65); transition: color 0.2s ease; }
+    #nav.scrolled .nav-link { color: rgba(255,255,255,.65); }
+    .nav-link:hover { color: var(--amber); }
     #nav.scrolled .nav-link:hover { color: #fff; }
-    .nav-link.active { color: var(--sage); }
+    .nav-link.active { color: var(--sage-dark); }
     #nav.scrolled .nav-link.active { color: var(--sage); }
+    .ham-line { display: block; width: 22px; height: 2px; background: rgba(42,42,42,.6); }
+    #nav.scrolled .ham-line { background: rgba(255,255,255,.7); }
 
-    .hero-dark { background: var(--dark); position: relative; overflow: hidden; padding: 120px 24px 80px; text-align: center; }
-    .hero-script { font-family: 'Permanent Marker', cursive; font-size: clamp(18px,3vw,26px); color: var(--amber); display: inline-block; transform: rotate(-1.5deg); margin-bottom: 12px; }
-    .hero-h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 300; font-size: clamp(28px,5.5vw,52px); line-height: 1.1; letter-spacing: -0.5px; color: var(--cream); margin-bottom: 20px; }
-    .hero-h1 em { color: var(--sage); font-style: italic; }
-    .hero-sub { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 300; font-style: italic; color: rgba(245,240,232,.65); line-height: 1.8; max-width: 520px; margin: 0 auto; }
+    /* Hero — light */
+    .hero-light { background: linear-gradient(160deg, #D8EDD0 0%, #F5F0E8 100%); position: relative; overflow: hidden; padding: 140px 24px 80px; text-align: center; }
+    .hero-script { font-family: 'Permanent Marker', cursive; font-size: clamp(18px,3vw,24px); color: var(--amber); display: inline-block; transform: rotate(-1.5deg); margin-bottom: 14px; }
+    .hero-h1 { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 300; font-size: clamp(28px,5vw,52px); line-height: 1.1; letter-spacing: -0.5px; color: var(--text); margin-bottom: 16px; }
+    .hero-h1 em { color: var(--sage-dark); font-style: italic; }
+    .hero-sub { font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 300; font-style: italic; color: rgba(42,42,42,.55); line-height: 1.8; max-width: 520px; margin: 0 auto; }
     .circ { position: absolute; border-radius: 50%; pointer-events: none; }
 
+    /* Reveal */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; }
     .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
 
     /* Offer cards */
-    .offers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 20px; }
-    .offer-card { background: var(--white); border-radius: 16px; border: 2px solid var(--line); padding: 32px 28px; display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
+    .offer-card { background: var(--white); border-radius: 16px; border: 2px solid var(--line); padding: 26px 22px; display: flex; flex-direction: column; transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; }
     .offer-card:hover { transform: translateY(-4px); border-color: var(--sage); box-shadow: 0 10px 32px rgba(122,171,106,.12); }
     .offer-card.signature { border-color: var(--sage); background: linear-gradient(135deg,rgba(122,171,106,.05) 0%,#fff 100%); }
-    .offer-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 30px; font-weight: 700; color: var(--sage); margin-bottom: 4px; }
-    .offer-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 19px; font-weight: 600; color: var(--text); line-height: 1.25; margin-bottom: 14px; }
-    .offer-desc { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--body); line-height: 1.8; flex: 1; margin-bottom: 24px; }
-    .offer-tag { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--violet); border: 2px solid var(--violet); padding: 5px 14px; border-radius: 50px; display: inline-block; margin-bottom: 16px; }
+    .offer-price { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 24px; font-weight: 700; color: var(--sage); margin-bottom: 4px; }
+    .offer-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; font-weight: 600; color: var(--text); line-height: 1.25; margin-bottom: 10px; }
+    .offer-desc { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--body); line-height: 1.8; flex: 1; margin-bottom: 20px; }
+    .offer-tag { font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--violet); border: 2px solid var(--violet); padding: 4px 12px; border-radius: 50px; display: inline-block; margin-bottom: 12px; }
     .offer-tag.sig { color: var(--sage-dark); border-color: var(--sage-dark); }
-    .offer-cta { display: inline-block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: var(--sage); padding: 12px 28px; border-radius: 50px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; margin-top: auto; text-align: center; }
+    .offer-cta { display: inline-block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #fff; background: var(--sage); padding: 11px 22px; border-radius: 50px; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; margin-top: auto; text-align: center; }
     .offer-cta:hover { background: var(--sage-dark); transform: translateY(-2px); }
     .offer-cta.dark { background: var(--dark); }
     .offer-cta.dark:hover { background: #0e1525; }
 
+    /* Footer */
     .site-footer { background: var(--dark); padding: 36px 24px; }
     .footer-inner { max-width: 960px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
@@ -79,10 +84,17 @@
     .footer-link:hover { color: rgba(255,255,255,.85); }
     .footer-copy { font-family: 'DM Sans', sans-serif; font-size: 11px; color: rgba(255,255,255,.2); }
 
+    /* Mobile nav */
     #mobile-nav { display: none; background: var(--dark); padding: 20px 24px 28px; border-top: 1px solid rgba(255,255,255,.06); }
     #mobile-nav.open { display: block; }
     #mobile-nav .nav-link { font-size: 15px; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.7); display: block; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
-    @media (max-width:680px) { .desktop-nav { display:none !important; } #ham { display:flex !important; } .narrow, .wide { padding: 0 16px; } .hero-dark { padding: 100px 16px 60px; } }
+
+    @media (max-width:680px) { .desktop-nav { display:none !important; } #ham { display:flex !important; } }
+
+    /* Layout responsive */
+    @media (max-width: 960px) { .offers-layout { grid-template-columns: 1fr !important; } }
+    @media (max-width: 540px) { .cards-grid { grid-template-columns: 1fr !important; } }
+    @media (max-width: 680px) { .hero-light { padding: 100px 16px 60px; } .wide { padding: 0 16px; } }
     @media (prefers-reduced-motion: reduce) { .reveal { transition: none; } }
   </style>
 </head>
@@ -92,7 +104,7 @@
 <nav id="nav">
   <div class="nav-inner">
     <a href="/" aria-label="Somatic with Clara — home">
-      <img src="brand-assets/somatic-with-clara-logo-dark-transparent.svg" alt="Somatic with Clara" style="height:40px;width:auto;display:block;" />
+      <img id="nav-logo" src="brand-assets/somatic-with-clara-logo.svg" alt="Somatic with Clara" style="height:40px;width:auto;display:block;" />
     </a>
     <div style="display:flex;align-items:center;gap:32px;" class="desktop-nav">
       <a href="about.html" class="nav-link">About</a>
@@ -100,9 +112,9 @@
       <a href="quiz.html" class="btn-sage" style="padding:10px 24px;font-size:11px;">Take the Quiz</a>
     </div>
     <button id="ham" type="button" aria-label="Open menu" style="background:none;border:none;cursor:pointer;padding:8px;display:none;flex-direction:column;gap:5px;">
-      <span style="display:block;width:22px;height:2px;background:rgba(255,255,255,.7);"></span>
-      <span style="display:block;width:22px;height:2px;background:rgba(255,255,255,.7);"></span>
-      <span style="display:block;width:22px;height:2px;background:rgba(255,255,255,.7);"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
     </button>
   </div>
   <div id="mobile-nav">
@@ -113,55 +125,81 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero-dark" style="padding-top:140px;padding-bottom:100px;">
-  <div class="circ" style="width:280px;height:280px;border:3px solid var(--sage);opacity:.08;top:-80px;right:-80px;"></div>
-  <div class="circ" style="width:150px;height:150px;border:2px solid var(--violet);opacity:.09;bottom:-50px;left:-50px;"></div>
+<section class="hero-light">
+  <div class="circ" style="width:240px;height:240px;border:2px solid var(--sage);opacity:.10;top:-60px;right:-60px;"></div>
+  <div class="circ" style="width:140px;height:140px;border:2px solid var(--amber);opacity:.09;bottom:-40px;left:-40px;"></div>
   <div style="max-width:680px;margin:0 auto;position:relative;z-index:1;">
-    <h1 class="hero-h1">Work with <em>Clara</em></h1>
+    <div class="hero-script">work with me</div>
+    <h1 class="hero-h1">ways we can work <em>together</em></h1>
     <p class="hero-sub">Each offer is a different entry point into the same work.</p>
   </div>
 </section>
 <hr class="divider" />
 
-<!-- OFFER CARDS -->
+<!-- OFFERS + WHY ME -->
 <section style="background:var(--bg);padding:80px 24px;">
   <div class="wide">
-    <div class="offers-grid">
+    <div class="offers-layout" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
 
-      <!-- Card 1 -->
-      <div class="offer-card reveal">
-        <span class="offer-tag">Self-paced</span>
-        <div class="offer-price">$97</div>
-        <h3 class="offer-title">Personalised Visualisation Tracks</h3>
-        <p class="offer-desc">A guided audio recording built specifically around you — your name, your vision, your Human Design type. Sensory and grounded, shaped by your central belief block or theme. Available in English, French, or Spanish.</p>
-        <a href="mailto:hello@somaticwithclara.com?subject=Visualisation Tracks enquiry" class="offer-cta">Enquire</a>
+      <!-- Left: 4 offer cards in 2x2 -->
+      <div class="cards-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+        <div class="offer-card reveal">
+          <span class="offer-tag">Self-paced</span>
+          <div class="offer-price">$97</div>
+          <h3 class="offer-title">Personalised Visualisation Tracks</h3>
+          <p class="offer-desc">4 guided audio recordings built around you: your name, your vision, your Human Design type. Sensory, grounded, shaped by your central belief block or theme. Available in English, French, or Spanish.</p>
+          <a href="mailto:hello@somaticwithclara.com?subject=Visualisation Tracks enquiry" class="offer-cta">Enquire</a>
+        </div>
+
+        <div class="offer-card reveal d1">
+          <span class="offer-tag">Report + call</span>
+          <div class="offer-price">$135</div>
+          <h3 class="offer-title">HD Report & Clarity Call</h3>
+          <p class="offer-desc">Your Human Design patterns named in plain language: what you're designed for, where you've been operating against your nature, and what becomes available when you stop. Includes an optional 30-minute call within 15 days.</p>
+          <a href="mailto:hello@somaticwithclara.com?subject=HD Report enquiry" class="offer-cta">Enquire</a>
+        </div>
+
+        <div class="offer-card reveal d2">
+          <span class="offer-tag">1:1 sessions</span>
+          <div class="offer-price">$90 / $320</div>
+          <h3 class="offer-title">Somatic Sessions</h3>
+          <p class="offer-desc">Individual sessions or a package of four. The body does the real reading. We work from where you actually are, not where you think you should be. Discovery call required before booking.</p>
+          <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" class="offer-cta dark" target="_blank" rel="noopener">Book a Discovery Call</a>
+        </div>
+
+        <div class="offer-card signature reveal d3">
+          <span class="offer-tag sig">Signature offer</span>
+          <div class="offer-price">from $400</div>
+          <h3 class="offer-title">HD + Somatic</h3>
+          <p class="offer-desc">The most complete arc of the work. Report first: your Human Design patterns named and mapped. Then somatic sessions, the chart gives the map, the body does the real reading. Discovery call required.</p>
+          <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" class="offer-cta dark" target="_blank" rel="noopener">Book a Discovery Call</a>
+        </div>
+
       </div>
 
-      <!-- Card 2 -->
-      <div class="offer-card reveal d1">
-        <span class="offer-tag">Report + call</span>
-        <div class="offer-price">$135</div>
-        <h3 class="offer-title">HD Report & Clarity Call</h3>
-        <p class="offer-desc">Your Human Design patterns named in plain language — what you're designed for, where you've been operating against your nature, and what becomes available when you stop. Includes an optional 30-minute call within 15 days if you have questions.</p>
-        <a href="mailto:hello@somaticwithclara.com?subject=HD Report enquiry" class="offer-cta">Enquire</a>
-      </div>
+      <!-- Right: Why me + bodygraph -->
+      <div class="reveal d2">
+        <span class="section-label">why work with me</span>
+        <h2 class="section-title">Designed to see<br/><em>your pattern.</em></h2>
 
-      <!-- Card 3 -->
-      <div class="offer-card reveal d2">
-        <span class="offer-tag">1:1 sessions</span>
-        <div class="offer-price">$90 / $320</div>
-        <h3 class="offer-title">Somatic Sessions</h3>
-        <p class="offer-desc">Individual sessions or a package of four. The body does the real reading. We work from where you actually are — not where you think you should be. Discovery call required before booking.</p>
-        <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" class="offer-cta dark" target="_blank" rel="noopener">Book a Discovery Call</a>
-      </div>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--line);border-radius:50px;padding:6px 16px 6px 10px;margin-bottom:20px;">
+          <span style="width:8px;height:8px;border-radius:50%;background:var(--sage);flex-shrink:0;display:inline-block;"></span>
+          <span style="font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--text);">Human Design Projector</span>
+        </div>
 
-      <!-- Card 4 — Signature -->
-      <div class="offer-card signature reveal d3">
-        <span class="offer-tag sig">Signature offer</span>
-        <div class="offer-price" style="color:var(--text);">$400+</div>
-        <h3 class="offer-title">HD + Somatic</h3>
-        <p class="offer-desc">The most complete arc of the work. Report first — your Human Design patterns named and mapped. Then somatic sessions — the chart gives the map, the body does the real reading. Discovery call required. This is where real unravelling happens.</p>
-        <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" class="offer-cta dark" target="_blank" rel="noopener">Book a Discovery Call</a>
+        <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:var(--body);line-height:1.85;margin-bottom:20px;">
+          I'm not designed to do the work alongside you. I'm designed to see you clearly enough that you can begin to see yourself.
+        </p>
+
+        <img src="brand-assets/bodygraph-clara.png" alt="Clara's Human Design Bodygraph" style="width:100%;max-width:300px;display:block;margin:0 auto 24px;border-radius:8px;" />
+
+        <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:var(--body);line-height:1.85;margin-bottom:16px;">
+          My defined G centre gives me a consistent, magnetic quality of direction. My defined Spleen brings moment-to-moment intuitive knowing, body-level truth that doesn't need evidence or explanation.
+        </p>
+        <p style="font-family:'DM Sans',sans-serif;font-size:14px;color:var(--body);line-height:1.85;">
+          Somatic practice and Human Design sit at the same intersection for me: what the body already knows, and what your design was built for. I see the gap between those two things. That's where we work.
+        </p>
       </div>
 
     </div>
@@ -177,7 +215,7 @@
     <span class="section-label reveal" style="color:rgba(255,255,255,.5);">For Somatic Sessions & HD + Somatic</span>
     <h2 class="reveal d1" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:400;font-size:clamp(26px,4.5vw,42px);color:#fff;line-height:1.1;margin-bottom:16px;">Not sure where to start?</h2>
     <p class="reveal d2" style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:300;font-style:italic;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:32px;">
-      A 30-minute discovery call. No pressure — just a conversation to find out whether we're a good fit and what the right entry point is for where you are now.
+      A 30-minute discovery call. No pressure, just a conversation to find out whether we're a good fit and what the right entry point is for where you are now.
     </p>
     <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" class="btn-dark reveal d3" target="_blank" rel="noopener">Book a Discovery Call</a>
   </div>
@@ -194,13 +232,20 @@
       <a href="https://www.instagram.com/clara.holds.space/" class="footer-link" target="_blank">Instagram</a>
       <a href="https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg" class="footer-link" target="_blank">YouTube</a>
     </div>
-    <p class="footer-copy">© 2026 Clara Louis — somaticwithclara.com</p>
+    <p class="footer-copy">© 2026 Clara Louis · somaticwithclara.com</p>
   </div>
 </footer>
 
 <script>
 const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+const logo = document.getElementById('nav-logo');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 40;
+  nav.classList.toggle('scrolled', scrolled);
+  logo.src = scrolled
+    ? 'brand-assets/somatic-with-clara-logo-dark-transparent.svg'
+    : 'brand-assets/somatic-with-clara-logo.svg';
+}, { passive: true });
 const ham = document.getElementById('ham');
 const mobileNav = document.getElementById('mobile-nav');
 if (ham) ham.addEventListener('click', () => mobileNav.classList.toggle('open'));
