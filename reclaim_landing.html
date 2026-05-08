@@ -43,7 +43,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
 @keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* HERO */
-.hero{background:var(--bg);text-align:center;padding:80px 40px 100px;position:relative;overflow:hidden}
+.hero{background:var(--bg);text-align:center;padding:140px 40px 100px;position:relative;overflow:hidden}
 .hero-circle{position:absolute;border-radius:50%;pointer-events:none}
 .hero-badge{display:inline-flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--sage);border:2px solid var(--sage);padding:8px 20px;border-radius:50px;margin-bottom:36px;background:#fff}
 .hero-badge::before{content:'';width:8px;height:8px;background:var(--sage);border-radius:50%;flex-shrink:0}
@@ -59,7 +59,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
 .btn-white:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(0,0,0,.3)}
 .cta-sub{font-family:'DM Sans',sans-serif;font-size:11px;color:var(--muted);margin-top:16px;font-weight:400}
 .cta-wrapper{text-align:center}
-.section-label{font-family:'DM Sans',sans-serif;font-size:8px;font-weight:700;letter-spacing:3.5px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:block}
+.section-label{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:16px;display:block}
 .section-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:500;font-size:clamp(26px,4vw,40px);color:var(--text);line-height:1.15;margin-bottom:40px}
 
 /* PAIN */
@@ -76,7 +76,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
 @media(max-width:640px){.benefits-grid{grid-template-columns:1fr}}
 .benefit-card{padding:30px;background:#fff;border:2px solid var(--line);border-radius:16px;transition:all 0.3s ease;position:relative;overflow:hidden}
 .benefit-card:hover{transform:translateY(-4px);border-color:var(--sage);box-shadow:0 12px 40px rgba(91,154,110,.1)}
-.benefit-before{font-family:'DM Sans',sans-serif;font-size:12px;color:var(--faint);margin-bottom:14px;display:flex;align-items:center;gap:6px;line-height:1.5}
+.benefit-before{font-family:'DM Sans',sans-serif;font-size:14px;color:var(--muted);margin-bottom:14px;display:flex;align-items:center;gap:6px;line-height:1.5}
 .benefit-after{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:16px;color:var(--text);line-height:1.65}
 
 /* INTRO */
@@ -290,14 +290,49 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
 .ed-practice-desc{font-family:'DM Sans',sans-serif;font-size:9px;color:rgba(255,255,255,.5);line-height:1.4}
 
 @media(max-width:700px){.narrow,.wide{padding:0 20px}.hero{padding:60px 20px 80px}.pain-section,.benefits-section,.intro-section,.story-section,.stack-section,.wvw-section,.faq-section,.steps-section,.offer-table-section{padding-left:20px;padding-right:20px}}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 0;transition:background 0.35s ease,box-shadow 0.35s ease,padding 0.35s ease}
+#nav.scrolled{background:var(--dark);box-shadow:0 1px 0 rgba(255,255,255,.06);padding:12px 0}
+.nav-inner{max-width:960px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-link{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:rgba(42,42,42,.65);transition:color 0.2s ease}
+#nav.scrolled .nav-link{color:rgba(255,255,255,.65)}
+.nav-link:hover{color:var(--amber)}
+#nav.scrolled .nav-link:hover{color:#fff}
+.ham-line{display:block;width:22px;height:2px;background:rgba(42,42,42,.6)}
+#nav.scrolled .ham-line{background:rgba(255,255,255,.7)}
+#mobile-nav{display:none;background:var(--dark);padding:20px 24px 28px;border-top:1px solid rgba(255,255,255,.06)}
+#mobile-nav.open{display:block}
+#mobile-nav .nav-link{font-size:15px;letter-spacing:0;text-transform:none;color:rgba(255,255,255,.7);display:block;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+@media(max-width:680px){.desktop-nav{display:none!important}#ham{display:flex!important}}
+
 </style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <p class="top-bar-text">A nervous system community for women ready to stop managing, and start becoming. <span>Join below.</span></p>
-</div>
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Somatic with Clara">
+      <img id="nav-logo" src="brand-assets/somatic-with-clara-logo.svg" alt="Somatic with Clara" style="height:40px;width:auto;display:block;" />
+    </a>
+    <div style="display:flex;align-items:center;gap:32px;" class="desktop-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="offers.html" class="nav-link">Work with Me</a>
+      <a href="quiz.html" class="btn-sage" style="padding:10px 24px;font-size:11px;">Take the Quiz</a>
+    </div>
+    <button id="ham" type="button" aria-label="Open menu" style="background:none;border:none;cursor:pointer;padding:8px;display:none;flex-direction:column;gap:5px;">
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+      <span class="ham-line"></span>
+    </button>
+  </div>
+  <div id="mobile-nav">
+    <a href="about.html" class="nav-link">About</a>
+    <a href="offers.html" class="nav-link">Work with Me</a>
+    <a href="quiz.html" class="btn-sage" style="display:block;margin-top:20px;text-align:center;">Take the Quiz</a>
+  </div>
+</nav>
 
 <!-- HERO -->
 <div class="hero">
@@ -311,7 +346,6 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
     <h1>You're managing.<br>You're functioning.<br>And something still feels <em>off.</em></h1>
     <p class="hero-summary">Not crisis-level wrong. Just quietly, persistently not yours. This is the space to name what's been happening, and to start asking what comes next.</p>
     <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" class="btn-sage">Join here</a>
-    <p class="cta-sub">Takes 5 minutes. Most people have a moment of recognition.</p>
   </div>
 </div>
 <div class="divider"></div>
@@ -390,17 +424,17 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
       <div class="ed-card-body">
         <p>Find out what your default survival state is, the pattern your nervous system falls back to when things get hard.</p>
         <div style="margin-top:12px">
-          <div style="background:var(--bg);border-radius:8px;padding:10px 12px;margin-bottom:6px;border-left:3px solid var(--sage)">
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:var(--text);text-transform:uppercase;margin-bottom:2px">Sympathetic (Fight/Flight)</div>
-            <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:var(--muted)">On high alert. Hard to switch off.</div>
+          <div class="ed-milestone">
+            <div class="ed-ms-num" style="background:var(--dark);font-size:14px;">😤</div>
+            <div class="ed-ms-text">Sympathetic (Fight/Flight) — on high alert, hard to switch off</div>
           </div>
-          <div style="background:var(--bg);border-radius:8px;padding:10px 12px;margin-bottom:6px;border-left:3px solid var(--violet)">
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:var(--text);text-transform:uppercase;margin-bottom:2px">Dorsal Vagal (Shutdown)</div>
-            <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:var(--muted)">Disconnected. Hard to feel anything.</div>
+          <div class="ed-milestone">
+            <div class="ed-ms-num" style="background:var(--dark);font-size:14px;">😶‍🌫️</div>
+            <div class="ed-ms-text">Dorsal Vagal (Shutdown) — disconnected, hard to feel anything</div>
           </div>
-          <div style="background:var(--bg);border-radius:8px;padding:10px 12px;border-left:3px solid var(--sage-dark)">
-            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;color:var(--text);text-transform:uppercase;margin-bottom:2px">Freeze (Functional Collapse)</div>
-            <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:var(--muted)">Stuck between go and stop.</div>
+          <div class="ed-milestone">
+            <div class="ed-ms-num" style="background:var(--dark);font-size:14px;">🧊</div>
+            <div class="ed-ms-text">Freeze (Functional Collapse) — stuck between go and stop</div>
           </div>
         </div>
         <div class="ed-tag" style="margin-top:12px;display:inline-block">First step</div>
@@ -416,17 +450,10 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
       </div>
       <div class="ed-card-body">
         <p>When you feel off, overwhelmed, or like you can't land, open the app, answer a few questions, get practices matched to your current state.</p>
-        <div class="ed-practice" style="margin-top:12px">
-          <div class="ed-practice-label">Matched practice</div>
-          <div class="ed-practice-title">Activate & Discharge</div>
-          <div class="ed-practice-desc">Your body needs to move the energy before it can settle. Try this 3-minute practice.</div>
+        <div style="margin-top:16px;text-align:center;">
+          <img src="brand-assets/app-home-screen.png" alt="Somatic Pause App home screen" style="width:100%;max-width:220px;display:block;margin:0 auto;border-radius:16px;box-shadow:0 8px 32px rgba(0,0,0,.15);" />
         </div>
-        <div class="ed-practice">
-          <div class="ed-practice-label">Matched practice</div>
-          <div class="ed-practice-title">Ground & Orient</div>
-          <div class="ed-practice-desc">Bring your system back into the present. Start here when you feel frozen or far away.</div>
-        </div>
-        <div class="ed-tag" style="margin-top:4px;display:inline-block">In-the-moment tool</div>
+        <div class="ed-tag" style="margin-top:14px;display:inline-block">In-the-moment tool</div>
       </div>
     </div>
 
@@ -644,7 +671,7 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
       </div>
     </div>
     <div class="cta-wrapper">
-      <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" class="btn-white">Start with the quiz</a>
+      <a href="quiz.html" class="btn-white">Start with the quiz</a>
       <p class="cta-sub" style="color:rgba(255,255,255,.3)">Takes 5 minutes. Your result is instant. The journey starts there.</p>
     </div>
   </div>
@@ -787,8 +814,18 @@ body{font-family:'DM Sans',sans-serif;color:var(--body);background:var(--bg);-we
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
-  <p>&copy; 2026 Clara Louis, Reclaim Your Life. All rights reserved.</p>
+<footer style="background:var(--dark);padding:36px 24px;">
+  <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <img src="brand-assets/somatic-with-clara-logo-dark-transparent.svg" alt="Somatic with Clara" style="height:28px;width:auto;opacity:.4;" />
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <a href="/" style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color 0.2s;">Home</a>
+      <a href="about.html" style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color 0.2s;">About</a>
+      <a href="offers.html" style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color 0.2s;">Work with Me</a>
+      <a href="quiz.html" style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color 0.2s;">Quiz</a>
+      <a href="https://www.instagram.com/clara.holds.space/" style="font-family:'DM Sans',sans-serif;font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;transition:color 0.2s;" target="_blank">Instagram</a>
+    </div>
+    <p style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.2);">© 2026 Clara Louis · somaticwithclara.com</p>
+  </div>
 </footer>
 
 <script>
@@ -890,6 +927,21 @@ function toggleFaq(el){el.closest('.faq-item').classList.toggle('open')}
   },{threshold:0.3});
   observer.observe(container);
 })();
+
+// Nav scroll + logo swap
+const nav = document.getElementById('nav');
+const navLogo = document.getElementById('nav-logo');
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 40;
+  nav.classList.toggle('scrolled', scrolled);
+  navLogo.src = scrolled
+    ? 'brand-assets/somatic-with-clara-logo-dark-transparent.svg'
+    : 'brand-assets/somatic-with-clara-logo.svg';
+}, { passive: true });
+const ham = document.getElementById('ham');
+const mobileNav = document.getElementById('mobile-nav');
+if (ham) ham.addEventListener('click', () => mobileNav.classList.toggle('open'));
+
 </script>
 </body>
 </html>
