@@ -95,14 +95,15 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 .misread-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--violet);margin-bottom:8px;}
 .misread-card p{font-size:13.5px;font-style:italic;color:var(--body);line-height:1.7;}
 
-.practice-card{background:var(--sage-light);border:2px solid var(--sage);border-radius:16px;padding:26px 22px;margin-bottom:14px;position:relative;overflow:hidden;}
-.practice-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;}
-.practice-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:clamp(16px,4vw,20px);color:var(--dark);line-height:1.2;margin-bottom:12px;}
+.practice-card{background:var(--sage-light);border:2px solid var(--sage);border-radius:16px;padding:26px 22px;margin-bottom:14px;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(90,138,74,.2);}
+.practice-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--violet),var(--sage));}
+.practice-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;font-weight:600;}
+.practice-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:clamp(18px,4vw,22px);color:var(--dark);line-height:1.2;margin-bottom:12px;}
 .practice-desc{font-size:14px;font-style:italic;color:var(--body);line-height:1.85;}
 
-.path-b-card{background:var(--dark);border-radius:16px;padding:24px 22px;margin-bottom:14px;}
-.path-b-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px;}
-.path-b-card p{font-size:14.5px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);line-height:1.75;}
+.path-b-card{background:var(--cream);border:2px solid rgba(0,0,0,.07);border-radius:16px;padding:24px 22px;margin-bottom:14px;}
+.path-b-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.path-b-card p{font-size:14.5px;font-weight:300;font-style:italic;color:var(--body);line-height:1.75;}
 
 .email-confirm-card{background:var(--sage);border-radius:16px;padding:26px 22px;margin-bottom:14px;position:relative;overflow:hidden;text-align:center;}
 .email-confirm-card .circ-w{position:absolute;border-radius:50%;pointer-events:none;}
@@ -165,12 +166,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 <div id="quiz-start"></div>
 
 <!-- HEADER -->
-<div class="header">
+<div class="header" id="quiz-header">
   <div class="circ" style="width:240px;height:240px;border:3px solid #5B9A6E;opacity:.07;top:-70px;right:-70px;"></div>
   <div class="circ" style="width:140px;height:140px;border:2px solid #7B5EA7;opacity:.09;bottom:-45px;left:-45px;"></div>
   <div class="circ" style="width:80px;height:80px;border:2px solid #5B9A6E;opacity:.05;top:24px;left:10%;"></div>
   <div class="eyebrow">this is where it starts</div>
-  <div class="h1">What's your nervous system's<br><span>default state?</span></div>
   <p class="sub">You're keeping it together on the outside. But inside, something's off and you can't quite name it. 10 questions to find out what your body's been trying to tell you — and what it actually needs.</p>
 </div>
 
@@ -503,6 +503,7 @@ function nextQ(){
 
 function showEmailGate(){
   document.getElementById('quiz-wrap').style.display='none';
+  document.getElementById('quiz-header').style.display='none';
   document.getElementById('email-gate-wrap').style.display='block';
   window.scrollTo(0,0);
 }
@@ -538,6 +539,7 @@ function showResult(){
   const isVentral=winner==='ventral';
 
   document.getElementById('quiz-wrap').style.display='none';
+  document.getElementById('quiz-header').style.display='none';
   document.getElementById('email-gate-wrap').style.display='none';
   document.getElementById('result-wrap').style.display='block';
 
@@ -546,7 +548,11 @@ function showResult(){
   document.getElementById('result-intro').textContent=r.intro;
   document.getElementById('result-body-text').textContent=r.body;
   document.getElementById('result-recognise').textContent=r.recognise;
-  document.getElementById('result-misread').textContent=r.misread;
+
+  // Strip leading "Often misread as: " prefix so it doesn't duplicate the card label
+  const misreadText=r.misread.replace(/^Often misread as:\s*/i,'').replace(/^Sometimes misread as:\s*/i,'');
+  document.getElementById('result-misread').textContent=misreadText;
+
   document.getElementById('result-path-b').textContent=r.pathB;
 
   document.querySelector('.takeaway .takeaway-label').textContent=isVentral
@@ -557,7 +563,7 @@ function showResult(){
   document.getElementById('result-practice-name').textContent=r.practice.slice(0,firstDot);
   document.getElementById('result-practice-desc').textContent=r.practice.slice(firstDot+2);
 
-  window.scrollTo(0,0);
+  document.getElementById('result-wrap').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
 function retake(){
@@ -565,6 +571,7 @@ function retake(){
   Object.keys(scores).forEach(k=>scores[k]=0);
   document.getElementById('result-wrap').style.display='none';
   document.getElementById('email-gate-wrap').style.display='none';
+  document.getElementById('quiz-header').style.display='';
   document.getElementById('quiz-wrap').style.display='block';
   render();window.scrollTo(0,0);
 }
