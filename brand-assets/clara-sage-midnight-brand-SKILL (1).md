@@ -407,3 +407,30 @@ nervous system regulation visual language, body-based healing,
 soft off-white and cream backgrounds, solid flat color blocks,
 bold yet nurturing brand energy, somatic practitioner brand
 ```
+
+---
+
+## Reports & Documents Brand ("To be Human")
+
+Used for PDF reports, HD analysis documents, client-facing written deliverables.
+Brand name in this context: **To be Human**
+Footer text: `To be Human — somaticwithclara.com`
+Tagline: *Nervous System Healing & Identity Reclamation*
+
+### Colors (Report palette — lighter, softer than the web brand)
+
+| Purpose | Hex | Notes |
+|---------|-----|-------|
+| Primary | #E2E9D3 | Soft sage — section backgrounds, header fills |
+| Secondary | #BBA3CF | Lavender — accent bars, dividers |
+| Accent | #C8D9A8 | Sage green — highlights, pull-out boxes |
+| Text | #2A2A2A | Same as web brand |
+| Background | #F0EEE8 | Warm off-white page background |
+| Cover background | #E9EFD8 | Slightly cooler off-white for cover pages |
+
+### Typography (Reports)
+- **Heading font:** Lato, sans-serif
+- **Body font:** Lato, sans-serif
+
+### When to use
+PDF reports, HD profile deliverables, client analysis documents, printed materials. Not for web pages — use the Sage & Midnight Ink web brand for all digital/online content.
