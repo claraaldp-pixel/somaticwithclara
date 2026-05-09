@@ -146,7 +146,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min
 <body>
 
 <!-- QUIZ LANDING -->
-<section style="background:var(--dark);padding:120px 24px 80px;text-align:center;position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;">
+<section id="landing-section" style="background:var(--dark);padding:120px 24px 80px;text-align:center;position:relative;overflow:hidden;min-height:100svh;display:flex;align-items:center;">
   <div style="position:absolute;width:300px;height:300px;border-radius:50%;border:3px solid var(--sage);opacity:.08;top:-80px;right:-80px;pointer-events:none;"></div>
   <div style="position:absolute;width:160px;height:160px;border-radius:50%;border:2px solid var(--violet);opacity:.09;bottom:-50px;left:-50px;pointer-events:none;"></div>
   <div style="position:absolute;width:90px;height:90px;border-radius:50%;border:2px solid var(--sage);opacity:.06;top:40px;left:12%;pointer-events:none;"></div>
@@ -504,6 +504,7 @@ function nextQ(){
 
 function showEmailGate(){
   document.getElementById('quiz-wrap').style.display='none';
+  document.getElementById('landing-section').style.display='none';
   document.getElementById('email-gate-wrap').style.display='block';
   window.scrollTo(0,0);
 }
@@ -571,6 +572,7 @@ function retake(){
   Object.keys(scores).forEach(k=>scores[k]=0);
   document.getElementById('result-wrap').style.display='none';
   document.getElementById('email-gate-wrap').style.display='none';
+  document.getElementById('landing-section').style.display='';
   document.getElementById('quiz-header').style.display='';
   document.getElementById('quiz-wrap').style.display='block';
   render();window.scrollTo(0,0);
