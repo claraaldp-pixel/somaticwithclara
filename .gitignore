@@ -2,6 +2,7 @@ node_modules/
 .DS_Store
 temporary screenshots/
 *.log
+.worktrees/
 
 # Local private reference files
 *.local.txt
