@@ -736,7 +736,7 @@ git commit -m "Rebuild Section 01 Definition: spine language, margin note, detai
 ### Task 6: Rebuild Section 02 — Services (remove icons)
 
 **Files:**
-- Modify: `index.html:256` (`.service-icon` CSS rule), `index.html:406-439` (Services section)
+- Modify: `index.html:254-256` (`.service-icon` and `.service-card:hover` CSS rules), `index.html:406-439` (Services section)
 
 **Interfaces:**
 - Consumes: `.detail-photo` from `field-notes.css`
@@ -844,7 +844,15 @@ Replace it with:
 </section>
 ```
 
-Note: `.services-grid` still applies `display:grid;grid-template-columns:repeat(2,1fr)` from the existing CSS (line 253) — the inline border/padding overrides on each `.service-card` link replace the old card-box look (white bg, rounded border, hover shadow) with the flat top-rule list treatment. The `.service-card:hover` rule (line 255) still fires (transform/shadow) but has no visible box to show it against; that's fine to leave as harmless dead styling rather than editing an unrelated rule.
+Note: `.services-grid` still applies `display:grid;grid-template-columns:repeat(2,1fr)` from the existing CSS (line 253) — the inline border/padding overrides on each `.service-card` link replace the old card-box look (white bg, rounded border, hover shadow) with the flat top-rule list treatment.
+
+The `.service-card:hover` rule would still fire against the new flat layout (transform/shadow with no visible box to show it against — a floating shadow with nothing under it). Since this task is already editing `.service-card` markup, delete the now-incorrect hover rule rather than leave it live. Find in the `<style>` block:
+
+```css
+    .service-card:hover { transform: translateY(-4px); border-color: var(--ember); box-shadow: 0 8px 28px rgba(220,90,34,.12); }
+```
+
+Delete this line entirely (it sits right after the `.service-card` rule, near line 254).
 
 - [ ] **Step 5: Run the check again, confirm it passes**
 
@@ -949,7 +957,7 @@ git commit -m "Rebuild About interlude with personal margin note"
 ### Task 8: Replace Testimonials with the pull-quote stack
 
 **Files:**
-- Modify: `index.html:458-503` (Testimonials section)
+- Modify: `index.html:233` (`.testimonials-grid` rule inside the mobile media query), `index.html:262-280` (testimonials CSS block and its `prefers-reduced-motion` rule), `index.html:458-503` (Testimonials section)
 
 **Interfaces:**
 - Consumes: `.pull-quote-stack`, `.pull-quote` from `field-notes.css`
@@ -996,7 +1004,26 @@ Find (lines 458–503) — the full `<!-- TESTIMONIALS -->` section with its thr
 </section>
 ```
 
-Note: this drops the auto-scrolling `.testimonial-track` animation, the `.testimonials-viewport` mask, and the shorter one-line reviews from the original three-column layout — the pull-quote stack is deliberately a smaller, curated set (per the spec's "two quotes visible at once" editorial direction), not a like-for-like port of every existing quote. The `.testimonials-viewport`, `.testimonial-track`, `.quote-card` CSS rules (lines 263–273) become unused; leave them in place as with the service-card rules in Task 6 rather than editing unrelated CSS.
+Note: this drops the auto-scrolling `.testimonial-track` animation, the `.testimonials-viewport` mask, and the shorter one-line reviews from the original three-column layout — the pull-quote stack is deliberately a smaller, curated set (per the spec's "two quotes visible at once" editorial direction), not a like-for-like port of every existing quote.
+
+The `.testimonials-viewport`, `.testimonial-track`, `.quote-card`, `.quote-mark`, `.quote-text`, `.quote-attr` CSS rules and the `@keyframes scrollUp` rule (lines 262–273) become fully unused once this markup is replaced. Since this task is already replacing the only markup that used them, delete this whole block from the `<style>` tag rather than leave dead CSS behind:
+
+```css
+    /* ── Testimonials (vertical scroll) ── */
+    .testimonials-viewport { overflow: hidden; height: 520px; -webkit-mask-image: linear-gradient(to bottom,transparent 0%,black 10%,black 90%,transparent 100%); mask-image: linear-gradient(to bottom,transparent 0%,black 10%,black 90%,transparent 100%); }
+    .testimonial-track { display: flex; flex-direction: column; gap: 16px; animation: scrollUp linear infinite; }
+    @keyframes scrollUp { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
+    .quote-card { background: var(--bone); border-radius: 16px; border: 1.5px solid var(--line); padding: 24px; }
+    .quote-card.sage { background: var(--dark); border-color: var(--dark); }
+    .quote-mark { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 56px; line-height: 0.6; color: var(--gold); display: block; margin-bottom: 12px; }
+    .quote-card.sage .quote-mark { color: rgba(242,182,92,.35); }
+    .quote-text { font-family: 'Spectral', serif; font-size: 14px; line-height: 1.85; font-weight: 300; color: var(--text); margin-bottom: 12px; }
+    .quote-card.sage .quote-text { color: var(--honey); }
+    .quote-attr { font-family: 'Hanken Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+    .quote-card.sage .quote-attr { color: rgba(248,220,166,.5); }
+```
+
+Also delete the now-orphaned `@media (prefers-reduced-motion: reduce) { .testimonial-track { animation: none; } }` rule (originally near line 280) and the `.testimonials-grid { grid-template-columns: 1fr !important; }` line inside the `@media (max-width: 680px)` block (originally near line 233) — both reference the deleted testimonial markup.
 
 - [ ] **Step 4: Run the check again, confirm it passes**
 
