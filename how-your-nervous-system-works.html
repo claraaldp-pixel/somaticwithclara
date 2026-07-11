@@ -18,69 +18,73 @@
 <meta name="twitter:title" content="How Your Nervous System Works" />
 <meta name="twitter:description" content="Your nervous system is your operating system — not background noise. Learn the architecture behind why it runs the show." />
 <meta name="twitter:image" content="https://somaticwithclara.com/og-image.jpg" />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#EBF0E2;--white:#FFFFFF;--sage-light:#D4E8D8;
-  --sage:#5B9A6E;--sage-dark:#3D7A55;--violet:#7B5EA7;
-  --violet-dark:#5A4080;--dark:#1A2035;--text:#2A2A2A;
-  --body:#3A3A3A;--muted:#888;--faint:#BBB;--line:rgba(0,0,0,.08);
-}
+:root {
+      --bg: #FBF5EA; --white: #FFFFFF;
+      --sage-light: #E6EAD7; --sage: #7C8456; --sage-dark: #5E6A40;
+      --violet: #7E6F97; --violet-dark: #5E5078;
+      --ember: #DC5A22; --ember-dark: #C2491A; --amber: #DC5A22;
+      --marigold: #E8983A; --gold: #F2B65C; --honey: #F8DCA6; --honey-pale: #FCEFD2;
+      --cream: #FBF5EA; --bone: #F3EADB; --sand: #E7D8BF;
+      --dark: #2A2117; --text: #2A2117; --body: #4A3E2F;
+      --muted: #6E6051; --faint: #D8C5A4; --line: rgba(42,33,23,.1);
+    }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
+body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--text);}
 
 .ticker{background:var(--sage);padding:9px 0;overflow:hidden;}
 .ticker-inner{display:flex;animation:tick 30s linear infinite;width:max-content;}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.tw{font-family:'Anton',sans-serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 22px;}
+.tw{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 22px;}
 .td{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.28);display:inline-block;flex-shrink:0;align-self:center;}
 
 .header{background:var(--dark);padding:36px 24px 30px;text-align:center;position:relative;overflow:hidden;}
 .circ{position:absolute;border-radius:50%;pointer-events:none;}
-.eyebrow{font-family:'Permanent Marker',cursive;font-style:normal;font-size:14px;color:var(--sage);transform:rotate(-2deg);display:inline-block;margin-bottom:8px;}
-.h1{font-family:'Anton',sans-serif;font-size:clamp(22px,5vw,34px);color:#fff;text-transform:uppercase;line-height:1.05;}
+.eyebrow{font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-size:14px;color: var(--ember);transform:rotate(-2deg);display:inline-block;margin-bottom:8px;}
+.h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(22px,5vw,34px);color:#fff;text-transform:uppercase;line-height:1.05;}
 .h1 em{color:var(--sage);font-style:normal;}
 .header-sub{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);margin-top:10px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
 .grad-div{height:4px;background:var(--sage);}
 
 .contents{background:var(--white);border-bottom:2px solid var(--line);}
 .contents-inner{max-width:680px;margin:0 auto;padding:16px 24px;}
-.contents-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.contents-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
 .contents-list{display:flex;flex-wrap:wrap;gap:6px;}
-.contents-pill{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--sage-dark);background:rgba(91,154,110,.1);border:1.5px solid rgba(91,154,110,.2);border-radius:50px;padding:4px 12px;text-decoration:none;cursor:pointer;transition:all .15s;}
+.contents-pill{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:500;color:var(--sage-dark);background:rgba(124,132,86,.1);border:1.5px solid rgba(124,132,86,.2);border-radius:50px;padding:4px 12px;text-decoration:none;cursor:pointer;transition:all .15s;}
 .contents-pill:hover{background:var(--sage);color:#fff;}
 
 .body{max-width:680px;margin:0 auto;padding:32px 24px 60px;}
 
 .lesson{margin-bottom:44px;scroll-margin-top:20px;}
-.lesson-num{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
-.lesson-title{font-family:'Anton',sans-serif;font-size:clamp(15px,2.8vw,19px);text-transform:uppercase;color:var(--dark);margin-bottom:6px;line-height:1.1;}
+.lesson-num{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
+.lesson-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(15px,2.8vw,19px);text-transform:uppercase;color:var(--dark);margin-bottom:6px;line-height:1.1;}
 .lesson-title em{color:var(--sage);font-style:normal;}
 .lesson-sub{font-size:12px;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:14px;}
 .body-text{font-size:14px;line-height:1.75;color:var(--body);margin-bottom:12px;}
 .body-text strong{font-weight:700;color:var(--text);}
 
-.divider{height:4px;background:var(--sage);width:36px;margin-bottom:40px;}
+.divider{height:4px;background: var(--amber);width:36px;margin-bottom:40px;}
 .divider.v{background:var(--violet);}
 
-.key-idea{border-left:4px solid var(--sage);background:rgba(91,154,110,.07);border-radius:0 12px 12px 0;padding:14px 18px;margin:14px 0 18px;}
+.key-idea{border-left:4px solid var(--sage);background:rgba(124,132,86,.07);border-radius:0 12px 12px 0;padding:14px 18px;margin:14px 0 18px;}
 .key-idea.violet{border-left-color:var(--violet);background:rgba(123,94,167,.07);}
-.ki-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:5px;}
+.ki-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:5px;}
 .ki-label.v{color:var(--violet-dark);}
 .ki-text{font-size:13px;line-height:1.65;color:var(--body);}
 
 /* NS Architecture diagram */
 .arch{background:var(--white);border:2px solid var(--line);border-radius:14px;overflow:hidden;margin:16px 0;}
 .arch-top{background:var(--dark);padding:12px 18px;display:flex;align-items:center;gap:10px;}
-.arch-top-label{font-family:'Anton',sans-serif;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;}
+.arch-top-label{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;}
 .arch-section{padding:14px 18px;border-bottom:1px solid var(--line);}
 .arch-section:last-child{border-bottom:none;}
 .arch-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
 .arch-desc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.5;}
 .arch-indent{padding-left:20px;border-left:3px solid var(--sage-light);}
-.arch-badge{display:inline-block;font-family:'Anton',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:50px;margin-right:6px;}
+.arch-badge{display:inline-block;font-family:'Bricolage Grotesque',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:50px;margin-right:6px;}
 .arch-badge.sns{background:rgba(186,117,23,.15);color:#7A4F00;}
-.arch-badge.pns{background:rgba(91,154,110,.15);color:var(--sage-dark);}
+.arch-badge.pns{background:rgba(124,132,86,.15);color:var(--sage-dark);}
 .arch-badge.ans{background:rgba(123,94,167,.15);color:var(--violet-dark);}
 
 /* Brain layers */
@@ -89,19 +93,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
 .brain-layer:last-child{border-bottom:none;}
 .bl-bar{width:6px;flex-shrink:0;border-radius:3px;min-height:40px;}
 .bl-content{}
-.bl-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.bl-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
 .bl-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
 .bl-desc{font-size:12px;font-weight:300;color:var(--body);line-height:1.55;}
 
 .stat-highlight{display:flex;align-items:center;gap:14px;background:var(--white);border:2px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
-.stat-num{font-family:'Anton',sans-serif;font-size:32px;color:var(--sage);flex-shrink:0;line-height:1;}
+.stat-num{font-family:'Bricolage Grotesque',sans-serif;font-size:32px;color:var(--sage);flex-shrink:0;line-height:1;}
 .stat-label{font-size:13px;color:var(--body);line-height:1.55;}
 .stat-label strong{font-weight:700;color:var(--text);}
 
 .dark-block{background:var(--dark);border-radius:14px;padding:20px 22px;margin:16px 0;position:relative;overflow:hidden;}
 .db-circ{position:absolute;border-radius:50%;pointer-events:none;}
-.db-label{font-family:'Permanent Marker',cursive;font-style:normal;font-size:13px;color:var(--sage);transform:rotate(-1deg);display:inline-block;margin-bottom:8px;}
-.db-title{font-family:'Anton',sans-serif;font-size:14px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
+.db-label{font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-size:13px;color:var(--sage);transform:rotate(-1deg);display:inline-block;margin-bottom:8px;}
+.db-title{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
 .db-row{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);}
 .db-row:last-child{border-bottom:none;}
 .db-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);margin-top:5px;flex-shrink:0;}
@@ -112,21 +116,21 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
 .example-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
 .example-card{background:var(--white);border:2px solid var(--line);border-radius:12px;padding:14px 16px;}
 .ec-icon{font-size:20px;margin-bottom:6px;}
-.ec-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
+.ec-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
 .ec-label.safe{color:var(--sage-dark);}
 .ec-label.stress{color:var(--violet-dark);}
 .ec-body{font-size:12px;font-weight:300;color:var(--body);line-height:1.6;}
 
 .takeaway{background:var(--violet);border-radius:14px;padding:20px 22px;margin:20px 0;position:relative;overflow:hidden;}
 .tv-circ{position:absolute;border-radius:50%;pointer-events:none;}
-.takeaway-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
+.takeaway-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
 .takeaway-text{font-size:14px;font-weight:300;font-style:italic;color:#fff;line-height:1.75;}
 
 .flow{background:var(--sage-light);border-radius:14px;padding:18px 20px;margin:14px 0;}
-.flow-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;}
-.flow-row{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid rgba(91,154,110,.15);}
+.flow-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;}
+.flow-row{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid rgba(124,132,86,.15);}
 .flow-row:last-child{border-bottom:none;}
-.flow-step{width:28px;height:28px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:11px;color:#fff;flex-shrink:0;margin-top:1px;}
+.flow-step{width:28px;height:28px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-size:11px;color:#fff;flex-shrink:0;margin-top:1px;}
 .flow-text{font-size:13px;color:var(--body);line-height:1.6;}
 .flow-text strong{font-weight:700;color:var(--text);}
 
@@ -134,6 +138,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
   .example-compare{grid-template-columns:1fr;}
 }
 </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f7f03a7-24e9-4452-bc92-91b58256b1cc"></script>
 </head>
 <body>
 
@@ -214,7 +219,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
                 <div class="arch-name" style="font-size:12px;">Sympathetic</div>
                 <div class="arch-desc">Fight or flight. Mobilises energy, increases heart rate, prepares the body for action.</div>
               </div>
-              <div style="flex:1;min-width:180px;background:rgba(91,154,110,.07);border-radius:10px;padding:10px 12px;">
+              <div style="flex:1;min-width:180px;background:rgba(124,132,86,.07);border-radius:10px;padding:10px 12px;">
                 <div style="margin-bottom:3px;"><span class="arch-badge pns">PNS</span></div>
                 <div class="arch-name" style="font-size:12px;">Parasympathetic</div>
                 <div class="arch-desc">Rest and digest. Calming, restorative. Promotes digestion and conserves energy.</div>
@@ -258,7 +263,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
           <div class="bl-desc">Home of the amygdala, which constantly scans for threats and stores emotionally charged memories. The limbic system processes feelings and shapes your sense of self and relationships.</div>
         </div>
       </div>
-      <div class="brain-layer" style="background:rgba(91,154,110,.04);">
+      <div class="brain-layer" style="background:rgba(124,132,86,.04);">
         <div class="bl-bar" style="background:var(--sage);"></div>
         <div class="bl-content">
           <div class="bl-label">Outermost layer · Only accessible when regulated</div>
@@ -404,19 +409,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
   <!-- Quiz link -->
   <div style="background:var(--dark);border-radius:14px;padding:22px 24px;margin-top:12px;position:relative;overflow:hidden;">
     <div style="position:absolute;width:160px;height:160px;border:3px solid rgba(255,255,255,.07);top:-50px;right:-50px;border-radius:50%;pointer-events:none;"></div>
-    <div style="font-family:'Permanent Marker',cursive;font-size:13px;color:var(--sage);transform:rotate(-1.5deg);display:inline-block;margin-bottom:8px;">take it further</div>
-    <div style="font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:8px;">Want to see this in your own life?</div>
+    <div style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;color:var(--sage);transform:rotate(-1.5deg);display:inline-block;margin-bottom:8px;">take it further</div>
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:8px;">Want to see this in your own life?</div>
     <p style="font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.6);margin-bottom:18px;line-height:1.7;">The companion reflection — not a test, not a score. Just questions that ask you to notice where these concepts are already showing up in how your nervous system runs.</p>
-    <a href="/ns-works-quiz" style="font-family:'Anton',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--sage);color:#fff;border-radius:50px;padding:12px 24px;text-decoration:none;display:inline-block;transition:all .2s;">Open the reflection →</a>
+    <a href="/ns-works-quiz" style="font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--sage);color:#fff;border-radius:50px;padding:12px 24px;text-decoration:none;display:inline-block;transition:all .2s;">Open the reflection →</a>
   </div>
 
   <!-- Skool CTA -->
   <div style="background:var(--sage);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;margin-top:12px;margin-bottom:0;">
     <div style="position:absolute;width:160px;height:160px;border:3px solid rgba(255,255,255,.08);border-radius:50%;top:-50px;right:-50px;pointer-events:none;"></div>
-    <div style="font-family:'Permanent Marker',cursive;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:4px;">Reclaim Your Life</div>
-    <h3 style="font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;">This is where the work continues.</h3>
+    <div style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:4px;">Reclaim Your Life</div>
+    <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;">This is where the work continues.</h3>
     <p style="font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);margin-bottom:20px;line-height:1.65;max-width:420px;margin-left:auto;margin-right:auto;">Inside the community: practices mapped to your nervous system state, a full somatic library, and people doing exactly this work.</p>
-    <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" style="font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 26px;text-decoration:none;display:inline-block;">Join the community →</a>
+    <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" style="font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 26px;text-decoration:none;display:inline-block;">Join the community →</a>
   </div>
 
 </div>
