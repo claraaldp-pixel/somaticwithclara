@@ -121,7 +121,6 @@
     .section-label { font-family: 'Hanken Grotesk', sans-serif; font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 12px; }
     .section-title { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: clamp(28px,4vw,44px); color: var(--text); line-height: 1.12; margin-bottom: 40px; }
     .section-title em { color: var(--ember); font-style: normal; }
-    .hero-literary em { color: var(--gold); font-style: normal; }
 
     /* Buttons */
     .btn-sage {
@@ -164,49 +163,27 @@
     .nav-link:hover { color: var(--honey); }
     #nav.scrolled .nav-link:hover { color: #fff; }
 
-    /* Hero (dark) */
-    .hero-dark {
-      background: var(--dark) url('brand-assets/hero-poster.jpg') center/cover no-repeat;
-      position: relative; overflow: hidden;
-      padding: 120px 24px 80px; text-align: center;
+    /* ── Photo split: shared asymmetric real-photo layout ── */
+    .photo-split { display: flex; gap: 48px; align-items: center; }
+    .photo-split.reverse { flex-direction: row-reverse; }
+    .photo-split-media { flex: 1 1 56%; min-width: 0; }
+    .photo-split-media img { width: 100%; height: 100%; min-height: 320px; max-height: 480px; object-fit: cover; display: block; border-radius: 4px; }
+    .photo-split-text { flex: 1 1 44%; min-width: 0; }
+    @media (max-width: 780px) {
+      .photo-split, .photo-split.reverse { flex-direction: column; gap: 24px; }
+      .photo-split-media img { max-height: 340px; }
     }
-    .hero-video {
-      position: absolute; inset: 0; width: 100%; height: 100%;
-      object-fit: cover; z-index: 0;
-      opacity: 0; transition: opacity 0.6s ease;
-    }
-    .hero-overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background:
-        linear-gradient(to right, rgba(30,18,8,0.72) 0%, rgba(30,18,8,0.3) 55%, transparent 100%),
-        linear-gradient(to bottom, rgba(30,18,8,0.2) 0%, transparent 40%, transparent 65%, rgba(30,18,8,0.45) 100%);
-    }
-    @media (max-width: 768px) {
-      .hero-video { display: none; }
-      .hero-dark {
-        background-image:
-          linear-gradient(160deg, rgba(42,33,23,0.85) 0%, rgba(42,33,23,0.7) 100%),
-          radial-gradient(ellipse 80% 60% at 5% 95%, rgba(220,90,34,0.3) 0%, transparent 60%),
-          url('brand-assets/hero-poster.jpg');
-        background-size: cover;
-        background-position: center;
-        background-color: var(--dark);
-      }
-    }
+
+    /* Hero */
     .hero-eyebrow {
-      font-family: 'Hanken Grotesk', sans-serif; font-size: 10px; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--gold); display: block; margin-bottom: 24px;
+      font-family: 'Hanken Grotesk', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--ember); display: block; margin-bottom: 16px;
     }
-    .hero-h1 {
-      font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700;
-      font-size: clamp(42px,8vw,96px); line-height: 0.92;
-      letter-spacing: -0.02em; color: var(--honey); margin-bottom: 0;
-    }
-    .hero-literary {
-      font-family: 'Newsreader', serif; font-weight: 300;
-      font-size: clamp(28px,4.5vw,56px); line-height: 1.25;
-      letter-spacing: -0.01em; color: var(--honey-pale); max-width: 680px;
+    .hero-headline {
+      font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800;
+      font-size: clamp(34px,5vw,52px); line-height: 1.06;
+      color: var(--dark); margin: 0 0 16px;
     }
 
 
@@ -229,7 +206,6 @@
 
     @media (max-width: 680px) {
       .narrow, .wide { padding: 0 16px; }
-      .hero-dark { padding: 100px 16px 60px; }
       .testimonials-grid { grid-template-columns: 1fr !important; }
       .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     }
@@ -278,32 +254,6 @@
     #mobile-nav .nav-link { font-size: 15px; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.7); display: block; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
     @media (max-width:680px) { .desktop-nav { display:none !important; } #ham { display:flex !important; } }
     @media (prefers-reduced-motion: reduce) { .testimonial-track { animation: none; } }
-
-    /* ── Scroll-controlled hero ────────────────────── */
-    .hero-scroll-outer { height: 320vh; position: relative; }
-    .hero-sticky-wrap { position: sticky; top: 0; height: 100vh; overflow: hidden; }
-    .hero-scroll-outer .hero-dark { padding: 0; height: 100vh; }
-    .hero-state {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end;
-      text-align: left; padding: 0 60px 80px;
-      z-index: 3; opacity: 0;
-      transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1);
-      pointer-events: none;
-    }
-    .hero-state.active { opacity: 1; pointer-events: auto; }
-    .hero-state.center-state { align-items: center; justify-content: center; text-align: center; padding: 0 40px; }
-    @media (max-width: 680px) {
-      .hero-state { padding: 0 24px 60px; }
-    }
-    @keyframes scrollHint { 0%,100%{opacity:.4;transform:translateX(-50%) translateY(0)} 50%{opacity:.7;transform:translateX(-50%) translateY(6px)} }
-    @media (max-width: 768px) {
-      .hero-scroll-outer { height: 100vh; }
-      .hero-sticky-wrap { position: relative; }
-      .hero-state { opacity: 0 !important; }
-      .hero-state[data-phase="0"] { opacity: 1 !important; pointer-events: auto !important; }
-    }
-    @media (prefers-reduced-motion: reduce) { .hero-state { transition: none; } }
 
     /* Learn dropdown */
     .nav-dropdown { position: relative; display: flex; align-items: center; }
@@ -355,37 +305,18 @@
 </nav>
 
 <!-- HERO -->
-<div class="hero-scroll-outer" id="hero-outer">
-  <div class="hero-sticky-wrap">
-    <section class="hero-dark">
-      <video class="hero-video" id="hero-video" muted playsinline preload="auto" poster="brand-assets/hero-poster.jpg">
-        <source src="hero-video.mp4" type="video/mp4">
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="circ" style="width:300px;height:300px;border:3px solid var(--sage);opacity:.06;top:-80px;right:-80px;position:absolute;z-index:2;border-radius:50%;pointer-events:none;"></div>
-      <div class="circ" style="width:160px;height:160px;border:2px solid var(--amber);opacity:.08;bottom:-50px;left:-50px;position:absolute;z-index:2;border-radius:50%;pointer-events:none;"></div>
-
-      <!-- State 0 — Opening (0–50% scroll) · left-aligned -->
-      <div class="hero-state active" data-phase="0">
-        <div style="max-width:640px;">
-          <span class="hero-eyebrow">Somatic &amp; Nervous-System Coaching</span>
-          <h1 class="hero-h1">slow is a skill.<br/>let's practice it.</h1>
-        </div>
+<section style="background:var(--cream);padding:140px 24px 80px;">
+  <div class="wide">
+    <div class="photo-split">
+      <div class="photo-split-media"><img src="brand-assets/hero-stretch.jpg" alt="Clara in a seated stretch, grounded and at ease" loading="eager"></div>
+      <div class="photo-split-text">
+        <span class="hero-eyebrow">Somatic &amp; Nervous-System Coaching</span>
+        <h1 class="hero-headline">slow is a skill.<br>let's practice it.</h1>
+        <p style="font-family:'Hanken Grotesk',sans-serif;font-size:16px;line-height:1.7;color:var(--body);max-width:38ch;margin:0;">There's who you've been surviving as. And who you actually are.</p>
       </div>
-
-      <!-- State 1 — Invitation (50–100% scroll) · centred -->
-      <div class="hero-state center-state" data-phase="1">
-        <p class="hero-literary">There's who you've been<br/>surviving as.<br/>And who you <em>actually</em> are.</p>
-      </div>
-
-      <!-- Scroll hint -->
-      <div id="scroll-hint" style="position:absolute;bottom:32px;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,.3);font-family:'Hanken Grotesk',sans-serif;font-size:10px;letter-spacing:2px;text-transform:uppercase;animation:scrollHint 2s ease-in-out infinite;transition:opacity 0.5s ease;">
-        Scroll
-        <span style="width:1px;height:36px;background:rgba(255,255,255,.2);display:block;"></span>
-      </div>
-    </section>
+    </div>
   </div>
-</div>
+</section>
 <hr class="divider" />
 
 <!-- GEO: Definition + Credential Block -->
@@ -583,43 +514,6 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.12 });
 revealEls.forEach(el => observer.observe(el));
-
-// ── Scroll-controlled hero video ─────────────────────
-const heroOuter   = document.getElementById('hero-outer');
-const heroVideoEl = document.getElementById('hero-video');
-const heroStates  = document.querySelectorAll('.hero-state');
-const scrollHint  = document.getElementById('scroll-hint');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const isMobile      = window.innerWidth <= 768 || 'ontouchstart' in window;
-
-if (reducedMotion || isMobile) {
-  if (heroVideoEl) { heroVideoEl.setAttribute('autoplay', ''); heroVideoEl.setAttribute('loop', ''); heroVideoEl.style.opacity = '1'; }
-  if (scrollHint) scrollHint.style.display = 'none';
-} else {
-  // Fade video in once enough is buffered to seek smoothly
-  if (heroVideoEl) {
-    heroVideoEl.addEventListener('canplaythrough', () => { heroVideoEl.style.opacity = '1'; }, { once: true });
-  }
-
-  function updateHero() {
-    const rect = heroOuter.getBoundingClientRect();
-    const totalH = heroOuter.offsetHeight - window.innerHeight;
-    if (totalH <= 0) return;
-    // Reserve ~40vh at the end as a pause zone — progress stays at 1.0 while
-    // the user scrolls through it, holding the last video frame before moving on
-    const pauseH = window.innerHeight * 0.4;
-    const activeH = totalH - pauseH;
-    const progress = Math.max(0, Math.min(1, -rect.top / activeH));
-    if (heroVideoEl && heroVideoEl.duration) {
-      heroVideoEl.currentTime = progress * heroVideoEl.duration * 0.5;
-    }
-    const phase = progress < 0.5 ? 0 : 1;
-    heroStates.forEach(s => s.classList.toggle('active', +s.dataset.phase === phase));
-    if (scrollHint) scrollHint.style.opacity = progress > 0.04 ? '0' : '1';
-  }
-  window.addEventListener('scroll', updateHero, { passive: true });
-  if (heroVideoEl) heroVideoEl.addEventListener('loadedmetadata', updateHero);
-}
 </script>
 </body>
 </html>
