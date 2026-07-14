@@ -42,6 +42,15 @@ check('services use bold visible numerals, no decorative icons', async (page) =>
   return result.opacity > 0.8 && result.fontSize >= 32;
 });
 
+check('About uses photo-split with real about-smile photo and personal copy', async (page) => {
+  const text = await page.evaluate(() => document.body.innerText);
+  const hasPhoto = await page.evaluate(() => {
+    const imgs = Array.from(document.querySelectorAll('.photo-split-media img'));
+    return imgs.some(i => (i.getAttribute('src') || '').includes('about-smile.jpg'));
+  });
+  return hasPhoto && (text.includes('scattering') || text.includes('boring'));
+});
+
 async function run() {
   const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: true });
   const page = await browser.newPage();
