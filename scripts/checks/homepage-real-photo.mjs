@@ -29,6 +29,19 @@ check('Section 01 uses reversed photo-split with real definition-selfhug photo',
   return el.some(src => src && src.includes('definition-selfhug.jpg'));
 });
 
+check('services use bold visible numerals, no decorative icons', async (page) => {
+  const result = await page.evaluate(() => {
+    const numerals = Array.from(document.querySelectorAll('.service-numeral'));
+    const icons = document.querySelectorAll('.service-icon');
+    if (numerals.length !== 4 || icons.length !== 0) return null;
+    const style = getComputedStyle(numerals[0]);
+    return { opacity: parseFloat(style.opacity), fontSize: parseFloat(style.fontSize) };
+  });
+  if (!result) return false;
+  // "Bold visible" means opacity close to 1 (not the ~0.1 ghosted look) and a large font size
+  return result.opacity > 0.8 && result.fontSize >= 32;
+});
+
 async function run() {
   const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: true });
   const page = await browser.newPage();

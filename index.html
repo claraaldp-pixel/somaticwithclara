@@ -226,14 +226,13 @@
     .process-card p { font-family: 'DM Sans', sans-serif; font-size: 13px; color: var(--body); line-height: 1.75; }
 
     /* ── Services grid ── */
-    .services-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 20px; max-width: 860px; margin: 0 auto; }
-    .service-card { background: var(--white); border-radius: 20px; border: 1.5px solid var(--line); padding: 36px 32px; transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; display: flex; flex-direction: column; gap: 12px; }
-    .service-card:hover { transform: translateY(-4px); border-color: var(--ember); box-shadow: 0 8px 28px rgba(220,90,34,.12); }
-    .service-icon { font-size: 20px; color: var(--ember); line-height: 1; }
-    .service-name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 18px; color: var(--text); line-height: 1.2; margin: 0; }
-    .service-desc { font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: var(--body); line-height: 1.8; font-weight: 300; margin: 0; flex: 1; }
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 0; max-width: 780px; margin: 0 auto; }
+    .service-card { padding: 24px 0; border-top: 1.5px solid var(--line); display: flex; align-items: flex-start; gap: 20px; text-decoration: none; }
+    .services-grid a.service-card:last-child { border-bottom: 1.5px solid var(--line); }
+    .service-numeral { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; line-height: 1; color: var(--sage); flex-shrink: 0; min-width: 64px; }
+    .service-name { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 600; font-size: 18px; color: var(--text); line-height: 1.2; margin: 0 0 6px; }
+    .service-desc { font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: var(--body); line-height: 1.8; font-weight: 300; margin: 0 0 8px; }
     .service-link { font-family: 'Hanken Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ember); }
-    @media (max-width: 680px) { .services-grid { grid-template-columns: 1fr; } }
 
     /* ── Testimonials (vertical scroll) ── */
     .testimonials-viewport { overflow: hidden; height: 520px; -webkit-mask-image: linear-gradient(to bottom,transparent 0%,black 10%,black 90%,transparent 100%); mask-image: linear-gradient(to bottom,transparent 0%,black 10%,black 90%,transparent 100%); }
@@ -340,35 +339,43 @@
 <hr class="divider" />
 
 <!-- SERVICES -->
-<section style="background:var(--bg);padding:100px 24px;">
+<section style="background:linear-gradient(160deg, rgba(124,132,86,.16) 0%, rgba(124,132,86,.05) 100%), var(--sage-light);padding:100px 24px;">
   <div class="wide">
-    <div style="text-align:center;margin-bottom:56px;">
-      <h2 class="section-title reveal" style="text-align:center;">Ways to work together.</h2>
+    <div style="margin-bottom:48px;">
+      <h2 class="section-title reveal">Ways to work together.</h2>
     </div>
     <div class="services-grid">
-      <a href="offers.html" class="service-card reveal" style="text-decoration:none;">
-        <div class="service-icon">◎</div>
-        <p class="service-name">Somatic Coaching</p>
-        <p class="service-desc">One-to-one work with the body as guide. For women who are functioning but feel stuck, disconnected, or exhausted by coping. 3 or 6-month arc.</p>
-        <span class="service-link">See details →</span>
+      <a href="offers.html" class="service-card reveal">
+        <span class="service-numeral">01.</span>
+        <div>
+          <p class="service-name">Somatic Coaching</p>
+          <p class="service-desc">One-to-one work with the body as guide. For women who are functioning but feel stuck, disconnected, or exhausted by coping. 3 or 6-month arc.</p>
+          <span class="service-link">See details →</span>
+        </div>
       </a>
-      <a href="somatic-yoga.html" class="service-card reveal d1" style="text-decoration:none;">
-        <div class="service-icon">〜</div>
-        <p class="service-name">Somatic Yoga</p>
-        <p class="service-desc">Movement, breath, and nervous system awareness, together. Classes designed to help the body release survival patterns through sensation rather than effort.</p>
-        <span class="service-link">Learn more →</span>
+      <a href="somatic-yoga.html" class="service-card reveal d1">
+        <span class="service-numeral">02.</span>
+        <div>
+          <p class="service-name">Somatic Yoga</p>
+          <p class="service-desc">Movement, breath, and nervous system awareness, together. Classes designed to help the body release survival patterns through sensation rather than effort.</p>
+          <span class="service-link">Learn more →</span>
+        </div>
       </a>
-      <a href="offers.html" class="service-card reveal d2" style="text-decoration:none;">
-        <div class="service-icon">◇</div>
-        <p class="service-name">Human Design</p>
-        <p class="service-desc">A reading that maps the design underneath your coping patterns. Understand your energy type, authority, and what alignment actually looks like for you.</p>
-        <span class="service-link">See details →</span>
+      <a href="offers.html" class="service-card reveal d2">
+        <span class="service-numeral">03.</span>
+        <div>
+          <p class="service-name">Human Design</p>
+          <p class="service-desc">One of the tools I actually use to find the somatic block underneath a pattern — a map of your energetic architecture, not a personality quiz.</p>
+          <span class="service-link">See details →</span>
+        </div>
       </a>
-      <a href="reclaim-your-life.html" class="service-card reveal d3" style="text-decoration:none;">
-        <div class="service-icon">○</div>
-        <p class="service-name">Nervous System Community</p>
-        <p class="service-desc">A Skool community for women learning to regulate. Somatic practices, nervous system tools, and a space to show up as you actually are.</p>
-        <span class="service-link">Join the community →</span>
+      <a href="reclaim-your-life.html" class="service-card reveal d3">
+        <span class="service-numeral">04.</span>
+        <div>
+          <p class="service-name">Nervous System Community</p>
+          <p class="service-desc">A Skool community for women learning to regulate. Somatic practices, nervous system tools, and a space to show up as you actually are.</p>
+          <span class="service-link">Join the community →</span>
+        </div>
       </a>
     </div>
   </div>
