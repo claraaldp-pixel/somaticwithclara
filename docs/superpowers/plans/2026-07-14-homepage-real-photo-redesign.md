@@ -263,6 +263,16 @@ Replace it with:
 </section>
 ```
 
+- [ ] **Step 5b: Delete the now-orphaned `.hero-dark` mobile override**
+
+Find, inside the `@media (max-width: 680px)` block near the top of the `<style>` block:
+
+```css
+      .hero-dark { padding: 100px 16px 60px; }
+```
+
+Delete this line. It's one line inside a shared media-query block that also contains `.narrow, .wide`, `.testimonials-grid`, and `.about-grid` overrides — delete only this one line, leaving the block's other lines and its opening/closing braces intact. (`.testimonials-grid` and `.about-grid` become dead in later tasks — Task 4 and Task 5 remove those two lines respectively; don't remove them here.)
+
 - [ ] **Step 6: Delete the scroll-controlled hero video `<script>` block**
 
 Find, at the end of the closing `<script>` tag (lines 587–622):
@@ -659,12 +669,22 @@ Replace it with:
 
 Note: the "Full story →" link now uses the existing `.btn-dark` class (solid dark pill button) rather than a bare text link, matching the spec's "solid, not thin underline links" button requirement.
 
-- [ ] **Step 4: Run the check again, confirm it passes**
+- [ ] **Step 4: Delete the now-orphaned `.about-grid` mobile override**
+
+Find, inside the same `@media (max-width: 680px)` block Task 1 touched (Task 1 already removed the `.hero-dark` line from it):
+
+```css
+      .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+```
+
+Delete this line (the `.about-grid` class is no longer used anywhere in the markup after this task's Step 3 replacement). Leave the block's remaining `.narrow, .wide` and `.testimonials-grid` lines untouched — Task 5 removes `.testimonials-grid` in its own step.
+
+- [ ] **Step 5: Run the check again, confirm it passes**
 
 Run: `node scripts/checks/homepage-real-photo.mjs`
 Expected: `PASS — About uses photo-split with real about-smile photo and personal copy`
 
-- [ ] **Step 5: Commit**
+- [ ] **Step 6: Commit**
 
 ```bash
 cd "/Users/clara/Desktop/Website builder"
