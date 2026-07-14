@@ -21,6 +21,14 @@ check('no scroll-controlled hero video remains', async (page) => {
   return !hasVideo;
 });
 
+check('Section 01 uses reversed photo-split with real definition-selfhug photo', async (page) => {
+  const el = await page.evaluate(() => {
+    const imgs = Array.from(document.querySelectorAll('.photo-split.reverse .photo-split-media img'));
+    return imgs.map(i => i.getAttribute('src'));
+  });
+  return el.some(src => src && src.includes('definition-selfhug.jpg'));
+});
+
 async function run() {
   const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: true });
   const page = await browser.newPage();
