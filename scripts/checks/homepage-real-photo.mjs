@@ -60,6 +60,16 @@ check('testimonials use pull-quote + photo pairing, not auto-scroll carousel', a
   return !hasTrack && pairs.length === 3 && pairs.every(Boolean);
 });
 
+check('FAQ headings use bold 800-weight Bricolage Grotesque', async (page) => {
+  const style = await page.evaluate(() => {
+    const h3 = document.querySelector('section h3');
+    if (!h3) return null;
+    return { fontWeight: getComputedStyle(h3).fontWeight, fontSize: parseFloat(getComputedStyle(h3).fontSize) };
+  });
+  if (!style) return false;
+  return parseInt(style.fontWeight, 10) >= 700 && style.fontSize >= 18;
+});
+
 async function run() {
   const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: true });
   const page = await browser.newPage();
