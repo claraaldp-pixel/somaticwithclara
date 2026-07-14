@@ -51,6 +51,15 @@ check('About uses photo-split with real about-smile photo and personal copy', as
   return hasPhoto && (text.includes('scattering') || text.includes('boring'));
 });
 
+check('testimonials use pull-quote + photo pairing, not auto-scroll carousel', async (page) => {
+  const hasTrack = await page.evaluate(() => !!document.querySelector('.testimonial-track'));
+  const pairs = await page.evaluate(() => {
+    const els = Array.from(document.querySelectorAll('.pull-quote-pair'));
+    return els.map(el => !!el.querySelector('img') && !!el.querySelector('.pull-quote-text'));
+  });
+  return !hasTrack && pairs.length === 3 && pairs.every(Boolean);
+});
+
 async function run() {
   const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: true });
   const page = await browser.newPage();

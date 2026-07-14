@@ -206,7 +206,6 @@
 
     @media (max-width: 680px) {
       .narrow, .wide { padding: 0 16px; }
-      .testimonials-grid { grid-template-columns: 1fr !important; }
     }
 
     /* ── Process arc cards ── */
@@ -233,25 +232,21 @@
     .service-desc { font-family: 'Hanken Grotesk', sans-serif; font-size: 14px; color: var(--body); line-height: 1.8; font-weight: 300; margin: 0 0 8px; }
     .service-link { font-family: 'Hanken Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ember); }
 
-    /* ── Testimonials (vertical scroll) ── */
-    .testimonials-viewport { overflow: hidden; height: 520px; -webkit-mask-image: linear-gradient(to bottom,transparent 0%,black 10%,black 90%,transparent 100%); mask-image: linear-gradient(to bottom,transparent 0%,black 10%,black 90%,transparent 100%); }
-    .testimonial-track { display: flex; flex-direction: column; gap: 16px; animation: scrollUp linear infinite; }
-    @keyframes scrollUp { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
-    .quote-card { background: var(--bone); border-radius: 16px; border: 1.5px solid var(--line); padding: 24px; }
-    .quote-card.sage { background: var(--dark); border-color: var(--dark); }
-    .quote-mark { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 700; font-size: 56px; line-height: 0.6; color: var(--gold); display: block; margin-bottom: 12px; }
-    .quote-card.sage .quote-mark { color: rgba(242,182,92,.35); }
-    .quote-text { font-family: 'Spectral', serif; font-size: 14px; line-height: 1.85; font-weight: 300; color: var(--text); margin-bottom: 12px; }
-    .quote-card.sage .quote-text { color: var(--honey); }
-    .quote-attr { font-family: 'Hanken Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
-    .quote-card.sage .quote-attr { color: rgba(248,220,166,.5); }
+    /* ── Pull-quote + photo pairing ── */
+    .pull-quote-stack { display: grid; gap: 24px; max-width: 760px; margin: 0 auto; }
+    .pull-quote-pair { display: flex; gap: 20px; align-items: center; background: var(--white); border-radius: 8px; padding: 24px; }
+    .pull-quote-pair img { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+    .pull-quote-text q { font-family: 'Hanken Grotesk', sans-serif; font-style: italic; font-size: 15px; line-height: 1.65; color: var(--text); display: block; margin-bottom: 8px; quotes: none; }
+    .pull-quote-text cite { font-family: 'Hanken Grotesk', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); font-style: normal; }
+    @media (max-width: 560px) {
+      .pull-quote-pair { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
 
     /* ── Mobile nav ── */
     #mobile-nav { display: none; background: var(--dark); padding: 20px 24px 28px; border-top: 1px solid rgba(255,255,255,.06); }
     #mobile-nav.open { display: block; }
     #mobile-nav .nav-link { font-size: 15px; letter-spacing: 0; text-transform: none; color: rgba(255,255,255,.7); display: block; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
     @media (max-width:680px) { .desktop-nav { display:none !important; } #ham { display:flex !important; } }
-    @media (prefers-reduced-motion: reduce) { .testimonial-track { animation: none; } }
 
     /* Learn dropdown */
     .nav-dropdown { position: relative; display: flex; align-items: center; }
@@ -399,47 +394,30 @@
 <hr class="divider" />
 
 <!-- TESTIMONIALS -->
-<section style="background:var(--bg);padding:100px 24px;overflow:hidden;">
+<section style="background:var(--bg);padding:100px 24px;">
   <div style="text-align:center;margin-bottom:48px;">
     <h2 class="section-title reveal" style="text-align:center;">Words from the women<br/><em>in this space.</em></h2>
   </div>
-  <div style="max-width:860px;margin:0 auto;">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;" class="testimonials-grid">
-      <div>
-        <div class="testimonials-viewport" style="height:480px;">
-          <div class="testimonial-track" style="animation-duration:22s;">
-            <div class="quote-card sage"><span class="quote-mark">"</span><p class="quote-text">I never experienced something like this. I actually never credited the power of feelings or somatic work. I think though, Clara's style amplified the effect of those. One thing I can say — things become clear with Clara. It opened a portal to feelings in a very subtle way, which I didn't know was there.</p><p class="quote-attr">— Myke P., somatic coaching client</p></div>
-            <div class="quote-card"><span class="quote-mark">"</span><p class="quote-text">Thank you Clara. It helped to lessen anxiety and stress. Now feeling so much calmer.</p><p class="quote-attr">— Guided practice review ★★★★★</p></div>
-            <div class="quote-card"><span class="quote-mark">"</span><p class="quote-text">I was able to get through 5/7 last week and they all helped so much.</p><p class="quote-attr">— Community member</p></div>
-            <div class="quote-card sage"><span class="quote-mark">"</span><p class="quote-text">I never experienced something like this. I actually never credited the power of feelings or somatic work. I think though, Clara's style amplified the effect of those. One thing I can say — things become clear with Clara. It opened a portal to feelings in a very subtle way, which I didn't know was there.</p><p class="quote-attr">— Myke P., somatic coaching client</p></div>
-            <div class="quote-card"><span class="quote-mark">"</span><p class="quote-text">Thank you Clara. It helped to lessen anxiety and stress. Now feeling so much calmer.</p><p class="quote-attr">— Guided practice review ★★★★★</p></div>
-            <div class="quote-card"><span class="quote-mark">"</span><p class="quote-text">I was able to get through 5/7 last week and they all helped so much.</p><p class="quote-attr">— Community member</p></div>
-          </div>
-        </div>
+  <div class="pull-quote-stack">
+    <div class="pull-quote-pair reveal">
+      <img src="brand-assets/hands-clasped.jpg" alt="" aria-hidden="true">
+      <div class="pull-quote-text">
+        <q>I never experienced something like this. I actually never credited the power of feelings or somatic work — things become clear with Clara. It opened a portal to feelings in a very subtle way, which I didn't know was there.</q>
+        <cite>— Myke P., somatic coaching client</cite>
       </div>
-      <div>
-        <div class="testimonials-viewport" style="height:480px;">
-          <div class="testimonial-track" style="animation-duration:28s;">
-            <div class="quote-card"><span class="quote-mark">"</span><p class="quote-text">I would highly recommend Clara and somatic coaching as an easy way to stay grounded and build self trust when feeling emotions.</p><p class="quote-attr">— Fontanna W.</p></div>
-            <div class="quote-card"><p class="quote-text">Very helpful guided body scan. Gentle.</p></div>
-            <div class="quote-card"><p class="quote-text">Thank you, this helped me settle.</p></div>
-            <div class="quote-card"><span class="quote-mark">"</span><p class="quote-text">I would highly recommend Clara and somatic coaching as an easy way to stay grounded and build self trust when feeling emotions.</p><p class="quote-attr">— Fontanna W.</p></div>
-            <div class="quote-card"><p class="quote-text">Very helpful guided body scan. Gentle.</p></div>
-            <div class="quote-card"><p class="quote-text">Thank you, this helped me settle.</p></div>
-          </div>
-        </div>
+    </div>
+    <div class="pull-quote-pair reveal d1">
+      <img src="brand-assets/forward-fold.jpg" alt="" aria-hidden="true">
+      <div class="pull-quote-text">
+        <q>I would highly recommend Clara and somatic coaching as an easy way to stay grounded and build self trust when feeling emotions.</q>
+        <cite>— Fontanna W.</cite>
       </div>
-      <div>
-        <div class="testimonials-viewport" style="height:480px;">
-          <div class="testimonial-track" style="animation-duration:18s;">
-            <div class="quote-card"><span class="quote-mark">"</span><p class="quote-text">Moving through some emotions this morning and this has come at a perfect time. Moving through these now. Thank you.</p><p class="quote-attr">— YouTube viewer</p></div>
-            <div class="quote-card sage"><span class="quote-mark">"</span><p class="quote-text">I would highly recommend Clara and somatic coaching as an easy way to stay grounded and build self trust when feeling emotions.</p><p class="quote-attr">— Fontanna W.</p></div>
-            <div class="quote-card"><p class="quote-text">This video was recommended to me and I was surprised it had so few views. I clicked and I'm so glad I did — I'm going through a hard time and this really helped me.</p><p class="quote-attr">— YouTube viewer</p></div>
-            <div class="quote-card"><span class="quote-mark">"</span><p class="quote-text">Moving through some emotions this morning and this has come at a perfect time. Moving through these now. Thank you.</p><p class="quote-attr">— YouTube viewer</p></div>
-            <div class="quote-card sage"><span class="quote-mark">"</span><p class="quote-text">I would highly recommend Clara and somatic coaching as an easy way to stay grounded and build self trust when feeling emotions.</p><p class="quote-attr">— Fontanna W.</p></div>
-            <div class="quote-card"><p class="quote-text">This video was recommended to me and I was surprised it had so few views. I clicked and I'm so glad I did — I'm going through a hard time and this really helped me.</p><p class="quote-attr">— YouTube viewer</p></div>
-          </div>
-        </div>
+    </div>
+    <div class="pull-quote-pair reveal d2">
+      <img src="brand-assets/courtyard-walk.jpg" alt="" aria-hidden="true">
+      <div class="pull-quote-text">
+        <q>This video was recommended to me and I was surprised it had so few views. I clicked and I'm so glad I did — I'm going through a hard time and this really helped me.</q>
+        <cite>— YouTube viewer</cite>
       </div>
     </div>
   </div>
