@@ -187,9 +187,6 @@
     }
 
 
-    /* Decorative circles */
-    .circ { position: absolute; border-radius: 50%; pointer-events: none; }
-
     /* Scroll reveal */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -454,20 +451,23 @@
 <hr class="divider" />
 
 <!-- CONTACT -->
-<section style="background:var(--dark);padding:100px 24px;text-align:center;position:relative;overflow:hidden;">
-  <div class="circ" style="width:280px;height:280px;border:3px solid var(--sage);opacity:.07;top:-80px;right:-80px;"></div>
-  <div class="circ" style="width:160px;height:160px;border:2px solid var(--violet);opacity:.09;bottom:-50px;left:-50px;"></div>
-  <div style="max-width:620px;margin:0 auto;position:relative;z-index:1;">
-    <span class="section-label reveal" style="color:rgba(255,255,255,.3);">Start here</span>
-    <h2 class="reveal d1" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:600;font-size:clamp(28px,5vw,48px);color:var(--cream);line-height:1.1;margin-bottom:20px;">
-      Not sure where<br/>to begin?
-    </h2>
-    <p class="reveal d2" style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.85;margin-bottom:40px;">
-      The discovery call is free, 30 minutes, and there is no pressure. We talk about where you are, what you're looking for, and whether this work is a fit.
-    </p>
-    <div class="reveal d3" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
-      <a href="https://cal.com/clara-louis/discovery-call" class="btn-sage" target="_blank" rel="noopener">Book a discovery call</a>
-      <a href="offers.html" class="btn-dark">See all offers</a>
+<section style="background:var(--dark);padding:100px 24px;">
+  <div class="wide">
+    <div class="photo-split">
+      <div class="photo-split-media"><img src="brand-assets/cta-pyramid.jpg" alt="Clara walking toward Mayan ruins, water bottles in hand" loading="lazy"></div>
+      <div class="photo-split-text">
+        <span class="section-label reveal" style="color:rgba(255,255,255,.4);">Start here</span>
+        <h2 class="reveal d1" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,4vw,40px);color:var(--cream);line-height:1.1;margin-bottom:20px;">
+          Not sure where to begin?
+        </h2>
+        <p class="reveal d2" style="font-family:'Hanken Grotesk',sans-serif;font-size:15px;font-weight:300;color:rgba(255,255,255,.65);line-height:1.85;margin-bottom:32px;">
+          The discovery call is free, 30 minutes, and there is no pressure. We talk about where you are, what you're looking for, and whether this work is a fit.
+        </p>
+        <div class="reveal d3" style="display:flex;flex-wrap:wrap;gap:16px;">
+          <a href="https://cal.com/clara-louis/discovery-call" class="btn-sage" target="_blank" rel="noopener">Book a discovery call</a>
+          <a href="offers.html" class="btn-dark">See all offers</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -70,6 +70,21 @@ check('FAQ headings use bold 800-weight Bricolage Grotesque', async (page) => {
   return parseInt(style.fontWeight, 10) >= 700 && style.fontSize >= 18;
 });
 
+check('CTA uses photo-split with real cta-pyramid photo on dark background', async (page) => {
+  const result = await page.evaluate(() => {
+    const heading = Array.from(document.querySelectorAll('h2')).find(h => h.textContent.includes('Not sure where'));
+    if (!heading) return null;
+    const section = heading.closest('section');
+    const img = section.querySelector('.photo-split-media img');
+    return {
+      bg: getComputedStyle(section).backgroundColor,
+      src: img ? img.getAttribute('src') : null,
+    };
+  });
+  if (!result) return false;
+  return result.bg === 'rgb(42, 33, 23)' && result.src && result.src.includes('cta-pyramid.jpg');
+});
+
 async function run() {
   const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: true });
   const page = await browser.newPage();
