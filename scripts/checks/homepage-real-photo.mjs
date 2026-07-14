@@ -85,6 +85,44 @@ check('CTA uses photo-split with real cta-pyramid photo on dark background', asy
   return result.bg === 'rgb(42, 33, 23)' && result.src && result.src.includes('cta-pyramid.jpg');
 });
 
+check('no horizontal overflow at any viewport width', async (page) => {
+  const widths = [390, 560, 680, 780, 900, 1440];
+  try {
+    for (const width of widths) {
+      await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
+      await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+      const { scrollWidth, innerWidth } = await page.evaluate(() => ({
+        scrollWidth: document.documentElement.scrollWidth,
+        innerWidth: window.innerWidth,
+      }));
+      if (scrollWidth > innerWidth) {
+        console.error(`  overflow at ${width}px: scrollWidth=${scrollWidth} > innerWidth=${innerWidth}`);
+        return false;
+      }
+    }
+    return true;
+  } finally {
+    await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
+  }
+});
+
+check('every photo-split image loads (no broken images)', async (page) => {
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+  const broken = await page.evaluate(() => {
+    const imgs = Array.from(document.querySelectorAll('img'));
+    return imgs.filter(img => img.complete && img.naturalWidth === 0).map(img => img.src);
+  });
+  if (broken.length > 0) console.error('  broken images:', broken);
+  return broken.length === 0;
+});
+
+check('no console errors on load', async (page) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+  return errors.length === 0;
+});
+
 async function run() {
   const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: true });
   const page = await browser.newPage();
@@ -98,6 +136,31 @@ async function run() {
     console.log(`${ok ? 'PASS' : 'FAIL'} — ${name}`);
     if (!ok) failed++;
   }
+  async function scrollThroughForReveal(page) {
+    await page.evaluate(async () => {
+      const distance = 400;
+      const delay = 120;
+      while (document.scrollingElement.scrollTop + window.innerHeight < document.body.scrollHeight) {
+        document.scrollingElement.scrollBy({ top: distance, behavior: 'instant' });
+        await new Promise(r => setTimeout(r, delay));
+      }
+      document.scrollingElement.scrollTo({ top: 0, behavior: 'instant' });
+      await new Promise(r => setTimeout(r, 300));
+    });
+  }
+
+  await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+  await scrollThroughForReveal(page);
+  await page.screenshot({ path: 'temporary screenshots/homepage-real-photo-desktop.png', fullPage: true });
+
+  await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 1 });
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+  await scrollThroughForReveal(page);
+  await page.screenshot({ path: 'temporary screenshots/homepage-real-photo-mobile.png', fullPage: true });
+
+  console.log('\nScreenshots saved to "temporary screenshots/".');
+
   await browser.close();
   if (failed > 0) { console.log(`\n${failed} check(s) failed.`); process.exit(1); }
   console.log('\nAll checks passed.');
