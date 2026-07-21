@@ -18,8 +18,12 @@
 <meta name="twitter:title" content="Why Start With Awareness?" />
 <meta name="twitter:description" content="Your nervous system isn't just reacting — it's constructing your experience. Learn the science behind awareness-first somatic work." />
 <meta name="twitter:image" content="https://somaticwithclara.com/og-image.jpg" />
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
 <style>
+/* brand shell overrides */
+#nav{position:static;background:var(--bg);box-shadow:0 1px 0 var(--line);}
+#nav .nav-link{color:var(--text);}
 :root {
       --bg: #FBF5EA; --white: #FFFFFF;
       --sage-light: #E6EAD7; --sage: #7C8456; --sage-dark: #5E6A40;
@@ -33,23 +37,23 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--text);}
 
-.ticker{background:var(--sage);padding:9px 0;overflow:hidden;}
+.ticker{background:var(--clay-deep);padding:9px 0;overflow:hidden;}
 .ticker-inner{display:flex;animation:tick 30s linear infinite;width:max-content;}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.tw{font-family:'Bricolage Grotesque',sans-serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 22px;}
+.tw{font-family:'Newsreader',serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 22px;}
 .td{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.28);display:inline-block;flex-shrink:0;align-self:center;}
 
 .header{background:var(--dark);padding:36px 24px 30px;text-align:center;position:relative;overflow:hidden;}
 .circ{position:absolute;border-radius:50%;pointer-events:none;}
-.eyebrow{font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-size:14px;color: var(--ember);transform:rotate(-2deg);display:inline-block;margin-bottom:8px;}
-.h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(22px,5vw,34px);color:#fff;text-transform:uppercase;line-height:1.05;}
-.h1 em{color:var(--sage);font-style:normal;}
+.eyebrow{font-family:'Newsreader',serif;font-style:italic;font-size:15px;color:var(--clay);transform:none;display:inline-block;margin-bottom:8px;}
+.h1{font-family:'Newsreader',serif;font-size:clamp(22px,5vw,34px);color:#fff;text-transform:uppercase;line-height:1.05;}
+.h1 em{color:var(--clay);font-style:italic;}
 .header-sub{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);margin-top:10px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
-.grad-div{height:4px;background:var(--sage);}
+.grad-div{height:3px;background:var(--clay);}
 
 .contents{background:var(--white);border-bottom:2px solid var(--line);}
 .contents-inner{max-width:680px;margin:0 auto;padding:16px 24px;}
-.contents-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.contents-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
 .contents-list{display:flex;flex-wrap:wrap;gap:6px;}
 .contents-pill{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:500;color:var(--sage-dark);background:rgba(124,132,86,.1);border:1.5px solid rgba(124,132,86,.2);border-radius:50px;padding:4px 12px;text-decoration:none;cursor:pointer;transition:all .15s;}
 .contents-pill:hover{background:var(--sage);color:#fff;}
@@ -57,45 +61,45 @@ body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--te
 .body{max-width:680px;margin:0 auto;padding:32px 24px 60px;}
 
 .lesson{margin-bottom:44px;scroll-margin-top:20px;}
-.lesson-num{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
-.lesson-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(15px,2.8vw,19px);text-transform:uppercase;color:var(--dark);margin-bottom:6px;line-height:1.1;}
+.lesson-num{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
+.lesson-title{font-family:'Newsreader',serif;font-size:clamp(15px,2.8vw,19px);text-transform:uppercase;color:var(--dark);margin-bottom:6px;line-height:1.1;}
 .lesson-title em{color:var(--sage);font-style:normal;}
 .lesson-sub{font-size:12px;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:14px;}
 .body-text{font-size:14px;line-height:1.75;color:var(--body);margin-bottom:12px;}
 .body-text strong{font-weight:700;color:var(--text);}
 
-.divider{height:4px;background: var(--amber);width:36px;margin-bottom:40px;}
+.divider{display:block;height:3px;background:var(--clay);width:36px;margin-bottom:40px;}
 .divider.v{background:var(--violet);}
 
 .key-idea{border-left:4px solid var(--sage);background:rgba(124,132,86,.07);border-radius:0 12px 12px 0;padding:14px 18px;margin:14px 0 18px;}
 .key-idea.violet{border-left-color:var(--violet);background:rgba(123,94,167,.07);}
-.ki-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:5px;}
+.ki-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:5px;}
 .ki-label.v{color:var(--violet-dark);}
 .ki-text{font-size:13px;line-height:1.65;color:var(--body);}
 
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
 .info-card{background:var(--white);border:2px solid var(--line);border-radius:12px;padding:14px 16px;}
-.ic-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:4px;}
+.ic-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:4px;}
 .ic-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:5px;}
 .ic-body{font-size:12px;font-weight:300;color:var(--body);line-height:1.6;}
 
 .flow{background:var(--sage-light);border-radius:14px;padding:18px 20px;margin:14px 0;}
-.flow-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;}
+.flow-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;}
 .flow-row{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid rgba(124,132,86,.15);}
 .flow-row:last-child{border-bottom:none;}
-.flow-step{width:28px;height:28px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-size:11px;color:#fff;flex-shrink:0;margin-top:1px;}
+.flow-step{width:28px;height:28px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:11px;color:#fff;flex-shrink:0;margin-top:1px;}
 .flow-text{font-size:13px;color:var(--body);line-height:1.6;}
 .flow-text strong{font-weight:700;color:var(--text);}
 
 .stat-highlight{display:flex;align-items:center;gap:14px;background:var(--white);border:2px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
-.stat-num{font-family:'Bricolage Grotesque',sans-serif;font-size:32px;color:var(--sage);flex-shrink:0;line-height:1;}
+.stat-num{font-family:'Newsreader',serif;font-size:32px;color:var(--sage);flex-shrink:0;line-height:1;}
 .stat-label{font-size:13px;color:var(--body);line-height:1.55;}
 .stat-label strong{font-weight:700;color:var(--text);}
 
 .dark-block{background:var(--dark);border-radius:14px;padding:20px 22px;margin:16px 0;position:relative;overflow:hidden;}
 .db-circ{position:absolute;border-radius:50%;pointer-events:none;}
 .db-label{font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-size:13px;color:var(--sage);transform:rotate(-1deg);display:inline-block;margin-bottom:8px;}
-.db-title{font-family:'Bricolage Grotesque',sans-serif;font-size:14px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
+.db-title{font-family:'Newsreader',serif;font-size:14px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
 .db-row{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);}
 .db-row:last-child{border-bottom:none;}
 .db-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);margin-top:5px;flex-shrink:0;}
@@ -104,14 +108,14 @@ body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--te
 
 .takeaway{background:var(--violet);border-radius:14px;padding:20px 22px;margin:20px 0;position:relative;overflow:hidden;}
 .tv-circ{position:absolute;border-radius:50%;pointer-events:none;}
-.takeaway-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
+.takeaway-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
 .takeaway-text{font-size:14px;font-weight:300;font-style:italic;color:#fff;line-height:1.75;}
 
 .reframe{display:flex;gap:0;margin:14px 0;border-radius:12px;overflow:hidden;border:2px solid var(--line);}
 .reframe-col{flex:1;padding:14px 16px;}
 .reframe-col.old{background:rgba(186,117,23,.06);}
 .reframe-col.new{background:rgba(124,132,86,.07);}
-.reframe-label{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
+.reframe-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px;}
 .reframe-label.old{color:#7A4F00;}
 .reframe-label.new{color:var(--sage-dark);}
 .reframe-mid{width:2px;background:var(--line);flex-shrink:0;}
@@ -133,6 +137,39 @@ body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--te
   <script defer src="https://cloud.umami.is/script.js" data-website-id="8f7f03a7-24e9-4452-bc92-91b58256b1cc"></script>
 </head>
 <body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Somatic with Clara home">
+      <img src="brand-assets/somatic-with-clara-logo.svg" alt="Somatic with Clara" style="height:40px;width:auto;display:block;" />
+    </a>
+    <div style="display:flex;align-items:center;gap:30px;" class="desktop-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="offers.html" class="nav-link">Work with Me</a>
+      <a href="reclaim-your-life.html" class="nav-link">Community</a>
+      <div class="nav-dropdown">
+        <span class="nav-link nav-dropdown-toggle">Resources</span>
+        <div class="nav-dropdown-menu">
+          <a href="somatic-yoga.html">What is Somatic Yoga?</a>
+          <a href="nervous-system-states.html">Nervous System States</a>
+          <a href="fawn-response.html">The Fawn Response</a>
+        </div>
+      </div>
+      <a href="quiz.html" class="btn" style="padding:11px 26px;">Take the Quiz</a>
+    </div>
+    <button id="ham" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-nav">
+    <a href="about.html">About</a>
+    <a href="offers.html">Work with Me</a>
+    <a href="reclaim-your-life.html">Community</a>
+    <a href="somatic-yoga.html">What is Somatic Yoga?</a>
+    <a href="nervous-system-states.html">Nervous System States</a>
+    <a href="fawn-response.html">The Fawn Response</a>
+    <a href="quiz.html">Take the Quiz</a>
+  </div>
+</nav>
 
 <div class="ticker">
   <div class="ticker-inner">
@@ -385,21 +422,43 @@ body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--te
   <!-- Quiz link -->
   <div style="background:var(--dark);border-radius:14px;padding:22px 24px;margin-top:12px;position:relative;overflow:hidden;">
     <div style="position:absolute;width:160px;height:160px;border:3px solid rgba(255,255,255,.07);top:-50px;right:-50px;border-radius:50%;pointer-events:none;"></div>
-    <div style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;color:var(--sage);transform:rotate(-1.5deg);display:inline-block;margin-bottom:8px;">take it further</div>
-    <div style="font-family:'Bricolage Grotesque',sans-serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:8px;">Want to see this in your own life?</div>
+    <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:var(--clay);display:inline-block;margin-bottom:8px;">take it further</div>
+    <div style="font-family:'Newsreader',serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:8px;">Want to see this in your own life?</div>
     <p style="font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.6);margin-bottom:18px;line-height:1.7;">The companion reflection — not a test, not a score. Just questions that ask you to notice where these concepts are already showing up.</p>
-    <a href="/why-awareness-quiz" style="font-family:'Bricolage Grotesque',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--sage);color:#fff;border-radius:50px;padding:12px 24px;text-decoration:none;display:inline-block;transition:all .2s;">Open the reflection →</a>
+    <a href="/why-awareness-quiz" style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;background:var(--clay);color:#fff;border-radius:50px;padding:12px 24px;text-decoration:none;display:inline-block;transition:all .2s;">Open the reflection →</a>
   </div>
 
   <!-- Skool CTA -->
-  <div style="background:var(--sage);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;margin-top:12px;margin-bottom:0;">
+  <div style="background:var(--clay-deep);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;margin-top:12px;margin-bottom:0;">
     <div style="position:absolute;width:160px;height:160px;border:3px solid rgba(255,255,255,.08);border-radius:50%;top:-50px;right:-50px;pointer-events:none;"></div>
     <div style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:4px;">Reclaim Your Life</div>
-    <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;">This is where the work continues.</h3>
+    <h3 style="font-family:'Newsreader',serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;">This is where the work continues.</h3>
     <p style="font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);margin-bottom:20px;line-height:1.65;max-width:420px;margin-left:auto;margin-right:auto;">Awareness is the door. Inside the community: practices mapped to your nervous system state, a full somatic library, and people doing the same work you just read about.</p>
-    <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" style="font-family:'Bricolage Grotesque',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 26px;text-decoration:none;display:inline-block;">Join the community →</a>
+    <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" style="font-family:'Newsreader',serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 26px;text-decoration:none;display:inline-block;">Join the community →</a>
   </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="brand-assets/somatic-with-clara-logo-dark-transparent.svg" alt="Somatic with Clara" style="height:30px;width:auto;opacity:.6;" />
+    <div class="footer-links">
+      <a href="/" class="footer-link">Home</a>
+      <a href="about.html" class="footer-link">About</a>
+      <a href="offers.html" class="footer-link">Work with Me</a>
+      <a href="quiz.html" class="footer-link">Quiz</a>
+      <a href="https://www.instagram.com/clara.holds.space/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.tiktok.com/@tobehuman.life" class="footer-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+    </div>
+    <p class="footer-copy">© 2026 Clara Louis · somaticwithclara.com</p>
+  </div>
+</footer>
+
+<script>
+const ham=document.getElementById('ham'),mobileNav=document.getElementById('mobile-nav');
+if(ham)ham.addEventListener('click',()=>mobileNav.classList.toggle('open'));
+</script>
 </body>
 </html>
