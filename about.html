@@ -241,8 +241,18 @@
       Nervous system practices and somatic meditations, free to follow and listen.
     </p>
     <div class="reveal d3">
-      <iframe style="border-radius:16px" width="100%" height="455px" title="Insight Timer Embed: Clara Louis" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" src="https://widgets.insighttimer.com/publisher/P3t2x5Y5U0a3d2J4a1v8A8q8y7D6A8c3p4t2e5h4c0b5d0X3u0V5Z7v5f3d3w9J5y2W1L8V5W5y6J5y2k8y7Z3u2F7x6r9c9p3s0?created_at=1780665340&cid=P3t2x5Y5U0a3d2J4a1v8A8q8y7D6A8c3p4t2e5h4c0b5d0X3u0V5Z7v5f3d3w9J5y2W1L8V5W5y6J5y2k8y7Z3u2F7x6r9c9p3s0"></iframe>
+      <!-- src is attached after window load: the widget holds an open connection that
+           otherwise keeps the page at readyState "interactive", which suppresses analytics -->
+      <iframe id="insight-timer-embed" style="border-radius:16px" width="100%" height="455px" title="Insight Timer Embed: Clara Louis" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" data-src="https://widgets.insighttimer.com/publisher/P3t2x5Y5U0a3d2J4a1v8A8q8y7D6A8c3p4t2e5h4c0b5d0X3u0V5Z7v5f3d3w9J5y2W1L8V5W5y6J5y2k8y7Z3u2F7x6r9c9p3s0?created_at=1780665340&cid=P3t2x5Y5U0a3d2J4a1v8A8q8y7D6A8c3p4t2e5h4c0b5d0X3u0V5Z7v5f3d3w9J5y2W1L8V5W5y6J5y2k8y7Z3u2F7x6r9c9p3s0"></iframe>
     </div>
+    <script>
+      (function () {
+        var frame = document.getElementById('insight-timer-embed');
+        function attach() { frame.src = frame.dataset.src; }
+        if (document.readyState === 'complete') attach();
+        else window.addEventListener('load', attach, { once: true });
+      })();
+    </script>
   </div>
 </section>
 <hr class="divider" />
