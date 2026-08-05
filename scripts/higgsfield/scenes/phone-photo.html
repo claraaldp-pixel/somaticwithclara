@@ -1,0 +1,61 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>phone-photo</title>
+<style>
+  :root {
+    --bg: #F6F1E7; --panel: #E7DAC9; --clay: #C89574;
+    --clay-deep: #C08A66; --text: #2A2117;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1080px; height: 1920px; overflow: hidden;
+    display: grid; place-items: center;
+    background: var(--bg);
+    position: relative;
+  }
+  /* Backdrop photo: person-forward source, but blurred/scrimmed hard enough
+     to read as place (warm, lived-in) rather than as a blurred human. */
+  .backdrop { position: absolute; inset: 0; overflow: hidden; }
+  .backdrop img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center;
+    display: block;
+    filter: blur(22px) saturate(1.15);
+    transform: scale(1.12);
+  }
+  .scrim {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(200,149,116,.40) 0%, rgba(176,119,79,.58) 100%);
+  }
+  /* Soft radial glow behind the phone so the device is anchored rather than floating. */
+  .glow {
+    position: absolute; width: 900px; height: 900px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(200,149,116,.28) 0%, transparent 68%);
+    top: 8%; left: 50%; transform: translateX(-50%); filter: blur(30px);
+  }
+  .phone {
+    position: relative; width: 560px; aspect-ratio: 390 / 844;
+    border-radius: 62px; padding: 13px;
+    background: linear-gradient(160deg, #3a3129 0%, #211a13 55%, #2f2720 100%);
+    box-shadow:
+      0 60px 120px -30px rgba(42,33,23,.55),
+      0 20px 40px -12px rgba(42,33,23,.35),
+      inset 0 0 0 1px rgba(255,255,255,.09);
+    transform: rotate(-3deg);
+  }
+  .screen {
+    width: 100%; height: 100%; border-radius: 50px; overflow: hidden;
+    background: #F6F4F1; display: block;
+  }
+  .screen img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
+</style>
+<div class="backdrop"><img id="bg" alt=""></div>
+<div class="scrim"></div>
+<div class="glow"></div>
+<div class="phone"><div class="screen"><img id="shot" alt=""></div></div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const src = params.get('src');
+  const bg = params.get('bg');
+  if (src) document.getElementById('shot').src = src;
+  if (bg) document.getElementById('bg').src = bg;
+</script>

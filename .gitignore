@@ -18,3 +18,9 @@ Website idea.webp
 site-config.md
 .gstack/
 .impeccable/
+
+# Credentials
+.env
+
+# Higgsfield intermediate artefacts (source captures + composed first frames)
+scripts/higgsfield/out/
