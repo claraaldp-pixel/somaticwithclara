@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { dayIndex, nextWindow, selectWindow } from './select'
-import type { Window } from './types'
+import { dayIndex, nextWindow, selectWindow, lunationsOn } from './select'
+import type { Window, Lunation } from './types'
 
 function makeWindow(gate: number, start: string, end: string): Window {
   return {
@@ -92,5 +92,46 @@ describe('nextWindow', () => {
 
   it('is null for the last window', () => {
     expect(nextWindow(WINDOWS, WINDOWS[1])).toBeNull()
+  })
+})
+
+function makeLunation(phase: 'new' | 'full', moment: string): Lunation {
+  return { phase, moment, gate: 7, line: 3, sun_gate: 13 }
+}
+
+const LUNATIONS: Lunation[] = [
+  makeLunation('full', '2026-08-08T14:30:00+01:00'),
+  makeLunation('new', '2026-08-23T09:15:00+01:00'),
+]
+
+describe('lunationsOn', () => {
+  const TZ = 'Europe/London'
+
+  it('finds a lunation falling on the same local day', () => {
+    const found = lunationsOn(LUNATIONS, new Date('2026-08-08T20:00:00+01:00'), TZ)
+    expect(found.map((l) => l.phase)).toEqual(['full'])
+  })
+
+  it('is empty on a day with no lunation', () => {
+    expect(lunationsOn(LUNATIONS, new Date('2026-08-09T12:00:00+01:00'), TZ)).toEqual([])
+  })
+
+  it('matches on the local calendar day, not the UTC one', () => {
+    // 00:40 on 9 Aug in London is 23:40 on 8 Aug UTC — the London day wins.
+    const lateNight = [makeLunation('full', '2026-08-09T00:40:00+01:00')]
+    expect(lunationsOn(lateNight, new Date('2026-08-09T10:00:00+01:00'), TZ)).toHaveLength(1)
+    expect(lunationsOn(lateNight, new Date('2026-08-08T10:00:00+01:00'), TZ)).toHaveLength(0)
+  })
+
+  it('returns every lunation on the day, not just the first', () => {
+    const twice = [
+      makeLunation('new', '2026-08-08T02:00:00+01:00'),
+      makeLunation('full', '2026-08-08T22:00:00+01:00'),
+    ]
+    expect(lunationsOn(twice, new Date('2026-08-08T12:00:00+01:00'), TZ)).toHaveLength(2)
+  })
+
+  it('is empty for an empty list', () => {
+    expect(lunationsOn([], new Date('2026-08-08T12:00:00+01:00'), TZ)).toEqual([])
   })
 })
