@@ -1,18 +1,17 @@
 import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase-server'
+import { getSession } from '@/lib/session'
+import { pool } from '@/lib/db'
 import ReportView from './ReportView'
 
 export default async function DashboardPage() {
-  const supabase = await createClient()
+  const session = await getSession()
+  if (!session) redirect('/login')
 
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) redirect('/login')
-
-  const { data: client } = await supabase
-    .from('clients')
-    .select('id, name')
-    .eq('email', user.email)
-    .single()
+  const clientResult = await pool.query(
+    'SELECT id, name FROM clients WHERE email = $1',
+    [session.email]
+  )
+  const client = clientResult.rows[0]
 
   if (!client) {
     return (
@@ -27,12 +26,11 @@ export default async function DashboardPage() {
     )
   }
 
-  const { data: report } = await supabase
-    .from('reports')
-    .select('content, updated_at')
-    .eq('client_id', client.id)
-    .eq('published', true)
-    .single()
+  const reportResult = await pool.query(
+    'SELECT content, updated_at FROM reports WHERE client_id = $1 AND published = true',
+    [client.id]
+  )
+  const report = reportResult.rows[0]
 
   if (!report) {
     return (
@@ -47,5 +45,12 @@ export default async function DashboardPage() {
     )
   }
 
-  return <ReportView name={client.name} clientId={client.id} content={report.content} updatedAt={report.updated_at} />
+  return (
+    <ReportView
+      name={client.name}
+      clientId={client.id}
+      content={report.content}
+      updatedAt={report.updated_at}
+    />
+  )
 }

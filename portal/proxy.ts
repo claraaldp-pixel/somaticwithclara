@@ -1,40 +1,32 @@
-import { createServerClient } from '@supabase/ssr'
+import { jwtVerify } from 'jose'
 import { NextResponse, type NextRequest } from 'next/server'
 
+const secret = new TextEncoder().encode(process.env.AUTH_SECRET!)
+
+async function getSessionEmail(request: NextRequest): Promise<string | null> {
+  const token = request.cookies.get('session')?.value
+  if (!token) return null
+  try {
+    const { payload } = await jwtVerify(token, secret)
+    return payload.email as string
+  } catch {
+    return null
+  }
+}
+
 export async function proxy(request: NextRequest) {
-  let response = NextResponse.next({ request })
-
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() {
-          return request.cookies.getAll()
-        },
-        setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
-          response = NextResponse.next({ request })
-          cookiesToSet.forEach(({ name, value, options }) =>
-            response.cookies.set(name, value, options)
-          )
-        },
-      },
-    }
-  )
-
-  const { data: { user } } = await supabase.auth.getUser()
+  const email = await getSessionEmail(request)
   const { pathname } = request.nextUrl
 
-  if ((pathname.startsWith('/dashboard') || pathname.startsWith('/admin')) && !user) {
+  if ((pathname.startsWith('/dashboard') || pathname.startsWith('/admin')) && !email) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
-  if (pathname === '/login' && user) {
+  if (pathname === '/login' && email) {
     return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
-  return response
+  return NextResponse.next({ request })
 }
 
 export const config = {

@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react'
 import ReactMarkdown from 'react-markdown'
-import { createClient } from '@/lib/supabase-browser'
 import { useRouter } from 'next/navigation'
 
 interface Props {
@@ -16,27 +15,22 @@ const isHtml = (s: string) => s.trimStart().startsWith('<')
 
 export default function ReportView({ name, clientId, content, updatedAt }: Props) {
   const router = useRouter()
-  const supabase = createClient()
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const saveTimers = useRef<Record<string, ReturnType<typeof setTimeout>>>({})
 
-  async function handleSignOut() {
-    await supabase.auth.signOut()
-    router.push('/login')
+  function handleSignOut() {
+    window.location.href = '/api/auth/logout'
   }
 
   useEffect(() => {
     if (!isHtml(content)) return
 
     async function loadAndSendNotes() {
-      const { data: notes } = await supabase
-        .from('section_notes')
-        .select('section_key, content')
-        .eq('client_id', clientId)
+      const res = await fetch(`/api/notes?clientId=${clientId}`)
+      if (!res.ok) return
 
-      const notesMap = Object.fromEntries(
-        (notes ?? []).map((n) => [n.section_key, n.content])
-      )
+      const notes: { section_key: string; content: string }[] = await res.json()
+      const notesMap = Object.fromEntries(notes.map((n) => [n.section_key, n.content]))
 
       const iframe = iframeRef.current
       if (!iframe) return
@@ -61,16 +55,12 @@ export default function ReportView({ name, clientId, content, updatedAt }: Props
       }
 
       clearTimeout(saveTimers.current[sectionKey])
-      saveTimers.current[sectionKey] = setTimeout(async () => {
-        await supabase.from('section_notes').upsert(
-          {
-            client_id: clientId,
-            section_key: sectionKey,
-            content: noteContent,
-            updated_at: new Date().toISOString(),
-          },
-          { onConflict: 'client_id,section_key' }
-        )
+      saveTimers.current[sectionKey] = setTimeout(() => {
+        fetch('/api/notes', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ clientId, sectionKey, content: noteContent }),
+        })
       }, 1000)
     }
 

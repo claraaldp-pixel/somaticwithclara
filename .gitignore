@@ -3,6 +3,13 @@ node_modules/
 temporary screenshots/
 *.log
 
+# Secrets and build output — must never be committed
+.env
+.env.local
+.env*.local
+.vercel
+.next/
+
 # Local private reference files
 *.local.txt
 
