@@ -1,0 +1,3043 @@
+{
+  "anchor": "Leo",
+  "start": "2026-07-22T20:13:05.428919+01:00",
+  "end": "2027-07-23T02:04:40.620874+01:00",
+  "generated": "2026-08-14T11:04:06.097377+01:00",
+  "lunations": [
+    {
+      "phase": "full",
+      "moment": "2026-07-29T15:35:45.619597+01:00",
+      "gate": 41,
+      "line": 5,
+      "sun_gate": 31
+    },
+    {
+      "phase": "new",
+      "moment": "2026-08-12T18:36:43.560461+01:00",
+      "gate": 4,
+      "line": 2,
+      "sun_gate": 4
+    },
+    {
+      "phase": "full",
+      "moment": "2026-08-28T05:18:32.765707+01:00",
+      "gate": 55,
+      "line": 6,
+      "sun_gate": 59
+    },
+    {
+      "phase": "new",
+      "moment": "2026-09-11T04:27:01.053328+01:00",
+      "gate": 47,
+      "line": 2,
+      "sun_gate": 47
+    },
+    {
+      "phase": "full",
+      "moment": "2026-09-26T17:49:01.113867+01:00",
+      "gate": 25,
+      "line": 6,
+      "sun_gate": 46
+    },
+    {
+      "phase": "new",
+      "moment": "2026-10-10T16:50:06.942572+01:00",
+      "gate": 57,
+      "line": 3,
+      "sun_gate": 57
+    },
+    {
+      "phase": "full",
+      "moment": "2026-10-26T04:11:47.272352+00:00",
+      "gate": 27,
+      "line": 1,
+      "sun_gate": 28
+    },
+    {
+      "phase": "new",
+      "moment": "2026-11-09T07:02:07.101530+00:00",
+      "gate": 1,
+      "line": 4,
+      "sun_gate": 1
+    },
+    {
+      "phase": "full",
+      "moment": "2026-11-24T14:53:36.209807+00:00",
+      "gate": 20,
+      "line": 3,
+      "sun_gate": 34
+    },
+    {
+      "phase": "new",
+      "moment": "2026-12-09T00:51:51.283506+00:00",
+      "gate": 5,
+      "line": 6,
+      "sun_gate": 5
+    },
+    {
+      "phase": "full",
+      "moment": "2026-12-24T01:28:16.412672+00:00",
+      "gate": 15,
+      "line": 5,
+      "sun_gate": 10
+    },
+    {
+      "phase": "new",
+      "moment": "2027-01-07T20:24:25.428557+00:00",
+      "gate": 54,
+      "line": 3,
+      "sun_gate": 54
+    },
+    {
+      "phase": "full",
+      "moment": "2027-01-22T12:17:21.639532+00:00",
+      "gate": 31,
+      "line": 1,
+      "sun_gate": 41
+    },
+    {
+      "phase": "new",
+      "moment": "2027-02-06T15:56:09.192709+00:00",
+      "gate": 13,
+      "line": 5,
+      "sun_gate": 13
+    },
+    {
+      "phase": "full",
+      "moment": "2027-02-20T23:23:38.189062+00:00",
+      "gate": 59,
+      "line": 3,
+      "sun_gate": 55
+    },
+    {
+      "phase": "new",
+      "moment": "2027-03-08T09:29:29.749846+00:00",
+      "gate": 22,
+      "line": 1,
+      "sun_gate": 22
+    },
+    {
+      "phase": "full",
+      "moment": "2027-03-22T10:43:48.513350+00:00",
+      "gate": 46,
+      "line": 4,
+      "sun_gate": 25
+    },
+    {
+      "phase": "new",
+      "moment": "2027-04-07T00:51:08.790449+01:00",
+      "gate": 51,
+      "line": 2,
+      "sun_gate": 51
+    },
+    {
+      "phase": "full",
+      "moment": "2027-04-20T23:27:11.102385+01:00",
+      "gate": 50,
+      "line": 5,
+      "sun_gate": 3
+    },
+    {
+      "phase": "new",
+      "moment": "2027-05-06T11:58:37.370810+01:00",
+      "gate": 2,
+      "line": 3,
+      "sun_gate": 2
+    },
+    {
+      "phase": "full",
+      "moment": "2027-05-20T11:59:01.569914+01:00",
+      "gate": 14,
+      "line": 6,
+      "sun_gate": 8
+    },
+    {
+      "phase": "new",
+      "moment": "2027-06-04T20:40:21.335234+01:00",
+      "gate": 35,
+      "line": 3,
+      "sun_gate": 35
+    },
+    {
+      "phase": "full",
+      "moment": "2027-06-19T01:44:20.255255+01:00",
+      "gate": 11,
+      "line": 6,
+      "sun_gate": 12
+    },
+    {
+      "phase": "new",
+      "moment": "2027-07-04T04:02:04.370398+01:00",
+      "gate": 39,
+      "line": 3,
+      "sun_gate": 39
+    },
+    {
+      "phase": "full",
+      "moment": "2027-07-18T16:44:56.226896+01:00",
+      "gate": 61,
+      "line": 6,
+      "sun_gate": 62
+    }
+  ],
+  "windows": [
+    {
+      "gate": 31,
+      "name": "Influence",
+      "sign": "Leo",
+      "start": "2026-07-24T22:29:10.391592+01:00",
+      "end": "2026-07-30T19:46:54.513601+01:00",
+      "days": 6,
+      "tagline": "the voice standing on the dream",
+      "axis": {
+        "sentence": "Pressure builds in the Root (Earth · 41 Fantasy) and looks for expression through the Throat (Sun · 31 Influence).",
+        "lead": null,
+        "sun": {
+          "gate": 31,
+          "name": "Influence",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 41,
+          "name": "Fantasy",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": {
+        "sign": "Leo",
+        "text": "Leo's keyword is \"I will.\" Gate 41 is the hunger; gate 31 is the voice. The failure mode is speaking from the fantasy instead of from what you've actually heard from the collective (31's high expression). The correction is 41's: pick the most aligned one."
+      },
+      "risk": null,
+      "sun_reading": "Your voice carries further than usual in this window. Things you say in passing land harder than you expected, and people come to you for direction more than they normally would. Something in you wants to take that on, and it is worth taking seriously rather than deflecting.\n\nThis is a good stretch for saying the thing properly. Speaking in public, making the case, putting language on something you have been circling. The clarity is available in a way it is not always available.\n\nThe place it tips is when being heard starts mattering more than what you are actually saying. Watch for the moment you begin adjusting the message to secure the response, rather than saying the true thing and letting it land however it lands.",
+      "earth_reading": null,
+      "earth_fallback": "Gate 41: Fantasy, in the Root Centre. Themes: Initiating & Beginning Energy. At its best: ability to tap into a universal field of creativity, creative premonitions, a healthy balance of visionary realism and honest inner motivation.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 41 on 22–27 Jan 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Alpha. Gate 7: Future, in the G Centre. Themes: Leadership Energy, Fixing Others Energy. At its best: guidance by promoting autonomy for all, inner guidance takes precedence over outer guidance, facilitator of group function. This is the other component making up the channel, and it will be highlighted by the Sun on 5–11 Aug 2026."
+        ]
+      }
+    },
+    {
+      "gate": 33,
+      "name": "Memory",
+      "sign": "Leo",
+      "start": "2026-07-30T19:46:54.513601+01:00",
+      "end": "2026-08-05T16:52:34.706968+01:00",
+      "days": 6,
+      "tagline": "retreat to find the need",
+      "axis": {
+        "sentence": "Pressure builds in the Root (Earth · 19 Sensitivity) and looks for expression through the Throat (Sun · 33 Memory).",
+        "lead": null,
+        "sun": {
+          "gate": 33,
+          "name": "Memory",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 19,
+          "name": "Sensitivity",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": {
+        "sign": "Leo",
+        "text": "this reframes gate 33's retreat. You don't withdraw to hide. You withdraw because your needs are simple, easily overridden, and you cannot hear them in a loud room. 33's *\"hiding oneself, loneliness\"* over 19's codependence is the fawn cluster in HD language."
+      },
+      "risk": null,
+      "sun_reading": "Something in you wants to go quiet in this window, and the pull is worth honouring rather than pushing through. What happened over the last stretch is asking to be digested before it can be spoken about usefully.\n\nInsight from past experience tends to clarify here. Things you have been carrying without understanding start to make sense, sometimes suddenly. There is often an urgency to share what you have worked out, and this is exactly where timing matters: the same insight lands completely differently depending on when you offer it.\n\nTreat solitude as recharging rather than avoidance. You are refilling something before the next cycle asks for it.",
+      "earth_reading": null,
+      "earth_fallback": "Gate 19: Sensitivity, in the Root Centre. Themes: Inconsistent Energy, Sensitivity to Judgement/Criticism, Codependent, People Pleasing Energy, Fixing Others Energy. At its best: independence, sensitivity to bio-energy, nature, or subtle frequencies, progress toward an interdependent relationship with a greater ecosystem (cosmic, natural, internal, or spiritual).",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "1 Feb 2026",
+        "gap": "six months ago",
+        "text": "Emotional retreat rather than mental retreat. This is a window where buried feeling tends to surface, often through dreams or a realisation that arrives sideways while you are doing something else.\n\nThe invitation is to process rather than perform processing. Feelings that were overlooked when they first happened get another chance to move. If you notice yourself wanting to be alone more than usual for a few days, that is the shape of it, and it will pass."
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 19 on 27 Jan – 2 Feb 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Prodigal. Gate 13: Past, in the G Centre. Themes: Past Energy. At its best: deep cleansing through listening to the past, being able to hear the mistakes of the past and course-correct, lineage/ancestry/history connection. This is the other component making up the channel, and it will be highlighted by the Sun on 2–7 Feb 2027."
+        ]
+      }
+    },
+    {
+      "gate": 7,
+      "name": "Future",
+      "sign": "Leo",
+      "start": "2026-08-05T16:52:34.706968+01:00",
+      "end": "2026-08-11T13:40:03.303923+01:00",
+      "days": 6,
+      "tagline": "the still point",
+      "axis": {
+        "sentence": "Both poles sit in the G Centre (Sun · 7 Future, Earth · 13 Past). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
+        "lead": "The only window with both lights in one centre. Identity and direction, no pressure and no expression. Vault line: **\"Gate 13 remembers where we have been; Gate 7 knows where we need to go.\"**",
+        "sun": {
+          "gate": 7,
+          "name": "Future",
+          "centre": "G Centre",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 13,
+          "name": "Past",
+          "centre": "G Centre",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": {
+        "sign": "Leo",
+        "text": "Leo's closing question — my power, or a higher power moving through me? — resolves here. And from Channel 7–31: a *\"democratic, **supported** leader.\"* Supported. The antidote to Leo's can't-delegate burnout, already written into HD."
+      },
+      "risk": null,
+      "sun_reading": "Something in you wants to be out in front during this window. Not performing, leading. You may notice you are being looked at more than usual, asked what you think, treated as the one who decides. There is a pull to take that on, and it is worth taking seriously rather than shrinking from.\n\nThe version that does not cost you goes first and leaves room. You name a direction, and you let people take their own next step inside it. The measure of it is not how many people follow you, it is how much more capable of moving on their own they are afterwards.",
+      "earth_reading": null,
+      "earth_fallback": "Gate 13: Past, in the G Centre. Themes: Past Energy. At its best: deep cleansing through listening to the past, being able to hear the mistakes of the past and course-correct, lineage/ancestry/history connection.",
+      "nervous": {
+        "source": "G Centre",
+        "level": "centre",
+        "text": "An undefined G Center in dysregulation can spiral into identity questions and existential doubt. This is amplified conditioning, not truth. The somatic practice: ground in the body (which is always here) rather than trying to find stable identity in the mind."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 13 on 2–7 Feb 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Alpha. Gate 31: Influence, in the Throat Centre. Themes: Leadership Energy. At its best: understanding and hearing the needs of the collective, voice/mouthpiece of a collective or group, listens well and thus can sway group movement effectively. This is the other component making up the channel, and it will be highlighted by the Sun on 24–30 Jul 2026."
+        ]
+      }
+    },
+    {
+      "gate": 4,
+      "name": "Logic",
+      "sign": "Leo",
+      "start": "2026-08-11T13:40:03.303923+01:00",
+      "end": "2026-08-17T10:10:36.645712+01:00",
+      "days": 6,
+      "tagline": "the head coming back to the heart",
+      "axis": {
+        "sentence": "Awareness gathers in the Solar Plexus (Earth · 49 Revolution) and looks for recognition in the Ajna (Sun · 4 Logic).",
+        "lead": null,
+        "sun": {
+          "gate": 4,
+          "name": "Logic",
+          "centre": "Ajna",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 49,
+          "name": "Revolution",
+          "centre": "Solar Plexus",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": {
+        "sign": "Leo",
+        "text": "Leo rules the heart, and gate 4's high expression is the Leo instruction in HD language. Rosemary does it physiologically — harmonises heart, blood, brain and eyes, *\"the mind acting in accordance with the heart.\"*"
+      },
+      "risk": "the mind wants certainty (4) while standing on emotional reactivity (49). Premature certainty dressed as logic. \"Quits too soon\" plus \"needing answers.\"",
+      "sun_reading": "Analytical capacity comes forward in this window. Questions you have been circling become workable, and it is a good stretch for thinking something through properly rather than reacting to it.\n\nThis is a time for asking better questions more than for reaching conclusions. Consider the angles you have been avoiding. The mind is unusually willing to hold several possibilities at once, which is exactly the condition a real answer needs.\n\nNotice the urge to close it off early. The formula that arrives fastest is rarely the one that holds.",
+      "earth_reading": null,
+      "earth_fallback": "Gate 49: Revolution, in the Solar Plexus Centre. Themes: Codependent, Teaching Energy. At its best: reactionary response channeled towards revolutionary understanding rooted in goodwill for all, radical response used to reform social imbalances for the benefit of all without reactivity.",
+      "nervous": {
+        "source": "Ajna",
+        "level": "centre",
+        "text": "Keeps us alive and on track — sends hormonal messages to the thyroid glands. The Ajna is where abstract inspiration from the Head becomes something the body can begin to process."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 49 on 7–13 Feb 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Logic. Gate 63: Doubting, in the Head Centre. Themes: Self-Doubt, Inadequacy Energy, Overthinking, Lack of Identity/Not Knowing Self. At its best: non-identifying with doubt, contemplation, unbiased inquiry, neutral questioning propels one into self-discovery and further stages of development. This is the other component making up the channel, and it will be highlighted by the Sun on 2–7 Mar 2027."
+        ]
+      }
+    },
+    {
+      "gate": 29,
+      "name": "Commitment",
+      "sign": "Leo",
+      "start": "2026-08-17T10:10:36.645712+01:00",
+      "end": "2026-08-23T06:25:38.025869+01:00",
+      "days": 6,
+      "tagline": "the burnout window",
+      "axis": {
+        "sentence": "Awareness gathers in the Solar Plexus (Earth · 30 Desire) and looks for action through the Sacral (Sun · 29 Commitment).",
+        "lead": null,
+        "sun": {
+          "gate": 29,
+          "name": "Commitment",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 30,
+          "name": "Desire",
+          "centre": "Solar Plexus",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": {
+        "sign": "Leo",
+        "text": "both gates name burnout in their low expression, and the lesson's warning is identical — excess yang → exhaustion → straight to the heart. Leo's source-check (*needing to be seen? trying to impress? or pure expression?*) and gate 29's (*response, or \"I should\"?*) are the same question. Plant: Motherwort."
+      },
+      "risk": null,
+      "sun_reading": "This window puts a light on what you have said yes to. Patterns in your commitments become easier to see, including the ones that quietly do not serve you, and the honest reckoning is often uncomfortable.\n\nVitality runs high, which is the useful part and also the trap. The appetite to begin something, to enter a relationship, to take a thing on, is stronger than usual. The risk is agreeing quickly because the energy is there, without accounting for what the commitment will actually cost across the months that follow.\n\nThe most valuable thing available here is not a new yes. It is noticing where the old ones came from.",
+      "earth_reading": null,
+      "earth_fallback": "Gate 30: Desire, in the Solar Plexus Centre. Themes: Determination & Perseverance. At its best: surrender to desire, embodiment of physical wants while maintaining larger perspective, non-identification with hungers.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 30 on 13–19 Feb 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Discovery. Gate 46: Love of the Body, in the G Centre. At its best: serendipity/luck originating from trust in flow-of-life that the body taps into, delight, lightness, trusting in where the body brings you/desires to do. This is the other component making up the channel, and it will be highlighted by the Sun on 21–27 Sep 2026."
+        ]
+      }
+    },
+    {
+      "gate": 59,
+      "name": "Intimacy",
+      "sign": "Virgo",
+      "start": "2026-08-23T06:25:38.025869+01:00",
+      "end": "2026-08-29T02:23:19.859060+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Solar Plexus (Earth · 55 Creative Spirit) and looks for action through the Sacral (Sun · 59 Intimacy).",
+        "lead": null,
+        "sun": {
+          "gate": 59,
+          "name": "Intimacy",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 55,
+          "name": "Creative Spirit",
+          "centre": "Solar Plexus",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 55: Creative Spirit, in the Solar Plexus Centre. Themes: Past Energy. At its best: freeing from the victim state, becoming a creative conduit for awareness, processing and physical release of emotions.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 55 on 19–24 Feb 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Sexuality. Gate 6: Friction, in the Solar Plexus Centre. Themes: Self-Doubt, Inadequacy Energy. At its best: tactful and dynamic exchanges, maintaining self-awareness even in heated emotions, feeling and adjusting to auric shifts in others. This is the other component making up the channel, and it will be highlighted by the Sun on 15–21 Sep 2026."
+        ]
+      }
+    },
+    {
+      "gate": 40,
+      "name": "Independent",
+      "sign": "Virgo",
+      "start": "2026-08-29T02:23:19.859060+01:00",
+      "end": "2026-09-03T21:58:30.739531+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Solar Plexus (Earth · 37 Friendship) and looks for action through the Heart (Sun · 40 Independent).",
+        "lead": null,
+        "sun": {
+          "gate": 40,
+          "name": "Independent",
+          "centre": "Heart",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 37,
+          "name": "Friendship",
+          "centre": "Solar Plexus",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 37: Friendship, in the Solar Plexus Centre. Themes: People Pleasing Energy. At its best: equalizing fair exchange by giving from the heart, symbiotic work and life balance, global family, equal and fair relationship arrangements.",
+      "nervous": {
+        "source": "Heart",
+        "level": "centre",
+        "text": "An undefined Heart running on borrowed willpower is a setup for burnout. The body pushes through on amplified energy that was never designed to sustain — and crashes harder."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 37 on 24 Feb – 2 Mar 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Community. Gate 37: Friendship, in the Solar Plexus Centre. Themes: People Pleasing Energy. At its best: equalizing fair exchange by giving from the heart, symbiotic work and life balance, global family, equal and fair relationship arrangements. This is the other component making up the channel, and it will be highlighted by the Sun on 24 Feb – 2 Mar 2027."
+        ]
+      }
+    },
+    {
+      "gate": 64,
+      "name": "Fractal Stream",
+      "sign": "Virgo",
+      "start": "2026-09-03T21:58:30.739531+01:00",
+      "end": "2026-09-09T17:06:19.011168+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Head (Sun · 64 Fractal Stream, Earth · 63 Doubting). Nothing crosses between centres this week — the whole axis turns inward on the Head.",
+        "lead": null,
+        "sun": {
+          "gate": 64,
+          "name": "Fractal Stream",
+          "centre": "Head",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 63,
+          "name": "Doubting",
+          "centre": "Head",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 63: Doubting, in the Head Centre. Themes: Self-Doubt, Inadequacy Energy, Overthinking, Lack of Identity/Not Knowing Self. At its best: non-identifying with doubt, contemplation, unbiased inquiry, neutral questioning propels one into self-discovery and further stages of development.",
+      "nervous": {
+        "source": "Head",
+        "level": "centre",
+        "text": "More than 90% of mental processing takes place below the level of conscious awareness — the Head Centre is largely operating subconsciously even when it feels like active thinking."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "3 Mar 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 63 on 2–7 Mar 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Abstraction. Gate 47: Mental Processing, in the Ajna Centre. At its best: sifting and working through ongoing archetypes from subconscious/memory/lineage/shadow. This is the other component making up the channel, and it will be highlighted by the Sun on 9–15 Sep 2026."
+        ]
+      }
+    },
+    {
+      "gate": 47,
+      "name": "Mental Processing",
+      "sign": "Virgo",
+      "start": "2026-09-09T17:06:19.011168+01:00",
+      "end": "2026-09-15T11:48:42.620787+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Solar Plexus (Earth · 22 Grace) and looks for recognition in the Ajna (Sun · 47 Mental Processing).",
+        "lead": null,
+        "sun": {
+          "gate": 47,
+          "name": "Mental Processing",
+          "centre": "Ajna",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 22,
+          "name": "Grace",
+          "centre": "Solar Plexus",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 22: Grace, in the Solar Plexus Centre. At its best: feeling, honouring, and listening to the full range of one's own emotion without disrespecting the feelings of others.",
+      "nervous": {
+        "source": "Ajna",
+        "level": "centre",
+        "text": "Keeps us alive and on track — sends hormonal messages to the thyroid glands. The Ajna is where abstract inspiration from the Head becomes something the body can begin to process."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 22 on 7–13 Mar 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Abstraction. Gate 64: Fractal Stream, in the Head Centre. Themes: Overthinking. At its best: witnessing the mind, confusion releases into imagination, swirling thoughts are released and become artistry. This is the other component making up the channel, and it will be highlighted by the Sun on 3–9 Sep 2026."
+        ]
+      }
+    },
+    {
+      "gate": 6,
+      "name": "Friction",
+      "sign": "Virgo",
+      "start": "2026-09-15T11:48:42.620787+01:00",
+      "end": "2026-09-21T06:07:51.730627+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Solar Plexus (Sun · 6 Friction, Earth · 36 Experiences). Nothing crosses between centres this week — the whole axis turns inward on the Solar Plexus.",
+        "lead": null,
+        "sun": {
+          "gate": 6,
+          "name": "Friction",
+          "centre": "Solar Plexus",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 36,
+          "name": "Experiences",
+          "centre": "Solar Plexus",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 36: Experiences, in the Solar Plexus Centre. Themes: Initiating & Beginning Energy, Self-Doubt, Inadequacy Energy, Multi Passionate Energy, Creative Energy, Inconsistent Energy, Sensitivity to Judgement/Criticism, Risk Taking. At its best: the facing of suffering and desire — by addressing suffering one finds new levels of humanitarianism and helping work.",
+      "nervous": {
+        "source": "Solar Plexus",
+        "level": "centre",
+        "text": "- Holding emotions in causes double injury: you lose access to the emotional power, AND waste energy suppressing it\n- \"High vibe only\" is a bypassing pattern — the lows are part of the wave\n- The body stores what the emotional system isn't allowed to release\n- Health marker: decreased time from emotion → expression of emotion"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 36 on 13–19 Mar 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Sexuality. Gate 59: Intimacy, in the Sacral Centre. Themes: Creative Energy. At its best: union of awareness with others whether through sexuality or the heart, acceptance of intimacy fears breaks open transcendence of the ego. This is the other component making up the channel, and it will be highlighted by the Sun on 23–29 Aug 2026."
+        ]
+      }
+    },
+    {
+      "gate": 46,
+      "name": "Love of the Body",
+      "sign": "Virgo",
+      "start": "2026-09-21T06:07:51.730627+01:00",
+      "end": "2026-09-27T00:04:01.805662+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the G Centre (Sun · 46 Love of the Body, Earth · 25 Universal Love). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
+        "lead": null,
+        "sun": {
+          "gate": 46,
+          "name": "Love of the Body",
+          "centre": "G Centre",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 25,
+          "name": "Universal Love",
+          "centre": "G Centre",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 25: Universal Love, in the G Centre. At its best: acceptance of all things including sacred wounds, softening and blossoming of the soul, 'spiritual springtime.'.",
+      "nervous": {
+        "source": "G Centre",
+        "level": "centre",
+        "text": "An undefined G Center in dysregulation can spiral into identity questions and existential doubt. This is amplified conditioning, not truth. The somatic practice: ground in the body (which is always here) rather than trying to find stable identity in the mind."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 25 on 19–24 Mar 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Discovery. Gate 29: Commitment, in the Sacral Centre. Themes: People Pleasing Energy, Overworking, Codependent, Determination & Perseverance. At its best: true commitment originating from the core will engender luck, following Sacral/gut engagement with an unbiased mind (gut response over 'I should...' or 'I have to...'). This is the other component making up the channel, and it will be highlighted by the Sun on 17–23 Aug 2026."
+        ]
+      }
+    },
+    {
+      "gate": 18,
+      "name": "Integrity",
+      "sign": "Libra",
+      "start": "2026-09-27T00:04:01.805662+01:00",
+      "end": "2026-10-02T17:33:02.074369+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Ajna (Earth · 17 Opinions) and looks for recognition in the Spleen (Sun · 18 Integrity).",
+        "lead": null,
+        "sun": {
+          "gate": 18,
+          "name": "Integrity",
+          "centre": "Spleen",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 17,
+          "name": "Opinions",
+          "centre": "Ajna",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 17: Opinions, in the Ajna Centre. Themes: Fixing Others Energy, Sensitivity to Judgement/Criticism. At its best: seeing beyond opinions to grasp universal truths, mediator between logic and abstract knowing, using flaw-finding to root out limiting belief systems.",
+      "nervous": {
+        "source": "Spleen",
+        "level": "centre",
+        "text": "An undefined Spleen in a dysregulated environment constantly amplifies ambient fear — not specific threats, just background anxiety. The nervous system can't distinguish between borrowed fear and real danger. Energy clearing and intentional environment-choosing are essential."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 17 on 24–30 Mar 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Judgement. Gate 58: Joy, in the Root Centre. At its best: release of concern about an imagined future — by sitting with all feelings of satisfaction or dissatisfaction, surges of vitality break through. This is the other component making up the channel, and it will be highlighted by the Sun on 25–31 Dec 2026."
+        ]
+      }
+    },
+    {
+      "gate": 48,
+      "name": "Depth",
+      "sign": "Libra",
+      "start": "2026-10-02T17:33:02.074369+01:00",
+      "end": "2026-10-08T10:31:37.265066+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Heart (Earth · 21 Control) and looks for recognition in the Spleen (Sun · 48 Depth).",
+        "lead": null,
+        "sun": {
+          "gate": 48,
+          "name": "Depth",
+          "centre": "Spleen",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 21,
+          "name": "Control",
+          "centre": "Heart",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 21: Control, in the Heart Centre. At its best: having authority through love and loyalty, a balance of receptivity to find true command, command is found through release of control.",
+      "nervous": {
+        "source": "Spleen",
+        "level": "centre",
+        "text": "An undefined Spleen in a dysregulated environment constantly amplifies ambient fear — not specific threats, just background anxiety. The nervous system can't distinguish between borrowed fear and real danger. Energy clearing and intentional environment-choosing are essential."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "2 Apr 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 21 on 30 Mar – 5 Apr 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Mastery. Gate 16: Enthusiasm, in the Throat Centre. Themes: Initiating & Beginning Energy, Multi Passionate Energy, Risk Taking. At its best: zeal to ascend to mastery, skill becomes a vehicle to the higher self, versatility across disciplines. This is the other component making up the channel, and it will be highlighted by the Sun on 27 May – 2 Jun 2027."
+        ]
+      }
+    },
+    {
+      "gate": 57,
+      "name": "Intuition",
+      "sign": "Libra",
+      "start": "2026-10-08T10:31:37.265066+01:00",
+      "end": "2026-10-14T03:01:56.262831+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Heart (Earth · 51 Shock) and looks for recognition in the Spleen (Sun · 57 Intuition).",
+        "lead": null,
+        "sun": {
+          "gate": 57,
+          "name": "Intuition",
+          "centre": "Spleen",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 51,
+          "name": "Shock",
+          "centre": "Heart",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 51: Shock, in the Heart Centre. Themes: Initiating & Beginning Energy, Teaching Energy, Perfectionism Energy. At its best: the warrior of facing personal fears, courageous leaps into the unknown, first to initiate new things, portal into initiations and new awareness.",
+      "nervous": {
+        "source": "Spleen",
+        "level": "centre",
+        "text": "An undefined Spleen in a dysregulated environment constantly amplifies ambient fear — not specific threats, just background anxiety. The nervous system can't distinguish between borrowed fear and real danger. Energy clearing and intentional environment-choosing are essential."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 51 on 5–10 Apr 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Perfected Form. Gate 10: Self Love, in the G Centre. Themes: Perfectionism Energy, Selfish/Self-Centered Energy, Sensitivity to Judgement/Criticism. At its best: courageous self-love, both mystical and mundane acceptance of differentiated self, playfulness, release from mental self-criticism, the true self is lived. This is the other component making up the channel, and it will be highlighted by the Sun on 20–25 Dec 2026.",
+          "Brainwave. Gate 20: The Now, in the Throat Centre. At its best: surrender to authority/body wisdom, escaping the mental trap, self-assurance/trust in life, 'everything will be okay' sensibility. This is the other component making up the channel, and it will be highlighted by the Sun on 21–27 May 2027.",
+          "Power. Gate 34: Power, in the Sacral Centre. Themes: Multi Passionate Energy, Overworking. At its best: true strength is to be in harmony with natural forces — to yield or redirect power in accordance with nature, the heroism archetype, prowess. This is the other component making up the channel, and it will be highlighted by the Sun on 22–27 Nov 2026."
+        ]
+      }
+    },
+    {
+      "gate": 32,
+      "name": "Endurance",
+      "sign": "Libra",
+      "start": "2026-10-14T03:01:56.262831+01:00",
+      "end": "2026-10-19T19:07:31.040281+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 42 Middles & Ends) and looks for recognition in the Spleen (Sun · 32 Endurance).",
+        "lead": null,
+        "sun": {
+          "gate": 32,
+          "name": "Endurance",
+          "centre": "Spleen",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 42,
+          "name": "Middles & Ends",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 42: Middles & Ends, in the Sacral Centre. Themes: Determination & Perseverance. At its best: letting go of assumption for fearless forward movement, detachment from expectation, elevation and improvement, follow-through, able to identify when closure is necessary.",
+      "nervous": {
+        "source": "Gate 32",
+        "level": "gate",
+        "text": "The spleen is a global system, so working with its fears requires behavioural change rather than insight alone. The splenic (lymphatic) system has no pump — the only way to move it is proper motion and proper breath: run, walk, throw."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 42 on 10–16 Apr 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Transformation. Gate 54: Aspiration, in the Root Centre. Themes: Selfish/Self-Centered Energy, Overworking, Determination & Perseverance, Initiating & Beginning Energy, Perfectionism Energy. At its best: aspiration surpasses material desire, seeking spiritual growth and working for the benefit of all. This is the other component making up the channel, and it will be highlighted by the Sun on 5–11 Jan 2027."
+        ]
+      }
+    },
+    {
+      "gate": 50,
+      "name": "Values",
+      "sign": "Libra",
+      "start": "2026-10-19T19:07:31.040281+01:00",
+      "end": "2026-10-25T09:50:40.107550+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 3 Innovation) and looks for recognition in the Spleen (Sun · 50 Values).",
+        "lead": null,
+        "sun": {
+          "gate": 50,
+          "name": "Values",
+          "centre": "Spleen",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 3,
+          "name": "Innovation",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 3: Innovation, in the Sacral Centre. Themes: Initiating & Beginning Energy, Teaching Energy. At its best: primordial ability for creation and play producing ingenuity, cooperation, and innovation; progress made through mutual effort/synergy.",
+      "nervous": {
+        "source": "Spleen",
+        "level": "centre",
+        "text": "An undefined Spleen in a dysregulated environment constantly amplifies ambient fear — not specific threats, just background anxiety. The nervous system can't distinguish between borrowed fear and real danger. Energy clearing and intentional environment-choosing are essential."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 3 on 16–22 Apr 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Preservation. Gate 27: Caring, in the Sacral Centre. Themes: People Pleasing Energy, Overworking, Codependent. At its best: altruistic giving without any expectation begets unexpected goodwill from the cosmos. This is the other component making up the channel, and it will be highlighted by the Sun on 22–28 Apr 2027."
+        ]
+      }
+    },
+    {
+      "gate": 28,
+      "name": "Purpose",
+      "sign": "Scorpio",
+      "start": "2026-10-25T09:50:40.107550+00:00",
+      "end": "2026-10-31T01:08:53.171667+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 27 Caring) and looks for recognition in the Spleen (Sun · 28 Purpose).",
+        "lead": null,
+        "sun": {
+          "gate": 28,
+          "name": "Purpose",
+          "centre": "Spleen",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 27,
+          "name": "Caring",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 27: Caring, in the Sacral Centre. Themes: People Pleasing Energy, Overworking, Codependent. At its best: altruistic giving without any expectation begets unexpected goodwill from the cosmos.",
+      "nervous": {
+        "source": "Spleen",
+        "level": "centre",
+        "text": "An undefined Spleen in a dysregulated environment constantly amplifies ambient fear — not specific threats, just background anxiety. The nervous system can't distinguish between borrowed fear and real danger. Energy clearing and intentional environment-choosing are essential."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 27 on 22–28 Apr 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Struggle / Adventure. Gate 38: Perseverance, in the Root Centre. Themes: Determination & Perseverance. At its best: the fight for meaning, love and purpose, perseverance, the warrior that fights not to hurt but to protect what matters. This is the other component making up the channel, and it will be highlighted by the Sun on 31 Dec – 5 Jan 2027."
+        ]
+      }
+    },
+    {
+      "gate": 44,
+      "name": "Alertness",
+      "sign": "Scorpio",
+      "start": "2026-10-31T01:08:53.171667+00:00",
+      "end": "2026-11-05T16:00:05.410780+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Ajna (Earth · 24 Mental Reviewing) and looks for recognition in the Spleen (Sun · 44 Alertness).",
+        "lead": null,
+        "sun": {
+          "gate": 44,
+          "name": "Alertness",
+          "centre": "Spleen",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 24,
+          "name": "Mental Reviewing",
+          "centre": "Ajna",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 24: Mental Reviewing, in the Ajna Centre. Themes: Past Energy. At its best: pondering and contemplating into eventual leaps of original thought and genius, mental review gives way to eureka.",
+      "nervous": {
+        "source": "Spleen",
+        "level": "centre",
+        "text": "An undefined Spleen in a dysregulated environment constantly amplifies ambient fear — not specific threats, just background anxiety. The nervous system can't distinguish between borrowed fear and real danger. Energy clearing and intentional environment-choosing are essential."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "1 May 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 24 on 28 Apr – 3 May 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Transmission. Gate 26: Manipulation, in the Heart Centre. Themes: Selfish/Self-Centered Energy. At its best: allowing purpose to guide willpower in service to higher Self, an artful use of ego, ego rendered as an art form. This is the other component making up the channel, and it will be highlighted by the Sun on 9–14 Dec 2026."
+        ]
+      }
+    },
+    {
+      "gate": 1,
+      "name": "Self Expression",
+      "sign": "Scorpio",
+      "start": "2026-11-05T16:00:05.410780+00:00",
+      "end": "2026-11-11T06:26:15.925268+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the G Centre (Sun · 1 Self Expression, Earth · 2 Direction of Self). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
+        "lead": null,
+        "sun": {
+          "gate": 1,
+          "name": "Self Expression",
+          "centre": "G Centre",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 2,
+          "name": "Direction of Self",
+          "centre": "G Centre",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 2: Direction of Self, in the G Centre. Themes: Teaching Energy. At its best: orientation, inner compass pointing to true north, voice of internal guidance heard and directs toward higher path.",
+      "nervous": {
+        "source": "G Centre",
+        "level": "centre",
+        "text": "An undefined G Center in dysregulation can spiral into identity questions and existential doubt. This is amplified conditioning, not truth. The somatic practice: ground in the body (which is always here) rather than trying to find stable identity in the mind."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 2 on 3–9 May 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Inspiration. Gate 8: Individuality, in the Throat Centre. Themes: Leadership Energy. At its best: using unpredictable uniqueness as innovation, revolutionary free-thinking, evolution via embodied uniqueness. This is the other component making up the channel, and it will be highlighted by the Sun on 15–21 May 2027."
+        ]
+      }
+    },
+    {
+      "gate": 43,
+      "name": "Individual Knowing",
+      "sign": "Scorpio",
+      "start": "2026-11-11T06:26:15.925268+00:00",
+      "end": "2026-11-16T20:32:04.068274+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 23 Individual Expression) and looks for recognition in the Ajna (Sun · 43 Individual Knowing).",
+        "lead": null,
+        "sun": {
+          "gate": 43,
+          "name": "Individual Knowing",
+          "centre": "Ajna",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 23,
+          "name": "Individual Expression",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 23: Individual Expression, in the Throat Centre. Themes: Teaching Energy. At its best: clearing of the canal between thought and word, language simplifies, purifies and becomes easily understood by all, streamlined communication.",
+      "nervous": {
+        "source": "Ajna",
+        "level": "centre",
+        "text": "Keeps us alive and on track — sends hormonal messages to the thyroid glands. The Ajna is where abstract inspiration from the Head becomes something the body can begin to process."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 23 on 9–15 May 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Structuring. Gate 23: Individual Expression, in the Throat Centre. Themes: Teaching Energy. At its best: clearing of the canal between thought and word, language simplifies, purifies and becomes easily understood by all, streamlined communication. This is the other component making up the channel, and it will be highlighted by the Sun on 9–15 May 2027."
+        ]
+      }
+    },
+    {
+      "gate": 14,
+      "name": "Abundance",
+      "sign": "Scorpio",
+      "start": "2026-11-16T20:32:04.068274+00:00",
+      "end": "2026-11-22T10:21:36.918882+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 8 Individuality) and looks for action through the Sacral (Sun · 14 Abundance).",
+        "lead": null,
+        "sun": {
+          "gate": 14,
+          "name": "Abundance",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 8,
+          "name": "Individuality",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 8: Individuality, in the Throat Centre. Themes: Leadership Energy. At its best: using unpredictable uniqueness as innovation, revolutionary free-thinking, evolution via embodied uniqueness.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 8 on 15–21 May 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Receptive. Gate 2: Direction of Self, in the G Centre. Themes: Teaching Energy. At its best: orientation, inner compass pointing to true north, voice of internal guidance heard and directs toward higher path. This is the other component making up the channel, and it will be highlighted by the Sun on 3–9 May 2027."
+        ]
+      }
+    },
+    {
+      "gate": 34,
+      "name": "Power",
+      "sign": "Sagittarius",
+      "start": "2026-11-22T10:21:36.918882+00:00",
+      "end": "2026-11-27T23:54:29.526114+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 20 The Now) and looks for action through the Sacral (Sun · 34 Power).",
+        "lead": null,
+        "sun": {
+          "gate": 34,
+          "name": "Power",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 20,
+          "name": "The Now",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 20: The Now, in the Throat Centre. At its best: surrender to authority/body wisdom, escaping the mental trap, self-assurance/trust in life, 'everything will be okay' sensibility.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 20 on 21–27 May 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Exploration. Gate 10: Self Love, in the G Centre. Themes: Perfectionism Energy, Selfish/Self-Centered Energy, Sensitivity to Judgement/Criticism. At its best: courageous self-love, both mystical and mundane acceptance of differentiated self, playfulness, release from mental self-criticism, the true self is lived. This is the other component making up the channel, and it will be highlighted by the Sun on 20–25 Dec 2026.",
+          "Charisma. Gate 20: The Now, in the Throat Centre. At its best: surrender to authority/body wisdom, escaping the mental trap, self-assurance/trust in life, 'everything will be okay' sensibility. This is the other component making up the channel, and it will be highlighted by the Sun on 21–27 May 2027.",
+          "Power. Gate 57: Intuition, in the Spleen Centre. Themes: Mystical Energy, Initiating & Beginning Energy. At its best: the intuition system for being in harmony with the outer world, highest sensitivity to sound and vibration, sensitivity to guidance, near-psychic perception. This is the other component making up the channel, and it will be highlighted by the Sun on 8–14 Oct 2026."
+        ]
+      }
+    },
+    {
+      "gate": 9,
+      "name": "Details",
+      "sign": "Sagittarius",
+      "start": "2026-11-27T23:54:29.526114+00:00",
+      "end": "2026-12-03T13:09:21.943831+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 16 Enthusiasm) and looks for action through the Sacral (Sun · 9 Details).",
+        "lead": null,
+        "sun": {
+          "gate": 9,
+          "name": "Details",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 16,
+          "name": "Enthusiasm",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 16: Enthusiasm, in the Throat Centre. Themes: Initiating & Beginning Energy, Multi Passionate Energy, Risk Taking. At its best: zeal to ascend to mastery, skill becomes a vehicle to the higher self, versatility across disciplines.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": {
+        "date": "31 May 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 16 on 27 May – 2 Jun 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Concentration. Gate 52: Stillness, in the Root Centre. Themes: Inconsistent Energy, Determination & Perseverance. At its best: pacing and restraint, intention slowly unfolds into form, never 'stuck' if there is a larger goal no matter how still things seem. This is the other component making up the channel, and it will be highlighted by the Sun on 25 Jun – 1 Jul 2027."
+        ]
+      }
+    },
+    {
+      "gate": 5,
+      "name": "Fixed Rhythms",
+      "sign": "Sagittarius",
+      "start": "2026-12-03T13:09:21.943831+00:00",
+      "end": "2026-12-09T02:07:34.942144+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 35 Adventure) and looks for action through the Sacral (Sun · 5 Fixed Rhythms).",
+        "lead": null,
+        "sun": {
+          "gate": 5,
+          "name": "Fixed Rhythms",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 35,
+          "name": "Adventure",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 35: Adventure, in the Throat Centre. Themes: Lack of Identity/Not Knowing Self, Leadership Energy. At its best: intentionally choosing to make desirous cravings into opportunities for growth, progress fueled by purpose.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 35 on 2–8 Jun 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Rhythm. Gate 15: Extreme Rhythms, in the G Centre. Themes: Inconsistent Energy. At its best: presence and magnetism, synchronized with universal vibration and pulse and rhythm of life, finding the divine in the ordinary. This is the other component making up the channel, and it will be highlighted by the Sun on 19–25 Jun 2027."
+        ]
+      }
+    },
+    {
+      "gate": 26,
+      "name": "Manipulation",
+      "sign": "Sagittarius",
+      "start": "2026-12-09T02:07:34.942144+00:00",
+      "end": "2026-12-14T14:54:12.016653+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 45 Authority) and looks for action through the Heart (Sun · 26 Manipulation).",
+        "lead": null,
+        "sun": {
+          "gate": 26,
+          "name": "Manipulation",
+          "centre": "Heart",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 45,
+          "name": "Authority",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 45: Authority, in the Throat Centre. Themes: Teaching Energy, Leadership Energy, Selfish/Self-Centered Energy. At its best: the leap to sharing, supporting the collective over the self, gifting authority to others (rather than hoarding it), educating and bolstering others.",
+      "nervous": {
+        "source": "Heart",
+        "level": "centre",
+        "text": "An undefined Heart running on borrowed willpower is a setup for burnout. The body pushes through on amplified energy that was never designed to sustain — and crashes harder."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "11 Jun 2025",
+        "gap": "eighteen months ago, last cycle",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 45 on 8–13 Jun 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Transmission. Gate 44: Alertness, in the Spleen Centre. Themes: Past Energy. At its best: smelling out what is healthy and correct for oneself, scent perception of allies and enemies, smelling out the higher path (path to disease, health, or teamwork). This is the other component making up the channel, and it will be highlighted by the Sun on 31 Oct – 5 Nov 2026."
+        ]
+      }
+    },
+    {
+      "gate": 11,
+      "name": "Beliefs",
+      "sign": "Sagittarius",
+      "start": "2026-12-14T14:54:12.016653+00:00",
+      "end": "2026-12-20T03:34:35.593771+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 12 Caution) and looks for recognition in the Ajna (Sun · 11 Beliefs).",
+        "lead": null,
+        "sun": {
+          "gate": 11,
+          "name": "Beliefs",
+          "centre": "Ajna",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 12,
+          "name": "Caution",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 12: Caution, in the Throat Centre. Themes: Safety Seeking, Mystical Energy. At its best: love and appreciation for things outside oneself, sensitivity to authenticity, using voice as a tool for truth.",
+      "nervous": {
+        "source": "Ajna",
+        "level": "centre",
+        "text": "Keeps us alive and on track — sends hormonal messages to the thyroid glands. The Ajna is where abstract inspiration from the Head becomes something the body can begin to process."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 12 on 13–19 Jun 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Curiosity. Gate 56: Storytelling, in the Throat Centre. Themes: Teaching Energy, Past Energy, Creative Energy. At its best: distraction begets enrichment, seeking out and communicating stimulating ideas, self-discipline, setbacks become opportunities, a balance of levity and gravitas. This is the other component making up the channel, and it will be highlighted by the Sun on 19–25 Jul 2027."
+        ]
+      }
+    },
+    {
+      "gate": 10,
+      "name": "Self Love",
+      "sign": "Sagittarius",
+      "start": "2026-12-20T03:34:35.593771+00:00",
+      "end": "2026-12-25T16:10:23.149695+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the G Centre (Sun · 10 Self Love, Earth · 15 Extreme Rhythms). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
+        "lead": null,
+        "sun": {
+          "gate": 10,
+          "name": "Self Love",
+          "centre": "G Centre",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 15,
+          "name": "Extreme Rhythms",
+          "centre": "G Centre",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 15: Extreme Rhythms, in the G Centre. Themes: Inconsistent Energy. At its best: presence and magnetism, synchronized with universal vibration and pulse and rhythm of life, finding the divine in the ordinary.",
+      "nervous": {
+        "source": "G Centre",
+        "level": "centre",
+        "text": "An undefined G Center in dysregulation can spiral into identity questions and existential doubt. This is amplified conditioning, not truth. The somatic practice: ground in the body (which is always here) rather than trying to find stable identity in the mind."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 15 on 19–25 Jun 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Awakening. Gate 20: The Now, in the Throat Centre. At its best: surrender to authority/body wisdom, escaping the mental trap, self-assurance/trust in life, 'everything will be okay' sensibility. This is the other component making up the channel, and it will be highlighted by the Sun on 21–27 May 2027.",
+          "Exploration. Gate 34: Power, in the Sacral Centre. Themes: Multi Passionate Energy, Overworking. At its best: true strength is to be in harmony with natural forces — to yield or redirect power in accordance with nature, the heroism archetype, prowess. This is the other component making up the channel, and it will be highlighted by the Sun on 22–27 Nov 2026.",
+          "Perfected Form. Gate 57: Intuition, in the Spleen Centre. Themes: Mystical Energy, Initiating & Beginning Energy. At its best: the intuition system for being in harmony with the outer world, highest sensitivity to sound and vibration, sensitivity to guidance, near-psychic perception. This is the other component making up the channel, and it will be highlighted by the Sun on 8–14 Oct 2026."
+        ]
+      }
+    },
+    {
+      "gate": 58,
+      "name": "Joy",
+      "sign": "Capricorn",
+      "start": "2026-12-25T16:10:23.149695+00:00",
+      "end": "2026-12-31T04:40:58.620085+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Root (Sun · 58 Joy, Earth · 52 Stillness). Nothing crosses between centres this week — the whole axis turns inward on the Root.",
+        "lead": null,
+        "sun": {
+          "gate": 58,
+          "name": "Joy",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 52,
+          "name": "Stillness",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 52: Stillness, in the Root Centre. Themes: Inconsistent Energy, Determination & Perseverance. At its best: pacing and restraint, intention slowly unfolds into form, never 'stuck' if there is a larger goal no matter how still things seem.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "30 Jun 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 52 on 25 Jun – 1 Jul 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Judgement. Gate 18: Integrity, in the Spleen Centre. Themes: Past Energy, Perfectionism Energy, Fixing Others Energy, Sensitivity to Judgement/Criticism, Determination & Perseverance, Teaching Energy. At its best: non-reactive to judgments, all judgments arise from the heart for the sole purpose of releasing others from pain, constant inner labor to achieve greater integrity. This is the other component making up the channel, and it will be highlighted by the Sun on 27 Sep – 2 Oct 2026."
+        ]
+      }
+    },
+    {
+      "gate": 38,
+      "name": "Perseverance",
+      "sign": "Capricorn",
+      "start": "2026-12-31T04:40:58.620085+00:00",
+      "end": "2027-01-05T17:06:30.208639+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Root (Sun · 38 Perseverance, Earth · 39 Provocation). Nothing crosses between centres this week — the whole axis turns inward on the Root.",
+        "lead": null,
+        "sun": {
+          "gate": 38,
+          "name": "Perseverance",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 39,
+          "name": "Provocation",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 39: Provocation, in the Root Centre. Themes: Teaching Energy. At its best: playful, a catalyst for creative action, stimulating laughter and awakening of a spirited and playful approach to life.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 39 on 1–7 Jul 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Struggle / Adventure. Gate 28: Purpose, in the Spleen Centre. Themes: Risk Taking, Self-Doubt, Inadequacy Energy. At its best: to befriend the fear of death, to walk alongside mortality and fears, lighthearted in the face of adversity, the plot of one's life emerges. This is the other component making up the channel, and it will be highlighted by the Sun on 25–31 Oct 2026."
+        ]
+      }
+    },
+    {
+      "gate": 54,
+      "name": "Aspiration",
+      "sign": "Capricorn",
+      "start": "2027-01-05T17:06:30.208639+00:00",
+      "end": "2027-01-11T05:31:32.221655+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Root (Sun · 54 Aspiration, Earth · 53 Beginnings). Nothing crosses between centres this week — the whole axis turns inward on the Root.",
+        "lead": null,
+        "sun": {
+          "gate": 54,
+          "name": "Aspiration",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 53,
+          "name": "Beginnings",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 53: Beginnings, in the Root Centre. Themes: Initiating & Beginning Energy, Multi Passionate Energy, Inconsistent Energy, Teaching Energy. At its best: heart expansion, self-awareness, aligning with greater whole in finding the places to begin new endeavours.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "10 Jul 2025",
+        "gap": "eighteen months ago, last cycle",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 53 on 7–13 Jul 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Transformation. Gate 32: Endurance, in the Spleen Centre. Themes: Determination & Perseverance, Self-Doubt, Inadequacy Energy. At its best: adaptability, persevering, endurance, knowing when to take risks or use restraint, continuity, filling up and depleting resources in careful balance. This is the other component making up the channel, and it will be highlighted by the Sun on 14–19 Oct 2026."
+        ]
+      }
+    },
+    {
+      "gate": 61,
+      "name": "Unravelling Mystery",
+      "sign": "Capricorn",
+      "start": "2027-01-11T05:31:32.221655+00:00",
+      "end": "2027-01-16T18:01:53.756575+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 62 Organising Thought) and looks for pressure into the Head (Sun · 61 Unravelling Mystery).",
+        "lead": null,
+        "sun": {
+          "gate": 61,
+          "name": "Unravelling Mystery",
+          "centre": "Head",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 62,
+          "name": "Organising Thought",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 62: Organising Thought, in the Throat Centre. Themes: Teaching Energy. At its best: synergy of heart and mind in communication, intellect acts in service to the heart, mediator/channel of universal truths, logical mouthpiece for abstract concepts.",
+      "nervous": {
+        "source": "Head",
+        "level": "centre",
+        "text": "More than 90% of mental processing takes place below the level of conscious awareness — the Head Centre is largely operating subconsciously even when it feels like active thinking."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 62 on 13–19 Jul 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Awareness. Gate 24: Mental Reviewing, in the Ajna Centre. Themes: Past Energy. At its best: pondering and contemplating into eventual leaps of original thought and genius, mental review gives way to eureka. This is the other component making up the channel, and it will be highlighted by the Sun on 28 Apr – 3 May 2027."
+        ]
+      }
+    },
+    {
+      "gate": 60,
+      "name": "Boundaries",
+      "sign": "Capricorn",
+      "start": "2027-01-16T18:01:53.756575+00:00",
+      "end": "2027-01-22T06:40:42.798056+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 56 Storytelling) and looks for pressure into the Root (Sun · 60 Boundaries).",
+        "lead": null,
+        "sun": {
+          "gate": 60,
+          "name": "Boundaries",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 56,
+          "name": "Storytelling",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 56: Storytelling, in the Throat Centre. Themes: Teaching Energy, Past Energy, Creative Energy. At its best: distraction begets enrichment, seeking out and communicating stimulating ideas, self-discipline, setbacks become opportunities, a balance of levity and gravitas.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 56 on 19–25 Jul 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Mutation. Gate 3: Innovation, in the Sacral Centre. Themes: Initiating & Beginning Energy, Teaching Energy. At its best: primordial ability for creation and play producing ingenuity, cooperation, and innovation; progress made through mutual effort/synergy. This is the other component making up the channel, and it will be highlighted by the Sun on 16–22 Apr 2027."
+        ]
+      }
+    },
+    {
+      "gate": 41,
+      "name": "Fantasy",
+      "sign": "Aquarius",
+      "start": "2027-01-22T06:40:42.798056+00:00",
+      "end": "2027-01-27T19:28:18.153318+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 31 Influence) and looks for pressure into the Root (Sun · 41 Fantasy).",
+        "lead": null,
+        "sun": {
+          "gate": 41,
+          "name": "Fantasy",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 31,
+          "name": "Influence",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 31: Influence, in the Throat Centre. Themes: Leadership Energy. At its best: understanding and hearing the needs of the collective, voice/mouthpiece of a collective or group, listens well and thus can sway group movement effectively.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "29 Jul 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 31 on 24–30 Jul 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Recognition. Gate 30: Desire, in the Solar Plexus Centre. Themes: Determination & Perseverance. At its best: surrender to desire, embodiment of physical wants while maintaining larger perspective, non-identification with hungers. This is the other component making up the channel, and it will be highlighted by the Sun on 13–19 Feb 2027."
+        ]
+      }
+    },
+    {
+      "gate": 19,
+      "name": "Sensitivity",
+      "sign": "Aquarius",
+      "start": "2027-01-27T19:28:18.153318+00:00",
+      "end": "2027-02-02T08:23:17.090162+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Expression gathers in the Throat (Earth · 33 Memory) and looks for pressure into the Root (Sun · 19 Sensitivity).",
+        "lead": null,
+        "sun": {
+          "gate": 19,
+          "name": "Sensitivity",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 33,
+          "name": "Memory",
+          "centre": "Throat",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 33: Memory, in the Throat Centre. Themes: Past Energy. At its best: mindfulness, noticing harmful repeated patterns, freeing oneself from cyclical behaviors, retreating into self-witnessing.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 33 on 30 Jul – 5 Aug 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Synthesis. Gate 49: Revolution, in the Solar Plexus Centre. Themes: Codependent, Teaching Energy. At its best: reactionary response channeled towards revolutionary understanding rooted in goodwill for all, radical response used to reform social imbalances for the benefit of all without reactivity. This is the other component making up the channel, and it will be highlighted by the Sun on 7–13 Feb 2027."
+        ]
+      }
+    },
+    {
+      "gate": 13,
+      "name": "Past",
+      "sign": "Aquarius",
+      "start": "2027-02-02T08:23:17.090162+00:00",
+      "end": "2027-02-07T21:28:54.354986+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the G Centre (Sun · 13 Past, Earth · 7 Future). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
+        "lead": null,
+        "sun": {
+          "gate": 13,
+          "name": "Past",
+          "centre": "G Centre",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 7,
+          "name": "Future",
+          "centre": "G Centre",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 7: Future, in the G Centre. Themes: Leadership Energy, Fixing Others Energy. At its best: guidance by promoting autonomy for all, inner guidance takes precedence over outer guidance, facilitator of group function.",
+      "nervous": {
+        "source": "G Centre",
+        "level": "centre",
+        "text": "An undefined G Center in dysregulation can spiral into identity questions and existential doubt. This is amplified conditioning, not truth. The somatic practice: ground in the body (which is always here) rather than trying to find stable identity in the mind."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "9 Aug 2025",
+        "gap": "eighteen months ago, last cycle",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 7 on 5–11 Aug 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Prodigal. Gate 33: Memory, in the Throat Centre. Themes: Past Energy. At its best: mindfulness, noticing harmful repeated patterns, freeing oneself from cyclical behaviors, retreating into self-witnessing. This is the other component making up the channel, and it will be highlighted by the Sun on 30 Jul – 5 Aug 2026."
+        ]
+      }
+    },
+    {
+      "gate": 49,
+      "name": "Revolution",
+      "sign": "Aquarius",
+      "start": "2027-02-07T21:28:54.354986+00:00",
+      "end": "2027-02-13T10:50:30.782904+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Ajna (Earth · 4 Logic) and looks for recognition in the Solar Plexus (Sun · 49 Revolution).",
+        "lead": null,
+        "sun": {
+          "gate": 49,
+          "name": "Revolution",
+          "centre": "Solar Plexus",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 4,
+          "name": "Logic",
+          "centre": "Ajna",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 4: Logic, in the Ajna Centre. Themes: Fixing Others Energy, Overthinking. At its best: freedom from logic, heart/body wisdom integrated with mental intellect, fixation on knowledge loosens.",
+      "nervous": {
+        "source": "Solar Plexus",
+        "level": "centre",
+        "text": "- Holding emotions in causes double injury: you lose access to the emotional power, AND waste energy suppressing it\n- \"High vibe only\" is a bypassing pattern — the lows are part of the wave\n- The body stores what the emotional system isn't allowed to release\n- Health marker: decreased time from emotion → expression of emotion"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 4 on 11–17 Aug 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Synthesis. Gate 19: Sensitivity, in the Root Centre. Themes: Inconsistent Energy, Sensitivity to Judgement/Criticism, Codependent, People Pleasing Energy, Fixing Others Energy. At its best: independence, sensitivity to bio-energy, nature, or subtle frequencies, progress toward an interdependent relationship with a greater ecosystem (cosmic, natural, internal, or spiritual). This is the other component making up the channel, and it will be highlighted by the Sun on 27 Jan – 2 Feb 2027."
+        ]
+      }
+    },
+    {
+      "gate": 30,
+      "name": "Desire",
+      "sign": "Aquarius",
+      "start": "2027-02-13T10:50:30.782904+00:00",
+      "end": "2027-02-19T00:31:58.698706+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 29 Commitment) and looks for recognition in the Solar Plexus (Sun · 30 Desire).",
+        "lead": null,
+        "sun": {
+          "gate": 30,
+          "name": "Desire",
+          "centre": "Solar Plexus",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 29,
+          "name": "Commitment",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 29: Commitment, in the Sacral Centre. Themes: People Pleasing Energy, Overworking, Codependent, Determination & Perseverance. At its best: true commitment originating from the core will engender luck, following Sacral/gut engagement with an unbiased mind (gut response over 'I should...' or 'I have to...').",
+      "nervous": {
+        "source": "Solar Plexus",
+        "level": "centre",
+        "text": "- Holding emotions in causes double injury: you lose access to the emotional power, AND waste energy suppressing it\n- \"High vibe only\" is a bypassing pattern — the lows are part of the wave\n- The body stores what the emotional system isn't allowed to release\n- Health marker: decreased time from emotion → expression of emotion"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 29 on 17–23 Aug 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Recognition. Gate 41: Fantasy, in the Root Centre. Themes: Initiating & Beginning Energy. At its best: ability to tap into a universal field of creativity, creative premonitions, a healthy balance of visionary realism and honest inner motivation. This is the other component making up the channel, and it will be highlighted by the Sun on 22–27 Jan 2027."
+        ]
+      }
+    },
+    {
+      "gate": 55,
+      "name": "Creative Spirit",
+      "sign": "Pisces",
+      "start": "2027-02-19T00:31:58.698706+00:00",
+      "end": "2027-02-24T14:34:23.206686+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 59 Intimacy) and looks for recognition in the Solar Plexus (Sun · 55 Creative Spirit).",
+        "lead": null,
+        "sun": {
+          "gate": 55,
+          "name": "Creative Spirit",
+          "centre": "Solar Plexus",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 59,
+          "name": "Intimacy",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 59: Intimacy, in the Sacral Centre. Themes: Creative Energy. At its best: union of awareness with others whether through sexuality or the heart, acceptance of intimacy fears breaks open transcendence of the ego.",
+      "nervous": {
+        "source": "Solar Plexus",
+        "level": "centre",
+        "text": "- Holding emotions in causes double injury: you lose access to the emotional power, AND waste energy suppressing it\n- \"High vibe only\" is a bypassing pattern — the lows are part of the wave\n- The body stores what the emotional system isn't allowed to release\n- Health marker: decreased time from emotion → expression of emotion"
+      },
+      "practice": null,
+      "lookback": {
+        "date": "28 Aug 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 59 on 23–29 Aug 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Emoting. Gate 39: Provocation, in the Root Centre. Themes: Teaching Energy. At its best: playful, a catalyst for creative action, stimulating laughter and awakening of a spirited and playful approach to life. This is the other component making up the channel, and it will be highlighted by the Sun on 1–7 Jul 2027."
+        ]
+      }
+    },
+    {
+      "gate": 37,
+      "name": "Friendship",
+      "sign": "Pisces",
+      "start": "2027-02-24T14:34:23.206686+00:00",
+      "end": "2027-03-02T04:54:54.547476+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Heart (Earth · 40 Independent) and looks for recognition in the Solar Plexus (Sun · 37 Friendship).",
+        "lead": null,
+        "sun": {
+          "gate": 37,
+          "name": "Friendship",
+          "centre": "Solar Plexus",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 40,
+          "name": "Independent",
+          "centre": "Heart",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 40: Independent, in the Heart Centre. Themes: Fixing Others Energy, Codependent. At its best: relaxation, knowing how to say no, using boundaries, using willpower at appropriate times makes work effortless and unforced, welcomes support.",
+      "nervous": {
+        "source": "Solar Plexus",
+        "level": "centre",
+        "text": "- Holding emotions in causes double injury: you lose access to the emotional power, AND waste energy suppressing it\n- \"High vibe only\" is a bypassing pattern — the lows are part of the wave\n- The body stores what the emotional system isn't allowed to release\n- Health marker: decreased time from emotion → expression of emotion"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 40 on 29 Aug – 3 Sep 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Community. Gate 40: Independent, in the Heart Centre. Themes: Fixing Others Energy, Codependent. At its best: relaxation, knowing how to say no, using boundaries, using willpower at appropriate times makes work effortless and unforced, welcomes support. This is the other component making up the channel, and it will be highlighted by the Sun on 29 Aug – 3 Sep 2026."
+        ]
+      }
+    },
+    {
+      "gate": 63,
+      "name": "Doubting",
+      "sign": "Pisces",
+      "start": "2027-03-02T04:54:54.547476+00:00",
+      "end": "2027-03-07T19:34:53.460287+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Head (Sun · 63 Doubting, Earth · 64 Fractal Stream). Nothing crosses between centres this week — the whole axis turns inward on the Head.",
+        "lead": null,
+        "sun": {
+          "gate": 63,
+          "name": "Doubting",
+          "centre": "Head",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 64,
+          "name": "Fractal Stream",
+          "centre": "Head",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 64: Fractal Stream, in the Head Centre. Themes: Overthinking. At its best: witnessing the mind, confusion releases into imagination, swirling thoughts are released and become artistry.",
+      "nervous": {
+        "source": "Head",
+        "level": "centre",
+        "text": "More than 90% of mental processing takes place below the level of conscious awareness — the Head Centre is largely operating subconsciously even when it feels like active thinking."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "7 Sep 2025",
+        "gap": "eighteen months ago, last cycle",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 64 on 3–9 Sep 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Logic. Gate 4: Logic, in the Ajna Centre. Themes: Fixing Others Energy, Overthinking. At its best: freedom from logic, heart/body wisdom integrated with mental intellect, fixation on knowledge loosens. This is the other component making up the channel, and it will be highlighted by the Sun on 11–17 Aug 2026."
+        ]
+      }
+    },
+    {
+      "gate": 22,
+      "name": "Grace",
+      "sign": "Pisces",
+      "start": "2027-03-07T19:34:53.460287+00:00",
+      "end": "2027-03-13T10:38:19.304594+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Ajna (Earth · 47 Mental Processing) and looks for recognition in the Solar Plexus (Sun · 22 Grace).",
+        "lead": null,
+        "sun": {
+          "gate": 22,
+          "name": "Grace",
+          "centre": "Solar Plexus",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 47,
+          "name": "Mental Processing",
+          "centre": "Ajna",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 47: Mental Processing, in the Ajna Centre. At its best: sifting and working through ongoing archetypes from subconscious/memory/lineage/shadow.",
+      "nervous": {
+        "source": "Solar Plexus",
+        "level": "centre",
+        "text": "- Holding emotions in causes double injury: you lose access to the emotional power, AND waste energy suppressing it\n- \"High vibe only\" is a bypassing pattern — the lows are part of the wave\n- The body stores what the emotional system isn't allowed to release\n- Health marker: decreased time from emotion → expression of emotion"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 47 on 9–15 Sep 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Openness. Gate 12: Caution, in the Throat Centre. Themes: Safety Seeking, Mystical Energy. At its best: love and appreciation for things outside oneself, sensitivity to authenticity, using voice as a tool for truth. This is the other component making up the channel, and it will be highlighted by the Sun on 13–19 Jun 2027."
+        ]
+      }
+    },
+    {
+      "gate": 36,
+      "name": "Experiences",
+      "sign": "Pisces",
+      "start": "2027-03-13T10:38:19.304594+00:00",
+      "end": "2027-03-19T02:09:07.453894+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Solar Plexus (Sun · 36 Experiences, Earth · 6 Friction). Nothing crosses between centres this week — the whole axis turns inward on the Solar Plexus.",
+        "lead": null,
+        "sun": {
+          "gate": 36,
+          "name": "Experiences",
+          "centre": "Solar Plexus",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 6,
+          "name": "Friction",
+          "centre": "Solar Plexus",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 6: Friction, in the Solar Plexus Centre. Themes: Self-Doubt, Inadequacy Energy. At its best: tactful and dynamic exchanges, maintaining self-awareness even in heated emotions, feeling and adjusting to auric shifts in others.",
+      "nervous": {
+        "source": "Solar Plexus",
+        "level": "centre",
+        "text": "- Holding emotions in causes double injury: you lose access to the emotional power, AND waste energy suppressing it\n- \"High vibe only\" is a bypassing pattern — the lows are part of the wave\n- The body stores what the emotional system isn't allowed to release\n- Health marker: decreased time from emotion → expression of emotion"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 6 on 15–21 Sep 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Transitoriness. Gate 35: Adventure, in the Throat Centre. Themes: Lack of Identity/Not Knowing Self, Leadership Energy. At its best: intentionally choosing to make desirous cravings into opportunities for growth, progress fueled by purpose. This is the other component making up the channel, and it will be highlighted by the Sun on 2–8 Jun 2027."
+        ]
+      }
+    },
+    {
+      "gate": 25,
+      "name": "Universal Love",
+      "sign": "Pisces",
+      "start": "2027-03-19T02:09:07.453894+00:00",
+      "end": "2027-03-24T18:08:32.879576+00:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the G Centre (Sun · 25 Universal Love, Earth · 46 Love of the Body). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
+        "lead": null,
+        "sun": {
+          "gate": 25,
+          "name": "Universal Love",
+          "centre": "G Centre",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 46,
+          "name": "Love of the Body",
+          "centre": "G Centre",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 46: Love of the Body, in the G Centre. At its best: serendipity/luck originating from trust in flow-of-life that the body taps into, delight, lightness, trusting in where the body brings you/desires to do.",
+      "nervous": {
+        "source": "G Centre",
+        "level": "centre",
+        "text": "An undefined G Center in dysregulation can spiral into identity questions and existential doubt. This is amplified conditioning, not truth. The somatic practice: ground in the body (which is always here) rather than trying to find stable identity in the mind."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "26 Sep 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 46 on 21–27 Sep 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Initiation. Gate 51: Shock, in the Heart Centre. Themes: Initiating & Beginning Energy, Teaching Energy, Perfectionism Energy. At its best: the warrior of facing personal fears, courageous leaps into the unknown, first to initiate new things, portal into initiations and new awareness. This is the other component making up the channel, and it will be highlighted by the Sun on 5–10 Apr 2027."
+        ]
+      }
+    },
+    {
+      "gate": 17,
+      "name": "Opinions",
+      "sign": "Aries",
+      "start": "2027-03-24T18:08:32.879576+00:00",
+      "end": "2027-03-30T11:32:27.627081+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Spleen (Earth · 18 Integrity) and looks for recognition in the Ajna (Sun · 17 Opinions).",
+        "lead": null,
+        "sun": {
+          "gate": 17,
+          "name": "Opinions",
+          "centre": "Ajna",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 18,
+          "name": "Integrity",
+          "centre": "Spleen",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 18: Integrity, in the Spleen Centre. Themes: Past Energy, Perfectionism Energy, Fixing Others Energy, Sensitivity to Judgement/Criticism, Determination & Perseverance, Teaching Energy. At its best: non-reactive to judgments, all judgments arise from the heart for the sole purpose of releasing others from pain, constant inner labor to achieve greater integrity.",
+      "nervous": {
+        "source": "Ajna",
+        "level": "centre",
+        "text": "Keeps us alive and on track — sends hormonal messages to the thyroid glands. The Ajna is where abstract inspiration from the Head becomes something the body can begin to process."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 18 on 27 Sep – 2 Oct 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Organisation. Gate 62: Organising Thought, in the Throat Centre. Themes: Teaching Energy. At its best: synergy of heart and mind in communication, intellect acts in service to the heart, mediator/channel of universal truths, logical mouthpiece for abstract concepts. This is the other component making up the channel, and it will be highlighted by the Sun on 13–19 Jul 2027."
+        ]
+      }
+    },
+    {
+      "gate": 21,
+      "name": "Control",
+      "sign": "Aries",
+      "start": "2027-03-30T11:32:27.627081+01:00",
+      "end": "2027-04-05T04:20:09.848799+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Spleen (Earth · 48 Depth) and looks for action through the Heart (Sun · 21 Control).",
+        "lead": null,
+        "sun": {
+          "gate": 21,
+          "name": "Control",
+          "centre": "Heart",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 48,
+          "name": "Depth",
+          "centre": "Spleen",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 48: Depth, in the Spleen Centre. Themes: Self-Doubt, Inadequacy Energy, Sensitivity to Judgement/Criticism, Determination & Perseverance. At its best: resourcefulness, being able to face any challenge — the more something is faced the more inner resource surfaces to address it, going inwards to face darkness.",
+      "nervous": {
+        "source": "Heart",
+        "level": "centre",
+        "text": "An undefined Heart running on borrowed willpower is a setup for burnout. The body pushes through on amplified energy that was never designed to sustain — and crashes harder."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "7 Oct 2025",
+        "gap": "eighteen months ago, last cycle",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 48 on 2–8 Oct 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Money. Gate 45: Authority, in the Throat Centre. Themes: Teaching Energy, Leadership Energy, Selfish/Self-Centered Energy. At its best: the leap to sharing, supporting the collective over the self, gifting authority to others (rather than hoarding it), educating and bolstering others. This is the other component making up the channel, and it will be highlighted by the Sun on 8–13 Jun 2027."
+        ]
+      }
+    },
+    {
+      "gate": 51,
+      "name": "Shock",
+      "sign": "Aries",
+      "start": "2027-04-05T04:20:09.848799+01:00",
+      "end": "2027-04-10T21:33:37.774786+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Spleen (Earth · 57 Intuition) and looks for action through the Heart (Sun · 51 Shock).",
+        "lead": null,
+        "sun": {
+          "gate": 51,
+          "name": "Shock",
+          "centre": "Heart",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 57,
+          "name": "Intuition",
+          "centre": "Spleen",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 57: Intuition, in the Spleen Centre. Themes: Mystical Energy, Initiating & Beginning Energy. At its best: the intuition system for being in harmony with the outer world, highest sensitivity to sound and vibration, sensitivity to guidance, near-psychic perception.",
+      "nervous": {
+        "source": "Heart",
+        "level": "centre",
+        "text": "An undefined Heart running on borrowed willpower is a setup for burnout. The body pushes through on amplified energy that was never designed to sustain — and crashes harder."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 57 on 8–14 Oct 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Initiation. Gate 25: Universal Love, in the G Centre. At its best: acceptance of all things including sacred wounds, softening and blossoming of the soul, 'spiritual springtime.'. This is the other component making up the channel, and it will be highlighted by the Sun on 19–24 Mar 2027."
+        ]
+      }
+    },
+    {
+      "gate": 42,
+      "name": "Middles & Ends",
+      "sign": "Aries",
+      "start": "2027-04-10T21:33:37.774786+01:00",
+      "end": "2027-04-16T15:16:28.887991+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Spleen (Earth · 32 Endurance) and looks for action through the Sacral (Sun · 42 Middles & Ends).",
+        "lead": null,
+        "sun": {
+          "gate": 42,
+          "name": "Middles & Ends",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 32,
+          "name": "Endurance",
+          "centre": "Spleen",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 32: Endurance, in the Spleen Centre. Themes: Determination & Perseverance, Self-Doubt, Inadequacy Energy. At its best: adaptability, persevering, endurance, knowing when to take risks or use restraint, continuity, filling up and depleting resources in careful balance.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 32 on 14–19 Oct 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Maturation. Gate 53: Beginnings, in the Root Centre. Themes: Initiating & Beginning Energy, Multi Passionate Energy, Inconsistent Energy, Teaching Energy. At its best: heart expansion, self-awareness, aligning with greater whole in finding the places to begin new endeavours. This is the other component making up the channel, and it will be highlighted by the Sun on 7–13 Jul 2027."
+        ]
+      }
+    },
+    {
+      "gate": 3,
+      "name": "Innovation",
+      "sign": "Aries",
+      "start": "2027-04-16T15:16:28.887991+01:00",
+      "end": "2027-04-22T09:29:16.322493+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Spleen (Earth · 50 Values) and looks for action through the Sacral (Sun · 3 Innovation).",
+        "lead": null,
+        "sun": {
+          "gate": 3,
+          "name": "Innovation",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 50,
+          "name": "Values",
+          "centre": "Spleen",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 50: Values, in the Spleen Centre. Themes: Safety Seeking, Codependent, Past Energy, Fixing Others Energy. At its best: the universal code for harmony, blueprints for honesty, intimacy, and equilibrium, the archetype of attentive mothering or cultivation.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 50 on 19–25 Oct 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Mutation. Gate 60: Boundaries, in the Root Centre. Themes: Past Energy, Safety Seeking. At its best: common sense, healthy realistic boundaries — not oppressively rigid but not carelessly loose, creating healthy structure, freedom and acceptance of physical trappings. This is the other component making up the channel, and it will be highlighted by the Sun on 16–22 Jan 2027."
+        ]
+      }
+    },
+    {
+      "gate": 27,
+      "name": "Caring",
+      "sign": "Taurus",
+      "start": "2027-04-22T09:29:16.322493+01:00",
+      "end": "2027-04-28T04:06:44.156126+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Spleen (Earth · 28 Purpose) and looks for action through the Sacral (Sun · 27 Caring).",
+        "lead": null,
+        "sun": {
+          "gate": 27,
+          "name": "Caring",
+          "centre": "Sacral",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 28,
+          "name": "Purpose",
+          "centre": "Spleen",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 28: Purpose, in the Spleen Centre. Themes: Risk Taking, Self-Doubt, Inadequacy Energy. At its best: to befriend the fear of death, to walk alongside mortality and fears, lighthearted in the face of adversity, the plot of one's life emerges.",
+      "nervous": {
+        "source": "Sacral",
+        "level": "centre",
+        "text": "- The sacral response is physical — learn to feel it before naming it\n- Frustration (not-self of Generators/MGs) is a signal the sacral said no and something overrode it\n- Undefined sacral in dysregulation: erratic, overextended, no reliable stopping point"
+      },
+      "practice": null,
+      "lookback": {
+        "date": "26 Oct 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 28 on 25–31 Oct 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Preservation. Gate 50: Values, in the Spleen Centre. Themes: Safety Seeking, Codependent, Past Energy, Fixing Others Energy. At its best: the universal code for harmony, blueprints for honesty, intimacy, and equilibrium, the archetype of attentive mothering or cultivation. This is the other component making up the channel, and it will be highlighted by the Sun on 19–25 Oct 2026."
+        ]
+      }
+    },
+    {
+      "gate": 24,
+      "name": "Mental Reviewing",
+      "sign": "Taurus",
+      "start": "2027-04-28T04:06:44.156126+01:00",
+      "end": "2027-05-03T23:06:17.162375+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Spleen (Earth · 44 Alertness) and looks for recognition in the Ajna (Sun · 24 Mental Reviewing).",
+        "lead": null,
+        "sun": {
+          "gate": 24,
+          "name": "Mental Reviewing",
+          "centre": "Ajna",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 44,
+          "name": "Alertness",
+          "centre": "Spleen",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 44: Alertness, in the Spleen Centre. Themes: Past Energy. At its best: smelling out what is healthy and correct for oneself, scent perception of allies and enemies, smelling out the higher path (path to disease, health, or teamwork).",
+      "nervous": {
+        "source": "Ajna",
+        "level": "centre",
+        "text": "Keeps us alive and on track — sends hormonal messages to the thyroid glands. The Ajna is where abstract inspiration from the Head becomes something the body can begin to process."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 44 on 31 Oct – 5 Nov 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Awareness. Gate 61: Unravelling Mystery, in the Head Centre. Themes: Overthinking. At its best: a release of mental pressure into creativity, inspiring thought integrates into the body as art, activity, or expression, curious inquiry. This is the other component making up the channel, and it will be highlighted by the Sun on 11–16 Jan 2027."
+        ]
+      }
+    },
+    {
+      "gate": 2,
+      "name": "Direction of Self",
+      "sign": "Taurus",
+      "start": "2027-05-03T23:06:17.162375+01:00",
+      "end": "2027-05-09T18:27:42.188543+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the G Centre (Sun · 2 Direction of Self, Earth · 1 Self Expression). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
+        "lead": null,
+        "sun": {
+          "gate": 2,
+          "name": "Direction of Self",
+          "centre": "G Centre",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 1,
+          "name": "Self Expression",
+          "centre": "G Centre",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 1: Self Expression, in the G Centre. Themes: Initiating & Beginning Energy, Creative Energy. At its best: creativity, new and revolutionary ideas, divine creative inspiration, creative genius.",
+      "nervous": {
+        "source": "G Centre",
+        "level": "centre",
+        "text": "An undefined G Center in dysregulation can spiral into identity questions and existential doubt. This is amplified conditioning, not truth. The somatic practice: ground in the body (which is always here) rather than trying to find stable identity in the mind."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "5 Nov 2025",
+        "gap": "eighteen months ago, last cycle",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 1 on 5–11 Nov 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Receptive. Gate 14: Abundance, in the Sacral Centre. At its best: fertility, full Sacral lead, allowing creative power to steer, enthusiasm for one's own life force, abundant inner resource. This is the other component making up the channel, and it will be highlighted by the Sun on 16–22 Nov 2026."
+        ]
+      }
+    },
+    {
+      "gate": 23,
+      "name": "Individual Expression",
+      "sign": "Taurus",
+      "start": "2027-05-09T18:27:42.188543+01:00",
+      "end": "2027-05-15T14:14:23.420691+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Ajna (Earth · 43 Individual Knowing) and looks for expression through the Throat (Sun · 23 Individual Expression).",
+        "lead": null,
+        "sun": {
+          "gate": 23,
+          "name": "Individual Expression",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 43,
+          "name": "Individual Knowing",
+          "centre": "Ajna",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 43: Individual Knowing, in the Ajna Centre. At its best: deep trust in inner voice, inner voice becomes clearly heard and protected from discouragement or indoctrination.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 43 on 11–16 Nov 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Structuring. Gate 43: Individual Knowing, in the Ajna Centre. At its best: deep trust in inner voice, inner voice becomes clearly heard and protected from discouragement or indoctrination. This is the other component making up the channel, and it will be highlighted by the Sun on 11–16 Nov 2026."
+        ]
+      }
+    },
+    {
+      "gate": 8,
+      "name": "Individuality",
+      "sign": "Taurus",
+      "start": "2027-05-15T14:14:23.420691+01:00",
+      "end": "2027-05-21T10:25:22.526564+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 14 Abundance) and looks for expression through the Throat (Sun · 8 Individuality).",
+        "lead": null,
+        "sun": {
+          "gate": 8,
+          "name": "Individuality",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 14,
+          "name": "Abundance",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 14: Abundance, in the Sacral Centre. At its best: fertility, full Sacral lead, allowing creative power to steer, enthusiasm for one's own life force, abundant inner resource.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 14 on 16–22 Nov 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Inspiration. Gate 1: Self Expression, in the G Centre. Themes: Initiating & Beginning Energy, Creative Energy. At its best: creativity, new and revolutionary ideas, divine creative inspiration, creative genius. This is the other component making up the channel, and it will be highlighted by the Sun on 5–11 Nov 2026."
+        ]
+      }
+    },
+    {
+      "gate": 20,
+      "name": "The Now",
+      "sign": "Gemini",
+      "start": "2027-05-21T10:25:22.526564+01:00",
+      "end": "2027-05-27T06:54:43.806624+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 34 Power) and looks for expression through the Throat (Sun · 20 The Now).",
+        "lead": null,
+        "sun": {
+          "gate": 20,
+          "name": "The Now",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 34,
+          "name": "Power",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 34: Power, in the Sacral Centre. Themes: Multi Passionate Energy, Overworking. At its best: true strength is to be in harmony with natural forces — to yield or redirect power in accordance with nature, the heroism archetype, prowess.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "24 Nov 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 34 on 22–27 Nov 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Awakening. Gate 10: Self Love, in the G Centre. Themes: Perfectionism Energy, Selfish/Self-Centered Energy, Sensitivity to Judgement/Criticism. At its best: courageous self-love, both mystical and mundane acceptance of differentiated self, playfulness, release from mental self-criticism, the true self is lived. This is the other component making up the channel, and it will be highlighted by the Sun on 20–25 Dec 2026.",
+          "Charisma. Gate 34: Power, in the Sacral Centre. Themes: Multi Passionate Energy, Overworking. At its best: true strength is to be in harmony with natural forces — to yield or redirect power in accordance with nature, the heroism archetype, prowess. This is the other component making up the channel, and it will be highlighted by the Sun on 22–27 Nov 2026.",
+          "Brainwave. Gate 57: Intuition, in the Spleen Centre. Themes: Mystical Energy, Initiating & Beginning Energy. At its best: the intuition system for being in harmony with the outer world, highest sensitivity to sound and vibration, sensitivity to guidance, near-psychic perception. This is the other component making up the channel, and it will be highlighted by the Sun on 8–14 Oct 2026."
+        ]
+      }
+    },
+    {
+      "gate": 16,
+      "name": "Enthusiasm",
+      "sign": "Gemini",
+      "start": "2027-05-27T06:54:43.806624+01:00",
+      "end": "2027-06-02T03:38:09.861502+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 9 Details) and looks for expression through the Throat (Sun · 16 Enthusiasm).",
+        "lead": null,
+        "sun": {
+          "gate": 16,
+          "name": "Enthusiasm",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 9,
+          "name": "Details",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 9: Details, in the Sacral Centre. Themes: Inconsistent Energy, Determination & Perseverance. At its best: small intentional steps move toward greater vision, detailed focus produces big results, amassing momentum with fastidious actions.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 9 on 27 Nov – 3 Dec 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Mastery. Gate 48: Depth, in the Spleen Centre. Themes: Self-Doubt, Inadequacy Energy, Sensitivity to Judgement/Criticism, Determination & Perseverance. At its best: resourcefulness, being able to face any challenge — the more something is faced the more inner resource surfaces to address it, going inwards to face darkness. This is the other component making up the channel, and it will be highlighted by the Sun on 2–8 Oct 2026."
+        ]
+      }
+    },
+    {
+      "gate": 35,
+      "name": "Adventure",
+      "sign": "Gemini",
+      "start": "2027-06-02T03:38:09.861502+01:00",
+      "end": "2027-06-08T00:33:53.734144+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Sacral (Earth · 5 Fixed Rhythms) and looks for expression through the Throat (Sun · 35 Adventure).",
+        "lead": null,
+        "sun": {
+          "gate": 35,
+          "name": "Adventure",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 5,
+          "name": "Fixed Rhythms",
+          "centre": "Sacral",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 5: Fixed Rhythms, in the Sacral Centre. At its best: patience, trust in rhythms and cycles, following the flow of life instead of forcing life to follow you.",
+      "nervous": {
+        "source": "Gate 35",
+        "level": "gate",
+        "text": "Impatience makes the NS overactive. The low expression chases sensation outside of itself to feed the hunger — which makes the hunger worse. The cure is turning that hunger inward: adventure inside of ourselves rather than outside. When the hunger becomes inner exploration, the NS settles."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "4 Dec 2025",
+        "gap": "eighteen months ago, last cycle",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 5 on 3–9 Dec 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Transitoriness. Gate 36: Experiences, in the Solar Plexus Centre. Themes: Initiating & Beginning Energy, Self-Doubt, Inadequacy Energy, Multi Passionate Energy, Creative Energy, Inconsistent Energy, Sensitivity to Judgement/Criticism, Risk Taking. At its best: the facing of suffering and desire — by addressing suffering one finds new levels of humanitarianism and helping work. This is the other component making up the channel, and it will be highlighted by the Sun on 13–19 Mar 2027."
+        ]
+      }
+    },
+    {
+      "gate": 45,
+      "name": "Authority",
+      "sign": "Gemini",
+      "start": "2027-06-08T00:33:53.734144+01:00",
+      "end": "2027-06-13T21:45:14.244474+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Energy gathers in the Heart (Earth · 26 Manipulation) and looks for expression through the Throat (Sun · 45 Authority).",
+        "lead": null,
+        "sun": {
+          "gate": 45,
+          "name": "Authority",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 26,
+          "name": "Manipulation",
+          "centre": "Heart",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 26: Manipulation, in the Heart Centre. Themes: Selfish/Self-Centered Energy. At its best: allowing purpose to guide willpower in service to higher Self, an artful use of ego, ego rendered as an art form.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 26 on 9–14 Dec 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Money. Gate 21: Control, in the Heart Centre. At its best: having authority through love and loyalty, a balance of receptivity to find true command, command is found through release of control. This is the other component making up the channel, and it will be highlighted by the Sun on 30 Mar – 5 Apr 2027."
+        ]
+      }
+    },
+    {
+      "gate": 12,
+      "name": "Caution",
+      "sign": "Gemini",
+      "start": "2027-06-13T21:45:14.244474+01:00",
+      "end": "2027-06-19T19:09:33.863997+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Awareness gathers in the Ajna (Earth · 11 Beliefs) and looks for expression through the Throat (Sun · 12 Caution).",
+        "lead": null,
+        "sun": {
+          "gate": 12,
+          "name": "Caution",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 11,
+          "name": "Beliefs",
+          "centre": "Ajna",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 11: Beliefs, in the Ajna Centre. Themes: Initiating & Beginning Energy, Multi Passionate Energy, Fixing Others Energy. At its best: ability to move dreams, archetypes, and ideas into form; effective idealism.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 11 on 14–20 Dec 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Openness. Gate 22: Grace, in the Solar Plexus Centre. At its best: feeling, honouring, and listening to the full range of one's own emotion without disrespecting the feelings of others. This is the other component making up the channel, and it will be highlighted by the Sun on 7–13 Mar 2027."
+        ]
+      }
+    },
+    {
+      "gate": 15,
+      "name": "Extreme Rhythms",
+      "sign": "Gemini",
+      "start": "2027-06-19T19:09:33.863997+01:00",
+      "end": "2027-06-25T16:40:56.857122+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the G Centre (Sun · 15 Extreme Rhythms, Earth · 10 Self Love). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
+        "lead": null,
+        "sun": {
+          "gate": 15,
+          "name": "Extreme Rhythms",
+          "centre": "G Centre",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 10,
+          "name": "Self Love",
+          "centre": "G Centre",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 10: Self Love, in the G Centre. Themes: Perfectionism Energy, Selfish/Self-Centered Energy, Sensitivity to Judgement/Criticism. At its best: courageous self-love, both mystical and mundane acceptance of differentiated self, playfulness, release from mental self-criticism, the true self is lived.",
+      "nervous": {
+        "source": "G Centre",
+        "level": "centre",
+        "text": "An undefined G Center in dysregulation can spiral into identity questions and existential doubt. This is amplified conditioning, not truth. The somatic practice: ground in the body (which is always here) rather than trying to find stable identity in the mind."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "24 Dec 2026",
+        "gap": "six months ago",
+        "text": null
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 10 on 20–25 Dec 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Rhythm. Gate 5: Fixed Rhythms, in the Sacral Centre. At its best: patience, trust in rhythms and cycles, following the flow of life instead of forcing life to follow you. This is the other component making up the channel, and it will be highlighted by the Sun on 3–9 Dec 2026."
+        ]
+      }
+    },
+    {
+      "gate": 52,
+      "name": "Stillness",
+      "sign": "Cancer",
+      "start": "2027-06-25T16:40:56.857122+01:00",
+      "end": "2027-07-01T14:13:40.682158+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Root (Sun · 52 Stillness, Earth · 58 Joy). Nothing crosses between centres this week — the whole axis turns inward on the Root.",
+        "lead": null,
+        "sun": {
+          "gate": 52,
+          "name": "Stillness",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 58,
+          "name": "Joy",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 58: Joy, in the Root Centre. At its best: release of concern about an imagined future — by sitting with all feelings of satisfaction or dissatisfaction, surges of vitality break through.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 58 on 25–31 Dec 2026, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Concentration. Gate 9: Details, in the Sacral Centre. Themes: Inconsistent Energy, Determination & Perseverance. At its best: small intentional steps move toward greater vision, detailed focus produces big results, amassing momentum with fastidious actions. This is the other component making up the channel, and it will be highlighted by the Sun on 27 Nov – 3 Dec 2026."
+        ]
+      }
+    },
+    {
+      "gate": 39,
+      "name": "Provocation",
+      "sign": "Cancer",
+      "start": "2027-07-01T14:13:40.682158+01:00",
+      "end": "2027-07-07T11:45:48.839392+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Root (Sun · 39 Provocation, Earth · 38 Perseverance). Nothing crosses between centres this week — the whole axis turns inward on the Root.",
+        "lead": null,
+        "sun": {
+          "gate": 39,
+          "name": "Provocation",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 38,
+          "name": "Perseverance",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": "This window puts a light on where you have settled for something that is not working. You may find yourself more willing to challenge, to push, to name the thing. Areas of your life that need to change become harder to look away from.\n\nUsed well, this is a genuine catalyst. The irritation is information about where you have outgrown something.\n\nUsed badly, it becomes conflict for its own sake. The same energy that provokes a necessary change can also detonate a conversation that did not need detonating. The difference is usually whether you know what you are actually poking at.",
+      "earth_reading": null,
+      "earth_fallback": "Gate 38: Perseverance, in the Root Centre. Themes: Determination & Perseverance. At its best: the fight for meaning, love and purpose, perseverance, the warrior that fights not to hurt but to protect what matters.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": {
+        "date": "3 Jan 2026",
+        "gap": "eighteen months ago, last cycle",
+        "text": "Feeling runs closer to the surface. You are more porous to other people's emotional states, and your own move faster than usual.\n\nThis is workable for genuine emotional processing, and it deepens connection where you can stay with the intensity rather than acting it out. It also means friction lands harder than it needs to. If everything feels sharper for a few days, that is the transit rather than your life falling apart."
+      },
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 38 on 31 Dec – 5 Jan 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Emoting. Gate 55: Creative Spirit, in the Solar Plexus Centre. Themes: Past Energy. At its best: freeing from the victim state, becoming a creative conduit for awareness, processing and physical release of emotions. This is the other component making up the channel, and it will be highlighted by the Sun on 19–24 Feb 2027."
+        ]
+      }
+    },
+    {
+      "gate": 53,
+      "name": "Beginnings",
+      "sign": "Cancer",
+      "start": "2027-07-07T11:45:48.839392+01:00",
+      "end": "2027-07-13T09:20:17.463697+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Both poles sit in the Root (Sun · 53 Beginnings, Earth · 54 Aspiration). Nothing crosses between centres this week — the whole axis turns inward on the Root.",
+        "lead": null,
+        "sun": {
+          "gate": 53,
+          "name": "Beginnings",
+          "centre": "Root",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 54,
+          "name": "Aspiration",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": "The appetite for a beginning is strong in this window, and it is a genuinely good stretch to take a first step on something you have been circling for a while.\n\nIt also invites looking at the cycles themselves: what is completing, what is opening, and whether you are in the habit of starting things as a way of avoiding finishing them. Optimism and vitality run high here, which is fuel, and which is also worth spending carefully.",
+      "earth_reading": null,
+      "earth_fallback": "Gate 54: Aspiration, in the Root Centre. Themes: Selfish/Self-Centered Energy, Overworking, Determination & Perseverance, Initiating & Beginning Energy, Perfectionism Energy. At its best: aspiration surpasses material desire, seeking spiritual growth and working for the benefit of all.",
+      "nervous": {
+        "source": "Root",
+        "level": "centre",
+        "text": "The Root is the adrenaline centre — when undefined and dysregulated, it can contribute to a near-constant low-level cortisol response. The body is always in \"rush\" even when nothing urgent is happening."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 54 on 5–11 Jan 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Maturation. Gate 42: Middles & Ends, in the Sacral Centre. Themes: Determination & Perseverance. At its best: letting go of assumption for fearless forward movement, detachment from expectation, elevation and improvement, follow-through, able to identify when closure is necessary. This is the other component making up the channel, and it will be highlighted by the Sun on 10–16 Apr 2027."
+        ]
+      }
+    },
+    {
+      "gate": 62,
+      "name": "Organising Thought",
+      "sign": "Cancer",
+      "start": "2027-07-13T09:20:17.463697+01:00",
+      "end": "2027-07-19T06:53:56.917318+01:00",
+      "days": 6,
+      "tagline": null,
+      "axis": {
+        "sentence": "Pressure builds in the Head (Earth · 61 Unravelling Mystery) and looks for expression through the Throat (Sun · 62 Organising Thought).",
+        "lead": null,
+        "sun": {
+          "gate": 62,
+          "name": "Organising Thought",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 61,
+          "name": "Unravelling Mystery",
+          "centre": "Head",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": null,
+      "risk": null,
+      "sun_reading": null,
+      "earth_reading": null,
+      "earth_fallback": "Gate 61: Unravelling Mystery, in the Head Centre. Themes: Overthinking. At its best: a release of mental pressure into creativity, inspiring thought integrates into the body as art, activity, or expression, curious inquiry.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 61 on 11–16 Jan 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Organisation. Gate 17: Opinions, in the Ajna Centre. Themes: Fixing Others Energy, Sensitivity to Judgement/Criticism. At its best: seeing beyond opinions to grasp universal truths, mediator between logic and abstract knowing, using flaw-finding to root out limiting belief systems. This is the other component making up the channel, and it will be highlighted by the Sun on 24–30 Mar 2027."
+        ]
+      }
+    },
+    {
+      "gate": 56,
+      "name": "Storytelling",
+      "sign": "Leo",
+      "start": "2027-07-19T06:53:56.917318+01:00",
+      "end": "2027-07-25T04:21:13.511137+01:00",
+      "days": 6,
+      "tagline": "the pressure to be bigger",
+      "axis": {
+        "sentence": "Pressure builds in the Root (Earth · 60 Boundaries) and looks for expression through the Throat (Sun · 56 Storytelling).",
+        "lead": null,
+        "sun": {
+          "gate": 56,
+          "name": "Storytelling",
+          "centre": "Throat",
+          "frame": "what the psyche will do"
+        },
+        "earth": {
+          "gate": 60,
+          "name": "Boundaries",
+          "centre": "Root",
+          "frame": "what to ground yourself in"
+        }
+      },
+      "bridge": {
+        "sign": "Leo",
+        "text": "the season opens on Leo's exact shadow — putting on a show, being bigger than is sustainable — and gives it a gland. The Earth underneath says: structure. What can your form actually hold?"
+      },
+      "risk": null,
+      "sun_reading": "Expression comes forward. This is a strong window for storytelling, teaching, and putting language on what you have lived through, and the appetite for new input runs high alongside it.\n\nIt also turns the attention back on your own narrative: the experiences you have collected, what they taught you, and how the story you tell about them shapes who you take yourself to be. Worth noticing which stories you are still telling because they are true, and which because they are familiar.",
+      "earth_reading": null,
+      "earth_fallback": "Gate 60: Boundaries, in the Root Centre. Themes: Past Energy, Safety Seeking. At its best: common sense, healthy realistic boundaries — not oppressively rigid but not carelessly loose, creating healthy structure, freedom and acceptance of physical trappings.",
+      "nervous": {
+        "source": "Throat",
+        "level": "centre",
+        "text": "Dysfunction shows up from premature, unwelcome words and actions, or from speaking when silence was needed. Vocal cord health and vagal function are directly linked to the wellbeing of this centre."
+      },
+      "practice": null,
+      "lookback": null,
+      "crossrefs": {
+        "opposite": "The Sun will travel to Gate 60 on 16–22 Jan 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
+        "channels": [
+          "Curiosity. Gate 11: Beliefs, in the Ajna Centre. Themes: Initiating & Beginning Energy, Multi Passionate Energy, Fixing Others Energy. At its best: ability to move dreams, archetypes, and ideas into form; effective idealism. This is the other component making up the channel, and it will be highlighted by the Sun on 14–20 Dec 2026."
+        ]
+      }
+    }
+  ]
+}
