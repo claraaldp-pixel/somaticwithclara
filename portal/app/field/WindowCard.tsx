@@ -7,6 +7,7 @@ interface Props {
   day: number
   next: Window | null
   lunations: Lunation[]
+  daysRemaining: number | null
 }
 
 // Dates must render in the same reference zone page.tsx uses to select the
@@ -32,7 +33,13 @@ function Section({ label, children }: { label: string; children: React.ReactNode
   )
 }
 
-export default function WindowCard({ window, day, next, lunations }: Props) {
+export default function WindowCard({ window, day, next, lunations, daysRemaining }: Props) {
+  const nervousSource =
+    window.nervous &&
+    (window.nervous.level === 'centre' && !window.nervous.source.endsWith('Centre')
+      ? `${window.nervous.source} Centre`
+      : window.nervous.source)
+
   return (
     <main className="min-h-screen bg-stone-50">
       <div className="max-w-2xl mx-auto px-6 py-12 space-y-10">
@@ -97,7 +104,7 @@ export default function WindowCard({ window, day, next, lunations }: Props) {
         </Section>
 
         {window.nervous && (
-          <Section label={`Nervous system · ${window.nervous.source}`}>
+          <Section label={`Nervous system · ${nervousSource}`}>
             <Markdown>{window.nervous.text}</Markdown>
           </Section>
         )}
@@ -146,7 +153,7 @@ export default function WindowCard({ window, day, next, lunations }: Props) {
           ))}
         </Section>
 
-        <footer className="pt-4 border-t border-stone-200">
+        <footer className="pt-4 border-t border-stone-200 space-y-1">
           <p className="text-xs text-stone-400">
             {next
               ? `Gate ${next.gate}${next.name ? ` · ${next.name}` : ''} from ${new Date(
@@ -154,6 +161,12 @@ export default function WindowCard({ window, day, next, lunations }: Props) {
                 ).toLocaleDateString('en-GB', DATE)}`
               : 'Last window of the year'}
           </p>
+          {daysRemaining !== null && (
+            <p className="text-xs text-stone-300">
+              The generated calendar ends in {daysRemaining}{' '}
+              {daysRemaining === 1 ? 'day' : 'days'} — due for regeneration from the vault.
+            </p>
+          )}
         </footer>
       </div>
     </main>

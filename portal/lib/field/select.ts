@@ -31,6 +31,19 @@ export function nextWindow(windows: Window[], current: Window): Window | null {
   return windows[index + 1]
 }
 
+/**
+ * Days remaining between `now` and the end of the last window, or null once
+ * that instant has passed (or the list is empty). Used to warn ahead of the
+ * year-end cliff, where `selectWindow` starts returning null.
+ */
+export function daysUntilEnd(windows: Window[], now: Date): number | null {
+  if (windows.length === 0) return null
+  const end = Date.parse(windows[windows.length - 1].end)
+  const remaining = end - now.getTime()
+  if (remaining <= 0) return null
+  return Math.ceil(remaining / MS_PER_DAY)
+}
+
 /** The calendar date in a given IANA zone, as YYYY-MM-DD. */
 function localDay(moment: Date, timeZone: string): string {
   return new Intl.DateTimeFormat('en-CA', {

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { dayIndex, nextWindow, selectWindow, lunationsOn } from './select'
+import { dayIndex, daysUntilEnd, nextWindow, selectWindow, lunationsOn } from './select'
 import type { Window, Lunation } from './types'
 
 function makeWindow(gate: number, start: string, end: string): Window {
@@ -92,6 +92,41 @@ describe('nextWindow', () => {
 
   it('is null for the last window', () => {
     expect(nextWindow(WINDOWS, WINDOWS[1])).toBeNull()
+  })
+})
+
+describe('daysUntilEnd', () => {
+  const MS_PER_DAY = 86_400_000
+  const END = '2027-07-25T04:21:13+01:00'
+  const YEAR_WINDOWS: Window[] = [makeWindow(56, '2027-07-19T04:21:13+01:00', END)]
+  const end = new Date(END).getTime()
+
+  it('is a large count well inside the year', () => {
+    const now = new Date(end - 90 * MS_PER_DAY)
+    expect(daysUntilEnd(YEAR_WINDOWS, now)).toBe(90)
+  })
+
+  it('is exactly 30 at the 30-day threshold', () => {
+    const now = new Date(end - 30 * MS_PER_DAY)
+    expect(daysUntilEnd(YEAR_WINDOWS, now)).toBe(30)
+  })
+
+  it('is null once the end has passed', () => {
+    const now = new Date(end + MS_PER_DAY)
+    expect(daysUntilEnd(YEAR_WINDOWS, now)).toBeNull()
+  })
+
+  it('is null at the exact end instant', () => {
+    expect(daysUntilEnd(YEAR_WINDOWS, new Date(end))).toBeNull()
+  })
+
+  it('rounds up to 1 day in the final moments before the end', () => {
+    const now = new Date(end - 1)
+    expect(daysUntilEnd(YEAR_WINDOWS, now)).toBe(1)
+  })
+
+  it('is null for an empty list', () => {
+    expect(daysUntilEnd([], new Date())).toBeNull()
   })
 })
 
