@@ -1,0 +1,169 @@
+import puppeteer from 'puppeteer';
+
+const CHROME_PATH = '/Users/clara/.cache/puppeteer/chrome/mac_arm-146.0.7680.153/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing';
+const BASE_URL = 'http://localhost:3002';
+
+const checks = [];
+function check(name, fn) { checks.push({ name, fn }); }
+
+check('photo-split component exists with real image (not a placeholder box)', async (page) => {
+  const el = await page.evaluate(() => {
+    const media = document.querySelector('.photo-split-media img');
+    if (!media) return null;
+    return { src: media.getAttribute('src'), naturalWidth: media.naturalWidth };
+  });
+  if (!el) return false;
+  return el.src.includes('brand-assets/') && el.naturalWidth > 0;
+});
+
+check('no scroll-controlled hero video remains', async (page) => {
+  const hasVideo = await page.evaluate(() => !!document.querySelector('#hero-video, .hero-video, #hero-outer, .hero-scroll-outer'));
+  return !hasVideo;
+});
+
+check('Section 01 uses reversed photo-split with real definition-selfhug photo', async (page) => {
+  const el = await page.evaluate(() => {
+    const imgs = Array.from(document.querySelectorAll('.photo-split.reverse .photo-split-media img'));
+    return imgs.map(i => i.getAttribute('src'));
+  });
+  return el.some(src => src && src.includes('definition-selfhug.jpg'));
+});
+
+check('services use bold visible numerals, no decorative icons', async (page) => {
+  const result = await page.evaluate(() => {
+    const numerals = Array.from(document.querySelectorAll('.service-numeral'));
+    const icons = document.querySelectorAll('.service-icon');
+    if (numerals.length !== 4 || icons.length !== 0) return null;
+    const style = getComputedStyle(numerals[0]);
+    return { opacity: parseFloat(style.opacity), fontSize: parseFloat(style.fontSize) };
+  });
+  if (!result) return false;
+  // "Bold visible" means opacity close to 1 (not the ~0.1 ghosted look) and a large font size
+  return result.opacity > 0.8 && result.fontSize >= 32;
+});
+
+check('About uses photo-split with real about-smile photo and personal copy', async (page) => {
+  const text = await page.evaluate(() => document.body.innerText);
+  const hasPhoto = await page.evaluate(() => {
+    const imgs = Array.from(document.querySelectorAll('.photo-split-media img'));
+    return imgs.some(i => (i.getAttribute('src') || '').includes('about-smile.jpg'));
+  });
+  return hasPhoto && (text.includes('scattering') || text.includes('boring'));
+});
+
+check('testimonials use pull-quote + photo pairing, not auto-scroll carousel', async (page) => {
+  const hasTrack = await page.evaluate(() => !!document.querySelector('.testimonial-track'));
+  const pairs = await page.evaluate(() => {
+    const els = Array.from(document.querySelectorAll('.pull-quote-pair'));
+    return els.map(el => !!el.querySelector('img') && !!el.querySelector('.pull-quote-text'));
+  });
+  return !hasTrack && pairs.length === 3 && pairs.every(Boolean);
+});
+
+check('FAQ headings use bold 800-weight Bricolage Grotesque', async (page) => {
+  const style = await page.evaluate(() => {
+    const h3 = document.querySelector('section h3');
+    if (!h3) return null;
+    return { fontWeight: getComputedStyle(h3).fontWeight, fontSize: parseFloat(getComputedStyle(h3).fontSize) };
+  });
+  if (!style) return false;
+  return parseInt(style.fontWeight, 10) >= 700 && style.fontSize >= 18;
+});
+
+check('CTA uses photo-split with real cta-pyramid photo on dark background', async (page) => {
+  const result = await page.evaluate(() => {
+    const heading = Array.from(document.querySelectorAll('h2')).find(h => h.textContent.includes('Not sure where'));
+    if (!heading) return null;
+    const section = heading.closest('section');
+    const img = section.querySelector('.photo-split-media img');
+    return {
+      bg: getComputedStyle(section).backgroundColor,
+      src: img ? img.getAttribute('src') : null,
+    };
+  });
+  if (!result) return false;
+  return result.bg === 'rgb(42, 33, 23)' && result.src && result.src.includes('cta-pyramid.jpg');
+});
+
+check('no horizontal overflow at any viewport width', async (page) => {
+  const widths = [390, 560, 680, 780, 900, 1440];
+  try {
+    for (const width of widths) {
+      await page.setViewport({ width, height: 900, deviceScaleFactor: 1 });
+      await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+      const { scrollWidth, innerWidth } = await page.evaluate(() => ({
+        scrollWidth: document.documentElement.scrollWidth,
+        innerWidth: window.innerWidth,
+      }));
+      if (scrollWidth > innerWidth) {
+        console.error(`  overflow at ${width}px: scrollWidth=${scrollWidth} > innerWidth=${innerWidth}`);
+        return false;
+      }
+    }
+    return true;
+  } finally {
+    await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
+  }
+});
+
+check('every photo-split image loads (no broken images)', async (page) => {
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+  const broken = await page.evaluate(() => {
+    const imgs = Array.from(document.querySelectorAll('img'));
+    return imgs.filter(img => img.complete && img.naturalWidth === 0).map(img => img.src);
+  });
+  if (broken.length > 0) console.error('  broken images:', broken);
+  return broken.length === 0;
+});
+
+check('no console errors on load', async (page) => {
+  const errors = [];
+  page.on('pageerror', (e) => errors.push(e.message));
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+  return errors.length === 0;
+});
+
+async function run() {
+  const browser = await puppeteer.launch({ executablePath: CHROME_PATH, headless: true });
+  const page = await browser.newPage();
+  await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+
+  let failed = 0;
+  for (const { name, fn } of checks) {
+    let ok = false;
+    try { ok = await fn(page); } catch (e) { ok = false; console.error(`  error in "${name}":`, e.message); }
+    console.log(`${ok ? 'PASS' : 'FAIL'} — ${name}`);
+    if (!ok) failed++;
+  }
+  async function scrollThroughForReveal(page) {
+    await page.evaluate(async () => {
+      const distance = 400;
+      const delay = 120;
+      while (document.scrollingElement.scrollTop + window.innerHeight < document.body.scrollHeight) {
+        document.scrollingElement.scrollBy({ top: distance, behavior: 'instant' });
+        await new Promise(r => setTimeout(r, delay));
+      }
+      document.scrollingElement.scrollTo({ top: 0, behavior: 'instant' });
+      await new Promise(r => setTimeout(r, 300));
+    });
+  }
+
+  await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 1 });
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+  await scrollThroughForReveal(page);
+  await page.screenshot({ path: 'temporary screenshots/homepage-real-photo-desktop.png', fullPage: true });
+
+  await page.setViewport({ width: 390, height: 844, deviceScaleFactor: 1 });
+  await page.goto(`${BASE_URL}/index.html`, { waitUntil: 'networkidle2' });
+  await scrollThroughForReveal(page);
+  await page.screenshot({ path: 'temporary screenshots/homepage-real-photo-mobile.png', fullPage: true });
+
+  console.log('\nScreenshots saved to "temporary screenshots/".');
+
+  await browser.close();
+  if (failed > 0) { console.log(`\n${failed} check(s) failed.`); process.exit(1); }
+  console.log('\nAll checks passed.');
+}
+
+run();

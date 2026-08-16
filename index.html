@@ -2,1017 +2,344 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="brand-assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="80x80" href="brand-assets/favicon.png">
+  <link rel="apple-touch-icon" href="brand-assets/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Somatic with Clara — Nervous System Healing & Identity Reclamation</title>
-  <meta name="description" content="Somatic coaching and human design for women ready to reconnect with their body — restoring self-trust, reducing self-blame, and feeling more like yourself again." />
-  <meta name="keywords" content="somatic healing, somatic coaching, human design, nervous system healing, somatic coach UK, nervous system coach, women's wellness, identity reclamation, body-based coaching, somatic therapy UK, human design reading" />
+  <title>Somatic with Clara — There's who you've been surviving as. And who you actually are.</title>
+  <meta name="description" content="Somatic coaching, somatic yoga, and Human Design for nervous system regulation. Clara Louis works with women in London and online to address anxiety, burnout, and disconnection at the body level." />
+  <meta name="last-modified" content="2026-07-19" />
   <meta name="author" content="Clara Louis" />
   <link rel="canonical" href="https://somaticwithclara.com/" />
-
-  <!-- Hreflang — language versions -->
   <link rel="alternate" hreflang="en" href="https://somaticwithclara.com/" />
   <link rel="alternate" hreflang="fr" href="https://somaticwithclara.com/fr/" />
   <link rel="alternate" hreflang="es-419" href="https://somaticwithclara.com/es/" />
   <link rel="alternate" hreflang="x-default" href="https://somaticwithclara.com/" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://somaticwithclara.com/" />
-  <meta property="og:title" content="Somatic with Clara — Nervous System Healing & Identity Reclamation" />
-  <meta property="og:description" content="Somatic coaching and human design for women ready to reconnect with their body — restoring self-trust, reducing self-blame, and feeling more like yourself again." />
+  <meta property="og:title" content="Somatic with Clara" />
+  <meta property="og:description" content="There's who you've been surviving as. And who you actually are." />
   <meta property="og:image" content="https://somaticwithclara.com/og-image.jpg" />
-  <meta property="og:locale" content="en_GB" />
-  <meta property="og:locale:alternate" content="fr_FR" />
-  <meta property="og:locale:alternate" content="es_419" />
-
-  <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Somatic with Clara — Nervous System Healing & Identity Reclamation" />
-  <meta name="twitter:description" content="Somatic coaching and human design for women ready to reconnect with their body — restoring self-trust, reducing self-blame, and feeling more like yourself again." />
+  <meta name="twitter:title" content="Somatic with Clara — There's who you've been surviving as. And who you actually are." />
+  <meta name="twitter:description" content="For women who are functioning on the outside and quietly disconnected inside. The quiz names the pattern. The work begins there." />
   <meta name="twitter:image" content="https://somaticwithclara.com/og-image.jpg" />
-
-  <!-- Structured data — Person / Coach -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": "https://somaticwithclara.com/#clara",
     "name": "Clara Louis",
+    "givenName": "Clara",
+    "familyName": "Louis",
     "jobTitle": "Somatic Coach & Human Design Guide",
-    "description": "Somatic coaching and human design for women ready to reconnect with their body — restoring self-trust, reducing self-blame, and feeling more like yourself again.",
+    "description": "Clara Louis is a somatic coach and Human Design guide based in London, UK. She works with women to regulate the nervous system and step out of survival patterns through somatic yoga, trauma-informed coaching, Human Design, and PSYCH-K®.",
     "url": "https://somaticwithclara.com",
     "email": "hello@somaticwithclara.com",
-    "sameAs": [
-      "https://www.instagram.com/clara.holds.space/",
-      "https://www.tiktok.com/@tobehuman.life",
-      "https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg",
-      "https://tobehuman2.substack.com/"
+    "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"},
+    "knowsAbout": ["somatic yoga", "nervous system regulation", "polyvagal theory", "trauma-informed healing", "Human Design", "somatic coaching", "PSYCH-K", "The Core Rising® Method"],
+    "hasCredential": [
+      {"@type": "EducationalOccupationalCredential", "name": "200-Hour Elemental Yoga Teacher Training", "credentialCategory": "yoga teacher training", "recognizedBy": {"@type": "Organization", "name": "Vivid Yoga APT"}},
+      {"@type": "EducationalOccupationalCredential", "name": "100-Hour Yoga & Somatics for Healing & Recovery", "credentialCategory": "somatic yoga therapy training", "recognizedBy": {"@type": "Organization", "name": "Somatic Therapeutic Yoga"}},
+      {"@type": "EducationalOccupationalCredential", "name": "The Core Rising® Method Certification", "credentialCategory": "trauma-informed healing", "recognizedBy": {"@type": "Organization", "name": "The Core Rising", "url": "https://www.thecorerising.com/"}},
+      {"@type": "EducationalOccupationalCredential", "name": "Somatic Coaching Certification", "credentialCategory": "somatic coaching", "recognizedBy": {"@type": "Organization", "name": "Academia Coaching Somático", "url": "https://academiacoachingsomatico.com/"}},
+      {"@type": "EducationalOccupationalCredential", "name": "PSYCH-K® Basic & Advanced", "credentialCategory": "mind-body modality certification"}
     ],
-    "knowsAbout": ["Somatic Healing", "Human Design", "Nervous System Regulation", "Women's Wellness"],
-    "areaServed": ["GB", "FR", "ES", "Europe", "Latin America"]
+    "sameAs": ["https://www.instagram.com/clara.holds.space/", "https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg", "https://www.tiktok.com/@tobehuman.life", "https://insig.ht/aOa3eieLI3b"]
   }
   </script>
-
-  <!-- Vercel Analytics -->
-  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthAndBeautyBusiness",
+    "name": "Somatic with Clara",
+    "description": "Somatic yoga and coaching for nervous system regulation. Working with women in London and online.",
+    "url": "https://somaticwithclara.com",
+    "email": "hello@somaticwithclara.com",
+    "address": {"@type": "PostalAddress", "addressLocality": "London", "addressCountry": "GB"},
+    "areaServed": ["London", "United Kingdom", "Online"],
+    "founder": {"@type": "Person", "name": "Clara Louis"},
+    "sameAs": ["https://www.instagram.com/clara.holds.space/", "https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "What is somatic yoga?", "acceptedAnswer": {"@type": "Answer", "text": "Somatic yoga is a body-led practice that combines yoga movement with nervous system awareness. Unlike conventional yoga, which focuses on physical form and flexibility, somatic yoga works with sensation, breath, and body awareness to help the nervous system release stored stress patterns. It is grounded in polyvagal theory — the science of how the nervous system regulates states of safety, threat, and connection."}},
+      {"@type": "Question", "name": "How is somatic coaching different from therapy?", "acceptedAnswer": {"@type": "Answer", "text": "Somatic coaching is an educational and experiential practice, not clinical therapy. It works with body sensations and survival patterns to support nervous system regulation and self-awareness. Clara Louis is a somatic practitioner and yoga teacher, not a licensed therapist. For clinical mental health support, a qualified therapist is recommended."}},
+      {"@type": "Question", "name": "Can somatic work help with anxiety, burnout, or feeling disconnected?", "acceptedAnswer": {"@type": "Answer", "text": "Many people who come to somatic work are not in crisis — they are functioning, but feel disconnected, exhausted, or stuck in the same patterns despite knowing better. Somatic practice addresses the body's survival states — fight, flight, freeze, and shutdown — at a physiological level, offering tools for regulation that work when mindset approaches have not."}},
+      {"@type": "Question", "name": "Where does somatic work with Clara Louis take place?", "acceptedAnswer": {"@type": "Answer", "text": "Clara Louis works with clients online and in London, UK. Options range from free somatic audio practices to one-to-one somatic coaching."}}
+    ]
+  }
+  </script>
+  <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
   <script defer src="/_vercel/insights/script.js"></script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['DM Sans', 'sans-serif'],
-            display: ['Plus Jakarta Sans', 'sans-serif'],
-          },
-        }
-      }
-    }
-  </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="brand.css">
   <style>
-    /* ── Fonts ──────────────────────────────────────────── */
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-Thin.ttf') format('truetype'); font-weight: 100; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-ThinItalic.ttf') format('truetype'); font-weight: 100; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-Light.ttf') format('truetype'); font-weight: 300; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-LightItalic.ttf') format('truetype'); font-weight: 300; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-Italic.ttf') format('truetype'); font-weight: 400; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-BoldItalic.ttf') format('truetype'); font-weight: 700; font-style: italic; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-Black.ttf') format('truetype'); font-weight: 900; font-style: normal; font-display: swap; }
-    @font-face { font-family: 'Lato'; src: url('brand-assets/fonts/Lato/Lato-BlackItalic.ttf') format('truetype'); font-weight: 900; font-style: italic; font-display: swap; }
-
-    /* ── Reset & Base ───────────────────────────────────── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; overflow-x: hidden; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: #FFFFFF;
-      color: #1A1A1A;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
-
-    /* Grain */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      z-index: 9000;
-      pointer-events: none;
-      opacity: 0.022;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-    }
-
-    /* ── Nav ────────────────────────────────────────────── */
-    #nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      padding: 1.5rem 0;
-      transition: background-color 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;
-    }
-    #nav.scrolled {
-      background-color: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 1px 0 rgba(42, 42, 42, 0.07);
-      padding: 0.875rem 0;
-    }
-    .nav-link {
-      font-size: 0.7rem;
-      color: rgba(26, 26, 26, 0.5);
-      text-decoration: none;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
-    }
-    .nav-link:hover { color: #1A1A1A; }
-
-    /* ── Buttons ────────────────────────────────────────── */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.375rem;
-      text-decoration: none;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      border-radius: 100px;
-      cursor: pointer;
-      border: none;
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
-                  background-color 0.22s ease;
-    }
-    .btn:focus-visible { outline: 2px solid #BBA3CF; outline-offset: 3px; }
-    .btn:active { transform: translateY(0) !important; }
-
-    .btn-dark {
-      padding: 0.9rem 2.125rem;
-      background-color: #1A1A1A;
-      color: #FFFFFF;
-      box-shadow: 0 2px 16px rgba(42, 42, 42, 0.18);
-    }
-    .btn-dark:hover {
-      background-color: #3d3d3a;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(42, 42, 42, 0.26);
-    }
-    .btn-sage {
-      padding: 0.9rem 2.125rem;
-      background-color: #C8D9A8;
-      color: #1A1A1A;
-      box-shadow: 0 2px 18px rgba(200, 217, 168, 0.45);
-    }
-    .btn-sage:hover {
-      background-color: #b9cd97;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(200, 217, 168, 0.55);
-    }
-    .btn-sage-sm {
-      padding: 0.625rem 1.375rem;
-      background-color: #C8D9A8;
-      color: #1A1A1A;
-      box-shadow: 0 2px 12px rgba(200, 217, 168, 0.4);
-    }
-    .btn-sage-sm:hover {
-      background-color: #b9cd97;
-      transform: translateY(-1px);
-    }
-    .btn-outline {
-      padding: 0.9rem 2.125rem;
-      background-color: transparent;
-      color: #1A1A1A;
-      border: 1.5px solid rgba(26, 26, 26, 0.22);
-    }
-    .btn-outline:hover {
-      background-color: rgba(26, 26, 26, 0.04);
-      border-color: rgba(26, 26, 26, 0.5);
-      transform: translateY(-1px);
-    }
-
-    /* ── Scroll reveal ──────────────────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    .d1 { transition-delay: 0.08s; }
-    .d2 { transition-delay: 0.16s; }
-    .d3 { transition-delay: 0.24s; }
-    .d4 { transition-delay: 0.32s; }
-    .d5 { transition-delay: 0.40s; }
-
-    /* ── Eyebrow ────────────────────────────────────────── */
-    .eyebrow {
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #9B82B8;
-      display: block;
-    }
-
-    /* ── Hero title ─────────────────────────────────────── */
-    .hero-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(4rem, 10.5vw, 9rem);
-      font-weight: 800;
-      line-height: 0.94;
-      letter-spacing: -0.03em;
-      color: #1A1A1A;
-    }
-    .hero-title .line2 {
-      display: block;
-      padding-left: clamp(2rem, 7vw, 7.5rem);
-      color: #9B82B8;
-    }
-
-    /* ── Marquee ────────────────────────────────────────── */
-    .marquee-wrap { overflow: hidden; }
-    .marquee-track {
-      display: flex;
-      white-space: nowrap;
-      animation: marquee 28s linear infinite;
-    }
-    @keyframes marquee {
-      0%   { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    .marquee-item {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: rgba(42, 42, 42, 0.55);
-      padding-right: 3rem;
-      white-space: nowrap;
-    }
-
-    /* ── Service cards ──────────────────────────────────── */
-    .card {
-      background-color: #ffffff;
-      border-radius: 1.25rem;
-      border: 1px solid rgba(42, 42, 42, 0.07);
-      box-shadow: 0 1px 12px rgba(42, 42, 42, 0.04);
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1),
-                  box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 36px rgba(42, 42, 42, 0.09);
-    }
-    .card-img {
-      width: 100%;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      display: block;
-    }
-    .card-body-wrap {
-      padding: 1.75rem 2rem 2rem;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .card-tag {
-      font-size: 0.5625rem;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 0.875rem;
-      color: #9B82B8;
-    }
-    .card-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.3rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.875rem;
-      color: #1A1A1A;
-    }
-    .card-desc {
-      font-size: 0.9rem;
-      line-height: 1.78;
-      color: rgba(42, 42, 42, 0.6);
-      flex: 1;
-      margin-bottom: 1.5rem;
-    }
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(42, 42, 42, 0.06);
-      margin-top: auto;
-    }
-    .card-price {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: #1A1A1A;
-    }
-    .card-link {
-      font-size: 0.6875rem;
-      font-weight: 700;
-      color: #9B82B8;
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
-    }
-    .card-link:hover { color: #1A1A1A; }
-
-    /* ── Hero entrance animations ──────────────────────── */
-    @keyframes hero-fade-up {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .hero-animate {
-      animation: hero-fade-up 1s cubic-bezier(0.25, 0.4, 0.25, 1) both;
-    }
-    .ha-0 { animation-delay: 0.3s; }
-    .ha-1 { animation-delay: 0.55s; }
-    .ha-2 { animation-delay: 0.75s; }
-    .ha-3 { animation-delay: 0.95s; }
-
-    /* Hero badge pill */
-    .hero-badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.375rem 1rem;
-      border-radius: 100px;
-      background: transparent;
-      border: 1px solid rgba(155,130,184,0.35);
-      font-size: 0.6875rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(155,130,184,0.85);
-      margin-bottom: 1.75rem;
-    }
-    .hero-badge-pill .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #9B82B8;
-      flex-shrink: 0;
-    }
-
-    /* Hero text colours */
-    .hero-grad-1 { color: #1A1A1A; }
-    .hero-grad-2 { color: #9B82B8; }
-
-    /* ── Testimonials ───────────────────────────────────── */
-    .quote-card {
-      background-color: #F8F7FC;
-      border-radius: 1.25rem;
-      padding: 2.25rem;
-      border: 1px solid rgba(155, 130, 184, 0.12);
-    }
-    .quote-mark {
-      font-size: 3.5rem;
-      line-height: 0.6;
-      color: #C8D9A8;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      margin-bottom: 1.125rem;
-      display: block;
-    }
-    .quote-text {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      line-height: 1.7;
-      color: #1A1A1A;
-      margin-bottom: 1.25rem;
-    }
-    .quote-attr {
-      font-size: 0.625rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: #9B82B8;
-      text-transform: uppercase;
-    }
-    .stars {
-      color: #9B82B8;
-      font-size: 0.875rem;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.875rem;
-      display: block;
-    }
-
-    /* ── Scrolling testimonials ─────────────────────────── */
-    @keyframes scroll-up {
-      from { transform: translateY(0); }
-      to   { transform: translateY(-50%); }
-    }
-    .testimonials-viewport {
-      overflow: hidden;
-      height: 680px;
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-      mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
-    }
-    .testimonials-viewport:hover .testimonial-track {
-      animation-play-state: paused;
-    }
-    .testimonial-track {
-      display: flex;
-      flex-direction: column;
-      gap: 1.125rem;
-      padding-bottom: 1.125rem;
-      animation: scroll-up linear infinite;
-      animation-play-state: running;
-    }
-
-    /* ── Mobile menu ────────────────────────────────────── */
-    #mobile-nav {
-      position: absolute;
-      top: 100%;
-      left: 0; right: 0;
-      background-color: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(42, 42, 42, 0.07);
-      padding: 1.5rem 1.5rem 2rem;
-      display: none;
-      box-shadow: 0 8px 32px rgba(42, 42, 42, 0.08);
-    }
-    #mobile-nav.open { display: block; }
-
-    /* ── Responsive ─────────────────────────────────────── */
-    @media (max-width: 767px) {
-      .hero-image-col { display: none !important; }
-      .about-grid { grid-template-columns: 1fr !important; }
-      .services-header { flex-direction: column !important; align-items: flex-start !important; }
-    }
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr !important; }
-    }
+    /* Homepage-only tweak: keep the philosophy band text tight */
+    .band .narrow{max-width:760px;}
   </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f7f03a7-24e9-4452-bc92-91b58256b1cc"></script>
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════════════════════
-       NAV
-  ══════════════════════════════════════════════════════ -->
-  <nav id="nav" aria-label="Main navigation">
-    <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between;">
-
-      <a href="/" aria-label="Somatic with Clara — home">
-        <img src="brand-assets/Logo.png" alt="Somatic with Clara" style="height: 36px; width: auto; display: block;" />
-      </a>
-
-      <div style="display: flex; align-items: center; gap: 2.5rem;" class="hidden md:flex">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#services" class="nav-link">Work with Me</a>
-        <a href="#contact" class="nav-link">Contact</a>
-        <!-- Language switcher -->
-        <div style="display: flex; align-items: center; gap: 0.25rem; border: 1px solid rgba(26,26,26,0.12); border-radius: 999px; padding: 0.2rem 0.5rem;">
-          <a href="/" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: #1A1A1A; text-decoration: none; padding: 0.15rem 0.35rem; border-radius: 999px; background: rgba(26,26,26,0.07);">EN</a>
-          <a href="./fr/" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: rgba(26,26,26,0.4); text-decoration: none; padding: 0.15rem 0.35rem; border-radius: 999px; transition: color 0.2s;" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='rgba(26,26,26,0.4)'">FR</a>
-          <a href="./es/" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; color: rgba(26,26,26,0.4); text-decoration: none; padding: 0.15rem 0.35rem; border-radius: 999px; transition: color 0.2s;" onmouseover="this.style.color='#1A1A1A'" onmouseout="this.style.color='rgba(26,26,26,0.4)'">ES</a>
-        </div>
-        <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" class="btn btn-sage-sm">Book a call</a>
-      </div>
-
-      <button id="ham" class="md:hidden" aria-label="Open menu" aria-expanded="false"
-        style="background: none; border: none; cursor: pointer; padding: 0.5rem; display: flex; flex-direction: column; gap: 5px;">
-        <span id="ham1" style="display: block; width: 22px; height: 1.5px; background: #2A2A2A; transition: transform 0.3s ease, opacity 0.3s ease;"></span>
-        <span id="ham2" style="display: block; width: 22px; height: 1.5px; background: #2A2A2A; transition: opacity 0.3s ease;"></span>
-        <span id="ham3" style="display: block; width: 22px; height: 1.5px; background: #2A2A2A; transition: transform 0.3s ease;"></span>
-      </button>
-    </div>
-
-    <div id="mobile-nav">
-      <div style="display: flex; flex-direction: column; gap: 1.125rem;">
-        <a href="#about" class="nav-link" style="font-size: 1rem; text-transform: none; letter-spacing: 0; color: #1A1A1A;">About</a>
-        <a href="#services" class="nav-link" style="font-size: 1rem; text-transform: none; letter-spacing: 0; color: #1A1A1A;">Work with Me</a>
-        <a href="#contact" class="nav-link" style="font-size: 1rem; text-transform: none; letter-spacing: 0; color: #1A1A1A;">Contact</a>
-        <div style="margin-top: 0.5rem;">
-          <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" class="btn btn-sage" style="width: 100%; justify-content: center;">Book a free call</a>
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Somatic with Clara — home">
+      <img src="brand-assets/somatic-with-clara-logo.svg" alt="Somatic with Clara" style="height:40px;width:auto;display:block;" />
+    </a>
+    <div style="display:flex;align-items:center;gap:30px;" class="desktop-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="offers.html" class="nav-link">Work with Me</a>
+      <a href="reclaim-your-life.html" class="nav-link">Community</a>
+      <div class="nav-dropdown">
+        <span class="nav-link nav-dropdown-toggle">Resources</span>
+        <div class="nav-dropdown-menu">
+          <a href="somatic-yoga.html">What is Somatic Yoga?</a>
+          <a href="nervous-system-states.html">Nervous System States</a>
+          <a href="fawn-response.html">The Fawn Response</a>
         </div>
       </div>
+      <a href="#sessions" class="btn" style="padding:11px 26px;">Begin here</a>
     </div>
-  </nav>
+    <button id="ham" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-nav">
+    <a href="about.html">About</a>
+    <a href="offers.html">Work with Me</a>
+    <a href="reclaim-your-life.html">Community</a>
+    <a href="somatic-yoga.html">What is Somatic Yoga?</a>
+    <a href="nervous-system-states.html">Nervous System States</a>
+    <a href="fawn-response.html">The Fawn Response</a>
+    <a href="quiz.html">Take the Quiz</a>
+    <a href="#sessions" style="border:none;color:var(--clay-dark);font-weight:700;">Begin here →</a>
+  </div>
+</nav>
 
-
-  <!-- ══════════════════════════════════════════════════════
-       HERO
-  ══════════════════════════════════════════════════════ -->
-  <section style="min-height: 100svh; background-color: #FFFFFF; position: relative; display: flex; align-items: center; overflow: hidden; padding: 9rem 0 5rem;">
-
-    <!-- Blobs -->
-    <div style="position: absolute; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, rgba(155,130,184,0.1) 0%, transparent 68%); top: -120px; right: -160px; pointer-events: none; filter: blur(80px);"></div>
-    <div style="position: absolute; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(200,217,168,0.12) 0%, transparent 70%); bottom: 8%; left: -80px; pointer-events: none; filter: blur(60px);"></div>
-
-    <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 10; width: 100%;">
-      <div class="hero-grid" style="display: grid; grid-template-columns: 1fr 360px; gap: 4rem; align-items: center;">
-
-        <!-- ── Left: text ── -->
-        <div>
-          <div class="hero-animate ha-0">
-            <span class="hero-badge-pill">
-              <span class="dot"></span>
-              Somatic Coaching &amp; Human Design
-            </span>
-          </div>
-
-          <h1 class="hero-title hero-animate ha-1">
-            <span class="hero-grad-1">Somatic</span>
-            <span class="line2 hero-grad-2">with Clara</span>
-          </h1>
-
-          <div class="hero-animate ha-2" style="margin-top: 2.75rem; margin-bottom: 2.75rem;">
-            <p style="font-size: 1.0625rem; line-height: 1.78; color: rgba(26,26,26,0.55); max-width: 400px; font-weight: 300; letter-spacing: 0.01em;">
-              For women ready to reconnect with their body — gently restoring self-trust, releasing self-blame, and finding their way back to themselves.
-            </p>
-          </div>
-
-          <div class="hero-animate ha-3" style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-            <a href="#services" class="btn btn-dark">Work with Me →</a>
-            <a href="#about" class="btn btn-outline">Meet Clara</a>
-          </div>
-        </div>
-
-        <!-- ── Right: image ── -->
-        <div class="hero-image-col reveal d1" style="position: relative;">
-          <img
-            src="profile-pic.png"
-            alt="Clara Louis — somatic guide"
-            style="width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; border-radius: 1.75rem; display: block; box-shadow: 0 28px 72px rgba(26,26,26,0.08);"
-          />
-
-          <!-- Floating testimonial card -->
-          <div style="position: absolute; bottom: -1.75rem; left: -2.25rem; background: #FFFFFF; border-radius: 1rem; padding: 1.25rem 1.5rem; box-shadow: 0 8px 48px rgba(155,130,184,0.18); max-width: 210px; border: 1px solid rgba(155,130,184,0.15);">
-            <span style="font-size: 2.25rem; line-height: 0.6; color: #C8D9A8; font-family: 'Plus Jakarta Sans', sans-serif; display: block; margin-bottom: 0.75rem;">"</span>
-            <p style="font-family: 'DM Sans', sans-serif; font-size: 0.9rem; line-height: 1.6; color: #1A1A1A; margin-bottom: 0.625rem;">Things become clear with Clara.</p>
-            <p style="font-size: 0.5625rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #9B82B8;">— Myke P.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════════════
-       MARQUEE STRIP
-  ══════════════════════════════════════════════════════ -->
-  <div style="background-color: #BBA3CF; padding: 1.125rem 0;" class="marquee-wrap">
-    <div class="marquee-track">
-      <span class="marquee-item">Feel More Like Yourself &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Somatic Coaching &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Human Design &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Nervous System Healing &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Identity Reclamation &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Body-Based Healing &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Women's Wellbeing &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Feel More Like Yourself &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Somatic Coaching &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Human Design &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Nervous System Healing &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Identity Reclamation &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Body-Based Healing &nbsp;·&nbsp;</span>
-      <span class="marquee-item">Women's Wellbeing &nbsp;·&nbsp;</span>
+<!-- HERO -->
+<section class="hero" style="background-image:url('brand-assets/hero-meadow.jpg');">
+  <div class="wide">
+    <div class="hero-inner">
+      <span class="eyebrow">Somatic Coaching · Human Design</span>
+      <h1>Come home<br><em>to your own rhythm.</em></h1>
+      <p>Nervous-system work and Human Design, together, so the body can feel safe enough to live the way it was always meant to.</p>
+      <a href="#sessions" class="btn">Begin here</a>
     </div>
   </div>
+</section>
 
-
-  <!-- ══════════════════════════════════════════════════════
-       BRIDGE — quote
-  ══════════════════════════════════════════════════════ -->
-  <section style="background-color: #F6F3FB; padding: 7.5rem 0;">
-    <div style="max-width: 72rem; margin: 0 auto; padding: 0 2rem;">
-      <div style="max-width: 760px; margin: 0 auto; text-align: center;">
-        <span class="eyebrow reveal" style="margin-bottom: 2rem;">The truth most women carry</span>
-        <p class="reveal d1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(1.75rem, 3.8vw, 2.75rem); font-weight: 700; line-height: 1.32; letter-spacing: -0.02em; color: #1A1A1A; margin-top: 1.5rem;">
-          "You can't explain why life feels so hard… The thoughts won't stop. The joy never lands.
-          And underneath it all, you're just <span style="color: #9B82B8;">tired.</span>"
-        </p>
-        <p class="reveal d2" style="margin-top: 3rem; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(26,26,26,0.4);">
-          There's another way. Your body knows it.
-        </p>
+<!-- INTEGRATION -->
+<section class="sec" style="background:var(--cream);">
+  <div class="wide">
+    <span class="eyebrow reveal">The integration</span>
+    <h2 class="display reveal d1" style="max-width:16ch;">Your body knows.<br>Your design illuminates.</h2>
+    <div class="integration-grid" style="margin-top:44px;">
+      <div class="integ-item arch reveal">
+        <div class="imgwrap"><img src="brand-assets/integration-body.jpg" alt="Clara seated on a hand-painted bench in a leafy courtyard"></div>
+        <span class="integ-label">01 · The Body</span>
+        <h3>Feel what is true</h3>
+        <p class="lead" style="font-size:15px;">Your nervous system is not a problem to fix. Somatic work goes bottom-up, through sensation and breath, until the body feels safe enough to soften. You cannot think your way to calm. The body has to feel it.</p>
+      </div>
+      <div class="integ-item arch push reveal d1">
+        <div class="imgwrap"><img src="brand-assets/integration-design.jpg" alt="Clara looking out across a meadow"></div>
+        <span class="integ-label">02 · The Design</span>
+        <h3>See how you're made</h3>
+        <p class="lead" style="font-size:15px;">Human Design maps your energy, your decisions, and your natural way of moving. Not a personality label. A language for how you're actually built.</p>
       </div>
     </div>
-  </section>
+    <div class="integ-close reveal">
+      <p>Together, they turn understanding into something you live, not another idea to hold but a truth you can feel.</p>
+      <a href="#sessions" class="btn">Book a discovery call</a>
+    </div>
+  </div>
+</section>
 
+<!-- PHILOSOPHY BAND -->
+<section class="band">
+  <div class="narrow reveal">
+    <p>Your patterns are not flaws. They are the accumulated logic of survival, what your body learned to keep you safe. Regulation is the doorway, not the destination: when the system feels safe enough, it can move, connect, create, and live fully again.</p>
+  </div>
+</section>
 
-  <!-- ══════════════════════════════════════════════════════
-       ABOUT
-  ══════════════════════════════════════════════════════ -->
-  <section id="about" style="background-color: #FFFFFF; padding: 9rem 0; overflow: hidden;">
-    <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem;">
-      <div class="about-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center;">
-
-        <!-- Photo -->
-        <div class="reveal" style="position: relative;">
-          <img
-            src="profile-pic.png"
-            alt="Clara Louis — somatic guide"
-            style="width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; border-radius: 1.75rem; display: block; box-shadow: 0 32px 80px rgba(26,26,26,0.07);"
-          />
-          <!-- Floating stat card -->
-          <div style="position: absolute; top: 2.5rem; right: -2.25rem; background: #9B82B8; border-radius: 1rem; padding: 1.375rem 1.625rem; text-align: center; box-shadow: 0 8px 40px rgba(155,130,184,0.3);">
-            <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 2.75rem; font-weight: 800; color: #ffffff; line-height: 1;">3+</p>
-            <p style="font-size: 0.5rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.72); margin-top: 0.375rem; line-height: 1.5;">Years of<br/>practice</p>
-          </div>
+<!-- FIRST GLIMPSE (the quiz) -->
+<section class="sec glimpse">
+  <div class="wide">
+    <div class="glimpse-grid">
+      <div class="reveal">
+        <span class="eyebrow">A first glimpse</span>
+        <h2 class="display">Meet your <em>nervous system.</em></h2>
+        <p class="lead" style="margin-top:20px;max-width:44ch;">A short quiz to name the survival pattern running underneath: fight, flight, freeze, or fawn. A gentle first glimpse of where the work begins.</p>
+      </div>
+      <div class="reveal d1">
+        <div class="hd-card">
+          <div class="step-count">The quiz</div>
+          <h4>Which pattern is running the show?</h4>
+          <p class="hint">Two minutes to name it. Nothing to prove.</p>
+          <a href="quiz.html" class="btn" style="width:100%;text-align:center;">Take the quiz →</a>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Text -->
+<!-- OFFERINGS -->
+<section class="sec" style="background:var(--cream);">
+  <div class="wide">
+    <span class="eyebrow reveal">Offerings</span>
+    <h2 class="display reveal d1" style="margin-bottom:44px;">Ways to work together.</h2>
+    <div class="offerings-list">
+      <a href="offers.html" class="offer reveal">
+        <span class="offer-num">01</span>
         <div>
-          <span class="eyebrow reveal" style="margin-bottom: 1.5rem;">About Clara</span>
-          <h2 class="reveal d1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.5rem, 4.5vw, 4rem); font-weight: 800; line-height: 1.06; letter-spacing: -0.03em; color: #1A1A1A; margin-bottom: 2.25rem; margin-top: 1rem;">
-            A guide for women<br/>coming home<br/><span style="color: #9B82B8;">to themselves.</span>
-          </h2>
-          <p style="font-size: 1.0625rem; line-height: 1.82; color: rgba(26,26,26,0.6); margin-bottom: 1.375rem;" class="reveal d2">
-            I'm Clara — somatic guide, space holder, and Projector in Human Design. I work with women who feel stuck in survival mode, burned out, and disconnected from themselves.
-          </p>
-          <p style="font-size: 1.0625rem; line-height: 1.82; color: rgba(26,26,26,0.6); margin-bottom: 1.375rem;" class="reveal d3">
-            My work is body-based and unhurried. We move at the pace your nervous system can actually handle — because real change doesn't come from pushing harder. It comes from finally feeling safe enough to let go.
-          </p>
-          <p style="font-size: 1.0625rem; line-height: 1.82; color: rgba(26,26,26,0.6); margin-bottom: 3rem;" class="reveal d4">
-            I help women rebuild safety in their bodies so they can trust themselves, reclaim their confidence, and feel like themselves again.
-          </p>
-          <a href="#services" class="btn btn-outline reveal d5">See how I can help →</a>
+          <h3>Somatic Coaching</h3>
+          <p>One-to-one work with the body as guide. For women who are functioning but feel stuck, disconnected, or exhausted by coping. 3 or 6-month arc.</p>
+          <span class="link-caps">See details →</span>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════════════
-       SERVICES
-  ══════════════════════════════════════════════════════ -->
-  <section id="services" style="background-color: #F9F9F7; padding: 9rem 0; position: relative; overflow: hidden;">
-
-    <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1;">
-
-      <div class="services-header" style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 5rem; flex-wrap: wrap; gap: 2rem;">
+      </a>
+      <a href="somatic-yoga.html" class="offer reveal d1">
+        <span class="offer-num">02</span>
         <div>
-          <h2 class="reveal d1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; color: #1A1A1A; margin-top: 1rem;">
-            Ways we can<br/>work together.
-          </h2>
+          <h3>Somatic Yoga</h3>
+          <p>Movement, breath, and nervous system awareness, together. Classes designed to help the body release survival patterns through sensation rather than effort.</p>
+          <span class="link-caps">Learn more →</span>
         </div>
-        <p class="reveal d2" style="font-size: 1rem; line-height: 1.75; color: rgba(26,26,26,0.5); max-width: 320px; padding-bottom: 0.5rem;">
-          Every offering is designed to meet you where you are — whether you're just starting to listen to your body, or ready to go deeper.
-        </p>
-      </div>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.125rem;">
-
-        <div class="card reveal d1">
-          <img src="https://placehold.co/560x260/E9EFD8/6A8A50?text=Community" alt="" class="card-img" />
-          <div class="card-body-wrap">
-            <p class="card-tag">Community</p>
-            <h3 class="card-title">Free Skool Community</h3>
-            <p class="card-desc">A space to understand your nervous system, find tools that actually work, and feel less alone in your patterns.</p>
-            <div class="card-footer">
-              <span class="card-price">Free</span>
-              <a href="https://www.skool.com/the-nervous-system-library-7770/about" class="card-link" target="_blank" rel="noopener">Join →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card reveal d2">
-          <img src="https://placehold.co/560x260/EDE8F3/8B72A8?text=Audio+Bundle" alt="" class="card-img" />
-          <div class="card-body-wrap">
-            <p class="card-tag">Self-Paced</p>
-            <h3 class="card-title">Feel Again – Audio Bundle</h3>
-            <p class="card-desc">Three gentle guided practices to soothe the tired-but-wired feeling, shift out of numbness, and return to your body safely and on your terms.</p>
-            <div class="card-footer">
-              <span class="card-price">£21</span>
-              <a href="https://pensight.com/x/tobehuman/feel-again" class="card-link" target="_blank" rel="noopener">Get it →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card reveal d3">
-          <img src="https://placehold.co/560x260/E9EFD8/6A8A50?text=Human+Design" alt="" class="card-img" />
-          <div class="card-body-wrap">
-            <p class="card-tag">Single Session</p>
-            <h3 class="card-title">Human Design Chat</h3>
-            <p class="card-desc">A relaxed 30-minute conversation about your Human Design chart — so you can understand who you are and give yourself permission to stop being any other way.</p>
-            <div class="card-footer">
-              <span class="card-price">£30</span>
-              <a href="https://pensight.com/x/tobehuman/digital-item-e507db62-324d-417b-90f8-6abc8aa5bf18" class="card-link" target="_blank" rel="noopener">Book →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card reveal d1">
-          <img src="https://placehold.co/560x260/EDE8F3/8B72A8?text=Nervous+System" alt="" class="card-img" />
-          <div class="card-body-wrap">
-            <p class="card-tag">Single Session</p>
-            <h3 class="card-title">Nervous System Check-in</h3>
-            <p class="card-desc">One session to feel calmer, understand what's really happening in your body, and leave with a clear personalised next step.</p>
-            <div class="card-footer">
-              <span class="card-price">£60</span>
-              <a href="https://pensight.com/x/tobehuman/somatic-coaching-60-min" class="card-link" target="_blank" rel="noopener">Book →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card reveal d2">
-          <img src="https://placehold.co/560x260/E9EFD8/6A8A50?text=3+Months" alt="" class="card-img" />
-          <div class="card-body-wrap">
-            <p class="card-tag">1:1 Support</p>
-            <h3 class="card-title">3-Month 1:1 Support</h3>
-            <p class="card-desc">Three months of body-based work to regulate, resource, and gently process what your nervous system has been carrying.</p>
-            <div class="card-footer">
-              <span class="card-price">£450</span>
-              <a href="https://pensight.com/x/tobehuman/6-x-11-somatic-coaching-sessions" class="card-link" target="_blank" rel="noopener">Apply →</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="card reveal d3">
-          <img src="https://placehold.co/560x260/EDE8F3/8B72A8?text=6+Months" alt="" class="card-img" />
-          <div class="card-body-wrap">
-            <p class="card-tag">1:1 Support</p>
-            <h3 class="card-title">6-Month 1:1 Support</h3>
-            <p class="card-desc">Six months to unwind long-standing patterns around work, worth, relationships, and time — until a different way of living starts to feel natural.</p>
-            <div class="card-footer">
-              <span class="card-price">£840</span>
-              <a href="https://pensight.com/x/tobehuman/bundle-d26af631-5c3e-4599-83fe-5d3909148ddc" class="card-link" target="_blank" rel="noopener">Apply →</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════════════
-       TESTIMONIALS
-  ══════════════════════════════════════════════════════ -->
-  <section style="background-color: #FFFFFF; padding: 9rem 0; overflow: hidden;">
-    <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem; margin-bottom: 4.5rem;">
-      <span class="eyebrow reveal" style="margin-bottom: 1.25rem;">What Women Say</span>
-      <h2 class="reveal d1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(2.5rem, 5.5vw, 4.5rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; color: #1A1A1A; margin-top: 1rem;">
-        Words from the women<br/>in this space.
-      </h2>
-    </div>
-
-    <!-- Scrolling columns -->
-    <div class="testimonials-viewport">
-      <div style="display: flex; gap: 1.125rem; padding: 0 2rem; align-items: flex-start;">
-
-        <!-- Column 1 — 22s -->
-        <div style="flex: 1; min-width: 0;">
-          <div class="testimonial-track" style="animation-duration: 22s;">
-            <!-- set 1 -->
-            <div class="quote-card" style="background: #BBA3CF; border: none;">
-              <span class="quote-mark" style="color: rgba(255,255,255,0.4);">"</span>
-              <p class="quote-text" style="color: rgba(255,255,255,0.95);">I never experienced something like this. Clara's style amplified the effect — things become clear with Clara. It opened a portal to feelings in a very subtle way.</p>
-              <p class="quote-attr" style="color: rgba(255,255,255,0.65);">— Myke P.</p>
-            </div>
-            <div class="quote-card">
-              <span class="stars">★★★★★</span>
-              <p class="quote-text">Thank you Clara. It helped to lessen anxiety and stress. Now feeling so much calmer. Thank you so much.</p>
-              <p class="quote-attr">— Guided practice review</p>
-            </div>
-            <div class="quote-card">
-              <span class="quote-mark">"</span>
-              <p class="quote-text">I am through a hard time and this really helped me :)</p>
-              <p class="quote-attr">— YouTube viewer</p>
-            </div>
-            <!-- set 2 (duplicate) -->
-            <div class="quote-card" style="background: #BBA3CF; border: none;">
-              <span class="quote-mark" style="color: rgba(255,255,255,0.4);">"</span>
-              <p class="quote-text" style="color: rgba(255,255,255,0.95);">I never experienced something like this. Clara's style amplified the effect — things become clear with Clara. It opened a portal to feelings in a very subtle way.</p>
-              <p class="quote-attr" style="color: rgba(255,255,255,0.65);">— Myke P.</p>
-            </div>
-            <div class="quote-card">
-              <span class="stars">★★★★★</span>
-              <p class="quote-text">Thank you Clara. It helped to lessen anxiety and stress. Now feeling so much calmer. Thank you so much.</p>
-              <p class="quote-attr">— Guided practice review</p>
-            </div>
-            <div class="quote-card">
-              <span class="quote-mark">"</span>
-              <p class="quote-text">I am through a hard time and this really helped me :)</p>
-              <p class="quote-attr">— YouTube viewer</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 2 — 28s -->
-        <div style="flex: 1; min-width: 0;">
-          <div class="testimonial-track" style="animation-duration: 28s;">
-            <!-- set 1 -->
-            <div class="quote-card">
-              <span class="quote-mark">"</span>
-              <p class="quote-text">I would highly recommend Clara and somatic coaching as an easy way to stay grounded and build self trust, when feeling emotions.</p>
-              <p class="quote-attr">— Fontanna W.</p>
-            </div>
-            <div class="quote-card">
-              <span class="stars">★★★★★</span>
-              <p class="quote-text">Very helpful guided body scan. Gentle.</p>
-            </div>
-            <div class="quote-card">
-              <span class="stars">★★★★★</span>
-              <p class="quote-text">Thank you, this helped me settle ✨</p>
-            </div>
-            <!-- set 2 (duplicate) -->
-            <div class="quote-card">
-              <span class="quote-mark">"</span>
-              <p class="quote-text">I would highly recommend Clara and somatic coaching as an easy way to stay grounded and build self trust, when feeling emotions.</p>
-              <p class="quote-attr">— Fontanna W.</p>
-            </div>
-            <div class="quote-card">
-              <span class="stars">★★★★★</span>
-              <p class="quote-text">Very helpful guided body scan. Gentle.</p>
-            </div>
-            <div class="quote-card">
-              <span class="stars">★★★★★</span>
-              <p class="quote-text">Thank you, this helped me settle ✨</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Column 3 — 18s -->
-        <div style="flex: 1; min-width: 0;">
-          <div class="testimonial-track" style="animation-duration: 18s;">
-            <!-- set 1 -->
-            <div class="quote-card">
-              <span class="quote-mark">"</span>
-              <p class="quote-text">oooof moving through some emotions this morning and this has come at a perfect time of day! Moving through these now. thank you ♥</p>
-              <p class="quote-attr">— YouTube viewer</p>
-            </div>
-            <div class="quote-card">
-              <span class="stars">★★★★★</span>
-              <p class="quote-text">wow....it works</p>
-            </div>
-            <div class="quote-card" style="background: #F0EDFA; border-color: rgba(155,130,184,0.15);">
-              <span class="quote-mark" style="color: #C8D9A8;">"</span>
-              <p class="quote-text">Things become clear with Clara.</p>
-              <p class="quote-attr">— Somatic coaching client</p>
-            </div>
-            <!-- set 2 (duplicate) -->
-            <div class="quote-card">
-              <span class="quote-mark">"</span>
-              <p class="quote-text">oooof moving through some emotions this morning and this has come at a perfect time of day! Moving through these now. thank you ♥</p>
-              <p class="quote-attr">— YouTube viewer</p>
-            </div>
-            <div class="quote-card">
-              <span class="stars">★★★★★</span>
-              <p class="quote-text">wow....it works</p>
-            </div>
-            <div class="quote-card" style="background: #F0EDFA; border-color: rgba(155,130,184,0.15);">
-              <span class="quote-mark" style="color: #C8D9A8;">"</span>
-              <p class="quote-text">Things become clear with Clara.</p>
-              <p class="quote-attr">— Somatic coaching client</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════════════
-       CTA
-  ══════════════════════════════════════════════════════ -->
-  <section id="contact" style="background-color: #1A1A1A; padding: 9rem 0; position: relative; overflow: hidden;">
-
-    <div style="position: absolute; width: 700px; height: 700px; border-radius: 50%; background: radial-gradient(circle, rgba(155,130,184,0.18) 0%, transparent 68%); top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; filter: blur(100px);"></div>
-
-    <div style="max-width: 72rem; margin: 0 auto; padding: 0 2rem; text-align: center; position: relative; z-index: 1;">
-      <span class="eyebrow reveal" style="color: rgba(155,130,184,0.7); margin-bottom: 2rem;">Let's Begin</span>
-      <h2 class="reveal d1" style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(3rem, 7.5vw, 5.5rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; color: #FFFFFF; margin-bottom: 2rem; margin-top: 1.5rem;">
-        You don't have to<br/><span style="color: #9B82B8;">figure this out alone.</span>
-      </h2>
-      <p class="reveal d2" style="font-size: 1.0625rem; line-height: 1.8; color: rgba(255,255,255,0.45); margin-bottom: 3.25rem; max-width: 440px; margin-left: auto; margin-right: auto; font-weight: 300;">
-        Wherever you are right now is a perfectly valid place to start. Book a free 20-minute call — let's see if we're a good fit.
-      </p>
-      <div class="reveal d3" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-        <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" class="btn btn-sage">Book a free call →</a>
-        <a href="#services" class="btn" style="padding: 0.9rem 2.125rem; background: transparent; color: rgba(255,255,255,0.65); border: 1.5px solid rgba(255,255,255,0.2);">Work with Me</a>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ══════════════════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════════════════ -->
-  <footer style="background-color: #3D2E4A; overflow: hidden;">
-
-    <div style="max-width: 80rem; margin: 0 auto; padding: 4rem 2rem 0;">
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2.5rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
-
+      </a>
+      <a href="offers.html" class="offer reveal d2">
+        <span class="offer-num">03</span>
         <div>
-          <img src="brand-assets/Logo.png" alt="Somatic with Clara" style="height: 32px; margin-bottom: 1rem; filter: brightness(0) invert(1); opacity: 0.55;" />
-          <p style="font-size: 0.8rem; color: rgba(255,255,255,0.32); line-height: 1.7;">
-            Nervous System Healing<br/>&amp; Identity Reclamation
-          </p>
+          <h3>Human Design</h3>
+          <p>One of the tools I actually use to find the somatic block underneath a pattern. A map of your energetic architecture, not a personality quiz.</p>
+          <span class="link-caps">See details →</span>
         </div>
-
+      </a>
+      <a href="reclaim-your-life.html" class="offer reveal d3">
+        <span class="offer-num">04</span>
         <div>
-          <span class="eyebrow" style="color: rgba(255,255,255,0.22); margin-bottom: 1.125rem;">Navigate</span>
-          <div style="display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1.125rem;">
-            <a href="#about" style="font-size: 0.875rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.42)'">About</a>
-            <a href="#services" style="font-size: 0.875rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.42)'">Work with Me</a>
-            <a href="https://pensight.com/x/tobehuman/meeting-08a5b21e-3b8b-4945-b1d7-2e3a9dc11d17" target="_blank" rel="noopener" style="font-size: 0.875rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.42)'">Book a Call</a>
-          </div>
+          <h3>Nervous System Community</h3>
+          <p>A Skool community for women learning to regulate. Somatic practices, nervous system tools, and a space to show up as you actually are.</p>
+          <span class="link-caps">Join the community →</span>
         </div>
+      </a>
+    </div>
+  </div>
+</section>
 
+<!-- REFLECTIONS -->
+<section class="sec" style="background:var(--bg);">
+  <div class="wide">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span class="eyebrow reveal">Reflections</span>
+      <h2 class="display reveal d1">Words from<br><em>this space.</em></h2>
+    </div>
+    <div class="quotes">
+      <div class="quote reveal">
+        <img src="brand-assets/avatars/avatar-1.svg" alt="" aria-hidden="true">
         <div>
-          <span class="eyebrow" style="color: rgba(255,255,255,0.22); margin-bottom: 1.125rem;">Connect</span>
-          <div style="display: flex; flex-direction: column; gap: 0.625rem; margin-top: 1.125rem;">
-            <a href="https://www.instagram.com/clara.holds.space/" style="font-size: 0.875rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.42)'">Instagram</a>
-            <a href="https://www.tiktok.com/@tobehuman.life" style="font-size: 0.875rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.42)'">TikTok</a>
-            <a href="https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg" style="font-size: 0.875rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.42)'">YouTube</a>
-            <a href="https://tobehuman2.substack.com/" style="font-size: 0.875rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.85)'" onmouseout="this.style.color='rgba(255,255,255,0.42)'">Substack</a>
-          </div>
+          <q>I never experienced something like this. I actually never credited the power of feelings or somatic work. Things become clear with Clara. It opened a portal to feelings in a very subtle way, which I didn't know was there.</q>
+          <cite>— Myke P., somatic coaching client</cite>
         </div>
-
       </div>
-
-      <div style="padding: 1.5rem 0 0; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-bottom: 2rem;">
-        <p style="font-size: 0.75rem; color: rgba(255,255,255,0.18);">© 2026 To be Human — somaticwithclara.com</p>
-        <p style="font-size: 0.7rem; color: rgba(255,255,255,0.18); text-align: right;">
-          Designed &amp; built by
-          <a href="mailto:clara.a.ldp@gmail.com" style="color: rgba(200,217,168,0.5); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(200,217,168,0.85)'" onmouseout="this.style.color='rgba(200,217,168,0.5)'">Clara Louis</a>
-          · <a href="mailto:clara.a.ldp@gmail.com?subject=Website enquiry" style="color: rgba(200,217,168,0.5); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='rgba(200,217,168,0.85)'" onmouseout="this.style.color='rgba(200,217,168,0.5)'">Bespoke websites for wellness practitioners →</a>
-        </p>
+      <div class="quote reveal d1">
+        <img src="brand-assets/avatars/avatar-2.svg" alt="" aria-hidden="true">
+        <div>
+          <q>I would highly recommend Clara and somatic coaching as an easy way to stay grounded and build self trust when feeling emotions.</q>
+          <cite>— Fontanna W.</cite>
+        </div>
       </div>
-
+      <div class="quote reveal d2">
+        <img src="brand-assets/avatars/avatar-3.svg" alt="" aria-hidden="true">
+        <div>
+          <q>This video was recommended to me and I was surprised it had so few views. I clicked and I'm so glad I did. I'm going through a hard time and this really helped me.</q>
+          <cite>— YouTube viewer</cite>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Large typographic word -->
-    <div style="line-height: 0.85; user-select: none; overflow: hidden; width: 100%;">
-      <p style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(4.5rem, 13.5vw, 10.5rem); font-weight: 800; letter-spacing: -0.04em; color: rgba(255,255,255,0.04); padding: 0 2rem; white-space: nowrap;">SOMATIC</p>
+<!-- SESSIONS -->
+<section class="sec" id="sessions" style="background:var(--sand);">
+  <div class="wide">
+    <div style="text-align:center;max-width:640px;margin:0 auto;">
+      <span class="eyebrow reveal">The sacred session</span>
+      <h2 class="display reveal d1">A space to be met.</h2>
+      <p class="lead reveal d1" style="margin-top:20px;">A complimentary 30-minute call. We'll sense into where you are and whether this work is a fit, with no pressure to perform or commit.</p>
     </div>
+    <div class="booking-card reveal">
+      <div id="cal-inline"></div>
+      <div class="booking-fallback">
+        <a href="https://cal.com/clara-louis/discovery-call" class="btn" target="_blank" rel="noopener">Book a discovery call</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  </footer>
+<!-- APPROACH + FAQ (GEO) -->
+<section class="sec" style="background:var(--white);">
+  <div class="narrow">
+    <span class="eyebrow reveal">The approach</span>
+    <h2 class="display reveal d1" style="margin-bottom:28px;">What somatic work<br><em>actually is.</em></h2>
+    <p class="lead reveal d1" style="margin-bottom:16px;"><strong style="font-weight:500;color:var(--text);">Somatic work</strong> starts from one idea: experience needs the body and the mind together. The body feels: a held breath, a locked jaw, a stomach that won't settle. The mind interprets, and without it, none of that becomes a decision. Most people are cut off in one of two directions: thinking straight past what the body is saying, or a body so loud it stopped being trustworthy.</p>
+    <p class="lead reveal d1" style="color:var(--muted);margin-bottom:40px;">Attention is the skill in between: the thing that lets you actually hear what the body's saying instead of drowning it out. Somatic yoga, somatic coaching, Human Design: they're all tools for turning the light back on.</p>
 
+    <div class="faq-item reveal"><h3>What is somatic yoga?</h3><p>Somatic yoga is a body-led practice that combines yoga movement with nervous system awareness. Unlike conventional yoga, which focuses on physical form and flexibility, somatic yoga works with sensation, breath, and body awareness to help the nervous system release stored stress patterns. It is grounded in polyvagal theory: the science of how the nervous system regulates states of safety, threat, and connection.</p></div>
+    <div class="faq-item reveal"><h3>How is somatic coaching different from therapy?</h3><p>Somatic coaching is an educational and experiential practice, not clinical therapy. It works with body sensations and survival patterns to support nervous system regulation and self-awareness. Clara Louis is a somatic practitioner and yoga teacher, not a licensed therapist. For clinical mental health support, a qualified therapist is recommended.</p></div>
+    <div class="faq-item reveal"><h3>Can somatic work help with anxiety, burnout, or feeling disconnected?</h3><p>Many people who come to somatic work are not in crisis. They are functioning, but feel disconnected, exhausted, or stuck in the same patterns despite knowing better. Somatic practice addresses the body's survival states at a physiological level, offering tools for regulation that work when mindset approaches haven't landed.</p></div>
+    <div class="faq-item reveal"><h3>Where does somatic work with Clara Louis take place?</h3><p>Clara works with clients online and in London, UK. Options range from free somatic audio practices to one-to-one somatic coaching.</p></div>
 
-  <!-- ══════════════════════════════════════════════════════
-       JAVASCRIPT
-  ══════════════════════════════════════════════════════ -->
-  <script>
-    // ── Nav scroll
-    const nav = document.getElementById('nav');
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 36);
-    }, { passive: true });
+    <p class="reveal" style="font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:24px;">Last updated: July 2026 &nbsp;·&nbsp; <a href="somatic-yoga.html" style="color:var(--clay-dark);font-weight:600;text-decoration:none;">What is somatic yoga? Read the full guide →</a></p>
+  </div>
+</section>
 
-    // ── Mobile menu
-    const ham = document.getElementById('ham');
-    const mobileNav = document.getElementById('mobile-nav');
-    const ham1 = document.getElementById('ham1');
-    const ham2 = document.getElementById('ham2');
-    const ham3 = document.getElementById('ham3');
+<!-- FINAL EXHALE -->
+<section class="exhale">
+  <div class="narrow">
+    <span class="eyebrow reveal">A final exhale</span>
+    <h2 class="reveal d1">You do not need to become more. You can become more you.</h2>
+    <a href="https://cal.com/clara-louis/discovery-call" class="btn btn-cream reveal d1" target="_blank" rel="noopener">Begin with a conversation</a>
+  </div>
+</section>
 
-    let menuOpen = false;
-    ham.addEventListener('click', () => {
-      menuOpen = !menuOpen;
-      mobileNav.classList.toggle('open', menuOpen);
-      ham.setAttribute('aria-expanded', menuOpen);
-      ham1.style.transform = menuOpen ? 'translateY(6.5px) rotate(45deg)' : '';
-      ham2.style.opacity   = menuOpen ? '0' : '1';
-      ham3.style.transform = menuOpen ? 'translateY(-6.5px) rotate(-45deg)' : '';
-    });
-    mobileNav.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        menuOpen = false;
-        mobileNav.classList.remove('open');
-        ham.setAttribute('aria-expanded', 'false');
-        ham1.style.transform = '';
-        ham2.style.opacity   = '1';
-        ham3.style.transform = '';
-      });
-    });
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="brand-assets/somatic-with-clara-logo-dark-transparent.svg" alt="Somatic with Clara" style="height:30px;width:auto;opacity:.6;" />
+    <div class="footer-links">
+      <a href="about.html" class="footer-link">About</a>
+      <a href="offers.html" class="footer-link">Work with Me</a>
+      <a href="quiz.html" class="footer-link">Quiz</a>
+      <a href="https://www.instagram.com/clara.holds.space/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.tiktok.com/@tobehuman.life" class="footer-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+    </div>
+    <p class="footer-copy">© 2026 Clara Louis · somaticwithclara.com</p>
+  </div>
+</footer>
 
-    // ── Scroll reveal
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+<script>
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+// Mobile menu
+const ham=document.getElementById('ham'),mobileNav=document.getElementById('mobile-nav');
+if(ham)ham.addEventListener('click',()=>mobileNav.classList.toggle('open'));
+// Reveal
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 
+<!-- cal.com inline embed -->
+<script>
+(function(C,A,L){let p=function(a,ar){a.q.push(ar);};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}if(ar[0]===L){const api=function(){p(api,arguments);};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace]);}else p(cal,ar);return;}p(cal,ar);};})(window,"https://app.cal.com/embed/embed.js","init");
+Cal("init","discovery-call",{origin:"https://cal.com"});
+Cal.ns["discovery-call"]("inline",{elementOrSelector:"#cal-inline",config:{layout:"month_view"},calLink:"clara-louis/discovery-call"});
+Cal.ns["discovery-call"]("ui",{hideEventTypeDetails:false,layout:"month_view"});
+</script>
 </body>
 </html>

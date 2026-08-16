@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80" role="img">
+  <title>Somatic with Clara</title>
+  <desc>Logo for Somatic with Clara — light background version</desc>
+
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700&amp;family=Permanent+Marker&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Spiral mark in Amber -->
+  <g transform="translate(4, 4)">
+    <path
+      d="M36 36 C36 29, 43 21, 51 26 C59 31, 59 45, 51 53 C41 63, 21 61, 13 46 C5 29, 14 7, 33 3 C55 -1, 71 16, 68 36 C65 55, 50 67, 36 67"
+      stroke="#D4904A"
+      stroke-width="3"
+      stroke-linecap="round"
+      fill="none"
+    />
+    <circle cx="36" cy="36" r="4.5" fill="#D4904A"/>
+    <circle cx="36" cy="67" r="2.5" fill="#D4904A"/>
+  </g>
+
+  <!-- Wordmark group -->
+  <g transform="translate(92, 8)">
+
+    <!-- SOMATIC in Plus Jakarta Sans Bold -->
+    <text
+      x="0"
+      y="38"
+      font-family="'Plus Jakarta Sans', sans-serif"
+      font-size="34"
+      font-weight="700"
+      fill="#1A2035"
+      letter-spacing="-0.5"
+    >SOMATIC</text>
+
+    <!-- "with" in Permanent Marker -->
+    <text
+      x="4"
+      y="58"
+      font-family="'Permanent Marker', cursive"
+      font-size="12"
+      fill="#D4904A"
+      transform="rotate(-1.5, 4, 58)"
+    >with</text>
+
+    <!-- CLARA in Plus Jakarta Sans Bold -->
+    <text
+      x="38"
+      y="58"
+      font-family="'Plus Jakarta Sans', sans-serif"
+      font-size="9"
+      font-weight="700"
+      fill="#D4904A"
+      letter-spacing="3"
+    >CLARA</text>
+
+  </g>
+
+</svg>

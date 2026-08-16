@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<link rel="icon" type="image/png" sizes="32x32" href="brand-assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="80x80" href="brand-assets/favicon.png">
+  <link rel="apple-touch-icon" href="brand-assets/favicon.png">
+  <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How Your Nervous System Works | Reclaim Your Life</title>
-<meta name="description" content="Your nervous system is your operating system — not background noise. Understand the architecture, why you can't think your way out of a triggered state, and where lasting change actually starts.">
+<meta name="description" content="Your nervous system is your operating system, not background noise. Understand the architecture, why you can't think your way out of a triggered state, and where lasting change actually starts.">
 <link rel="canonical" href="https://somaticwithclara.com/how-your-nervous-system-works" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="How Your Nervous System Works | Clara Louis" />
@@ -13,71 +16,79 @@
 <meta property="og:image" content="https://somaticwithclara.com/og-image.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="How Your Nervous System Works" />
-<meta name="twitter:description" content="Your nervous system is your operating system — not background noise. Learn the architecture behind why it runs the show." />
+<meta name="twitter:description" content="Your nervous system is your operating system, not background noise. Learn the architecture behind why it runs the show." />
 <meta name="twitter:image" content="https://somaticwithclara.com/og-image.jpg" />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500;1,6..72,600&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brand.css">
 <style>
-:root{
-  --bg:#EBF0E2;--white:#FFFFFF;--sage-light:#D4E8D8;
-  --sage:#5B9A6E;--sage-dark:#3D7A55;--violet:#7B5EA7;
-  --violet-dark:#5A4080;--dark:#1A2035;--text:#2A2A2A;
-  --body:#3A3A3A;--muted:#888;--faint:#BBB;--line:rgba(0,0,0,.08);
-}
+/* brand shell overrides */
+#nav{position:static;background:var(--bg);box-shadow:0 1px 0 var(--line);}
+#nav .nav-link{color:var(--text);}
+:root {
+      --bg: #FBF5EA; --white: #FFFFFF;
+      --sage-light: #E6EAD7; --sage: #7C8456; --sage-dark: #5E6A40;
+      --violet: #7E6F97; --violet-dark: #5E5078;
+      --ember: #DC5A22; --ember-dark: #C2491A; --amber: #DC5A22;
+      --marigold: #E8983A; --gold: #F2B65C; --honey: #F8DCA6; --honey-pale: #FCEFD2;
+      --cream: #FBF5EA; --bone: #F3EADB; --sand: #E7D8BF;
+      --dark: #2A2117; --text: #2A2117; --body: #4A3E2F;
+      --muted: #6E6051; --faint: #D8C5A4; --line: rgba(42,33,23,.1);
+    }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
+body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--text);}
 
-.ticker{background:var(--sage);padding:9px 0;overflow:hidden;}
+.ticker{background:var(--clay-deep);padding:9px 0;overflow:hidden;}
 .ticker-inner{display:flex;animation:tick 30s linear infinite;width:max-content;}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.tw{font-family:'Anton',sans-serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 22px;}
+.tw{font-family:'Newsreader',serif;font-size:11px;color:#fff;letter-spacing:2px;white-space:nowrap;padding:0 22px;}
 .td{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,.28);display:inline-block;flex-shrink:0;align-self:center;}
 
 .header{background:var(--dark);padding:36px 24px 30px;text-align:center;position:relative;overflow:hidden;}
 .circ{position:absolute;border-radius:50%;pointer-events:none;}
-.eyebrow{font-family:'Permanent Marker',cursive;font-style:normal;font-size:14px;color:var(--sage);transform:rotate(-2deg);display:inline-block;margin-bottom:8px;}
-.h1{font-family:'Anton',sans-serif;font-size:clamp(22px,5vw,34px);color:#fff;text-transform:uppercase;line-height:1.05;}
-.h1 em{color:var(--sage);font-style:normal;}
+.eyebrow{font-family:'Newsreader',serif;font-style:italic;font-size:15px;color:var(--clay);transform:none;display:inline-block;margin-bottom:8px;}
+.h1{font-family:'Newsreader',serif;font-size:clamp(22px,5vw,34px);color:#fff;text-transform:uppercase;line-height:1.05;}
+.h1 em{color:var(--clay);font-style:italic;}
 .header-sub{font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.5);margin-top:10px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.7;}
-.grad-div{height:4px;background:var(--sage);}
+.grad-div{height:3px;background:var(--clay);}
 
 .contents{background:var(--white);border-bottom:2px solid var(--line);}
 .contents-inner{max-width:680px;margin:0 auto;padding:16px 24px;}
-.contents-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.contents-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
 .contents-list{display:flex;flex-wrap:wrap;gap:6px;}
-.contents-pill{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;color:var(--sage-dark);background:rgba(91,154,110,.1);border:1.5px solid rgba(91,154,110,.2);border-radius:50px;padding:4px 12px;text-decoration:none;cursor:pointer;transition:all .15s;}
+.contents-pill{font-family:'Hanken Grotesk',sans-serif;font-size:12px;font-weight:500;color:var(--sage-dark);background:rgba(124,132,86,.1);border:1.5px solid rgba(124,132,86,.2);border-radius:50px;padding:4px 12px;text-decoration:none;cursor:pointer;transition:all .15s;}
 .contents-pill:hover{background:var(--sage);color:#fff;}
 
 .body{max-width:680px;margin:0 auto;padding:32px 24px 60px;}
 
 .lesson{margin-bottom:44px;scroll-margin-top:20px;}
-.lesson-num{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
-.lesson-title{font-family:'Anton',sans-serif;font-size:clamp(15px,2.8vw,19px);text-transform:uppercase;color:var(--dark);margin-bottom:6px;line-height:1.1;}
+.lesson-num{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage);margin-bottom:4px;}
+.lesson-title{font-family:'Newsreader',serif;font-size:clamp(15px,2.8vw,19px);text-transform:uppercase;color:var(--dark);margin-bottom:6px;line-height:1.1;}
 .lesson-title em{color:var(--sage);font-style:normal;}
 .lesson-sub{font-size:12px;font-weight:300;font-style:italic;color:var(--muted);margin-bottom:14px;}
 .body-text{font-size:14px;line-height:1.75;color:var(--body);margin-bottom:12px;}
 .body-text strong{font-weight:700;color:var(--text);}
 
-.divider{height:4px;background:var(--sage);width:36px;margin-bottom:40px;}
+.divider{display:block;height:3px;background:var(--clay);width:36px;margin-bottom:40px;}
 .divider.v{background:var(--violet);}
 
-.key-idea{border-left:4px solid var(--sage);background:rgba(91,154,110,.07);border-radius:0 12px 12px 0;padding:14px 18px;margin:14px 0 18px;}
+.key-idea{border-left:4px solid var(--sage);background:rgba(124,132,86,.07);border-radius:0 12px 12px 0;padding:14px 18px;margin:14px 0 18px;}
 .key-idea.violet{border-left-color:var(--violet);background:rgba(123,94,167,.07);}
-.ki-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:5px;}
+.ki-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:5px;}
 .ki-label.v{color:var(--violet-dark);}
 .ki-text{font-size:13px;line-height:1.65;color:var(--body);}
 
 /* NS Architecture diagram */
 .arch{background:var(--white);border:2px solid var(--line);border-radius:14px;overflow:hidden;margin:16px 0;}
 .arch-top{background:var(--dark);padding:12px 18px;display:flex;align-items:center;gap:10px;}
-.arch-top-label{font-family:'Anton',sans-serif;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;}
+.arch-top-label{font-family:'Newsreader',serif;font-size:11px;color:rgba(255,255,255,.45);letter-spacing:1.5px;text-transform:uppercase;}
 .arch-section{padding:14px 18px;border-bottom:1px solid var(--line);}
 .arch-section:last-child{border-bottom:none;}
 .arch-name{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
 .arch-desc{font-size:12px;font-weight:300;color:var(--muted);line-height:1.5;}
 .arch-indent{padding-left:20px;border-left:3px solid var(--sage-light);}
-.arch-badge{display:inline-block;font-family:'Anton',sans-serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:50px;margin-right:6px;}
+.arch-badge{display:inline-block;font-family:'Newsreader',serif;font-size:8px;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:50px;margin-right:6px;}
 .arch-badge.sns{background:rgba(186,117,23,.15);color:#7A4F00;}
-.arch-badge.pns{background:rgba(91,154,110,.15);color:var(--sage-dark);}
+.arch-badge.pns{background:rgba(124,132,86,.15);color:var(--sage-dark);}
 .arch-badge.ans{background:rgba(123,94,167,.15);color:var(--violet-dark);}
 
 /* Brain layers */
@@ -86,19 +97,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
 .brain-layer:last-child{border-bottom:none;}
 .bl-bar{width:6px;flex-shrink:0;border-radius:3px;min-height:40px;}
 .bl-content{}
-.bl-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.bl-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
 .bl-title{font-size:13px;font-weight:700;color:var(--text);margin-bottom:3px;}
 .bl-desc{font-size:12px;font-weight:300;color:var(--body);line-height:1.55;}
 
 .stat-highlight{display:flex;align-items:center;gap:14px;background:var(--white);border:2px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0;}
-.stat-num{font-family:'Anton',sans-serif;font-size:32px;color:var(--sage);flex-shrink:0;line-height:1;}
+.stat-num{font-family:'Newsreader',serif;font-size:32px;color:var(--sage);flex-shrink:0;line-height:1;}
 .stat-label{font-size:13px;color:var(--body);line-height:1.55;}
 .stat-label strong{font-weight:700;color:var(--text);}
 
 .dark-block{background:var(--dark);border-radius:14px;padding:20px 22px;margin:16px 0;position:relative;overflow:hidden;}
 .db-circ{position:absolute;border-radius:50%;pointer-events:none;}
-.db-label{font-family:'Permanent Marker',cursive;font-style:normal;font-size:13px;color:var(--sage);transform:rotate(-1deg);display:inline-block;margin-bottom:8px;}
-.db-title{font-family:'Anton',sans-serif;font-size:14px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
+.db-label{font-family:'Hanken Grotesk',sans-serif;font-style:normal;font-size:13px;color:var(--sage);transform:rotate(-1deg);display:inline-block;margin-bottom:8px;}
+.db-title{font-family:'Newsreader',serif;font-size:14px;text-transform:uppercase;color:#fff;margin-bottom:12px;}
 .db-row{display:flex;align-items:flex-start;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.06);}
 .db-row:last-child{border-bottom:none;}
 .db-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);margin-top:5px;flex-shrink:0;}
@@ -109,21 +120,21 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
 .example-compare{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0;}
 .example-card{background:var(--white);border:2px solid var(--line);border-radius:12px;padding:14px 16px;}
 .ec-icon{font-size:20px;margin-bottom:6px;}
-.ec-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
+.ec-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:4px;}
 .ec-label.safe{color:var(--sage-dark);}
 .ec-label.stress{color:var(--violet-dark);}
 .ec-body{font-size:12px;font-weight:300;color:var(--body);line-height:1.6;}
 
 .takeaway{background:var(--violet);border-radius:14px;padding:20px 22px;margin:20px 0;position:relative;overflow:hidden;}
 .tv-circ{position:absolute;border-radius:50%;pointer-events:none;}
-.takeaway-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
+.takeaway-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:6px;}
 .takeaway-text{font-size:14px;font-weight:300;font-style:italic;color:#fff;line-height:1.75;}
 
 .flow{background:var(--sage-light);border-radius:14px;padding:18px 20px;margin:14px 0;}
-.flow-label{font-family:'Anton',sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;}
-.flow-row{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid rgba(91,154,110,.15);}
+.flow-label{font-family:'Newsreader',serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;}
+.flow-row{display:flex;align-items:flex-start;gap:12px;padding:8px 0;border-bottom:1px solid rgba(124,132,86,.15);}
 .flow-row:last-child{border-bottom:none;}
-.flow-step{width:28px;height:28px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-family:'Anton',sans-serif;font-size:11px;color:#fff;flex-shrink:0;margin-top:1px;}
+.flow-step{width:28px;height:28px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-family:'Newsreader',serif;font-size:11px;color:#fff;flex-shrink:0;margin-top:1px;}
 .flow-text{font-size:13px;color:var(--body);line-height:1.6;}
 .flow-text strong{font-weight:700;color:var(--text);}
 
@@ -131,8 +142,42 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
   .example-compare{grid-template-columns:1fr;}
 }
 </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f7f03a7-24e9-4452-bc92-91b58256b1cc"></script>
 </head>
 <body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="/" aria-label="Somatic with Clara home">
+      <img src="brand-assets/somatic-with-clara-logo.svg" alt="Somatic with Clara" style="height:40px;width:auto;display:block;" />
+    </a>
+    <div style="display:flex;align-items:center;gap:30px;" class="desktop-nav">
+      <a href="about.html" class="nav-link">About</a>
+      <a href="offers.html" class="nav-link">Work with Me</a>
+      <a href="reclaim-your-life.html" class="nav-link">Community</a>
+      <div class="nav-dropdown">
+        <span class="nav-link nav-dropdown-toggle">Resources</span>
+        <div class="nav-dropdown-menu">
+          <a href="somatic-yoga.html">What is Somatic Yoga?</a>
+          <a href="nervous-system-states.html">Nervous System States</a>
+          <a href="fawn-response.html">The Fawn Response</a>
+        </div>
+      </div>
+      <a href="quiz.html" class="btn" style="padding:11px 26px;">Take the Quiz</a>
+    </div>
+    <button id="ham" type="button" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+  <div id="mobile-nav">
+    <a href="about.html">About</a>
+    <a href="offers.html">Work with Me</a>
+    <a href="reclaim-your-life.html">Community</a>
+    <a href="somatic-yoga.html">What is Somatic Yoga?</a>
+    <a href="nervous-system-states.html">Nervous System States</a>
+    <a href="fawn-response.html">The Fawn Response</a>
+    <a href="quiz.html">Take the Quiz</a>
+  </div>
+</nav>
 
 <div class="ticker">
   <div class="ticker-inner">
@@ -161,7 +206,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
   <div class="circ" style="width:80px;height:80px;border:2px solid #5B9A6E;opacity:.05;top:28px;left:8%;"></div>
   <div class="eyebrow">lesson 02</div>
   <div class="h1">How your <em>nervous system</em> works</div>
-  <p class="header-sub">Your nervous system is not background noise — it is your operating system. Walk through the architecture and understand why it runs the show.</p>
+  <p class="header-sub">Your nervous system is not background noise. It is your operating system. Walk through the architecture and understand why it runs the show.</p>
 </div>
 <div class="grad-div"></div>
 
@@ -186,7 +231,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
     <div class="lesson-num">01</div>
     <div class="lesson-title">The <em>architecture</em></div>
     <div class="lesson-sub">Two systems, one continuous conversation</div>
-    <p class="body-text">Your nervous system is a two-part communication network that runs every process in your body — voluntary and involuntary, conscious and unconscious — simultaneously, continuously, without rest.</p>
+    <p class="body-text">Your nervous system is a two-part communication network that runs every process in your body (voluntary and involuntary, conscious and unconscious) simultaneously, continuously, without rest.</p>
 
     <div class="arch">
       <div class="arch-top">
@@ -198,12 +243,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
       </div>
       <div class="arch-section">
         <div class="arch-name">Peripheral Nervous System (PNS)</div>
-        <div class="arch-desc">All nerves outside the brain and spinal cord. Transmits signals to and from the CNS — the body's internal messaging network.</div>
+        <div class="arch-desc">All nerves outside the brain and spinal cord. Transmits signals to and from the CNS, the body's internal messaging network.</div>
         <div style="height:10px;"></div>
         <div class="arch-indent">
           <div class="arch-section" style="padding:10px 0 6px;">
             <div class="arch-name"><span class="arch-badge ans">ANS</span>Autonomic Nervous System</div>
-            <div class="arch-desc">Controls involuntary functions — heart rate, blood pressure, breath, digestion. This is the part that matters most for regulation work. It divides into two branches.</div>
+            <div class="arch-desc">Controls involuntary functions: heart rate, blood pressure, breath, digestion. This is the part that matters most for regulation work. It divides into two branches.</div>
             <div style="height:8px;"></div>
             <div style="display:flex;gap:10px;flex-wrap:wrap;">
               <div style="flex:1;min-width:180px;background:rgba(186,117,23,.07);border-radius:10px;padding:10px 12px;">
@@ -211,7 +256,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
                 <div class="arch-name" style="font-size:12px;">Sympathetic</div>
                 <div class="arch-desc">Fight or flight. Mobilises energy, increases heart rate, prepares the body for action.</div>
               </div>
-              <div style="flex:1;min-width:180px;background:rgba(91,154,110,.07);border-radius:10px;padding:10px 12px;">
+              <div style="flex:1;min-width:180px;background:rgba(124,132,86,.07);border-radius:10px;padding:10px 12px;">
                 <div style="margin-bottom:3px;"><span class="arch-badge pns">PNS</span></div>
                 <div class="arch-name" style="font-size:12px;">Parasympathetic</div>
                 <div class="arch-desc">Rest and digest. Calming, restorative. Promotes digestion and conserves energy.</div>
@@ -220,13 +265,13 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
           </div>
           <div class="arch-section" style="padding:10px 0 0;">
             <div class="arch-name">Somatic Nervous System</div>
-            <div class="arch-desc">Controls conscious perception and voluntary movement of skeletal muscles — the part you're intentionally directing.</div>
+            <div class="arch-desc">Controls conscious perception and voluntary movement of skeletal muscles, the part you're intentionally directing.</div>
           </div>
         </div>
       </div>
     </div>
 
-    <p class="body-text">The sympathetic and parasympathetic systems are in constant dialogue — not opposites that switch on and off, but two forces maintaining a dynamic balance. Everything we do in this community is about restoring that balance when it's been tipped too far for too long.</p>
+    <p class="body-text">The sympathetic and parasympathetic systems are in constant dialogue, not opposites that switch on and off, but two forces maintaining a dynamic balance. Everything we do in this community is about restoring that balance when it's been tipped too far for too long.</p>
   </div>
 
   <div class="divider"></div>
@@ -236,38 +281,38 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
     <div class="lesson-num">02</div>
     <div class="lesson-title">Three layers <em>of the brain</em></div>
     <div class="lesson-sub">Why your thinking brain is the last to know</div>
-    <p class="body-text">To understand why regulation has to start in the body, you need to know how the brain is organised. Think of it as three nested layers, each with a different function — and a different relationship to your conscious awareness.</p>
+    <p class="body-text">To understand why regulation has to start in the body, you need to know how the brain is organised. Think of it as three nested layers, each with a different function, and a different relationship to your conscious awareness.</p>
 
     <div class="brain-layers">
       <div class="brain-layer" style="background:rgba(186,117,23,.04);">
         <div class="bl-bar" style="background:#BA7517;"></div>
         <div class="bl-content">
           <div class="bl-label">Innermost · Also called the reptilian brain</div>
-          <div class="bl-title">Brainstem — the survival brain</div>
-          <div class="bl-desc">The most ancient part of your brain. Controls heartbeat, breathing, and basic instincts. Its sole concern is keeping you alive. Thinks in sensation — not language, not logic.</div>
+          <div class="bl-title">Brainstem: the survival brain</div>
+          <div class="bl-desc">The most ancient part of your brain. Controls heartbeat, breathing, and basic instincts. Its sole concern is keeping you alive. Thinks in sensation, not language, not logic.</div>
         </div>
       </div>
       <div class="brain-layer" style="background:rgba(123,94,167,.04);">
         <div class="bl-bar" style="background:var(--violet);"></div>
         <div class="bl-content">
           <div class="bl-label">Middle layer · Where the amygdala lives</div>
-          <div class="bl-title">Limbic system — the emotional brain</div>
+          <div class="bl-title">Limbic system: the emotional brain</div>
           <div class="bl-desc">Home of the amygdala, which constantly scans for threats and stores emotionally charged memories. The limbic system processes feelings and shapes your sense of self and relationships.</div>
         </div>
       </div>
-      <div class="brain-layer" style="background:rgba(91,154,110,.04);">
+      <div class="brain-layer" style="background:rgba(124,132,86,.04);">
         <div class="bl-bar" style="background:var(--sage);"></div>
         <div class="bl-content">
           <div class="bl-label">Outermost layer · Only accessible when regulated</div>
-          <div class="bl-title">Prefrontal cortex — the thinking brain</div>
-          <div class="bl-desc">Planning, creativity, possibility, connection, reasoning. This is the part that can imagine a different future — and it only comes fully online when your nervous system feels safe.</div>
+          <div class="bl-title">Prefrontal cortex: the thinking brain</div>
+          <div class="bl-desc">Planning, creativity, possibility, connection, reasoning. This is the part that can imagine a different future, and it only comes fully online when your nervous system feels safe.</div>
         </div>
       </div>
     </div>
 
     <div class="key-idea violet">
       <div class="ki-label v">The critical piece</div>
-      <div class="ki-text">When the amygdala senses danger, it shuts down the prefrontal cortex. You literally lose access to creativity, clear thinking, and the ability to imagine new possibilities — not metaphorically, physiologically. This is why you can't think your way out of a triggered state. The thinking brain has gone offline.</div>
+      <div class="ki-text">When the amygdala senses danger, it shuts down the prefrontal cortex. You literally lose access to creativity, clear thinking, and the ability to imagine new possibilities, not metaphorically, physiologically. This is why you can't think your way out of a triggered state. The thinking brain has gone offline.</div>
     </div>
   </div>
 
@@ -277,7 +322,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
   <div class="lesson" id="survival-mode">
     <div class="lesson-num">03</div>
     <div class="lesson-title">What happens <em>in survival mode</em></div>
-    <div class="lesson-sub">The experience from the inside — two very different versions of you</div>
+    <div class="lesson-sub">The experience from the inside: two very different versions of you</div>
     <p class="body-text">Notice the difference between two versions of the same social situation: one where you feel confident and at ease, one where you feel stressed and on edge.</p>
 
     <div class="example-compare">
@@ -289,17 +334,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
       <div class="example-card">
         <div class="ec-icon">⚡</div>
         <div class="ec-label stress">Survival mode</div>
-        <p class="ec-body">You can't quite get your thoughts together. You're hyperfocused on small distractions — the saliva in your mouth, the noise outside, whether you look okay. Your brainstem is running the show.</p>
+        <p class="ec-body">You can't quite get your thoughts together. You're hyperfocused on small distractions: the saliva in your mouth, the noise outside, whether you look okay. Your brainstem is running the show.</p>
       </div>
     </div>
 
-    <p class="body-text">When survival mode activates, blood flow and neural activity concentrate in the brainstem and limbic system. The prefrontal cortex — your capacity for nuance, empathy, creativity and new thinking — goes dim. You are left with a narrowed, threat-focused field of awareness.</p>
-    <p class="body-text">The same happens with goals, relationships, money, and change of any kind. When your nervous system reads the new situation as threatening — not because it's dangerous, but because it's unfamiliar — it pulls you back from it. Not through sabotage. Through survival.</p>
+    <p class="body-text">When survival mode activates, blood flow and neural activity concentrate in the brainstem and limbic system. The prefrontal cortex (your capacity for nuance, empathy, creativity and new thinking) goes dim. You are left with a narrowed, threat-focused field of awareness.</p>
+    <p class="body-text">The same happens with goals, relationships, money, and change of any kind. When your nervous system reads the new situation as threatening (not because it's dangerous, but because it's unfamiliar), it pulls you back from it. Not through sabotage. Through survival.</p>
 
     <div class="takeaway">
       <div class="tv-circ" style="width:160px;height:160px;border:3px solid rgba(255,255,255,.08);top:-50px;right:-50px;border-radius:50%;"></div>
       <div class="takeaway-label">The reframe</div>
-      <div class="takeaway-text">The version of you that freezes, snaps, shuts down, or self-sabotages is not failing. It's a nervous system doing exactly what it was designed to do — protect you from what it has learned to read as dangerous. Understanding this is not an excuse. It's the starting point for change.</div>
+      <div class="takeaway-text">The version of you that freezes, snaps, shuts down, or self-sabotages is not failing. It's a nervous system doing exactly what it was designed to do: protect you from what it has learned to read as dangerous. Understanding this is not an excuse. It's the starting point for change.</div>
     </div>
   </div>
 
@@ -310,19 +355,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
     <div class="lesson-num">04</div>
     <div class="lesson-title">Why manifestation <em>starts in the body</em></div>
     <div class="lesson-sub">Thoughts don't stand a chance if your nervous system doesn't feel safe</div>
-    <p class="body-text">Most conversations about manifestation, mindset, or goal achievement focus on the mind — your thoughts, your beliefs, your vision. They are not wrong exactly, but they are starting in the wrong place.</p>
-    <p class="body-text">If your nervous system is stuck in survival, you don't have access to the brain's capacity to imagine new possibilities, create original solutions, or genuinely believe in a future that contradicts what your body has learned to expect. The thinking brain is what generates those capacities — and it's offline.</p>
+    <p class="body-text">Most conversations about manifestation, mindset, or goal achievement focus on the mind: your thoughts, your beliefs, your vision. They are not wrong exactly, but they are starting in the wrong place.</p>
+    <p class="body-text">If your nervous system is stuck in survival, you don't have access to the brain's capacity to imagine new possibilities, create original solutions, or genuinely believe in a future that contradicts what your body has learned to expect. The thinking brain is what generates those capacities, and it's offline.</p>
 
     <div class="stat-highlight">
       <div class="stat-num">80%</div>
       <div class="stat-label">of information travels <strong>from body to brain</strong>, not brain to body. Your body is the transmitter. Your mind is the receiver. Positive thinking is trying to work upstream against the current.</div>
     </div>
 
-    <p class="body-text">Affirmations, visualisations, and motivation all operate through the prefrontal cortex. But your body — which speaks through sensation, not language — is simultaneously sending a much louder counter-signal upward. And the body's signal takes precedence, because it's older, faster, and the brain trusts it more.</p>
+    <p class="body-text">Affirmations, visualisations, and motivation all operate through the prefrontal cortex. But your body (which speaks through sensation, not language) is simultaneously sending a much louder counter-signal upward. And the body's signal takes precedence, because it's older, faster, and the brain trusts it more.</p>
 
     <div class="key-idea">
       <div class="ki-label">What actually changes things</div>
-      <div class="ki-text">Your nervous system needs new felt evidence — not new thoughts. A regulated nervous system that has genuinely experienced safety, capability, and ease — even in small moments — begins to update its map of what's possible. That's where lasting change starts. Not in the mind. In the body.</div>
+      <div class="ki-text">Your nervous system needs new felt evidence, not new thoughts. A regulated nervous system that has genuinely experienced safety, capability, and ease (even in small moments) begins to update its map of what's possible. That's where lasting change starts. Not in the mind. In the body.</div>
     </div>
   </div>
 
@@ -333,8 +378,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
     <div class="lesson-num">05</div>
     <div class="lesson-title">Chronic stress <em>and the brain</em></div>
     <div class="lesson-sub">What sustained dysregulation actually does to your nervous system</div>
-    <p class="body-text">Short-term stress is normal and adaptive — your nervous system ramps up, handles the threat, and returns to baseline. The problem is chronic stress: a nervous system that never fully returns to baseline, because the threat never fully resolves.</p>
-    <p class="body-text">When the stress response runs continuously — for months or years — it begins to reshape the nervous system itself. The amygdala becomes more sensitive and reactive. The prefrontal cortex becomes thinner and less active. The window of what feels manageable narrows. And the system that was designed to be a temporary state becomes the new default.</p>
+    <p class="body-text">Short-term stress is normal and adaptive. Your nervous system ramps up, handles the threat, and returns to baseline. The problem is chronic stress: a nervous system that never fully returns to baseline, because the threat never fully resolves.</p>
+    <p class="body-text">When the stress response runs continuously (for months or years) it begins to reshape the nervous system itself. The amygdala becomes more sensitive and reactive. The prefrontal cortex becomes thinner and less active. The window of what feels manageable narrows. And the system that was designed to be a temporary state becomes the new default.</p>
 
     <div class="dark-block">
       <div class="db-circ" style="width:160px;height:160px;border:3px solid rgba(255,255,255,.07);top:-50px;right:-50px;"></div>
@@ -342,23 +387,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
       <div class="db-title">The accumulation</div>
       <div class="db-row">
         <div class="db-dot"></div>
-        <div class="db-text"><strong>Fatigue and sleep disruption</strong> — the system can't downregulate enough to restore. Rest doesn't feel restorative even when it happens.</div>
+        <div class="db-text"><strong>Fatigue and sleep disruption:</strong> the system can't downregulate enough to restore. Rest doesn't feel restorative even when it happens.</div>
       </div>
       <div class="db-row">
         <div class="db-dot"></div>
-        <div class="db-text"><strong>Brain fog and impaired decision-making</strong> — reduced prefrontal cortex activity means thinking clearly becomes genuinely harder, not just a perception.</div>
+        <div class="db-text"><strong>Brain fog and impaired decision-making:</strong> reduced prefrontal cortex activity means thinking clearly becomes genuinely harder, not just a perception.</div>
       </div>
       <div class="db-row">
         <div class="db-dot"></div>
-        <div class="db-text"><strong>Emotional dysregulation</strong> — smaller triggers produce larger responses. The system is primed, not calm, and tips into survival more easily.</div>
+        <div class="db-text"><strong>Emotional dysregulation:</strong> smaller triggers produce larger responses. The system is primed, not calm, and tips into survival more easily.</div>
       </div>
       <div class="db-row">
         <div class="db-dot"></div>
-        <div class="db-text"><strong>Autopilot living</strong> — many women describe feeling like they're going through the motions. That's a nervous system in low-grade survival — present in the body, absent from life.</div>
+        <div class="db-text"><strong>Autopilot living:</strong> many women describe feeling like they're going through the motions. That's a nervous system in low-grade survival, present in the body, absent from life.</div>
       </div>
     </div>
 
-    <p class="body-text">This is the state many people arrive in when they find this work. Not because something is fundamentally broken — but because the system has been working too hard, for too long, with too little genuine recovery.</p>
+    <p class="body-text">This is the state many people arrive in when they find this work. Not because something is fundamentally broken, but because the system has been working too hard, for too long, with too little genuine recovery.</p>
   </div>
 
   <div class="divider"></div>
@@ -368,54 +413,76 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);}
     <div class="lesson-num">06</div>
     <div class="lesson-title">Where <em>to start</em></div>
     <div class="lesson-sub">The only door that opens from the inside</div>
-    <p class="body-text">If 80% of neural communication travels upward — from body to brain — then the nervous system can only receive safety signals that originate in the body. Signals sent downward from the thinking mind compete with a much louder, faster signal already travelling the other direction.</p>
-    <p class="body-text">This is why we start with the body. Not because the mind doesn't matter — it does. But because the body is upstream. And upstream is the only place where lasting change can actually begin.</p>
+    <p class="body-text">If 80% of neural communication travels upward (from body to brain) then the nervous system can only receive safety signals that originate in the body. Signals sent downward from the thinking mind compete with a much louder, faster signal already travelling the other direction.</p>
+    <p class="body-text">This is why we start with the body. Not because the mind doesn't matter. It does. But because the body is upstream. And upstream is the only place where lasting change can actually begin.</p>
 
     <div class="flow">
       <div class="flow-label">The bottom-up sequence</div>
       <div class="flow-row">
         <div class="flow-step">1</div>
-        <div class="flow-text"><strong>Body</strong> — movement, breath, touch, sound, and somatic sensation reach the brainstem first. This is where the safety signal has to start.</div>
+        <div class="flow-text"><strong>Body:</strong> movement, breath, touch, sound, and somatic sensation reach the brainstem first. This is where the safety signal has to start.</div>
       </div>
       <div class="flow-row">
         <div class="flow-step">2</div>
-        <div class="flow-text"><strong>Brainstem</strong> — reads the signal and begins to downregulate the survival response. Heart rate steadies. Breath slows. Muscle tension releases.</div>
+        <div class="flow-text"><strong>Brainstem:</strong> reads the signal and begins to downregulate the survival response. Heart rate steadies. Breath slows. Muscle tension releases.</div>
       </div>
       <div class="flow-row">
         <div class="flow-step">3</div>
-        <div class="flow-text"><strong>Limbic system</strong> — as the body calms, emotion settles. The emotional brain stops amplifying threat signals.</div>
+        <div class="flow-text"><strong>Limbic system:</strong> as the body calms, emotion settles. The emotional brain stops amplifying threat signals.</div>
       </div>
       <div class="flow-row">
         <div class="flow-step">4</div>
-        <div class="flow-text"><strong>Prefrontal cortex</strong> — comes back online. Clear thinking, creativity, connection, and the ability to imagine a different future return.</div>
+        <div class="flow-text"><strong>Prefrontal cortex:</strong> comes back online. Clear thinking, creativity, connection, and the ability to imagine a different future return.</div>
       </div>
     </div>
 
     <div class="takeaway">
       <div class="tv-circ" style="width:160px;height:160px;border:3px solid rgba(255,255,255,.08);top:-50px;right:-50px;border-radius:50%;"></div>
       <div class="takeaway-label">The invitation</div>
-      <div class="takeaway-text">We are going to heal and create and change — but we are going to do it through the body. Not because it's softer or easier, but because that's how the nervous system actually works. Everything in this community builds on this. The body comes first — always.</div>
+      <div class="takeaway-text">We are going to heal and create and change, but we are going to do it through the body. Not because it's softer or easier, but because that's how the nervous system actually works. Everything in this community builds on this. The body comes first, always.</div>
     </div>
   </div>
 
   <!-- Quiz link -->
   <div style="background:var(--dark);border-radius:14px;padding:22px 24px;margin-top:12px;position:relative;overflow:hidden;">
     <div style="position:absolute;width:160px;height:160px;border:3px solid rgba(255,255,255,.07);top:-50px;right:-50px;border-radius:50%;pointer-events:none;"></div>
-    <div style="font-family:'Permanent Marker',cursive;font-size:13px;color:var(--sage);transform:rotate(-1.5deg);display:inline-block;margin-bottom:8px;">take it further</div>
-    <div style="font-family:'Anton',sans-serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:8px;">Want to see this in your own life?</div>
-    <p style="font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.6);margin-bottom:18px;line-height:1.7;">The companion reflection — not a test, not a score. Just questions that ask you to notice where these concepts are already showing up in how your nervous system runs.</p>
-    <a href="/ns-works-quiz" style="font-family:'Anton',sans-serif;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--sage);color:#fff;border-radius:50px;padding:12px 24px;text-decoration:none;display:inline-block;transition:all .2s;">Open the reflection →</a>
+    <div style="font-family:'Newsreader',serif;font-style:italic;font-size:14px;color:var(--clay);display:inline-block;margin-bottom:8px;">take it further</div>
+    <div style="font-family:'Newsreader',serif;font-size:18px;text-transform:uppercase;color:#fff;margin-bottom:8px;">Want to see this in your own life?</div>
+    <p style="font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.6);margin-bottom:18px;line-height:1.7;">The companion reflection, not a test, not a score. Just questions that ask you to notice where these concepts are already showing up in how your nervous system runs.</p>
+    <a href="/ns-works-quiz" style="font-family:'Hanken Grotesk',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;background:var(--clay);color:#fff;border-radius:50px;padding:12px 24px;text-decoration:none;display:inline-block;transition:all .2s;">Open the reflection →</a>
   </div>
 
   <!-- Skool CTA -->
-  <div style="background:var(--sage);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;margin-top:12px;margin-bottom:0;">
+  <div style="background:var(--clay-deep);border-radius:16px;padding:28px 24px;text-align:center;position:relative;overflow:hidden;margin-top:12px;margin-bottom:0;">
     <div style="position:absolute;width:160px;height:160px;border:3px solid rgba(255,255,255,.08);border-radius:50%;top:-50px;right:-50px;pointer-events:none;"></div>
-    <div style="font-family:'Permanent Marker',cursive;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:4px;">Reclaim Your Life</div>
-    <h3 style="font-family:'Anton',sans-serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;">This is where the work continues.</h3>
+    <div style="font-family:'Hanken Grotesk',sans-serif;font-size:13px;color:rgba(255,255,255,.7);transform:rotate(-1deg);display:inline-block;margin-bottom:4px;">Reclaim Your Life</div>
+    <h3 style="font-family:'Newsreader',serif;font-size:20px;text-transform:uppercase;color:#fff;margin-bottom:8px;">This is where the work continues.</h3>
     <p style="font-size:13px;font-weight:300;font-style:italic;color:rgba(255,255,255,.85);margin-bottom:20px;line-height:1.65;max-width:420px;margin-left:auto;margin-right:auto;">Inside the community: practices mapped to your nervous system state, a full somatic library, and people doing exactly this work.</p>
-    <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" style="font-family:'Anton',sans-serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 26px;text-decoration:none;display:inline-block;">Join the community →</a>
+    <a href="https://www.skool.com/the-nervous-system-library-7770/about" target="_blank" style="font-family:'Newsreader',serif;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;background:var(--dark);color:#fff;border-radius:50px;padding:13px 26px;text-decoration:none;display:inline-block;">Join the community →</a>
   </div>
 
 </div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="brand-assets/somatic-with-clara-logo-dark-transparent.svg" alt="Somatic with Clara" style="height:30px;width:auto;opacity:.6;" />
+    <div class="footer-links">
+      <a href="/" class="footer-link">Home</a>
+      <a href="about.html" class="footer-link">About</a>
+      <a href="offers.html" class="footer-link">Work with Me</a>
+      <a href="quiz.html" class="footer-link">Quiz</a>
+      <a href="https://www.instagram.com/clara.holds.space/" class="footer-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://www.youtube.com/channel/UC1Ew2V6Eg06v5syZQI9idyg" class="footer-link" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.tiktok.com/@tobehuman.life" class="footer-link" target="_blank" rel="noopener noreferrer">TikTok</a>
+    </div>
+    <p class="footer-copy">© 2026 Clara Louis · somaticwithclara.com</p>
+  </div>
+</footer>
+
+<script>
+const ham=document.getElementById('ham'),mobileNav=document.getElementById('mobile-nav');
+if(ham)ham.addEventListener('click',()=>mobileNav.classList.toggle('open'));
+</script>
 </body>
 </html>

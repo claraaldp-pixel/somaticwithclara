@@ -2,6 +2,7 @@ node_modules/
 .DS_Store
 temporary screenshots/
 *.log
+.worktrees/
 
 # Secrets and build output — must never be committed
 .env
@@ -22,3 +23,11 @@ package-lock.json
 CLAUDE - web design.md
 Website idea.webp
 site-config.md
+.gstack/
+.impeccable/
+
+# Credentials
+.env
+
+# Higgsfield intermediate artefacts (source captures + composed first frames)
+scripts/higgsfield/out/
