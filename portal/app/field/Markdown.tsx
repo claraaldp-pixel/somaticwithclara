@@ -1,7 +1,9 @@
 import ReactMarkdown from 'react-markdown'
 
 /**
- * The six window fields that carry vault Markdown, rendered.
+ * The seven window fields that carry vault Markdown, rendered: `nervous.text`,
+ * `sun_reading`, `earth_reading`, `bridge.text`, `lookback.text`, `axis.lead`,
+ * and `practice.text`.
  *
  * Phase 1 deliberately passes this prose through unconverted — assembling data
  * and deciding presentation are separate jobs. This is where the second one

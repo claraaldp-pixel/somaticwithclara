@@ -1,5 +1,6 @@
 import type { Lunation, Window } from '@/lib/field/types'
 import Markdown from './Markdown'
+import { TIME_ZONE } from './page'
 
 interface Props {
   window: Window
@@ -8,7 +9,10 @@ interface Props {
   lunations: Lunation[]
 }
 
-const DATE = { day: 'numeric', month: 'short' } as const
+// Dates must render in the same reference zone page.tsx uses to select the
+// window and match lunations. The server process's default zone (UTC on
+// Vercel) can otherwise show a date a day early or late.
+const DATE = { day: 'numeric', month: 'short', timeZone: TIME_ZONE } as const
 
 function span(window: Window): string {
   const start = new Date(window.start).toLocaleDateString('en-GB', DATE)

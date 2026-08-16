@@ -10,7 +10,7 @@ import WindowCard from './WindowCard'
 // live at build time and silently keep serving it after the window rolls over.
 export const dynamic = 'force-dynamic'
 
-const TIME_ZONE = 'Europe/London'
+export const TIME_ZONE = 'Europe/London'
 
 export default async function FieldPage() {
   const session = await getSession()
