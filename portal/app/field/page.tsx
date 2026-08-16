@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { getSession } from '@/lib/session'
 import { dayIndex, lunationsOn, nextWindow, selectWindow } from '@/lib/field/select'
+import { TIME_ZONE } from '@/lib/field/constants'
 import type { FieldData } from '@/lib/field/types'
 import data from '@/lib/field/windows.json'
 import WindowCard from './WindowCard'
@@ -9,8 +10,6 @@ import WindowCard from './WindowCard'
 // prerendered — a statically rendered page would serve whichever window was
 // live at build time and silently keep serving it after the window rolls over.
 export const dynamic = 'force-dynamic'
-
-export const TIME_ZONE = 'Europe/London'
 
 export default async function FieldPage() {
   const session = await getSession()

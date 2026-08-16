@@ -1,6 +1,6 @@
 import type { Lunation, Window } from '@/lib/field/types'
+import { TIME_ZONE } from '@/lib/field/constants'
 import Markdown from './Markdown'
-import { TIME_ZONE } from './page'
 
 interface Props {
   window: Window
