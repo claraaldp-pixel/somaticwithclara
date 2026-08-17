@@ -1,4 +1,4 @@
-import type { Lunation, Window } from '@/lib/field/types'
+import type { Lunation, Pole as PoleData, Window } from '@/lib/field/types'
 import { TIME_ZONE } from '@/lib/field/constants'
 import Markdown from './Markdown'
 
@@ -81,21 +81,16 @@ function Hero({
 
 function Pole({
   side,
-  gate,
-  name,
-  centre,
-  frame,
+  pole,
   reading,
   fallback,
 }: {
   side: string
-  gate: number
-  name: string | null
-  centre: string | null
-  frame: string
+  pole: PoleData
   reading: string | null
   fallback?: string
 }) {
+  const { gate, name, centre, frame, essence, somatic } = pole
   return (
     <div className="bg-rbd-surface px-5 py-5">
       <h3 className={`${LABEL} text-rbd-muted`}>
@@ -106,12 +101,27 @@ function Pole({
         {frame}
         {centre ? ` · ${centre}` : ''}
       </p>
+
+      {/* One body line, best available. `essence` beats `earth_fallback`
+          because the fallback is generated from theme labels — showing both
+          repeats the gate name and its themes twice in one cell. */}
       {reading ? (
         <div className="mt-3">
           <Markdown>{reading}</Markdown>
         </div>
+      ) : essence ? (
+        <p className="mt-3 text-sm leading-relaxed text-rbd-text">{essence}</p>
       ) : (
         fallback && <p className="mt-3 text-sm leading-relaxed text-rbd-text">{fallback}</p>
+      )}
+
+      {somatic && (
+        <div className="mt-4 border-t border-rbd-line pt-3">
+          <h4 className={`${LABEL} text-rbd-muted`}>In the body</h4>
+          <div className="mt-1.5">
+            <Markdown>{somatic}</Markdown>
+          </div>
+        </div>
       )}
     </div>
   )
@@ -173,6 +183,18 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
         {field.axis.lead && <Markdown>{field.axis.lead}</Markdown>}
       </section>
 
+      {/* Set apart rather than boxed: it is the one thing on the card meant to
+          be carried rather than read, and the sage-tinted blocks are already
+          spoken for by the lunation and the bridge. */}
+      {field.question && (
+        <section className="border-y border-rbd-line py-8 text-center">
+          <h2 className={`${LABEL} text-rbd-muted`}>The question</h2>
+          <p className="mt-3 font-serif text-2xl leading-snug text-rbd-ink italic">
+            {field.question}
+          </p>
+        </section>
+      )}
+
       {field.risk && (
         <Caution label="The risk in this window">
           <p className="leading-relaxed text-rbd-text">{field.risk}</p>
@@ -186,24 +208,20 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
           foot of the shorter column. A border on the cell leaves the surplus
           as plain surface, so uneven columns read as uneven text. */}
       <div className="grid divide-y divide-rbd-line border border-rbd-line bg-rbd-surface sm:grid-cols-2 sm:divide-x sm:divide-y-0">
-        <Pole
-          side="Sun"
-          gate={field.axis.sun.gate}
-          name={field.axis.sun.name}
-          centre={field.axis.sun.centre}
-          frame={field.axis.sun.frame}
-          reading={field.sun_reading}
-        />
+        <Pole side="Sun" pole={field.axis.sun} reading={field.sun_reading} />
         <Pole
           side="Earth"
-          gate={earth.gate}
-          name={earth.name}
-          centre={earth.centre}
-          frame={earth.frame}
+          pole={earth}
           reading={field.earth_reading}
           fallback={field.earth_fallback}
         />
       </div>
+
+      {field.shows_up && (
+        <Section label="How it shows up">
+          <Markdown>{field.shows_up}</Markdown>
+        </Section>
+      )}
 
       {field.bridge && (
         <section className="border-s-2 border-rbd-sage bg-rbd-sage-light/60 py-4 pe-4 ps-5">

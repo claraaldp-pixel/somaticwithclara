@@ -6,6 +6,9 @@ export interface Pole {
   name: string | null
   centre: string | null
   frame: string
+  /** Read per pole — either gate may have this written. */
+  essence: string | null
+  somatic: string | null
 }
 
 export interface Axis {
@@ -55,6 +58,14 @@ export interface Window {
   axis: Axis
   bridge: Bridge | null
   risk: string | null
+  /** The Sun gate's — the window is the Sun's transit. */
+  question: string | null
+  shows_up: string | null
+  /**
+   * The Transit `### Sun` / `### Earth` subsections, removed from the vault
+   * on 2026-08-17 and 0/64 since. Kept because they may return; `essence` on
+   * each pole carries what they used to.
+   */
   sun_reading: string | null
   earth_reading: string | null
   earth_fallback: string
