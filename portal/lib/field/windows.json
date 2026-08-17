@@ -2,7 +2,7 @@
   "anchor": "Leo",
   "start": "2026-07-22T20:13:05.428919+01:00",
   "end": "2027-07-23T02:04:40.620874+01:00",
-  "generated": "2026-08-14T11:04:06.097377+01:00",
+  "generated": "2026-08-16T22:52:54.568853+01:00",
   "lunations": [
     {
       "phase": "full",
@@ -360,7 +360,12 @@
         "level": "centre",
         "text": "Keeps us alive and on track — sends hormonal messages to the thyroid glands. The Ajna is where abstract inspiration from the Head becomes something the body can begin to process."
       },
-      "practice": null,
+      "practice": {
+        "type": null,
+        "media": null,
+        "duration": null,
+        "text": "For Gate 49, grounding = stay in the body while the charge is still live. The body isn't the destination, it's the container. The work is remaining present to an emotional wave without discharging it as rejection — and without going Inert.\n\nFive elements:\n\n1. The Root is the literal grounding. In the bodygraph, Gate 19's Root energy is the ground under Gate 49's principle. Somatically that's pelvis, legs, feet, weight, contact with a surface. Not head-to-feet descent — bottom-up support. Feet on the Ground, Push Feet into the Ground + Release, Push Palms Into Thighs + Release.\n\n2. Grounding is the pause inside the wave, not the end of it. The Solar Plexus practice is waiting for clarity across the wave rather than acting at its peak. In the body that means capacity to hold activation without needing it resolved — which is nervous-system capacity work, not calming work. Butterfly Tapping is the right tool: bilateral stimulation keeps regulation online during processing rather than shutting processing down.\n\n3. Grounding through physical need, not insight. Gene Keys is unusually blunt that this shadow is physical — hunger, temperature, sleep, touch, sex. When someone with this gate is reactive, the honest first question is often whether they're fed, warm, and rested. Meeting the animal need takes the charge out of the principle.\n\n4. Grounding through contact, because the fear is rejection. The counter-signal to \"I am about to be cast out\" is felt containment. Havening Touch and Collapsed Self-Hug address the fear at its actual level — C-tactile fibres, social-safety signalling — rather than reasoning with it.\n\n5. The caution, and it's the important one: for Gate 49, calm is not proof of regulation. The repressive pole presents as groundedness — flat, unbothered, stable, no fight. A meditation that only soothes will land straight into Inert and confirm it. So grounding for this gate has to include a live check: is this softness, or is this absence? — and a route back to agency if it's absence. Connect to Felt Sense of Relaxed Spaces asks that question honestly (soft-and-alive vs numb-and-flat). Slow Fist Curl + Release and Self-Supported Upright Spine restore voluntary tone if the answer is flat. A gentle seated Tense and Release lets the rejecting charge mobilise and return, teaching the system that activation can come back down without anyone getting cut off."
+      },
       "lookback": null,
       "crossrefs": {
         "opposite": "The Sun will travel to Gate 49 on 7–13 Feb 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
@@ -422,7 +427,7 @@
       "start": "2026-08-23T06:25:38.025869+01:00",
       "end": "2026-08-29T02:23:19.859060+01:00",
       "days": 6,
-      "tagline": null,
+      "tagline": "the purity problem in the body",
       "axis": {
         "sentence": "Awareness gathers in the Solar Plexus (Earth · 55 Creative Spirit) and looks for action through the Sacral (Sun · 59 Intimacy).",
         "lead": null,
@@ -439,7 +444,10 @@
           "frame": "what to ground yourself in"
         }
       },
-      "bridge": null,
+      "bridge": {
+        "sign": "Virgo",
+        "text": "the season opens on the sign's least comfortable subject. Virgo is the Virgin — purity, untaintedness — and the wheel starts it in the gate of intimacy and sexuality. Gate 59's low expression is *controlling how one is accepted and loved*, which is the perfectionism engine applied to a body and a relationship. And 59's high expression names the actual mechanism: acceptance of the fear, not its elimination."
+      },
       "risk": null,
       "sun_reading": null,
       "earth_reading": null,
@@ -465,7 +473,7 @@
       "start": "2026-08-29T02:23:19.859060+01:00",
       "end": "2026-09-03T21:58:30.739531+01:00",
       "days": 6,
-      "tagline": null,
+      "tagline": "the workaholism window",
       "axis": {
         "sentence": "Awareness gathers in the Solar Plexus (Earth · 37 Friendship) and looks for action through the Heart (Sun · 40 Independent).",
         "lead": null,
@@ -482,7 +490,10 @@
           "frame": "what to ground yourself in"
         }
       },
-      "bridge": null,
+      "bridge": {
+        "sign": "Virgo",
+        "text": "this is the strongest correspondence in the whole season. Gate 40's low expression lists **digestive issues and burnout in the same breath**, which is the Virgo body verbatim. Virgo rules the 6th house of health *and service*, and gate 40 is service that has curdled into hero-complex. The high expression — relaxation, boundaries, welcoming support — is the Virgo prescription: acceptance, and stopping the hammering."
+      },
       "risk": null,
       "sun_reading": null,
       "earth_reading": null,
@@ -508,10 +519,10 @@
       "start": "2026-09-03T21:58:30.739531+01:00",
       "end": "2026-09-09T17:06:19.011168+01:00",
       "days": 6,
-      "tagline": null,
+      "tagline": "both lights in the head",
       "axis": {
         "sentence": "Both poles sit in the Head (Sun · 64 Fractal Stream, Earth · 63 Doubting). Nothing crosses between centres this week — the whole axis turns inward on the Head.",
-        "lead": null,
+        "lead": "The only all-Head window of the season, and it lands mid-season.",
         "sun": {
           "gate": 64,
           "name": "Fractal Stream",
@@ -525,7 +536,10 @@
           "frame": "what to ground yourself in"
         }
       },
-      "bridge": null,
+      "bridge": {
+        "sign": "Virgo",
+        "text": "this is the Virgo trap given a mechanism. Confusion standing on doubt, with no Throat to speak it out and no Root to move it. The lesson's warning — swallowed by detail, losing the big picture, overwhelm and mental stress, *needing the hard facts and dismissing the intuitive* — is gate 63 low almost word for word. And both high expressions are the same instruction: **witness the mind, don't identify with it.** Neutral inquiry rather than verdict."
+      },
       "risk": null,
       "sun_reading": null,
       "earth_reading": null,
@@ -555,7 +569,7 @@
       "start": "2026-09-09T17:06:19.011168+01:00",
       "end": "2026-09-15T11:48:42.620787+01:00",
       "days": 6,
-      "tagline": null,
+      "tagline": "the purification window",
       "axis": {
         "sentence": "Awareness gathers in the Solar Plexus (Earth · 22 Grace) and looks for recognition in the Ajna (Sun · 47 Mental Processing).",
         "lead": null,
@@ -572,7 +586,10 @@
           "frame": "what to ground yourself in"
         }
       },
-      "bridge": null,
+      "bridge": {
+        "sign": "Virgo",
+        "text": "gate 47's high expression *is* the Virgo process — sifting the subconscious, separating what carries forward from what gets eliminated, and calling the result transformation. The Hermit and Cerberus: facing the lower world, purifying the past so the vital force can move cleanly. **The New Moon on 11 Sep falls in 47.2** — the season's reset lands exactly here."
+      },
       "risk": null,
       "sun_reading": null,
       "earth_reading": null,
@@ -598,7 +615,7 @@
       "start": "2026-09-15T11:48:42.620787+01:00",
       "end": "2026-09-21T06:07:51.730627+01:00",
       "days": 6,
-      "tagline": null,
+      "tagline": "the whole window in the emotional centre",
       "axis": {
         "sentence": "Both poles sit in the Solar Plexus (Sun · 6 Friction, Earth · 36 Experiences). Nothing crosses between centres this week — the whole axis turns inward on the Solar Plexus.",
         "lead": null,
@@ -615,7 +632,10 @@
           "frame": "what to ground yourself in"
         }
       },
-      "bridge": null,
+      "bridge": {
+        "sign": "Virgo",
+        "text": "both lights in the Solar Plexus, no mental centre in sight — after two windows of nothing but head. The mind that spent 3–15 September analysing is handed pure emotional weather and no apparatus to process it. Gate 6's *\"living a small life to feel safe\"* and gate 36's *\"guilt about inner turmoil\"* are both the perfectionist's move: shrink the exposure, then feel bad about the shrinking."
+      },
       "risk": null,
       "sun_reading": null,
       "earth_reading": null,
@@ -641,10 +661,10 @@
       "start": "2026-09-21T06:07:51.730627+01:00",
       "end": "2026-09-27T00:04:01.805662+01:00",
       "days": 6,
-      "tagline": null,
+      "tagline": "the answer",
       "axis": {
         "sentence": "Both poles sit in the G Centre (Sun · 46 Love of the Body, Earth · 25 Universal Love). Nothing crosses between centres this week — the whole axis turns inward on the direction of Self — coming to oneself, re-aligning, self-love, depending on the exact gate meaning.",
-        "lead": null,
+        "lead": "Both lights in the G Centre. The season closes here.",
         "sun": {
           "gate": 46,
           "name": "Love of the Body",
@@ -658,7 +678,10 @@
           "frame": "what to ground yourself in"
         }
       },
-      "bridge": null,
+      "bridge": {
+        "sign": "Virgo",
+        "text": "read gate 46's low expression next to the lesson's description of the Virgo constitution — an ideal image of how the body *should* be, compared against the actual body, held as tension. *\"Mistrust or controlling over body functions\"* in a sign that rules digestion. *\"Obsessing over your body\"* in the sign of perfectionism. The wheel names the disease and then, in the same window, names the cure: **trust where the body brings you.**"
+      },
       "risk": null,
       "sun_reading": null,
       "earth_reading": null,

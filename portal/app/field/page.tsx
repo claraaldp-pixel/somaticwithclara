@@ -26,10 +26,12 @@ export default async function FieldPage() {
 
   if (!current) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-stone-50 px-4">
-        <div className="max-w-md text-center space-y-3">
-          <h1 className="text-2xl font-light text-stone-800">Outside the current year</h1>
-          <p className="text-stone-500 text-sm leading-relaxed">
+      <div className="flex min-h-screen items-center justify-center px-6">
+        <div className="max-w-md space-y-4 text-center">
+          <h1 className="font-display text-3xl font-semibold tracking-tight text-rbd-ink uppercase">
+            Outside the current year
+          </h1>
+          <p className="text-sm leading-relaxed text-rbd-muted">
             Today falls outside the calendar that has been built. The generated
             year has ended and needs to be regenerated from the vault, then
             copied into the portal and deployed, before this page can show a

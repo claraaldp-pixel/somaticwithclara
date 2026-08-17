@@ -13,6 +13,54 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Regulation by Design palette, lifted verbatim from report-template-v3.html
+   so the report and the portal cannot drift apart. Only /field consumes these
+   today; defining them here rather than in the route keeps Tailwind's utility
+   generation in one place.
+
+   Two of the brand colours cannot legally carry small text on the cream
+   ground: terracotta #DC5A22 measures 3.50:1 and sage #7C8456 measures
+   3.66:1, both under the 4.5:1 floor. So `terracotta` is a structural colour
+   — rules, borders, and display type at 24px and up, where 3:1 applies —
+   and `ember` (5.05:1) is its text-safe counterpart. Same for `sage` and
+   `sage-deep` (6.01:1). Check any new colour before using it on body copy. */
+@theme {
+  --color-rbd-bg: #fbf5ea;
+  --color-rbd-surface: #ffffff;
+  --color-rbd-ink: #2a2117;
+  --color-rbd-text: #4a3e2f;
+  --color-rbd-muted: #6e6051;
+  --color-rbd-terracotta: #dc5a22;
+  --color-rbd-ember: #b34718;
+  --color-rbd-sage: #7c8456;
+  --color-rbd-sage-deep: #5a6140;
+  --color-rbd-sage-light: #e6ead7;
+  --color-rbd-line: rgba(74, 62, 47, 0.12);
+  --color-rbd-wash: rgba(220, 90, 34, 0.05);
+
+  --font-display: var(--font-bricolage), ui-sans-serif, sans-serif;
+  --font-body: var(--font-hanken), ui-sans-serif, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, serif;
+}
+
+/* The `@theme` block above declares these on `:root`, which is what makes
+   Tailwind emit the `font-display` / `font-body` / `font-serif` utilities —
+   but it is NOT where they can resolve. next/font declares `--font-bricolage`
+   and friends on whichever element carries its generated class, and /field
+   puts that on a nested wrapper rather than `<html>` so the fonts stay
+   scoped to this route. A custom property substitutes at the element it is
+   declared on, so on `:root` the inner `var(--font-bricolage)` is undefined,
+   `--font-display` computes to the guaranteed-invalid value, and every child
+   silently falls back to the `font-family: Arial` on `body` below.
+   Re-declaring the same three tokens on the wrapper puts them in scope
+   alongside the next/font variables, where they resolve. Delete this and the
+   route renders entirely in Arial with no error anywhere. */
+.rbd-fonts {
+  --font-display: var(--font-bricolage), ui-sans-serif, sans-serif;
+  --font-body: var(--font-hanken), ui-sans-serif, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, serif;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
