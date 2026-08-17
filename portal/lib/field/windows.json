@@ -2,7 +2,7 @@
   "anchor": "Leo",
   "start": "2026-07-22T20:13:05.428919+01:00",
   "end": "2027-07-23T02:04:40.620874+01:00",
-  "generated": "2026-08-17T18:35:51.949649+01:00",
+  "generated": "2026-08-17T22:44:39.030174+01:00",
   "lunations": [
     {
       "phase": "full",
@@ -418,7 +418,7 @@
           "centre": "Solar Plexus",
           "frame": "what to ground yourself in",
           "essence": null,
-          "somatic": null
+          "somatic": "Clinging lives as **held heat**. Restless warmth under the sternum, a gripped diaphragm, breath riding high in the chest and never fully landing at the bottom.\n\nThe body braces against a disappointment it is already rehearsing. Often paired with a grip in the hands and a slight forward lean — the posture of reaching for something that hasn't arrived. The exhale is the part that goes missing first."
         }
       },
       "bridge": {
@@ -436,7 +436,12 @@
         "level": "gate",
         "text": "**State:** fawn, with a dorsal undercurrent. The yes is a connection-preserving strategy; the collapse comes later, after enough wrong yeses.\n\n**Protocol direction:** Support → Space → Ground.\n\nThe fawn read is what makes the rest of this gate cohere: a yes given to keep someone from being disappointed is a threat response, not a decision. That is why it feels involuntary, and why willpower doesn't touch it."
       },
-      "practice": null,
+      "practice": {
+        "type": null,
+        "media": null,
+        "duration": null,
+        "text": "**Body focus:** solar plexus and diaphragm, sternum, chest, hands.\n\nGrounding for Gate 30 is **a hearth, not a lid**. The common error is treating the intensity as dysregulation to be calmed — that's the repressive pole, and it produces exactly the dampening the low expression already warns about. What this gate needs is a container: bones, weight, contact points, gravity. Walls for the fire to burn inside.\n\nSix elements:\n\n1. **Feel it fully without discharging it into action.** The 30 converts intensity into decisions fast. Let it stay sensation before it becomes a plan\n2. **Time is the technique.** On the emotional wave there is no clarity in the now. Sleeping on it does what no somatic practice can substitute for\n3. **Bring the fire below the diaphragm.** Descend attention: sternum → belly → pelvic floor → feet → floor\n4. **Separate the wanting from the object.** The sensation is fuel; the story about *how* it must arrive is the clinging\n5. **Contain, don't suppress.** Spine, sitting bones, feet\n6. **Let disappointment be an event in the body, not a verdict.** The shadow reads disappointment as proof the wanting was wrong\n\nContrast Gate 29, where grounding means slowing the answer down rather than holding a charge."
+      },
       "lookback": null,
       "crossrefs": {
         "opposite": "The Sun will travel to Gate 30 on 13–19 Feb 2027, offering the chance to review this gate from the other side. Worth returning to your notes from this period then.",
@@ -2041,7 +2046,7 @@
           "centre": "Solar Plexus",
           "frame": "what the psyche will do",
           "essence": null,
-          "somatic": null
+          "somatic": "Clinging lives as **held heat**. Restless warmth under the sternum, a gripped diaphragm, breath riding high in the chest and never fully landing at the bottom.\n\nThe body braces against a disappointment it is already rehearsing. Often paired with a grip in the hands and a slight forward lean — the posture of reaching for something that hasn't arrived. The exhale is the part that goes missing first."
         },
         "earth": {
           "gate": 29,
@@ -2060,15 +2065,15 @@
       "earth_reading": null,
       "earth_fallback": "Gate 29: Commitment, in the Sacral Centre. Themes: People Pleasing Energy, Overworking, Codependent, Determination & Perseverance. At its best: true commitment originating from the core will engender luck, following Sacral/gut engagement with an unbiased mind (gut response over 'I should...' or 'I have to...').",
       "nervous": {
-        "source": "Solar Plexus",
-        "level": "centre",
-        "text": "- Holding emotions in causes double injury: you lose access to the emotional power, AND waste energy suppressing it\n- \"High vibe only\" is a bypassing pattern — the lows are part of the wave\n- The body stores what the emotional system isn't allowed to release\n- Health marker: decreased time from emotion → expression of emotion"
+        "source": "Gate 30",
+        "level": "gate",
+        "text": "**State:** sympathetic — restless reaching, anticipatory, with the charge held rather than discharged.\n\n**Protocol direction:** Space → Ground.\n\nThe important read here is that the activation is not the problem. This gate's function *is* to run charge. What creates suffering is the charge being either discharged instantly into action or clamped down on — not the charge itself."
       },
       "practice": {
         "type": null,
         "media": null,
         "duration": null,
-        "text": "**Body focus:** low belly and sacrum, jaw, throat.\n\nGrounding for Gate 29 means **restoring access to the felt no**. Not decisiveness — permission to be slow. The sacral answer arrives on its own timeline, and the shadow is answering before it has. The somatic work is putting a gap between the question and the reply, and tolerating the discomfort of leaving someone waiting.\n\nContrast [[gate-30]], where grounding means holding a live charge without discharging it into action, and [[gate-04]], where grounding means getting out of the head entirely."
+        "text": "**Body focus:** low belly and sacrum, jaw, throat.\n\nGrounding for Gate 29 means **restoring access to the felt no**. Not decisiveness — permission to be slow. The sacral answer arrives on its own timeline, and the shadow is answering before it has. The somatic work is putting a gap between the question and the reply, and tolerating the discomfort of leaving someone waiting.\n\nContrast Gate 30, where grounding means holding a live charge without discharging it into action, and Gate 4, where grounding means getting out of the head entirely."
       },
       "lookback": null,
       "crossrefs": {
