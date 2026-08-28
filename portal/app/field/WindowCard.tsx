@@ -1,6 +1,5 @@
 import type { Lunation, MoonPhaseState, Pole as PoleData, Window } from '@/lib/field/types'
 import { TIME_ZONE } from '@/lib/field/constants'
-import Link from 'next/link'
 import Markdown from './Markdown'
 
 interface Props {
@@ -9,17 +8,8 @@ interface Props {
   next: Window | null
   lunations: Lunation[]
   daysRemaining: number | null
-  theme: 'serpens' | 'serpens-veil' | 'solar-tide' | 'solar-horizon' | 'mystic-oracle'
   moonPhase: MoonPhaseState | null
 }
-
-const THEMES = [
-  { id: 'serpens', number: '01', name: 'Serpens', note: 'orange · starlight blue' },
-  { id: 'serpens-veil', number: '02', name: 'Serpens Veil', note: 'mist · coral · blue' },
-  { id: 'solar-tide', number: '03', name: 'Solar Tide', note: 'yellow · teal · cobalt' },
-  { id: 'solar-horizon', number: '04', name: 'Solar Horizon', note: 'sunrise · ocean · glass' },
-  { id: 'mystic-oracle', number: '05', name: 'Mystic Oracle', note: 'incense · indigo · gold' },
-] as const
 
 // Dates must render in the same reference zone page.tsx uses to select the
 // window and match lunations. The server process's default zone (UTC on
@@ -138,7 +128,7 @@ function Pole({
   )
 }
 
-export default function WindowCard({ window: field, day, next, lunations, daysRemaining, theme, moonPhase }: Props) {
+export default function WindowCard({ window: field, day, next, lunations, daysRemaining, moonPhase }: Props) {
   const nervousSource =
     field.nervous &&
     (field.nervous.level === 'centre' && !field.nervous.source.endsWith('Centre')
@@ -153,7 +143,7 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
   const nervousBlock = field.nervous && <Markdown lead={!practiceLead}>{field.nervous.text}</Markdown>
 
   return (
-    <div className={`field-shell field-artwork field-theme-${theme}`}>
+    <div className="field-shell field-artwork field-theme-serpens-veil">
     <article className="mx-auto max-w-6xl space-y-6 px-4 pb-14 pt-5 sm:px-7 sm:pb-20 sm:pt-7 lg:px-10">
       <nav className="flex items-center justify-between border-b border-rbd-line pb-5">
         <div>
@@ -185,27 +175,6 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
           </div>
         </section>
       )}
-
-      <aside className="theme-picker field-panel rounded-2xl p-2" aria-label="Choose a design direction">
-        <div className="grid grid-cols-2 gap-1 sm:grid-cols-5">
-          {THEMES.map((option) => (
-            <Link
-              key={option.id}
-              href={`/field?theme=${option.id}`}
-              aria-current={theme === option.id ? 'page' : undefined}
-              className={`theme-choice rounded-xl px-3 py-3 transition ${theme === option.id ? 'is-active' : ''}`}
-            >
-              <span className="block font-display text-[10px] uppercase tracking-[0.2em] opacity-60">
-                {option.number}
-              </span>
-              <span className="mt-1 block font-serif text-base leading-tight">{option.name}</span>
-              <span className="mt-1 block text-[10px] uppercase tracking-[0.12em] opacity-60">
-                {option.note}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </aside>
 
       <header className="field-panel field-panel-gold grid overflow-hidden rounded-2xl lg:grid-cols-[minmax(0,1.45fr)_minmax(18rem,.55fr)]">
         <div className="space-y-5 p-6 sm:p-9 lg:p-11">
