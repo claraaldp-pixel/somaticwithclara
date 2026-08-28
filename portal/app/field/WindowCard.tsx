@@ -1,5 +1,6 @@
-import type { Lunation, Pole as PoleData, Window } from '@/lib/field/types'
+import type { Lunation, MoonPhaseState, Pole as PoleData, Window } from '@/lib/field/types'
 import { TIME_ZONE } from '@/lib/field/constants'
+import Link from 'next/link'
 import Markdown from './Markdown'
 
 interface Props {
@@ -8,7 +9,17 @@ interface Props {
   next: Window | null
   lunations: Lunation[]
   daysRemaining: number | null
+  theme: 'serpens' | 'serpens-veil' | 'solar-tide' | 'solar-horizon' | 'mystic-oracle'
+  moonPhase: MoonPhaseState | null
 }
+
+const THEMES = [
+  { id: 'serpens', number: '01', name: 'Serpens', note: 'orange · starlight blue' },
+  { id: 'serpens-veil', number: '02', name: 'Serpens Veil', note: 'mist · coral · blue' },
+  { id: 'solar-tide', number: '03', name: 'Solar Tide', note: 'yellow · teal · cobalt' },
+  { id: 'solar-horizon', number: '04', name: 'Solar Horizon', note: 'sunrise · ocean · glass' },
+  { id: 'mystic-oracle', number: '05', name: 'Mystic Oracle', note: 'incense · indigo · gold' },
+] as const
 
 // Dates must render in the same reference zone page.tsx uses to select the
 // window and match lunations. The server process's default zone (UTC on
@@ -32,7 +43,7 @@ function span(field: Window): string {
   return `${fmt(field.start, DAY)} ${fmt(field.start, MONTH)} – ${fmt(field.end, DAY)} ${fmt(field.end, MONTH_YEAR)}`
 }
 
-const LABEL = 'font-display text-[11px] font-medium uppercase tracking-[0.18em]'
+const LABEL = 'font-body text-[11px] font-medium uppercase tracking-[0.18em]'
 
 function Label({ children }: { children: React.ReactNode }) {
   return <h2 className={`${LABEL} text-rbd-muted`}>{children}</h2>
@@ -40,7 +51,7 @@ function Label({ children }: { children: React.ReactNode }) {
 
 function Section({ label, children }: { label: React.ReactNode; children: React.ReactNode }) {
   return (
-    <section className="space-y-3">
+    <section className="field-panel rounded-2xl p-6 sm:p-8 space-y-3">
       <Label>{label}</Label>
       {children}
     </section>
@@ -52,7 +63,7 @@ function Section({ label, children }: { label: React.ReactNode; children: React.
  *  it is the point, so it must not be used for merely-important content. */
 function Caution({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <section className="border-s-2 border-rbd-terracotta bg-rbd-wash py-4 pe-4 ps-5">
+    <section className="field-panel rounded-2xl border-s-2 border-s-rbd-terracotta bg-rbd-wash py-5 pe-5 ps-6">
       <h2 className={`${LABEL} text-rbd-ember`}>{label}</h2>
       <div className="mt-2">{children}</div>
     </section>
@@ -71,7 +82,7 @@ function Hero({
   children: React.ReactNode
 }) {
   return (
-    <section className="border border-rbd-line border-s-[3px] border-s-rbd-terracotta bg-rbd-surface px-6 py-7 sm:px-8 sm:py-9">
+    <section className="field-panel field-panel-gold rounded-2xl border-s-[3px] border-s-rbd-terracotta px-6 py-7 sm:px-8 sm:py-9">
       <h2 className={`${LABEL} text-rbd-ink`}>{label}</h2>
       {sub && <p className="mt-1.5 font-serif text-[15px] italic text-rbd-muted">{sub}</p>}
       <div className="mt-5">{children}</div>
@@ -92,7 +103,7 @@ function Pole({
 }) {
   const { gate, name, centre, frame, essence, somatic } = pole
   return (
-    <div className="bg-rbd-surface px-5 py-5">
+    <div className="px-5 py-6 sm:px-7">
       <h3 className={`${LABEL} text-rbd-muted`}>
         {side} · Gate {gate}
       </h3>
@@ -127,7 +138,7 @@ function Pole({
   )
 }
 
-export default function WindowCard({ window: field, day, next, lunations, daysRemaining }: Props) {
+export default function WindowCard({ window: field, day, next, lunations, daysRemaining, theme, moonPhase }: Props) {
   const nervousSource =
     field.nervous &&
     (field.nervous.level === 'centre' && !field.nervous.source.endsWith('Centre')
@@ -142,32 +153,96 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
   const nervousBlock = field.nervous && <Markdown lead={!practiceLead}>{field.nervous.text}</Markdown>
 
   return (
-    <article className="mx-auto max-w-2xl space-y-12 px-6 py-14 sm:py-20">
-      <header className="space-y-4">
-        <p className={`${LABEL} text-rbd-muted`}>
-          {span(field)}
-          <span className="mx-2 text-rbd-line">|</span>
-          day {day} of {field.days}
-        </p>
-        <h1 className="font-display">
-          <span className="block text-4xl leading-none font-semibold tracking-tight text-rbd-ink uppercase sm:text-5xl">
-            Gate {field.gate}
-          </span>
-          {field.name && (
-            <span className="mt-1 block text-2xl leading-tight font-normal text-rbd-terracotta sm:text-3xl">
-              {field.name}
-            </span>
-          )}
-        </h1>
-        {field.tagline && (
-          <p className="font-serif text-lg leading-snug text-rbd-sage-deep italic">
-            {field.tagline}
+    <div className={`field-shell field-artwork field-theme-${theme}`}>
+    <article className="mx-auto max-w-6xl space-y-6 px-4 pb-14 pt-5 sm:px-7 sm:pb-20 sm:pt-7 lg:px-10">
+      <nav className="flex items-center justify-between border-b border-rbd-line pb-5">
+        <div>
+          <p className="font-serif text-2xl leading-none text-rbd-terracotta sm:text-3xl">The Field</p>
+          <p className={`${LABEL} mt-1.5 text-rbd-muted`}>Regulation by Design</p>
+        </div>
+        <div className="hidden items-center gap-3 sm:flex">
+          <span className={`${LABEL} text-rbd-muted`}>Current transit</span>
+          <span className="rounded-full border border-rbd-line bg-white/5 px-4 py-2 text-xs text-rbd-text">Now</span>
+        </div>
+      </nav>
+
+      {moonPhase && (
+        <section className="moon-status field-panel" aria-label={`Current moon phase: ${moonPhase.name}`}>
+          <div className={`moon-orb moon-${moonPhase.key}`} aria-hidden="true">
+            <span />
+          </div>
+          <div className="moon-status-main">
+            <p className={`${LABEL} text-rbd-muted`}>Lunar weather · now</p>
+            <p className="mt-1 font-serif text-2xl text-rbd-ink sm:text-3xl">{moonPhase.name}</p>
+          </div>
+          <div className="moon-stat">
+            <span className={`${LABEL} text-rbd-muted`}>Illumination</span>
+            <strong>{moonPhase.illumination}%</strong>
+          </div>
+          <div className="moon-stat hidden sm:flex">
+            <span className={`${LABEL} text-rbd-muted`}>Next threshold</span>
+            <strong>{moonPhase.next.phase === 'new' ? 'New Moon' : 'Full Moon'} · {fmt(moonPhase.next.moment, DAY)} {fmt(moonPhase.next.moment, MONTH)}</strong>
+          </div>
+        </section>
+      )}
+
+      <aside className="theme-picker field-panel rounded-2xl p-2" aria-label="Choose a design direction">
+        <div className="grid grid-cols-2 gap-1 sm:grid-cols-5">
+          {THEMES.map((option) => (
+            <Link
+              key={option.id}
+              href={`/field?theme=${option.id}`}
+              aria-current={theme === option.id ? 'page' : undefined}
+              className={`theme-choice rounded-xl px-3 py-3 transition ${theme === option.id ? 'is-active' : ''}`}
+            >
+              <span className="block font-display text-[10px] uppercase tracking-[0.2em] opacity-60">
+                {option.number}
+              </span>
+              <span className="mt-1 block font-serif text-base leading-tight">{option.name}</span>
+              <span className="mt-1 block text-[10px] uppercase tracking-[0.12em] opacity-60">
+                {option.note}
+              </span>
+            </Link>
+          ))}
+        </div>
+      </aside>
+
+      <header className="field-panel field-panel-gold grid overflow-hidden rounded-2xl lg:grid-cols-[minmax(0,1.45fr)_minmax(18rem,.55fr)]">
+        <div className="space-y-5 p-6 sm:p-9 lg:p-11">
+          <p className={`${LABEL} text-rbd-muted`}>
+            {span(field)}
+            <span className="mx-2 text-rbd-terracotta">·</span>
+            day {day} of {field.days}
           </p>
-        )}
+          <h1 className="font-display">
+            <span className="block text-4xl leading-none font-semibold tracking-tight text-rbd-ink uppercase sm:text-6xl">
+              Gate {field.gate}
+            </span>
+            {field.name && (
+              <span className="mt-2 block font-serif text-3xl leading-tight font-normal text-rbd-terracotta sm:text-4xl">
+                {field.name}
+              </span>
+            )}
+          </h1>
+          {field.tagline && (
+            <p className="max-w-2xl font-serif text-xl leading-snug text-rbd-sage-deep italic">
+              {field.tagline}
+            </p>
+          )}
+        </div>
+        <div className="flex flex-col justify-between border-t border-rbd-line bg-black/8 p-6 sm:p-8 lg:border-s lg:border-t-0">
+          <div>
+            <p className={`${LABEL} text-rbd-muted`}>The axis</p>
+            <p className="mt-4 font-serif text-xl leading-relaxed text-rbd-ink">{field.axis.sentence}</p>
+          </div>
+          <p className={`${LABEL} mt-8 text-rbd-terracotta`}>
+            Sun · Gate {field.axis.sun.gate} &nbsp; / &nbsp; Earth · Gate {earth.gate}
+          </p>
+        </div>
       </header>
 
       {lunations.length > 0 && (
-        <section className="border-s-2 border-rbd-sage bg-rbd-sage-light/60 py-3 pe-4 ps-5">
+        <section className="field-panel rounded-2xl border-s-2 border-s-rbd-sage bg-rbd-sage-light/60 py-4 pe-5 ps-6">
           <h2 className={`${LABEL} text-rbd-sage-deep`}>Today</h2>
           {lunations.map((moon) => (
             <p key={moon.moment} className="mt-1.5 text-rbd-text">
@@ -178,16 +253,18 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
         </section>
       )}
 
-      <section className="space-y-4">
-        <p className="font-serif text-xl leading-relaxed text-rbd-ink">{field.axis.sentence}</p>
-        {field.axis.lead && <Markdown>{field.axis.lead}</Markdown>}
-      </section>
+      {field.axis.lead && (
+        <section className="field-panel rounded-2xl space-y-4 p-6 sm:p-8">
+          <p className={`${LABEL} text-rbd-terracotta`}>This window</p>
+          <Markdown>{field.axis.lead}</Markdown>
+        </section>
+      )}
 
       {/* Set apart rather than boxed: it is the one thing on the card meant to
           be carried rather than read, and the sage-tinted blocks are already
           spoken for by the lunation and the bridge. */}
       {field.question && (
-        <section className="border-y border-rbd-line py-8 text-center">
+        <section className="field-panel rounded-2xl px-6 py-9 text-center sm:px-12">
           <h2 className={`${LABEL} text-rbd-muted`}>The question</h2>
           <p className="mt-3 font-serif text-2xl leading-snug text-rbd-ink italic">
             {field.question}
@@ -207,7 +284,7 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
           background-drawn gap paints that difference as a filled block at the
           foot of the shorter column. A border on the cell leaves the surplus
           as plain surface, so uneven columns read as uneven text. */}
-      <div className="grid divide-y divide-rbd-line border border-rbd-line bg-rbd-surface sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+      <div className="field-panel grid overflow-hidden rounded-2xl divide-y divide-rbd-line sm:grid-cols-2 sm:divide-x sm:divide-y-0">
         <Pole side="Sun" pole={field.axis.sun} reading={field.sun_reading} />
         <Pole
           side="Earth"
@@ -224,7 +301,7 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
       )}
 
       {field.bridge && (
-        <section className="border-s-2 border-rbd-sage bg-rbd-sage-light/60 py-4 pe-4 ps-5">
+        <section className="field-panel rounded-2xl border-s-2 border-s-rbd-sage bg-rbd-sage-light/60 py-5 pe-5 ps-6">
           <h2 className={`${LABEL} text-rbd-sage-deep`}>{field.bridge.sign} bridge</h2>
           <div className="mt-2">
             <Markdown>{field.bridge.text}</Markdown>
@@ -281,7 +358,7 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
         </Section>
       )}
 
-      <footer className="space-y-6 border-t border-rbd-line pt-8">
+      <footer className="space-y-6 border-t border-rbd-line px-1 pt-8">
         <section className="space-y-2">
           <Label>Elsewhere in the year</Label>
           <p className="text-sm leading-relaxed text-rbd-muted">{field.crossrefs.opposite}</p>
@@ -312,5 +389,6 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
         )}
       </footer>
     </article>
+    </div>
   )
 }

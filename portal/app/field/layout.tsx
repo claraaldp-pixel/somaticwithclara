@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Bricolage_Grotesque, Hanken_Grotesk, Newsreader } from 'next/font/google'
+import { Bricolage_Grotesque, Cormorant_Garamond, Hanken_Grotesk, Manrope, Newsreader } from 'next/font/google'
 
 // The report's three faces. Scoping them to this route rather than the root
 // layout is deliberate: /dashboard renders client reports inside an iframe
@@ -26,6 +26,21 @@ const serif = Newsreader({
   display: 'swap',
 })
 
+const veilDisplay = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-cormorant',
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+})
+
+const veilBody = Manrope({
+  subsets: ['latin'],
+  variable: '--font-manrope',
+  weight: ['300', '400', '500', '600'],
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: 'The field — Regulation by Design',
   description: 'The Sun-gate window you are currently standing in.',
@@ -39,7 +54,7 @@ export default function FieldLayout({ children }: { children: React.ReactNode })
   // that globals.css sets on `body`, left over from the Next scaffold.
   return (
     <div
-      className={`${display.variable} ${body.variable} ${serif.variable} rbd-fonts font-body min-h-screen bg-rbd-bg text-rbd-text antialiased`}
+      className={`${display.variable} ${body.variable} ${serif.variable} ${veilDisplay.variable} ${veilBody.variable} rbd-fonts font-body min-h-screen bg-rbd-bg text-rbd-text antialiased`}
     >
       {children}
     </div>

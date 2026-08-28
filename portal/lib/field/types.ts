@@ -83,6 +83,13 @@ export interface Lunation {
   sun_gate: number
 }
 
+export interface MoonPhaseState {
+  name: string
+  key: 'new' | 'waxing-crescent' | 'first-quarter' | 'waxing-gibbous' | 'full' | 'waning-gibbous' | 'last-quarter' | 'waning-crescent'
+  illumination: number
+  next: Lunation
+}
+
 export interface FieldData {
   anchor: string
   start: string

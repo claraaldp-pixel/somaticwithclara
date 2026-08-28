@@ -1,4 +1,4 @@
-import type { Window, Lunation } from './types'
+import type { Window, Lunation, MoonPhaseState } from './types'
 
 const MS_PER_DAY = 86_400_000
 
@@ -68,4 +68,32 @@ export function lunationsOn(
 ): Lunation[] {
   const today = localDay(now, timeZone)
   return lunations.filter((l) => localDay(new Date(l.moment), timeZone) === today)
+}
+
+/** Approximate the familiar eight-phase Moon cycle between the exact New and
+ * Full Moon moments already calculated in the transit calendar. */
+export function moonPhaseAt(lunations: Lunation[], now: Date): MoonPhaseState | null {
+  const at = now.getTime()
+  const previous = [...lunations].reverse().find((moon) => Date.parse(moon.moment) <= at)
+  const next = lunations.find((moon) => Date.parse(moon.moment) > at)
+  if (!previous || !next) return null
+
+  const start = Date.parse(previous.moment)
+  const end = Date.parse(next.moment)
+  const progress = Math.min(1, Math.max(0, (at - start) / (end - start)))
+  const nearAnchor = progress < 0.06
+
+  if (previous.phase === 'new') {
+    if (nearAnchor) return { name: 'New Moon', key: 'new', illumination: 0, next }
+    const illumination = Math.round((.5 - .5 * Math.cos(Math.PI * progress)) * 100)
+    if (progress < .43) return { name: 'Waxing Crescent', key: 'waxing-crescent', illumination, next }
+    if (progress < .57) return { name: 'First Quarter', key: 'first-quarter', illumination, next }
+    return { name: 'Waxing Gibbous', key: 'waxing-gibbous', illumination, next }
+  }
+
+  if (nearAnchor) return { name: 'Full Moon', key: 'full', illumination: 100, next }
+  const illumination = Math.round((.5 + .5 * Math.cos(Math.PI * progress)) * 100)
+  if (progress < .43) return { name: 'Waning Gibbous', key: 'waning-gibbous', illumination, next }
+  if (progress < .57) return { name: 'Last Quarter', key: 'last-quarter', illumination, next }
+  return { name: 'Waning Crescent', key: 'waning-crescent', illumination, next }
 }

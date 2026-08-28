@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { dayIndex, daysUntilEnd, nextWindow, selectWindow, lunationsOn } from './select'
+import { dayIndex, daysUntilEnd, nextWindow, selectWindow, lunationsOn, moonPhaseAt } from './select'
 import type { Window, Lunation } from './types'
 
 function makeWindow(gate: number, start: string, end: string): Window {
@@ -184,5 +184,26 @@ describe('lunationsOn', () => {
 
   it('is empty for an empty list', () => {
     expect(lunationsOn([], new Date('2026-08-08T12:00:00+01:00'), TZ)).toEqual([])
+  })
+})
+
+describe('moonPhaseAt', () => {
+  const cycle = [
+    makeLunation('new', '2026-08-01T00:00:00Z'),
+    makeLunation('full', '2026-08-15T00:00:00Z'),
+    makeLunation('new', '2026-08-29T00:00:00Z'),
+  ]
+
+  it('shows the exact anchor phase', () => {
+    expect(moonPhaseAt(cycle, new Date('2026-08-15T02:00:00Z'))?.name).toBe('Full Moon')
+  })
+
+  it('distinguishes waxing and waning quarters', () => {
+    expect(moonPhaseAt(cycle, new Date('2026-08-08T00:00:00Z'))?.key).toBe('first-quarter')
+    expect(moonPhaseAt(cycle, new Date('2026-08-22T00:00:00Z'))?.key).toBe('last-quarter')
+  })
+
+  it('returns null outside the calculated lunation range', () => {
+    expect(moonPhaseAt(cycle, new Date('2026-07-01T00:00:00Z'))).toBeNull()
   })
 })

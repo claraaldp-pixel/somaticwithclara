@@ -13,30 +13,22 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* Regulation by Design palette, lifted verbatim from report-template-v3.html
-   so the report and the portal cannot drift apart. Only /field consumes these
-   today; defining them here rather than in the route keeps Tailwind's utility
-   generation in one place.
-
-   Two of the brand colours cannot legally carry small text on the cream
-   ground: terracotta #DC5A22 measures 3.50:1 and sage #7C8456 measures
-   3.66:1, both under the 4.5:1 floor. So `terracotta` is a structural colour
-   — rules, borders, and display type at 24px and up, where 3:1 applies —
-   and `ember` (5.05:1) is its text-safe counterpart. Same for `sage` and
-   `sage-deep` (6.01:1). Check any new colour before using it on body copy. */
+/* A smoked-saffron interpretation of Clara's photograph: dark walnut and
+   floorboard umber create the depth needed for glass, while sunlight, oat and
+   amber carry the orange-yellow warmth. Only /field consumes these tokens. */
 @theme {
-  --color-rbd-bg: #fbf5ea;
-  --color-rbd-surface: #ffffff;
-  --color-rbd-ink: #2a2117;
-  --color-rbd-text: #4a3e2f;
-  --color-rbd-muted: #6e6051;
-  --color-rbd-terracotta: #dc5a22;
-  --color-rbd-ember: #b34718;
-  --color-rbd-sage: #7c8456;
-  --color-rbd-sage-deep: #5a6140;
-  --color-rbd-sage-light: #e6ead7;
-  --color-rbd-line: rgba(74, 62, 47, 0.12);
-  --color-rbd-wash: rgba(220, 90, 34, 0.05);
+  --color-rbd-bg: #3b210f;
+  --color-rbd-surface: #5b351b;
+  --color-rbd-ink: #fff4df;
+  --color-rbd-text: #f0e3cf;
+  --color-rbd-muted: #cdbb9f;
+  --color-rbd-terracotta: #e4aa4f;
+  --color-rbd-ember: #f2bd63;
+  --color-rbd-sage: #d4a752;
+  --color-rbd-sage-deep: #efd29b;
+  --color-rbd-sage-light: #70451f;
+  --color-rbd-line: rgba(241, 205, 143, 0.18);
+  --color-rbd-wash: rgba(228, 170, 79, 0.07);
 
   --font-display: var(--font-bricolage), ui-sans-serif, sans-serif;
   --font-body: var(--font-hanken), ui-sans-serif, sans-serif;
@@ -59,6 +51,506 @@
   --font-display: var(--font-bricolage), ui-sans-serif, sans-serif;
   --font-body: var(--font-hanken), ui-sans-serif, sans-serif;
   --font-serif: var(--font-newsreader), ui-serif, serif;
+}
+
+.field-shell {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 74% 1%, rgba(199, 121, 32, 0.32), transparent 32rem),
+    radial-gradient(circle at 3% 55%, rgba(232, 158, 58, 0.16), transparent 30rem),
+    radial-gradient(circle at 92% 84%, rgba(134, 67, 18, 0.3), transparent 34rem),
+    linear-gradient(145deg, #2c180c 0%, #4a2912 48%, #321b0c 100%);
+}
+
+/* Five deliberately distinct celestial directions. Each keeps body copy on a
+   stable, sufficiently opaque pane; the colour and blur live around it. */
+.field-theme-solar {
+  --color-rbd-bg: #1b0c03; --color-rbd-surface: #3e1808; --color-rbd-ink: #fff4d2;
+  --color-rbd-text: #f5dfbd; --color-rbd-muted: #cdb28e; --color-rbd-terracotta: #ff9f1c;
+  --color-rbd-ember: #ffb23f; --color-rbd-sage: #e78213; --color-rbd-sage-deep: #ffd085;
+  --color-rbd-sage-light: #572006; --color-rbd-line: rgba(255,190,96,.22); --color-rbd-wash: rgba(255,126,0,.09);
+  background: radial-gradient(circle at 78% 0%,rgba(255,145,0,.48),transparent 29rem),radial-gradient(circle at 5% 58%,rgba(196,59,0,.27),transparent 34rem),linear-gradient(145deg,#130702,#321104 55%,#160802);
+}
+
+.field-theme-saffron {
+  --color-rbd-bg: #f2cc71; --color-rbd-surface: #fff0ba; --color-rbd-ink: #3a2609;
+  --color-rbd-text: #503810; --color-rbd-muted: #725625; --color-rbd-terracotta: #b5480b;
+  --color-rbd-ember: #923707; --color-rbd-sage: #a76609; --color-rbd-sage-deep: #704309;
+  --color-rbd-sage-light: #f4d77f; --color-rbd-line: rgba(74,43,5,.2); --color-rbd-wash: rgba(181,72,11,.08);
+  background: radial-gradient(circle at 16% 5%,rgba(255,255,222,.95),transparent 27rem),radial-gradient(circle at 89% 40%,rgba(244,155,33,.44),transparent 31rem),linear-gradient(145deg,#eab94f,#f8dc8c 52%,#dda33b);
+}
+
+.field-theme-saffron .field-panel { background: linear-gradient(145deg,rgba(255,250,220,.34),rgba(241,183,61,.3)); box-shadow: inset 0 1px rgba(255,255,255,.72),0 20px 60px rgba(82,45,4,.12); }
+.field-theme-saffron { --font-display: var(--font-newsreader),serif; --font-serif: var(--font-newsreader),serif; }
+
+.field-theme-serpens-veil {
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-manrope), ui-sans-serif, sans-serif;
+  --font-serif: var(--font-cormorant), Georgia, serif;
+  font-family: var(--font-manrope), ui-sans-serif, sans-serif;
+}
+
+.field-theme-serpens-veil .font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.field-theme-serpens-veil .font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.field-theme-serpens-veil .font-body {
+  font-family: var(--font-manrope), ui-sans-serif, sans-serif;
+}
+
+.field-theme-serpens-veil h1 .font-display,
+.field-theme-serpens-veil h1.font-display {
+  letter-spacing: -0.025em;
+}
+
+.field-theme-apricot {
+  --color-rbd-bg: #7d2916; --color-rbd-surface: #ad4b29; --color-rbd-ink: #fff3d7;
+  --color-rbd-text: #ffe4c4; --color-rbd-muted: #e5b999; --color-rbd-terracotta: #ffd05a;
+  --color-rbd-ember: #ffdc78; --color-rbd-sage: #f29b45; --color-rbd-sage-deep: #ffd19e;
+  --color-rbd-sage-light: #983b20; --color-rbd-line: rgba(255,218,153,.22); --color-rbd-wash: rgba(255,205,82,.08);
+  background: radial-gradient(ellipse at 12% 8%,rgba(255,179,91,.44),transparent 34rem),radial-gradient(ellipse at 92% 22%,rgba(201,55,30,.4),transparent 35rem),linear-gradient(145deg,#642012,#a44023 50%,#5d1b11);
+}
+.field-theme-apricot .field-panel { background: linear-gradient(140deg,rgba(215,100,51,.24),rgba(93,29,15,.34)); }
+.field-theme-apricot { --font-display: var(--font-bricolage),sans-serif; --font-serif: var(--font-newsreader),serif; }
+
+.field-theme-amber {
+  --color-rbd-bg: #29230e; --color-rbd-surface: #494019; --color-rbd-ink: #fff2bd;
+  --color-rbd-text: #ecdfb0; --color-rbd-muted: #c1b481; --color-rbd-terracotta: #eaaE32;
+  --color-rbd-ember: #f4c14e; --color-rbd-sage: #b98718; --color-rbd-sage-deep: #eed18a;
+  --color-rbd-sage-light: #5c4c18; --color-rbd-line: rgba(239,202,105,.2); --color-rbd-wash: rgba(234,174,50,.08);
+  background: radial-gradient(circle at 80% 10%,rgba(239,174,43,.42),transparent 31rem),radial-gradient(circle at 5% 65%,rgba(145,95,13,.3),transparent 35rem),linear-gradient(145deg,#1f1b0a,#403713 52%,#211b09);
+}
+.field-theme-amber .field-panel { background: rgba(77,65,21,.3); border-color: rgba(247,211,115,.24); box-shadow: 0 18px 45px rgba(17,14,3,.16); border-radius: .35rem; }
+.field-theme-amber { --font-display: var(--font-newsreader),Georgia,serif; --font-body: var(--font-newsreader),Georgia,serif; --font-serif: var(--font-newsreader),Georgia,serif; }
+
+.field-theme-desert {
+  --color-rbd-bg: #e58b42; --color-rbd-surface: #f5b55d; --color-rbd-ink: #3e1d0b;
+  --color-rbd-text: #542812; --color-rbd-muted: #774225; --color-rbd-terracotta: #9d260d;
+  --color-rbd-ember: #86200c; --color-rbd-sage: #b55e16; --color-rbd-sage-deep: #71350f;
+  --color-rbd-sage-light: #f2bb68; --color-rbd-line: rgba(78,31,8,.2); --color-rbd-wash: rgba(157,38,13,.07);
+  background: radial-gradient(circle at 50% -10%,rgba(255,235,139,.88),transparent 34rem),radial-gradient(circle at 92% 64%,rgba(192,64,20,.3),transparent 34rem),linear-gradient(150deg,#d57032,#f1a853 55%,#c75c29);
+}
+.field-theme-desert .field-panel { background: linear-gradient(145deg,rgba(255,222,151,.3),rgba(201,84,32,.26)); }
+.field-theme-desert { --font-display: var(--font-newsreader),serif; }
+
+.theme-choice { color: var(--color-rbd-muted); border: 1px solid transparent; }
+.theme-choice:hover { color: var(--color-rbd-ink); background: color-mix(in srgb,var(--color-rbd-surface) 70%,transparent); }
+.theme-choice.is-active { color: var(--color-rbd-ink); border-color: var(--color-rbd-terracotta); background: color-mix(in srgb,var(--color-rbd-terracotta) 12%,transparent); }
+
+.field-shell::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  opacity: 0.18;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+}
+
+.field-shell::after {
+  position: fixed;
+  inset: -12%;
+  z-index: -1;
+  content: "";
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 22%, var(--glass-orb-a, rgba(255, 205, 110, .44)) 0 4rem, transparent 13rem),
+    radial-gradient(circle at 87% 17%, var(--glass-orb-b, rgba(190, 112, 255, .28)) 0 6rem, transparent 19rem),
+    radial-gradient(circle at 68% 71%, var(--glass-orb-c, rgba(255, 155, 73, .3)) 0 5rem, transparent 18rem),
+    repeating-radial-gradient(circle at 50% 47%, transparent 0 9.8rem, var(--glass-orbit, rgba(255,255,255,.07)) 10rem 10.05rem, transparent 10.1rem 15rem);
+  filter: saturate(125%);
+}
+
+.field-panel {
+  position: relative;
+  background:
+    linear-gradient(135deg, var(--glass-shine, rgba(255,255,255,.13)), transparent 32%),
+    linear-gradient(145deg, var(--glass-pane-a, rgba(116,69,31,.25)), var(--glass-pane-b, rgba(45,24,11,.34)));
+  border: 1px solid var(--glass-edge, rgba(255,235,198,.3));
+  box-shadow:
+    inset 0 1px 0 var(--glass-highlight, rgba(255,255,255,.28)),
+    inset 1px 0 0 rgba(255,255,255,.06),
+    0 1px 2px rgba(0,0,0,.14),
+    0 18px 55px var(--glass-shadow, rgba(10,5,2,.18));
+  -webkit-backdrop-filter: blur(24px) saturate(145%) brightness(1.04);
+  backdrop-filter: blur(24px) saturate(145%) brightness(1.04);
+}
+
+.field-panel-gold {
+  border-color: rgba(228, 170, 79, 0.58);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 229, 177, 0.06),
+    0 22px 64px rgba(22, 10, 4, 0.22);
+}
+
+/* Apple's clear/regular hierarchy: controls float on the clearest glass;
+   reading surfaces retain a little more tint for long-form legibility. */
+.theme-picker {
+  position: sticky;
+  top: .75rem;
+  z-index: 20;
+  background: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.055));
+  border-color: var(--glass-clear-edge, rgba(255,255,255,.42));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.42), 0 12px 36px rgba(0,0,0,.2);
+  -webkit-backdrop-filter: blur(32px) saturate(180%) brightness(1.12);
+  backdrop-filter: blur(32px) saturate(180%) brightness(1.12);
+}
+
+.field-theme-solar {
+  --glass-pane-a: rgba(138,50,5,.22); --glass-pane-b: rgba(35,11,2,.34); --glass-edge: rgba(255,183,78,.34);
+  --glass-orb-a: rgba(255,174,36,.56); --glass-orb-b: rgba(255,91,0,.35); --glass-orb-c: rgba(255,205,71,.3); --glass-orbit: rgba(255,188,76,.08);
+}
+.field-theme-saffron {
+  --glass-pane-a: rgba(255,251,218,.34); --glass-pane-b: rgba(226,154,31,.3); --glass-edge: rgba(255,255,229,.68);
+  --glass-highlight: rgba(255,255,255,.88); --glass-shadow: rgba(91,48,2,.14);
+  --glass-orb-a: rgba(255,255,220,.82); --glass-orb-b: rgba(245,129,18,.4); --glass-orb-c: rgba(255,200,46,.36); --glass-orbit: rgba(91,54,4,.09);
+}
+.field-theme-apricot {
+  --glass-pane-a: rgba(215,100,51,.22); --glass-pane-b: rgba(93,29,15,.34); --glass-edge: rgba(255,215,157,.32);
+  --glass-orb-a: rgba(255,186,92,.5); --glass-orb-b: rgba(225,69,27,.36); --glass-orb-c: rgba(255,211,91,.32); --glass-orbit: rgba(255,220,170,.08);
+}
+.field-theme-amber {
+  --glass-pane-a: rgba(111,91,24,.24); --glass-pane-b: rgba(31,26,7,.36); --glass-edge: rgba(247,211,115,.28);
+  --glass-orb-a: rgba(245,190,54,.45); --glass-orb-b: rgba(177,113,12,.34); --glass-orb-c: rgba(237,207,95,.28); --glass-orbit: rgba(245,215,126,.08);
+}
+.field-theme-desert {
+  --glass-pane-a: rgba(255,222,151,.28); --glass-pane-b: rgba(201,84,32,.27); --glass-edge: rgba(255,239,192,.64);
+  --glass-highlight: rgba(255,255,255,.74); --glass-shadow: rgba(91,32,7,.14);
+  --glass-orb-a: rgba(255,243,157,.72); --glass-orb-b: rgba(218,71,19,.32); --glass-orb-c: rgba(255,178,47,.38); --glass-orbit: rgba(95,37,9,.09);
+}
+
+/* These earlier theme rules predate the shared material. Neutralise their
+   opaque fills here so every direction uses the same optical construction. */
+.field-theme-saffron .field-panel,
+.field-theme-apricot .field-panel,
+.field-theme-amber .field-panel,
+.field-theme-desert .field-panel {
+  background:
+    linear-gradient(135deg, var(--glass-shine, rgba(255,255,255,.13)), transparent 32%),
+    linear-gradient(145deg, var(--glass-pane-a), var(--glass-pane-b));
+  border-color: var(--glass-edge);
+  -webkit-backdrop-filter: blur(24px) saturate(145%) brightness(1.04);
+  backdrop-filter: blur(24px) saturate(145%) brightness(1.04);
+}
+
+.field-theme-amber .field-panel { border-radius: .6rem; }
+
+.field-shell .theme-picker {
+  background: linear-gradient(135deg, rgba(255,255,255,.18), rgba(255,255,255,.055));
+  border-color: var(--glass-clear-edge, rgba(255,255,255,.42));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.42), 0 12px 36px rgba(0,0,0,.2);
+  -webkit-backdrop-filter: blur(32px) saturate(180%) brightness(1.12);
+  backdrop-filter: blur(32px) saturate(180%) brightness(1.12);
+}
+
+/* Nebula-derived colour stories: warmth behaves as emitted light, while cool
+   hues supply the depth that makes each palette read as celestial. */
+.field-shell.field-theme-serpens {
+  --color-rbd-bg: #13273a; --color-rbd-surface: #274761; --color-rbd-ink: #fff5df;
+  --color-rbd-text: #e8edf0; --color-rbd-muted: #b6c5ce; --color-rbd-terracotta: #f29a55;
+  --color-rbd-ember: #ffb36e; --color-rbd-sage: #73a9c4; --color-rbd-sage-deep: #a8d2e4;
+  --color-rbd-sage-light: #294e68; --color-rbd-line: rgba(204,230,240,.2); --color-rbd-wash: rgba(242,154,85,.08);
+  --glass-pane-a: rgba(49,100,132,.26); --glass-pane-b: rgba(8,30,48,.34); --glass-edge: rgba(185,229,247,.34);
+  --glass-orb-a: rgba(242,139,62,.3); --glass-orb-b: rgba(55,169,216,.52); --glass-orb-c: rgba(239,104,45,.18); --glass-orbit: rgba(173,224,246,.1);
+  background: radial-gradient(ellipse at 0% 12%,rgba(232,105,43,.28),transparent 25rem),radial-gradient(ellipse at 82% 20%,rgba(44,159,210,.58),transparent 42rem),radial-gradient(circle at 55% 100%,rgba(19,91,133,.42),transparent 39rem),linear-gradient(150deg,#071a2b,#174f70 52%,#08243a);
+}
+
+.field-shell.field-theme-event-horizon {
+  --color-rbd-bg: #17142d; --color-rbd-surface: #322d55; --color-rbd-ink: #fff8e6;
+  --color-rbd-text: #ebe7f2; --color-rbd-muted: #bdb5cf; --color-rbd-terracotta: #ff9a18;
+  --color-rbd-ember: #ffb544; --color-rbd-sage: #41d6cf; --color-rbd-sage-deep: #8ce9e2;
+  --color-rbd-sage-light: #273e58; --color-rbd-line: rgba(218,211,242,.19); --color-rbd-wash: rgba(255,154,24,.08);
+  --glass-pane-a: rgba(75,53,126,.28); --glass-pane-b: rgba(17,13,52,.34); --glass-edge: rgba(215,202,255,.34);
+  --glass-orb-a: rgba(255,151,20,.27); --glass-orb-b: rgba(43,224,213,.5); --glass-orb-c: rgba(139,91,230,.56); --glass-orbit: rgba(206,192,245,.1);
+  background: radial-gradient(circle at 3% 18%,rgba(255,130,0,.24),transparent 24rem),radial-gradient(circle at 91% 8%,rgba(40,215,207,.4),transparent 34rem),radial-gradient(circle at 68% 77%,rgba(116,67,211,.62),transparent 43rem),linear-gradient(145deg,#0c0922,#2d1f59 52%,#091c31);
+}
+
+.field-shell.field-theme-zodiac-deco {
+  --color-rbd-bg: #071a32; --color-rbd-surface: #132d4b; --color-rbd-ink: #fff4cf;
+  --color-rbd-text: #e7edf2; --color-rbd-muted: #aebbc8; --color-rbd-terracotta: #e2b84e;
+  --color-rbd-ember: #f0c966; --color-rbd-sage: #a88836; --color-rbd-sage-deep: #ecd48f;
+  --color-rbd-sage-light: #1c3c59; --color-rbd-line: rgba(226,205,148,.2); --color-rbd-wash: rgba(226,184,78,.07);
+  --glass-pane-a: rgba(18,51,82,.28); --glass-pane-b: rgba(3,17,36,.36); --glass-edge: rgba(235,202,108,.38);
+  --glass-orb-a: rgba(226,184,78,.27); --glass-orb-b: rgba(25,92,148,.52); --glass-orb-c: rgba(205,143,36,.16); --glass-orbit: rgba(226,184,78,.14);
+  background: radial-gradient(circle at 50% -8%,rgba(213,166,55,.22),transparent 27rem),radial-gradient(circle at 7% 65%,rgba(19,83,139,.58),transparent 38rem),linear-gradient(155deg,#020d1d,#092845 55%,#031328);
+  --font-display: var(--font-newsreader),Georgia,serif; --font-serif: var(--font-newsreader),Georgia,serif;
+}
+
+.field-shell.field-theme-venus-garden {
+  --color-rbd-bg: #37325b; --color-rbd-surface: #57517a; --color-rbd-ink: #fff7dc;
+  --color-rbd-text: #f0e9e8; --color-rbd-muted: #c9bdcc; --color-rbd-terracotta: #ff994c;
+  --color-rbd-ember: #ffb06e; --color-rbd-sage: #84aa68; --color-rbd-sage-deep: #c5dfa7;
+  --color-rbd-sage-light: #465a50; --color-rbd-line: rgba(232,220,236,.19); --color-rbd-wash: rgba(255,153,76,.08);
+  --glass-pane-a: rgba(72,84,91,.25); --glass-pane-b: rgba(31,39,50,.34); --glass-edge: rgba(226,217,239,.34);
+  --glass-orb-a: rgba(255,137,59,.28); --glass-orb-b: rgba(109,169,75,.56); --glass-orb-c: rgba(187,158,232,.58); --glass-orbit: rgba(220,208,237,.1);
+  background: radial-gradient(circle at 3% 18%,rgba(238,111,48,.24),transparent 25rem),radial-gradient(circle at 91% 18%,rgba(91,154,59,.52),transparent 38rem),radial-gradient(circle at 62% 88%,rgba(166,133,220,.6),transparent 42rem),linear-gradient(145deg,#17292a,#354f43 48%,#3c315f);
+}
+
+.field-shell.field-theme-solar-tide {
+  --color-rbd-bg: #063f56; --color-rbd-surface: #135e70; --color-rbd-ink: #fff8d9;
+  --color-rbd-text: #e5f0ed; --color-rbd-muted: #add0cb; --color-rbd-terracotta: #f4c84d;
+  --color-rbd-ember: #ffda6b; --color-rbd-sage: #49b8aa; --color-rbd-sage-deep: #a0e2d8;
+  --color-rbd-sage-light: #176b70; --color-rbd-line: rgba(196,235,227,.2); --color-rbd-wash: rgba(244,200,77,.08);
+  --glass-pane-a: rgba(17,105,119,.25); --glass-pane-b: rgba(2,39,66,.34); --glass-edge: rgba(173,234,228,.34);
+  --glass-orb-a: rgba(255,211,61,.3); --glass-orb-b: rgba(31,183,165,.58); --glass-orb-c: rgba(31,71,183,.64); --glass-orbit: rgba(177,235,229,.1);
+  background: radial-gradient(circle at 5% 6%,rgba(246,195,47,.25),transparent 25rem),radial-gradient(circle at 91% 25%,rgba(28,174,158,.56),transparent 39rem),radial-gradient(circle at 55% 96%,rgba(26,58,171,.68),transparent 43rem),linear-gradient(145deg,#032b43,#08777d 48%,#09285f);
+}
+
+.field-shell.field-theme-serpens-veil {
+  --color-rbd-bg: #274c61; --color-rbd-surface: #527487; --color-rbd-ink: #fff8eb;
+  --color-rbd-text: #edf2f2; --color-rbd-muted: #c8d4d5; --color-rbd-terracotta: #ffad78;
+  --color-rbd-ember: #ffc095; --color-rbd-sage: #91c7cf; --color-rbd-sage-deep: #c5e8e9;
+  --color-rbd-sage-light: #4d7885; --color-rbd-line: rgba(225,242,241,.24); --color-rbd-wash: rgba(255,173,120,.08);
+  --glass-pane-a: rgba(112,153,168,.21); --glass-pane-b: rgba(29,67,88,.3); --glass-edge: rgba(233,248,247,.38);
+  --glass-highlight: rgba(255,255,255,.38); --glass-orb-a: rgba(255,163,104,.28); --glass-orb-b: rgba(157,220,226,.5); --glass-orb-c: rgba(255,205,158,.24); --glass-orbit: rgba(231,248,247,.11);
+  background: radial-gradient(ellipse at 5% 8%,rgba(255,159,99,.32),transparent 30rem),radial-gradient(ellipse at 83% 24%,rgba(150,218,224,.54),transparent 42rem),radial-gradient(ellipse at 46% 100%,rgba(244,186,143,.2),transparent 38rem),linear-gradient(145deg,#21465b,#507b8d 48%,#315a70);
+}
+
+.field-shell.field-theme-solar-horizon {
+  --color-rbd-bg: #12667a; --color-rbd-surface: #428c91; --color-rbd-ink: #fff9df;
+  --color-rbd-text: #f2f4e9; --color-rbd-muted: #d0ddd2; --color-rbd-terracotta: #ffd269;
+  --color-rbd-ember: #ffe08a; --color-rbd-sage: #63c0ad; --color-rbd-sage-deep: #c4ece1;
+  --color-rbd-sage-light: #398e8a; --color-rbd-line: rgba(230,244,226,.23); --color-rbd-wash: rgba(255,210,105,.08);
+  --glass-pane-a: rgba(76,156,153,.2); --glass-pane-b: rgba(9,73,99,.3); --glass-edge: rgba(235,248,231,.38);
+  --glass-highlight: rgba(255,255,255,.4); --glass-orb-a: rgba(255,220,105,.42); --glass-orb-b: rgba(70,201,180,.46); --glass-orb-c: rgba(236,136,75,.28); --glass-orbit: rgba(232,247,231,.11);
+  background: radial-gradient(ellipse at 50% 0%,rgba(255,222,112,.66),transparent 28rem),radial-gradient(ellipse at 8% 75%,rgba(32,184,169,.42),transparent 40rem),radial-gradient(ellipse at 95% 80%,rgba(225,108,57,.3),transparent 36rem),linear-gradient(180deg,#2c91a0 0%,#0d6d82 42%,#123f70 100%);
+}
+
+.field-shell.field-theme-mystic-oracle {
+  --color-rbd-bg: #070b1d; --color-rbd-surface: #18213b; --color-rbd-ink: #fff1c9;
+  --color-rbd-text: #e9e7ec; --color-rbd-muted: #aaaabd; --color-rbd-terracotta: #d8a94f;
+  --color-rbd-ember: #e9bd69; --color-rbd-sage: #725d91; --color-rbd-sage-deep: #c9b8dc;
+  --color-rbd-sage-light: #28304f; --color-rbd-line: rgba(223,210,229,.19); --color-rbd-wash: rgba(216,169,79,.08);
+  --glass-pane-a: rgba(35,42,77,.25); --glass-pane-b: rgba(5,8,27,.42); --glass-edge: rgba(224,211,232,.29);
+  --glass-highlight: rgba(255,239,205,.25); --glass-orb-a: rgba(220,170,73,.26); --glass-orb-b: rgba(79,67,137,.44); --glass-orb-c: rgba(116,57,90,.26); --glass-orbit: rgba(226,205,219,.13);
+  background:
+    radial-gradient(ellipse at 14% 68%,rgba(91,47,111,.3),transparent 34rem),
+    radial-gradient(ellipse at 91% 42%,rgba(31,73,120,.3),transparent 39rem),
+    linear-gradient(126deg,transparent 16%,rgba(104,87,143,.04) 30%,rgba(176,141,157,.13) 45%,rgba(70,83,135,.08) 58%,transparent 74%),
+    linear-gradient(155deg,#030611,#10152e 51%,#08091b);
+  --font-display: var(--font-newsreader),Georgia,serif; --font-serif: var(--font-newsreader),Georgia,serif;
+}
+
+.field-shell.field-theme-mystic-oracle::after {
+  filter: saturate(135%) contrast(108%);
+}
+
+/* Night-sky layer. The earlier concentric orbit texture made every palette
+   share the same composition; these variants use stars, haze, constellations
+   and meteor light instead. */
+.field-shell::after {
+  inset: 0;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.92) 0 1px, transparent 1.5px) 12px 19px / 97px 113px,
+    radial-gradient(circle, rgba(255,229,176,.72) 0 1px, transparent 1.6px) 43px 71px / 151px 167px,
+    radial-gradient(circle, rgba(171,222,245,.62) 0 .8px, transparent 1.4px) 7px 31px / 73px 89px;
+  filter: none;
+  opacity: .72;
+}
+
+.field-shell.field-theme-serpens::after {
+  background:
+    radial-gradient(circle at 73% 18%, rgba(255,255,255,.95) 0 1.4px, transparent 2px),
+    radial-gradient(circle, rgba(255,245,222,.9) 0 1px, transparent 1.5px) 11px 17px / 103px 127px,
+    radial-gradient(circle, rgba(113,201,239,.74) 0 .9px, transparent 1.5px) 37px 59px / 79px 101px,
+    linear-gradient(118deg, transparent 18%, rgba(92,177,214,.1) 43%, rgba(239,139,68,.1) 50%, transparent 72%);
+}
+
+.field-shell.field-theme-serpens-veil::after {
+  background:
+    radial-gradient(circle, rgba(255,255,255,.88) 0 1px, transparent 1.5px) 15px 23px / 109px 131px,
+    radial-gradient(circle, rgba(255,211,174,.72) 0 .9px, transparent 1.5px) 48px 67px / 83px 107px,
+    linear-gradient(127deg, transparent 16%, rgba(218,239,241,.06) 27%, rgba(218,239,241,.2) 44%, rgba(255,184,137,.14) 51%, rgba(218,239,241,.05) 66%, transparent 76%);
+  filter: blur(.15px);
+  opacity: .82;
+}
+
+.field-shell.field-theme-solar-tide::after {
+  background:
+    radial-gradient(circle, rgba(255,251,210,.94) 0 1px, transparent 1.5px) 21px 9px / 127px 149px,
+    radial-gradient(circle, rgba(127,238,226,.8) 0 .9px, transparent 1.5px) 7px 51px / 89px 113px,
+    linear-gradient(164deg, transparent 49.6%, rgba(255,218,91,.42) 49.8%, rgba(255,255,255,.68) 50%, transparent 50.35%) 72% 9% / 28rem 16rem no-repeat;
+  opacity: .78;
+}
+
+.field-shell.field-theme-solar-horizon::after {
+  background:
+    radial-gradient(circle, rgba(255,255,225,.94) 0 1px, transparent 1.5px) 17px 29px / 113px 137px,
+    radial-gradient(circle, rgba(153,239,226,.78) 0 .8px, transparent 1.4px) 47px 11px / 71px 97px,
+    linear-gradient(153deg, transparent 49.5%, rgba(255,226,128,.58) 49.75%, rgba(255,255,255,.75) 49.9%, transparent 50.2%) 12% 13% / 24rem 12rem no-repeat,
+    linear-gradient(166deg, transparent 49.55%, rgba(191,245,235,.45) 49.8%, transparent 50.15%) 89% 36% / 18rem 10rem no-repeat;
+  opacity: .78;
+}
+
+.field-shell.field-theme-mystic-oracle::after {
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='520' height='360' viewBox='0 0 520 360' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23e7cfa8' stroke-opacity='.2' stroke-width='.8'%3E%3Cpath d='M28 82L91 43l66 58 76-39 61 69 94-53 61 48'/%3E%3Cpath d='M65 286l73-59 68 27 83-69 112 86'/%3E%3C/g%3E%3Cg fill='%23ffe9b9'%3E%3Ccircle cx='28' cy='82' r='2.2'/%3E%3Ccircle cx='91' cy='43' r='1.3'/%3E%3Ccircle cx='157' cy='101' r='2.8'/%3E%3Ccircle cx='233' cy='62' r='1.4'/%3E%3Ccircle cx='294' cy='131' r='2.1'/%3E%3Ccircle cx='388' cy='78' r='1.5'/%3E%3Ccircle cx='449' cy='126' r='2.5'/%3E%3Ccircle cx='65' cy='286' r='1.5'/%3E%3Ccircle cx='138' cy='227' r='2.4'/%3E%3Ccircle cx='206' cy='254' r='1.2'/%3E%3Ccircle cx='289' cy='185' r='2.2'/%3E%3Ccircle cx='401' cy='271' r='1.8'/%3E%3Cpath d='M331 28v14M324 35h14' stroke='%23fff2ca' stroke-width='1.2'/%3E%3Cpath d='M474 304v18M465 313h18' stroke='%23fff2ca'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(circle, rgba(255,244,222,.86) 0 .9px, transparent 1.5px) 19px 37px / 97px 121px,
+    radial-gradient(circle, rgba(169,195,231,.7) 0 .7px, transparent 1.35px) 51px 12px / 73px 89px,
+    linear-gradient(128deg,transparent 20%,rgba(92,82,133,.04) 34%,rgba(202,173,174,.14) 48%,rgba(82,103,151,.06) 62%,transparent 76%);
+  background-size: 520px 360px,97px 121px,73px 89px,100% 100%;
+  opacity: .88;
+  filter: saturate(125%);
+}
+
+.field-shell.field-theme-mystic-oracle::before {
+  inset: 0;
+  opacity: 1;
+  background:
+    radial-gradient(circle at 86% 10%,#091027 0 4.7rem,transparent 4.8rem),
+    radial-gradient(circle at 89% 13%,rgba(240,194,103,.9) 0 5rem,rgba(213,151,61,.38) 5.1rem,transparent 5.5rem),
+    radial-gradient(ellipse at 46% 48%,rgba(181,149,168,.12),transparent 28rem),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E");
+}
+
+.moon-status {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  padding: 1rem 1.15rem;
+  border-radius: 1.5rem;
+}
+
+.moon-status::after {
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 42%;
+  content: "";
+  pointer-events: none;
+  background: linear-gradient(105deg, transparent, color-mix(in srgb, var(--color-rbd-terracotta) 8%, transparent));
+}
+
+.moon-orb {
+  position: relative;
+  width: 3.65rem;
+  height: 3.65rem;
+  flex: none;
+  overflow: hidden;
+  border: 1px solid rgba(255,240,201,.5);
+  border-radius: 999px;
+  background: radial-gradient(circle at 34% 28%, #fff9dc, #f2c76e 58%, #ae6d27 100%);
+  box-shadow: 0 0 1.8rem rgba(231,176,72,.3), inset -.4rem -.35rem .8rem rgba(92,45,21,.2);
+}
+
+.moon-orb::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  border-radius: inherit;
+  background: #080c21;
+  box-shadow: inset .25rem .1rem .7rem rgba(108,116,172,.2);
+}
+
+.moon-full::after { opacity: 0; }
+.moon-new::after { inset: 2px; background: #080b1b; }
+.moon-first-quarter::after { inset: 0 50% 0 0; border-radius: 999px 0 0 999px; }
+.moon-last-quarter::after { inset: 0 0 0 50%; border-radius: 0 999px 999px 0; }
+.moon-waxing-crescent::after { transform: translateX(-.55rem); }
+.moon-waning-crescent::after { transform: translateX(.55rem); }
+.moon-waxing-gibbous::after { transform: translateX(-2.5rem); }
+.moon-waning-gibbous::after { transform: translateX(2.5rem); }
+
+.moon-orb span {
+  position: absolute;
+  inset: 18% 22% auto auto;
+  z-index: 2;
+  width: .35rem;
+  height: .35rem;
+  border-radius: 50%;
+  background: rgba(114,76,40,.18);
+  box-shadow: -1.1rem 1.4rem 0 .08rem rgba(114,76,40,.12), .25rem 1.9rem 0 -.06rem rgba(114,76,40,.17);
+}
+
+.moon-status-main { position: relative; z-index: 1; min-width: 0; }
+.moon-stat { position: relative; z-index: 1; display: flex; min-width: 7rem; flex-direction: column; gap: .28rem; border-left: 1px solid var(--color-rbd-line); padding-left: 1rem; }
+.moon-stat strong { color: var(--color-rbd-ink); font-family: var(--font-serif); font-size: .95rem; font-weight: 400; }
+
+.field-shell.field-theme-mystic-oracle .field-panel {
+  background:
+    linear-gradient(122deg, rgba(255,255,255,.09), transparent 24%),
+    linear-gradient(145deg, rgba(39,47,83,.24), rgba(5,8,26,.42));
+  border-color: rgba(226,211,229,.24);
+  box-shadow: inset 0 1px 0 rgba(255,244,224,.2), 0 24px 70px rgba(0,0,12,.28);
+  backdrop-filter: blur(26px) saturate(135%);
+}
+
+.field-shell.field-theme-mystic-oracle .field-panel-gold {
+  border-color: rgba(218,171,82,.46);
+  box-shadow: inset 0 1px 0 rgba(255,240,202,.22), 0 28px 80px rgba(0,0,12,.34), 0 0 48px rgba(198,139,49,.06);
+}
+
+/* Project artwork generated specifically for this reading surface. A quiet
+   central void keeps the content legible while the nebula detail stays alive
+   at the edges and remains visible through the glass. */
+.field-shell.field-theme-mystic-oracle {
+  background:
+    linear-gradient(180deg, rgba(2,5,15,.08), rgba(2,5,15,.24)),
+    url('/images/mystic-night-sky-v1.png') center top / cover fixed;
+}
+
+.field-shell.field-theme-mystic-oracle::before {
+  inset: 0;
+  opacity: 1;
+  background:
+    radial-gradient(ellipse at center top, transparent 8%, rgba(1,4,13,.04) 55%, rgba(1,3,10,.32) 100%),
+    linear-gradient(90deg, rgba(218,153,48,.035), transparent 24%, transparent 76%, rgba(66,160,180,.035));
+}
+
+.field-shell.field-theme-mystic-oracle::after {
+  inset: 0;
+  opacity: .42;
+  background:
+    linear-gradient(118deg, transparent 0 44%, rgba(255,232,187,.045) 49%, transparent 55%),
+    radial-gradient(circle at 73% 14%, rgba(255,239,195,.5) 0 .8px, transparent 1.6px) 0 0 / 137px 151px;
+  filter: none;
+}
+
+@media (max-width: 767px) {
+  .field-shell.field-theme-mystic-oracle {
+    background-attachment: scroll;
+    background-position: 58% top;
+  }
+}
+
+/* The artwork is shared by every palette. Theme selection changes the glass
+   colour system, not the underlying sky, so stale query parameters can no
+   longer hide the generated background. */
+.field-shell.field-artwork {
+  background:
+    linear-gradient(180deg, rgba(2,5,15,.08), rgba(2,5,15,.24)),
+    url('/images/mystic-night-sky-v1.png') center top / cover fixed;
+}
+
+.field-shell.field-artwork.field-theme-serpens {
+  background:
+    linear-gradient(180deg, rgba(2,12,24,.04) 0%, rgba(3,19,35,.1) 26rem, rgba(3,17,31,.72) 70rem, #03111f 100%),
+    url('/images/banner-serpens.png') center top / 100% auto no-repeat fixed,
+    linear-gradient(145deg, #020d18, #08253c 45%, #031522);
+}
+
+@media (max-width: 767px) {
+  .field-shell.field-artwork {
+    background-attachment: scroll;
+    background-position: 58% top;
+  }
+
+  .field-shell.field-artwork.field-theme-serpens {
+    background-size: auto, auto 22rem, auto;
+    background-position: center top;
+  }
+}
+
+@media (min-width: 640px) {
+  .moon-status { grid-template-columns: auto minmax(12rem, 1fr) auto auto; gap: 1.5rem; padding: 1.15rem 1.5rem; }
 }
 
 @media (prefers-color-scheme: dark) {

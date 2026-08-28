@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { getSession } from '@/lib/session'
-import { dayIndex, daysUntilEnd, lunationsOn, nextWindow, selectWindow } from '@/lib/field/select'
+import { dayIndex, daysUntilEnd, lunationsOn, moonPhaseAt, nextWindow, selectWindow } from '@/lib/field/select'
 import { TIME_ZONE } from '@/lib/field/constants'
 import type { FieldData } from '@/lib/field/types'
 import data from '@/lib/field/windows.json'
@@ -15,7 +15,14 @@ export const dynamic = 'force-dynamic'
 // warning that the generated year is running out.
 const WARNING_WINDOW_DAYS = 30
 
-export default async function FieldPage() {
+const THEMES = ['serpens', 'serpens-veil', 'solar-tide', 'solar-horizon', 'mystic-oracle'] as const
+type FieldTheme = (typeof THEMES)[number]
+
+export default async function FieldPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ theme?: string | string[] }>
+}) {
   const session = await getSession()
   if (!session) redirect('/login')
 
@@ -43,6 +50,11 @@ export default async function FieldPage() {
   }
 
   const approachingEnd = daysRemaining !== null && daysRemaining <= WARNING_WINDOW_DAYS
+  const requestedTheme = (await searchParams).theme
+  const theme: FieldTheme =
+    typeof requestedTheme === 'string' && THEMES.includes(requestedTheme as FieldTheme)
+      ? (requestedTheme as FieldTheme)
+      : 'mystic-oracle'
 
   return (
     <WindowCard
@@ -51,6 +63,8 @@ export default async function FieldPage() {
       next={nextWindow(field.windows, current)}
       lunations={lunationsOn(field.lunations, now, TIME_ZONE)}
       daysRemaining={approachingEnd ? daysRemaining : null}
+      theme={theme}
+      moonPhase={moonPhaseAt(field.lunations, now)}
     />
   )
 }
