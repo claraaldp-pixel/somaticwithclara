@@ -90,6 +90,28 @@ export interface MoonPhaseState {
   next: Lunation
 }
 
+/** The New Moon-to-New Moon container for the optional reflective content. */
+export interface MoonCycleState {
+  newMoon: Lunation
+  /** Present only once the Full Moon in this cycle has occurred. */
+  fullMoon: Lunation | null
+  nextNewMoon: Lunation
+}
+
+/**
+ * Written material is intentionally kept apart from generated transit data.
+ * Add one entry for a New Moon moment when its questions and meditation links
+ * are ready; the page reveals the Full Moon material after that moon occurs.
+ */
+export interface MoonCycleContent {
+  newMoonMoment: string
+  reflectionQuestions: string[] | null
+  emotionsQuestion: string | null
+  newMoonMeditationUrl: string | null
+  fullMoonQuestions: string[] | null
+  fullMoonMeditationUrl: string | null
+}
+
 export interface FieldData {
   anchor: string
   start: string

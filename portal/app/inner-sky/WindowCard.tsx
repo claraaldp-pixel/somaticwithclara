@@ -1,4 +1,4 @@
-import type { Lunation, MoonPhaseState, Pole as PoleData, Window } from '@/lib/field/types'
+import type { Lunation, MoonCycleContent, MoonCycleState, MoonPhaseState, Pole as PoleData, Window } from '@/lib/field/types'
 import { TIME_ZONE } from '@/lib/field/constants'
 import Markdown from './Markdown'
 
@@ -9,6 +9,9 @@ interface Props {
   lunations: Lunation[]
   daysRemaining: number | null
   moonPhase: MoonPhaseState | null
+  moonCycle: MoonCycleState | null
+  moonCycleContent: MoonCycleContent | null
+  today: string
 }
 
 // Dates must render in the same reference zone page.tsx uses to select the
@@ -128,7 +131,107 @@ function Pole({
   )
 }
 
-export default function WindowCard({ window: field, day, next, lunations, daysRemaining, moonPhase }: Props) {
+function MoonCycleGuide({ cycle, content }: { cycle: MoonCycleState; content: MoonCycleContent }) {
+  const primaryNewMoonQuestion = content.reflectionQuestions?.[0]
+  const remainingNewMoonQuestions = content.reflectionQuestions?.slice(1) ?? []
+  const hasNewMoonGuide = Boolean(
+    content.reflectionQuestions?.length || content.emotionsQuestion || content.newMoonMeditationUrl
+  )
+  const hasFullMoonGuide = Boolean(
+    cycle.fullMoon && (content.fullMoonQuestions || content.fullMoonMeditationUrl)
+  )
+
+  if (!hasNewMoonGuide && !hasFullMoonGuide) return null
+
+  return (
+    <section className="field-panel rounded-2xl p-6 sm:p-8" aria-labelledby="moon-cycle-guide-title">
+      <div className="sm:flex sm:items-start sm:gap-8">
+        <h2 id="moon-cycle-guide-title" className={`${LABEL} shrink-0 pt-1 text-rbd-terracotta`}>Current Moon Cycle</h2>
+
+        {primaryNewMoonQuestion && (
+          <div className="mt-4 sm:mt-0">
+            <p className="font-serif text-xl leading-snug text-rbd-terracotta">{primaryNewMoonQuestion}</p>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-rbd-muted">
+              Write the question in your journal. Put a date next to it. Don&apos;t answer it. The clarity will come towards the end of the cycle.
+            </p>
+          </div>
+        )}
+      </div>
+
+      {hasNewMoonGuide && (remainingNewMoonQuestions.length > 0 || content.emotionsQuestion) && (
+        <details className="group mt-6 border-t border-rbd-line pt-5">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm text-rbd-ink [&::-webkit-details-marker]:hidden">
+            <span className={`${LABEL} text-rbd-muted`}>New Moon questions</span>
+            <span className="text-xl leading-none transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+          </summary>
+          <div className="mt-5 space-y-6">
+            {remainingNewMoonQuestions.length > 0 && (
+              <ol className="list-decimal space-y-2 ps-5 font-serif text-xl leading-snug text-rbd-ink italic marker:text-rbd-terracotta" start={2}>
+                {remainingNewMoonQuestions.map((question) => <li key={question}>{question}</li>)}
+              </ol>
+            )}
+
+            {content.emotionsQuestion && (
+              <div>
+                <h3 className={`${LABEL} text-rbd-muted`}>Emotions will come and go</h3>
+                <p className="mt-2 font-serif text-xl leading-snug text-rbd-ink italic">{content.emotionsQuestion}</p>
+                <p className="mt-3 text-sm leading-relaxed text-rbd-muted">Come back to this question as you navigate this cycle.</p>
+              </div>
+            )}
+          </div>
+        </details>
+      )}
+
+      {hasNewMoonGuide && content.newMoonMeditationUrl && (
+        <div className="mt-6">
+          <a
+            className="inline-flex rounded-full border border-rbd-line bg-white/5 px-4 py-2 text-sm text-rbd-ink transition hover:bg-white/10"
+            href={content.newMoonMeditationUrl}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Somatic meditation for this New Moon
+          </a>
+        </div>
+      )}
+
+      {hasFullMoonGuide && cycle.fullMoon && (
+        <details className="group mt-6 border-t border-rbd-line pt-5">
+          <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm text-rbd-ink [&::-webkit-details-marker]:hidden">
+            <span className={`${LABEL} text-rbd-muted`}>Full Moon questions</span>
+            <span className="text-xl leading-none transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+          </summary>
+          <div className="mt-5 space-y-6">
+            {content.fullMoonQuestions?.length && (
+              <div>
+                <h3 className={`${LABEL} text-rbd-muted`}>Journaling questions for the Full Moon</h3>
+                <ol className="mt-3 list-decimal space-y-2 ps-5 font-serif text-xl leading-snug text-rbd-ink italic marker:text-rbd-terracotta">
+                  {content.fullMoonQuestions.map((question) => <li key={question}>{question}</li>)}
+                </ol>
+                <p className="mt-3 max-w-2xl text-sm leading-relaxed text-rbd-muted">
+                  Write the answers down as they come. Date them. Come back to them when the Sun reaches Gate {cycle.fullMoon.gate}, in about six months, for another perspective.
+                </p>
+              </div>
+            )}
+
+            {content.fullMoonMeditationUrl && (
+              <a
+                className="inline-flex rounded-full border border-rbd-line bg-white/5 px-4 py-2 text-sm text-rbd-ink transition hover:bg-white/10"
+                href={content.fullMoonMeditationUrl}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Somatic meditation for the Full Moon phase
+              </a>
+            )}
+          </div>
+        </details>
+      )}
+    </section>
+  )
+}
+
+export default function WindowCard({ window: field, day, next, lunations, daysRemaining, moonPhase, moonCycle, moonCycleContent, today }: Props) {
   const nervousSource =
     field.nervous &&
     (field.nervous.level === 'centre' && !field.nervous.source.endsWith('Centre')
@@ -147,12 +250,12 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
     <article className="mx-auto max-w-6xl space-y-6 px-4 pb-14 pt-5 sm:px-7 sm:pb-20 sm:pt-7 lg:px-10">
       <nav className="flex items-center justify-between border-b border-rbd-line pb-5">
         <div>
-          <p className="font-serif text-2xl leading-none text-rbd-terracotta sm:text-3xl">The Field</p>
+          <p className="font-serif text-2xl leading-none text-rbd-terracotta sm:text-3xl">A Map to Your Inner Sky</p>
           <p className={`${LABEL} mt-1.5 text-rbd-muted`}>Regulation by Design</p>
         </div>
         <div className="hidden items-center gap-3 sm:flex">
           <span className={`${LABEL} text-rbd-muted`}>Current transit</span>
-          <span className="rounded-full border border-rbd-line bg-white/5 px-4 py-2 text-xs text-rbd-text">Now</span>
+          <span className="rounded-full border border-rbd-line bg-white/5 px-4 py-2 text-xs text-rbd-text">{today}</span>
         </div>
       </nav>
 
@@ -170,11 +273,13 @@ export default function WindowCard({ window: field, day, next, lunations, daysRe
             <strong>{moonPhase.illumination}%</strong>
           </div>
           <div className="moon-stat hidden sm:flex">
-            <span className={`${LABEL} text-rbd-muted`}>Next threshold</span>
+            <span className={`${LABEL} text-rbd-muted`}>Coming up</span>
             <strong>{moonPhase.next.phase === 'new' ? 'New Moon' : 'Full Moon'} · {fmt(moonPhase.next.moment, DAY)} {fmt(moonPhase.next.moment, MONTH)}</strong>
           </div>
         </section>
       )}
+
+      {moonCycle && moonCycleContent && <MoonCycleGuide cycle={moonCycle} content={moonCycleContent} />}
 
       <header className="field-panel field-panel-gold grid overflow-hidden rounded-2xl lg:grid-cols-[minmax(0,1.45fr)_minmax(18rem,.55fr)]">
         <div className="space-y-5 p-6 sm:p-9 lg:p-11">

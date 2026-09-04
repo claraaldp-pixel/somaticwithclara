@@ -1,4 +1,4 @@
-import type { Window, Lunation, MoonPhaseState } from './types'
+import type { Window, Lunation, MoonCycleState, MoonPhaseState } from './types'
 
 const MS_PER_DAY = 86_400_000
 
@@ -96,4 +96,28 @@ export function moonPhaseAt(lunations: Lunation[], now: Date): MoonPhaseState | 
   if (progress < .43) return { name: 'Waning Gibbous', key: 'waning-gibbous', illumination, next }
   if (progress < .57) return { name: 'Last Quarter', key: 'last-quarter', illumination, next }
   return { name: 'Waning Crescent', key: 'waning-crescent', illumination, next }
+}
+
+/** The current New Moon cycle, including its Full Moon only after it occurs. */
+export function moonCycleAt(lunations: Lunation[], now: Date): MoonCycleState | null {
+  const at = now.getTime()
+  const newMoon = [...lunations]
+    .reverse()
+    .find((moon) => moon.phase === 'new' && Date.parse(moon.moment) <= at)
+  if (!newMoon) return null
+
+  const nextNewMoon = lunations.find(
+    (moon) => moon.phase === 'new' && Date.parse(moon.moment) > Date.parse(newMoon.moment)
+  )
+  if (!nextNewMoon) return null
+
+  const fullMoon = lunations.find(
+    (moon) =>
+      moon.phase === 'full' &&
+      Date.parse(moon.moment) > Date.parse(newMoon.moment) &&
+      Date.parse(moon.moment) < Date.parse(nextNewMoon.moment) &&
+      Date.parse(moon.moment) <= at
+  ) ?? null
+
+  return { newMoon, fullMoon, nextNewMoon }
 }

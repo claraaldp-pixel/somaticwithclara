@@ -15,7 +15,7 @@
 
 /* A smoked-saffron interpretation of Clara's photograph: dark walnut and
    floorboard umber create the depth needed for glass, while sunlight, oat and
-   amber carry the orange-yellow warmth. Only /field consumes these tokens. */
+   amber carry the orange-yellow warmth. Only /inner-sky consumes these tokens. */
 @theme {
   --color-rbd-bg: #3b210f;
   --color-rbd-surface: #5b351b;
@@ -38,7 +38,7 @@
 /* The `@theme` block above declares these on `:root`, which is what makes
    Tailwind emit the `font-display` / `font-body` / `font-serif` utilities —
    but it is NOT where they can resolve. next/font declares `--font-bricolage`
-   and friends on whichever element carries its generated class, and /field
+   and friends on whichever element carries its generated class, and /inner-sky
    puts that on a nested wrapper rather than `<html>` so the fonts stay
    scoped to this route. A custom property substitutes at the element it is
    declared on, so on `:root` the inner `var(--font-bricolage)` is undefined,

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { dayIndex, daysUntilEnd, nextWindow, selectWindow, lunationsOn, moonPhaseAt } from './select'
+import { dayIndex, daysUntilEnd, nextWindow, selectWindow, lunationsOn, moonCycleAt, moonPhaseAt } from './select'
 import type { Window, Lunation } from './types'
 
 function makeWindow(gate: number, start: string, end: string): Window {
@@ -205,5 +205,21 @@ describe('moonPhaseAt', () => {
 
   it('returns null outside the calculated lunation range', () => {
     expect(moonPhaseAt(cycle, new Date('2026-07-01T00:00:00Z'))).toBeNull()
+  })
+})
+
+describe('moonCycleAt', () => {
+  const cycle = [
+    makeLunation('new', '2026-08-01T00:00:00Z'),
+    makeLunation('full', '2026-08-15T00:00:00Z'),
+    makeLunation('new', '2026-08-29T00:00:00Z'),
+  ]
+
+  it('keeps the Full Moon material hidden until the Full Moon has occurred', () => {
+    expect(moonCycleAt(cycle, new Date('2026-08-10T00:00:00Z'))?.fullMoon).toBeNull()
+  })
+
+  it('returns the current Full Moon after it has occurred', () => {
+    expect(moonCycleAt(cycle, new Date('2026-08-16T00:00:00Z'))?.fullMoon?.moment).toBe('2026-08-15T00:00:00Z')
   })
 })

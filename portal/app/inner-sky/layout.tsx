@@ -42,11 +42,11 @@ const veilBody = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: 'The field — Regulation by Design',
+  title: 'A Map to Your Inner Sky — Regulation by Design',
   description: 'The Sun-gate window you are currently standing in.',
 }
 
-export default function FieldLayout({ children }: { children: React.ReactNode }) {
+export default function InnerSkyLayout({ children }: { children: React.ReactNode }) {
   // Two classes here are load-bearing rather than decorative. `rbd-fonts`
   // re-declares the theme's font tokens in the same scope as the next/font
   // variables — see the comment on it in globals.css, without which this route
