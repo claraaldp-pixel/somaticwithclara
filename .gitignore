@@ -4,13 +4,6 @@ temporary screenshots/
 *.log
 .worktrees/
 
-# Secrets and build output — must never be committed
-.env
-.env.local
-.env*.local
-.vercel
-.next/
-
 # Local private reference files
 *.local.txt
 
@@ -31,3 +24,6 @@ site-config.md
 
 # Higgsfield intermediate artefacts (source captures + composed first frames)
 scripts/higgsfield/out/
+
+# Internal design docs and plans — local only, public repo
+docs/superpowers/

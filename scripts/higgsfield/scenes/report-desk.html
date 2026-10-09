@@ -2,30 +2,30 @@
 <meta charset="utf-8">
 <title>report-desk</title>
 <style>
-  :root { --bg: #F6F1E7; --panel: #E7DAC9; --sand: #EFE7D8; --clay: #C89574; }
+  :root { --paper: #FFF0DC; --paper-light: #FFFAF3; --paper-deep: #F3DFBF; --ink: #2E4B68; --orange: #F35F32; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     width: 1920px; height: 1080px; overflow: hidden;
     display: grid; place-items: center; position: relative;
     background:
-      linear-gradient(175deg, #FBF5EA 0%, var(--bg) 40%, var(--panel) 100%);
+      linear-gradient(175deg, var(--paper-light) 0%, var(--paper) 40%, var(--paper-deep) 100%);
   }
   body::after {
     content: ''; position: absolute; inset: 0; opacity: .3; mix-blend-mode: multiply;
-    background-image: repeating-linear-gradient(92deg, rgba(42,33,23,.05) 0 2px, transparent 2px 7px);
+    background-image: repeating-linear-gradient(92deg, rgba(46,75,104,.05) 0 2px, transparent 2px 7px);
   }
   .light {
     position: absolute; inset: 0;
-    background: linear-gradient(105deg, rgba(255,255,255,.5) 0%, transparent 38%, rgba(192,138,102,.2) 100%);
+    background: linear-gradient(105deg, rgba(255,255,255,.5) 0%, transparent 38%, rgba(243,95,50,.18) 100%);
   }
   .sheet {
     position: relative; width: 1180px; aspect-ratio: 1400 / 1000;
     background: #fff; border-radius: 6px; overflow: hidden;
     transform: rotate(-1.5deg);
     box-shadow:
-      0 70px 130px -35px rgba(42,33,23,.5),
-      0 24px 46px -14px rgba(42,33,23,.3),
-      0 1px 0 0 rgba(42,33,23,.08);
+      0 70px 130px -35px rgba(46,75,104,.46),
+      0 24px 46px -14px rgba(46,75,104,.28),
+      0 1px 0 0 rgba(46,75,104,.08);
   }
   .sheet img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
   .sheet::after {

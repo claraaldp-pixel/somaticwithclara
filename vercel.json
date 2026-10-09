@@ -8,7 +8,12 @@
     },
     {
       "source": "/reclaim_landing",
-      "destination": "/reclaim-your-life",
+      "destination": "/inner-sky",
+      "permanent": true
+    },
+    {
+      "source": "/reclaim-your-life",
+      "destination": "/inner-sky",
       "permanent": true
     }
   ]

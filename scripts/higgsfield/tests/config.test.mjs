@@ -25,10 +25,11 @@ test('loadConfig error never leaks a credential value', () => {
   }
 });
 
-test('PALETTE carries the live clay values and is frozen', () => {
-  assert.equal(PALETTE.clay, '#C89574');
-  assert.equal(PALETTE.bg, '#F6F1E7');
-  assert.equal(PALETTE.text, '#2A2117');
-  assert.equal(PALETTE.appLilac, '#9b8ec4');
+test('PALETTE carries the current brand values and is frozen', () => {
+  assert.equal(PALETTE.paper, '#FFF0DC');
+  assert.equal(PALETTE.ink, '#241C15');
+  assert.equal(PALETTE.plum, '#813B72');
+  assert.equal(PALETTE.orange, '#F35F32');
+  assert.equal(PALETTE.pink, '#E94F73');
   assert.ok(Object.isFrozen(PALETTE));
 });

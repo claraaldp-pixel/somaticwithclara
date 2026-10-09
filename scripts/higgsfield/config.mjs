@@ -6,19 +6,19 @@ export const SOURCE_DIR = join(ROOT, 'scripts', 'higgsfield', 'out', 'source');
 export const FRAMES_DIR = join(ROOT, 'scripts', 'higgsfield', 'out', 'frames');
 export const OUT_DIR = join(ROOT, 'brand-assets', 'generated');
 
-/** Live site palette — from brand.css. Do not use clara-ember-brand-CURRENT.md, it is stale. */
+/** Current Somatic with Clara palette — mirrored from brand.css. */
 export const PALETTE = Object.freeze({
-  bg: '#F6F1E7',
-  cream: '#FBF5EA',
-  panel: '#E7DAC9',
-  sand: '#EFE7D8',
-  clay: '#C89574',
-  clayDark: '#B0774F',
-  clayDeep: '#C08A66',
-  text: '#2A2117',
-  body: '#4A3E2F',
-  muted: '#6E6051',
-  appLilac: '#9b8ec4',
+  paper: '#FFF0DC',
+  paperLight: '#FFFAF3',
+  paperDeep: '#F3DFBF',
+  ink: '#241C15',
+  navy: '#2E4B68',
+  teal: '#3F7975',
+  orange: '#F35F32',
+  plum: '#813B72',
+  mustard: '#F8B52C',
+  pink: '#E94F73',
+  peacock: '#4D91A1',
 });
 
 const REQUIRED_VARS = ['HIGGSFIELD_API_KEY', 'HIGGSFIELD_API_SECRET'];

@@ -67,12 +67,10 @@ Compose writes to `out/frames/`. Copy the ones worth keeping into
 
 ## Gotchas that cost real time
 
-**The brand file lies.** `brand-assets/clara-ember-brand-CURRENT.md` claims to be the
-current live brand. It is not. It describes an orange "ember" palette (`#DC5A22`) with
-Bricolage Grotesque headings that the live site does not use. **Read `brand.css`** — the
-live brand is clay: `--clay:#C89574`, `--bg:#F6F1E7`, `--panel:#E7DAC9`, `--text:#2A2117`,
-with Newsreader + Hanken Grotesk. The HD report, separately, really is ember-branded, so
-the product and the site currently sit on different palettes.
+**Use the current brand source.** Read
+`brand-assets/somatic-with-clara-retro-editorial-brand-CURRENT.md` before composing new
+assets. `brand.css` carries the matching production tokens; the scene templates below
+use the same palette so generated mockups remain consistent with the website.
 
 **The app is behind a login wall.** A logged-out visitor sees only a sign-in form, so
 `capture.mjs` authenticates before screenshotting. It guards against this: if the page
@@ -88,17 +86,14 @@ SPA that hides every section except `#intro` via JS. Scrolling to a percentage o
 height cannot reach the content. `capture.mjs` drives the report's own `window.goTo()`
 navigation instead.
 
-**The report's bodygraph image is broken.** It points at
-`xherhlqktpmzibsigoir.supabase.co`, which is **NXDOMAIN** — that project is gone. The
-current templates point at `hd-report-flame-mu.vercel.app`, which resolves but 404s on
-`/images/*-bodygraph.png`. `capture.mjs` substitutes `brand-assets/bodygraph-clara.png` at
-capture time and waits for it to load; the source report file is never modified. **This
-workaround only fixes the screenshot — the underlying hosting is still broken for real
-delivered reports.**
+**The report's hero chart is loaded from a remote host** that may not serve it. When it
+doesn't, the capture renders a broken-image icon in the middle of the asset. `capture.mjs`
+substitutes `brand-assets/bodygraph-clara.png` at capture time and waits for it to finish
+loading before screenshotting; the source report file is never modified.
 
 **Match the chart to the report's stated type.** The example report is headed "SPLENIC
 PROJECTOR / AUTHORITY: SPLENIC", which requires a defined Spleen and an undefined Solar
-Plexus. Dropping in a chart that contradicts that puts a visible error in front of an
+Plexus. A chart that contradicts the header puts a visible error in front of an
 HD-literate audience. `bodygraph-clara.png` matches.
 
 **Blurred photos can still show a person.** Backdrops use real brand photography behind a
@@ -117,8 +112,7 @@ Exit codes were green throughout.
 `client.mjs` wraps the Higgsfield API: `POST /{model_id}` to submit,
 `GET /requests/{id}/status` to poll, `Authorization: Key {key}:{secret}`.
 
-**Parked as of 2026-08-04 — the Higgsfield credits expired.** Nothing was ever generated
-and nothing was ever billed.
+**Parked as of 2026-08-04.** Nothing has been generated and nothing has been billed.
 
 `generate.mjs` will not submit anything without `--confirm`. Without it, it prints the
 shots it *would* submit and exits. `--only <id>` scopes a run to a single shot, and errors
@@ -130,5 +124,5 @@ submit/poll/download machinery is generic. Free options worth checking if you re
 this: Google AI Studio (Gemini) for images, Hugging Face Inference for FLUX.1-schnell, and
 Hailuo for watermark-free image-to-video on a small daily allowance.
 
-The original design and task plan are in `docs/superpowers/specs/` and
-`docs/superpowers/plans/`, both dated 2026-08-03.
+The original design and task plan are kept locally in `docs/superpowers/` (gitignored),
+both dated 2026-08-03.
