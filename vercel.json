@@ -2,6 +2,26 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/es",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/es/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/fr",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/fr/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
       "source": "/nervous_system_state_quiz_v2",
       "destination": "/quiz",
       "permanent": true
