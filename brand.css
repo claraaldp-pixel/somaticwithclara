@@ -92,6 +92,7 @@
 .is-this-mine-signup .section-title{margin-bottom:18px}
 .is-this-mine-signup .intro-copy{margin:0 auto;text-align:center}
 .is-this-mine-signup .ml-embedded{margin:32px auto 0;text-align:left}
+.is-this-mine-signup .ml-embedded form{display:block;gap:normal;margin-top:0}
 .is-this-mine-signup .fineprint{max-width:590px;margin:22px auto 0;color:var(--navy);line-height:1.65;text-align:center}
 @media (max-width:760px){.is-this-mine-hero .inner-sky-hero-grid{grid-template-columns:1fr}.is-this-mine-portrait{width:min(72vw,300px);justify-self:start}.is-this-mine-signup{text-align:left}.is-this-mine-signup .intro-copy,.is-this-mine-signup .fineprint{text-align:left}}
 
