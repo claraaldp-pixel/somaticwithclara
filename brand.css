@@ -236,6 +236,7 @@
   .app-shot:nth-child(2){align-self:flex-end;margin-top:-8px!important}
   .coaching-hero-photo{width:min(84vw,430px);justify-self:start}
   .coaching-hero-collage{width:min(86vw,440px);justify-self:start}
+  .coaching-page-hero .inner-sky-hero-grid{grid-template-columns:1fr;gap:38px}
   .coaching-page-hero .coaching-hero-collage{width:min(86vw,430px)}
   .hd-page-hero .inner-sky-hero-grid{grid-template-columns:1fr}
   .hd-hero-collage{width:min(86vw,430px);justify-self:start}
