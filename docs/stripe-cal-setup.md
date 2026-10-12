@@ -26,7 +26,7 @@ Copy the four `price_...` IDs. Use **test mode** first.
 
 ## Add Vercel environment variables
 
-In Vercel: **Project → Settings → Environment Variables**, add these for both Preview and Production:
+In Vercel: **Project → Settings → Environment Variables**, add these variables. Use Stripe **test** values in Preview while testing; add the matching Stripe **live** values to Production only when the test checkout and fixed schedules are confirmed.
 
 ```text
 STRIPE_SECRET_KEY=sk_...
