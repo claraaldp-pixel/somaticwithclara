@@ -40,6 +40,7 @@
 .coaching-offers .detail-card .split-detail{display:flex;flex-direction:column;height:100%}
 .coaching-offers .detail-card .split-detail>div:last-child{display:flex;flex:1;flex-direction:column}
 .coaching-offers .detail-card .button{align-self:flex-start;margin-top:auto}
+.checkout-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:auto;padding-top:10px}.checkout-actions .button{margin-top:0}.checkout-button{font-family:'Hanken Grotesk',sans-serif;cursor:pointer}.checkout-button[disabled]{cursor:wait;opacity:.72}.checkout-note{margin:15px 0 0;font-size:10px!important;line-height:1.55!important}
 .coaching-faq-list{margin-top:38px}
 .coaching-faq-note{margin:35px 0 0}
 .coaching-page-hero{padding-top:clamp(38px,4.5vw,72px);padding-bottom:clamp(42px,5vw,78px)}
@@ -238,6 +239,7 @@
   .coaching-hero-collage{width:min(86vw,440px);justify-self:start}
   .coaching-page-hero .inner-sky-hero-grid{grid-template-columns:1fr;gap:38px}
   .coaching-page-hero .coaching-hero-collage{width:min(86vw,430px)}
+  .checkout-actions{align-items:stretch;flex-direction:column}.checkout-actions .button{text-align:center}
   .hd-page-hero .inner-sky-hero-grid{grid-template-columns:1fr}
   .hd-hero-collage{width:min(86vw,430px);justify-self:start}
 }
