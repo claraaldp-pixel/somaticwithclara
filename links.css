@@ -18,9 +18,11 @@
 .links-offer-copy strong{font-size:clamp(22px,4.6vw,30px);font-weight:900;letter-spacing:-.055em;line-height:1.02;text-transform:uppercase;}
 .links-offer-copy small{font-size:clamp(13px,2.6vw,15px);line-height:1.35;}
 .links-offer-arrow{align-self:start;font-family:'DM Mono',monospace;font-size:24px;line-height:1;}
+.links-offer-freebie{border-left:10px solid var(--orange);background:#ffdfc7;}
 .links-offer-sky{border-left:10px solid var(--mustard);background:#ffe7a8;}
 .links-offer-coaching{border-left:10px solid var(--teal);background:#d7e8e1;}
 .links-offer-hd{border-left:10px solid var(--plum);background:#eed5e5;}
+.links-offer-freebie:hover{background:#ffd2b2;}
 .links-offer-sky:hover{background:#ffdf88;}
 .links-offer-coaching:hover{background:#c6e0d5;}
 .links-offer-hd:hover{background:#e8c6dc;}
