@@ -145,7 +145,8 @@ body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--te
 .modal-section a:hover{color:#fff;}
 .modal-updated{font-family:'Hanken Grotesk',sans-serif;font-size:10px;color:rgba(255,255,255,.25);margin-top:20px;font-style:italic;}
 </style>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f7f03a7-24e9-4452-bc92-91b58256b1cc"></script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="8f7f03a7-24e9-4452-bc92-91b58256b1cc" data-domains="www.somaticwithclara.com,somaticwithclara.com"></script>
+  <script defer src="/site-events.js"></script>
 </head>
 <body>
 
@@ -302,7 +303,7 @@ body{font-family:'Hanken Grotesk',sans-serif;background:var(--bg);color:var(--te
     </div>
     <div class="modal-section">
       <div class="modal-section-title">Cookies & tracking</div>
-      <p>This quiz does not use cookies or tracking pixels. Anonymous page view data may be collected via Vercel Analytics to help understand how this page performs. No personal data is collected, no cookies are set, and your quiz responses are never shared.</p>
+      <p>We use Umami to count page views and interactions such as starting and completing the quiz. Your answers, name and email address are not sent to Umami.</p>
     </div>
     <div class="modal-section">
       <div class="modal-section-title">Contact</div>
@@ -507,6 +508,7 @@ function nextQ(){
 }
 
 function showEmailGate(){
+  window.umami?.track?.('quiz-questions-complete');
   document.getElementById('quiz-wrap').style.display='none';
   document.getElementById('landing-section').style.display='none';
   document.getElementById('email-gate-wrap').style.display='block';
@@ -538,6 +540,7 @@ function submitEmail(){
 }
 
 function showResult(){
+  window.umami?.track?.('quiz-result-view');
   const totalScore=Object.values(scores).reduce((a,b)=>a+b,0);
   const winner=totalScore<=8?'ventral':Object.keys(scores).reduce((a,b)=>scores[a]>scores[b]?a:b);
   const r=results[winner];
