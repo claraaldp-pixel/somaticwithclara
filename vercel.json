@@ -2,6 +2,26 @@
   "cleanUrls": true,
   "redirects": [
     {
+      "source": "/free-resources",
+      "destination": "/is-this-mine",
+      "permanent": false
+    },
+    {
+      "source": "/free-resources.html",
+      "destination": "/is-this-mine",
+      "permanent": false
+    },
+    {
+      "source": "/inner-sky",
+      "destination": "/offers",
+      "permanent": false
+    },
+    {
+      "source": "/inner-sky.html",
+      "destination": "/offers",
+      "permanent": false
+    },
+    {
       "source": "/es",
       "destination": "/",
       "permanent": false
@@ -38,12 +58,12 @@
     },
     {
       "source": "/reclaim_landing",
-      "destination": "/inner-sky",
+      "destination": "/offers",
       "permanent": true
     },
     {
       "source": "/reclaim-your-life",
-      "destination": "/inner-sky",
+      "destination": "/offers",
       "permanent": true
     }
   ]

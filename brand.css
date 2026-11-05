@@ -36,6 +36,7 @@
 .coaching-hero-collage{width:min(100%,560px);margin:0;justify-self:center}
 .coaching-hero-collage img{display:block;width:100%;height:auto}
 .coaching-offers{align-items:stretch}
+.method-grid .offer-card{min-height:260px}
 .coaching-offers .detail-card{height:100%}
 .coaching-offers .detail-card .split-detail{display:flex;flex-direction:column;height:100%}
 .coaching-offers .detail-card .split-detail>div:last-child{display:flex;flex:1;flex-direction:column}
